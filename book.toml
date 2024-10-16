@@ -4,3 +4,16 @@ language = "en"
 multilingual = false
 src = "src"
 title = "Idiomatic Rust Snippets"
+
+[output.html.playpen]
+editable = true
+editor = "ace"
+line-numbers = true
+
+[output.html.fold]
+enable = true
+
+[output.html]
+git-repository-url = "https://github.com/saltukalakus/idiomatic-rust-snippets"
+git-repository-icon = "fa-github"
+edit-url-template = "https://github.com/saltukalakus/idiomatic-rust-snippets/edit/main/{path}"
