@@ -1,5 +1,5 @@
 # Summary
 
 - [Essentials](./essentials/intro.md)
-  -[Sum Variables](./essentials/sum.md)
-- [Dereference a Va](./chapter_1.md)
+  - [Sum Variables](./essentials/sum.md)
+  - [Requiring modules](./essentials/modules.md)
