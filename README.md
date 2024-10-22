@@ -6,3 +6,12 @@ The snippets cover a variety of use cases from the simplest ones to using advanc
 
 Please like, share, and contribute. All pull requests are welcome.
 
+### How to run the project locally.
+
+```
+git clone https://github.com/saltukalakus/idiomatic-rust-snippets
+cd idiomatic-rust-snippets
+cargo install mdbook
+mdbook build
+mdbook serve
+```
