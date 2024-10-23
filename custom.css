@@ -1,0 +1,37 @@
+/* custom.css */
+
+/* Increase the size of the GitHub icon */
+.fa-github{
+    font-size: 2em; /* Adjust the size as needed */
+}
+
+.fa-edit{
+    font-size: 2em; /* Adjust the size as needed */
+}
+
+.fa-search{
+    font-size: 2em; /* Adjust the size as needed */
+}
+
+.fa-paint-brush{
+    font-size: 2em; /* Adjust the size as needed */
+}
+
+.fa-bars{
+    font-size: 2em; /* Adjust the size as needed */
+}
+
+
+.footer-content {
+    text-align: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+.footer-content .fa-github {
+    margin-right: 10px;
+}
+
+.footer-content img {
+    vertical-align: middle;
+}
