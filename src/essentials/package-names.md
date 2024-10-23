@@ -1,3 +1,5 @@
+### Package name and a quirk with dash (hyphens)
+
 Rust supports underscores (_) for package names but not hyphens (-). However, you may see packages on Crates.io with hyphens.
 
 [The related RFC](https://github.com/rust-lang/rfcs/blob/master/text/0940-hyphens-considered-harmful.md) recommends explicitly renaming those crates with underscores. E.g.

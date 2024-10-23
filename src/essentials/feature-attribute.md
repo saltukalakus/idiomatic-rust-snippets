@@ -1,3 +1,5 @@
+### How to use unstable features in your Rust project
+
 In Rust, the #! syntax is used for attributes that apply to the entire crate or module. These are known as "inner attributes." They are typically placed at the top of a file and are used to configure various aspects of the Rust compiler's behavior for that file or crate.
 
 #![feature(...)]: This attribute allows you to use unstable features in your Rust code from the nightly Rust compiler. It must be placed at the top of the file. 
