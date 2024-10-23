@@ -5,3 +5,4 @@
   - [Requiring modules](./essentials/modules.md)
   - [Package names](./essentials/package-names.md)
   - [Tag your Crate](./essentials/crates-tag.md)
+  - [Feature Attribute](./essentials/crates-tag.md)
