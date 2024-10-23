@@ -17,6 +17,6 @@ enable = true
 git-repository-url = "https://github.com/saltukalakus/idiomatic-rust-snippets"
 git-repository-icon = "fa-github"
 edit-url-template = "https://github.com/saltukalakus/idiomatic-rust-snippets/edit/main/{path}"
-
+google-analytics = "G-X57CCMGE79"
 [output.html.print]
 enable = false    # include support for printable output
