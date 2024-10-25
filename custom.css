@@ -20,18 +20,3 @@
 .fa-bars{
     font-size: 2em; /* Adjust the size as needed */
 }
-
-
-.footer-content {
-    text-align: center;
-    padding: 20px;
-    background-color: #f8f9fa;
-}
-
-.footer-content .fa-github {
-    margin-right: 10px;
-}
-
-.footer-content img {
-    vertical-align: middle;
-}
