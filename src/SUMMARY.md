@@ -7,3 +7,4 @@
   - [Tag your Crate](./essentials/crates-tag.md)
   - [Feature Attribute](./essentials/feature-attribute.md)
   - [Features Compilation](./essentials/features-compilation.md)
+  - [![no_std] Attribute](./essentials/no-std.md)
