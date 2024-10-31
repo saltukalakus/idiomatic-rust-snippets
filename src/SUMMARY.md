@@ -9,6 +9,7 @@
   - [Features Compilation](./essentials/features-compilation.md)
   - [![no_std] Attribute](./essentials/no-std.md)
   - [Traits](./essentials/trait.md)
+  - [Self Keyword](./essentials/self.md)
 
 - [Patterns](./patterns.md)
   - [Behavioral Patterns](./patterns/behavioral.md)
