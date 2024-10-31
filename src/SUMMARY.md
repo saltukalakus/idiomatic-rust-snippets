@@ -10,6 +10,8 @@
   - [![no_std] Attribute](./essentials/no-std.md)
   - [Traits](./essentials/trait.md)
   - [Self Keyword](./essentials/self.md)
+  - [Borrow vs Ownership](./essentials/borrow-vs-ownership.md)
+  
 
 - [Patterns](./patterns.md)
   - [Behavioral Patterns](./patterns/behavioral.md)
