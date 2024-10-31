@@ -20,12 +20,13 @@ fn main() {
 }
 ```
 
-
 ### Borrowing
 
 Borrowing allows you to reference a value without taking ownership of it. There are two types of borrowing in Rust:
 
-Immutable Borrowing (&T): You can have multiple immutable references to a value.
+**Immutable Borrowing (&T)**: 
+
+You can have multiple immutable references to a value.
 
 In this example, s1 is borrowed immutably by the calculate_length function. The function can read the value but cannot modify it. After the function call, s1 is still valid.
 
@@ -42,7 +43,9 @@ fn calculate_length(s: &String) -> usize {
 }
 ```
 
-Mutable Borrowing (&mut T): You can have only one mutable reference to a value at a time.
+**Mutable Borrowing (&mut T)**: 
+
+You can have only one mutable reference to a value at a time.
 
 In this example, s is borrowed mutably by the change function. The function can modify the value. After the function call, s is still valid and has been modified.
 
