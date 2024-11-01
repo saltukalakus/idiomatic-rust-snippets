@@ -12,7 +12,9 @@
   - [Self Keyword](./essentials/self.md)
   - [Borrow vs Ownership](./essentials/borrow-vs-ownership.md)
   - [Imp Keyword](./essentials/imp.md)
-  
+  - [Structs](./essentials/struct.md)
+  - [Enums](./essentials/enum.md)
+
 - [Patterns](./patterns.md)
   - [Behavioral Patterns](./patterns/behavioral.md)
     - [Observer Pattern](./patterns/behavioral/observer.md)
