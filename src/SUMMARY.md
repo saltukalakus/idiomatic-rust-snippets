@@ -14,6 +14,7 @@
   - [Imp Keyword](./essentials/imp.md)
   - [Structs](./essentials/struct.md)
   - [Enums](./essentials/enum.md)
+  - [Structs vs Enums](./essentials/struct-vs-enums.md)
 
 - [Patterns](./patterns.md)
   - [Behavioral Patterns](./patterns/behavioral.md)
