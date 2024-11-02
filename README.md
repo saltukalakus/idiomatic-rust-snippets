@@ -1,6 +1,6 @@
 # Idiomatic Rust Snippets  
 
-Rust is known to have a steep learning curve. This guide helps to learn idiomatic usage of the language with minimal sample code to get you off the ground quickly.
+Rust is known to have a steep learning curve. This guide aims to help you learn idiomatic usage of the language with minimalistic sample code to get you off the ground quickly.
 
 The snippets cover a variety of use cases from the simplest ones to using advanced features of Rust.
 
