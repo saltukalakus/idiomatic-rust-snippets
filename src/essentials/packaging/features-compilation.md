@@ -12,8 +12,8 @@ feature1 = []
 feature2 = ["dependency1/featureA"]
 ```
 
-**default**: This is a special feature that is enabled by default when your crate is used as a dependency. It can include other features.
-**feature1 and feature2**: These are custom features that can be enabled or disabled by the user.
+**default**: This is a special feature that is enabled by default when your crate is used as a dependency. It can include other features.<br/>
+**feature1 and feature2**: These are custom features that can be enabled or disabled by the user.<br/>
 
 ### Using Features in Code
 

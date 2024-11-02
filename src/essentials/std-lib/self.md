@@ -4,9 +4,8 @@
 
 ### Usage of self
 
-**Method Definitions**: When defining methods for a struct or enum, self is used to refer to the instance on which the method is called.
-
-**Method Parameters**: self can be used as a parameter in method definitions to indicate that the method takes ownership, borrows immutably, or borrows mutably from the instance.
+**Method Definitions**: When defining methods for a struct or enum, self is used to refer to the instance on which the method is called.<br/>
+**Method Parameters**: self can be used as a parameter in method definitions to indicate that the method takes ownership, borrows immutably, or borrows mutably from the instance.<br/>
 
 ### Immutable Borrow (&self)
 

@@ -4,9 +4,9 @@ The #![no_std] attribute in Rust is used to indicate that a crate does not use t
 
 ### Purpose of #![no_std]
 
-**Embedded Systems**: Many embedded systems do not have the resources to support the full standard library.
-**Operating System Development**: When writing an operating system, you often need to avoid dependencies on the standard library.
-**Custom Environments**: Any environment where the standard library is not available or not desired.
+**Embedded Systems**: Many embedded systems do not have the resources to support the full standard library.<br/>
+**Operating System Development**: When writing an operating system, you often need to avoid dependencies on the standard library.<br/>
+**Custom Environments**: Any environment where the standard library is not available or not desired.<br/>
 
 Here’s an example of how you might use #![no_std] in a Rust crate:
 

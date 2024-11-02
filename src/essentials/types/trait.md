@@ -4,11 +4,9 @@ In Rust, a trait is a way to define shared behavior in an abstract way. It is si
 
 ### Purpose of Traits
 
-**Define Shared Behavior**: Traits allow you to define methods that can be shared across different types.
-
-**Enable Polymorphism**: Traits enable polymorphism, allowing you to write code that can operate on different types in a generic way.
-
-**Abstract Over Types**: Traits allow you to abstract over types, enabling you to write more flexible and reusable code.
+**Define Shared Behavior**: Traits allow you to define methods that can be shared across different types.<br/>
+**Enable Polymorphism**: Traits enable polymorphism, allowing you to write code that can operate on different types in a generic way.<br/>
+**Abstract Over Types**: Traits allow you to abstract over types, enabling you to write more flexible and reusable code.<br/>
 
 In the sample code below the Greet trait is defined with a single method greet. The Greet trait is implemented for two structs, Person and Dog. 
 
