@@ -56,4 +56,3 @@ fn main() {
     person.greet();
 }
 ```
-
