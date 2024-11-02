@@ -33,12 +33,12 @@ fn main() {
 
 ### Key Points
 
-**No Standard Library**: The crate does not link to the standard library.
-**Use core**: You can use the core library, which provides essential functionalities like Option, Result, and basic traits.
-**Limited Functionality**: Without the standard library, you lose access to many features like heap allocation, file I/O, and threading.
+**No Standard Library**: The crate does not link to the standard library.<br/>
+**Use core**: You can use the core library, which provides essential functionalities like Option, Result, and basic traits.<br/>
+**Limited Functionality**: Without the standard library, you lose access to many features like heap allocation, file I/O, and threading.<br/>
 
 ### Common Use Cases
 
-**Embedded Development**: Writing firmware for microcontrollers.
-**Operating System Kernels**: Developing low-level system software.
-**WASM (WebAssembly)**: Targeting WebAssembly where the standard library is not fully supported.
+**Embedded Development**: Writing firmware for microcontrollers.<br/>
+**Operating System Kernels**: Developing low-level system software.<br/>
+**WASM (WebAssembly)**: Targeting WebAssembly where the standard library is not fully supported.<br/>

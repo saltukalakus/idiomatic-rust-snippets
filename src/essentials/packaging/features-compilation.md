@@ -58,9 +58,7 @@ In this example:
 
 ### Summary
 
-**Features**: Allow conditional compilation and optional dependencies.
-**Default Features**: Automatically enabled unless explicitly disabled.
-**Custom Features**: Defined in Cargo.toml and can be enabled or disabled as needed.
-**Conditional Compilation**: Use `#[cfg(feature = "feature_name")]` to include/exclude code based on features.
+`features`: Allow conditional compilation and optional dependencies.<br/>
+`default` attribute: Default features is enabled by default unless explicitly disabled.<br/>
 
-Features provide a powerful way to manage optional functionality and dependencies in Rust projects.
+Custom Features can be added in Cargo.toml and enabled or disabled as needed. You can use `#[cfg(feature = "feature_name")]` at the top of the function to include/exclude from teh code based on the feature availability.Features provide a powerful way to manage optional functionality and dependencies in Rust projects.<br/>
