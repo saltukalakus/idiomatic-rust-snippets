@@ -2,11 +2,11 @@
 
 Arithmetic operators are used to perform basic mathematical operations.
 
-+ : Addition
-- : Subtraction
-* : Multiplication
-/ : Division
-% : Remainder (modulus)
+`+` : Addition<br/>
+`-` : Subtraction<br/>
+`*` : Multiplication<br/>
+`/` : Division<br/>
+`%` : Remainder (modulus)<br/>
 
 ```rust
 fn main() {

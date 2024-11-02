@@ -1,13 +1,13 @@
-# Comparison Operators
+### Comparison Operators
 
 Comparison operators are used to compare two values and return a boolean result.
 
-== : Equal to
-!= : Not equal to
-> : Greater than
-< : Less than
->= : Greater than or equal to
-<= : Less than or equal to
+`==` : Equal to<br/>
+`!=` : Not equal to<br/>
+`>` : Greater than<br/>
+`<` : Less than<br/>
+`>=` : Greater than or equal to<br/>
+`<=` : Less than or equal to<br/>
 
 ```rust
 fn main() {

@@ -1,10 +1,10 @@
-# Logical Operators
+### Logical Operators
 
 Logical operators are used to combine multiple boolean expressions.
 
-&& : Logical AND
-|| : Logical OR
-! : Logical NOT
+`&&` : Logical AND<br/>
+`||` : Logical OR<br/>
+`!` : Logical NOT<br/>
 
 ```rust
 fn main() {
