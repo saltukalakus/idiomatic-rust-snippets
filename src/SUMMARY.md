@@ -27,5 +27,5 @@
     - [Borrow vs Ownership](./essentials/core-concepts/borrow-vs-ownership.md)
 
 - [Patterns](./patterns.md)
-  - [Behavioral Patterns](./patterns/behavioral.md)
-    - [Observer Pattern](./patterns/behavioral/observer.md)
+  - [Behavioral](./patterns/behavioral.md)
+    - [Observer](./patterns/behavioral/observer.md)
