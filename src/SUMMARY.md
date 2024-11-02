@@ -15,9 +15,11 @@
     - [Structs](./essentials/types/struct.md)
     - [Enums](./essentials/types/enum.md)
     - [Structs vs Enums](./essentials/types/struct-vs-enums.md)
-  - [Self Keyword](./essentials/self.md)
+    - [Generics](./essentials/types/generics.md) 
+  - [Standard Library](./essentials/std-lib/intro.md)
+    - [Self Keyword](./essentials/std-lib/self.md)
+    - [Imp Keyword](./essentials/std-lib/imp.md)
   - [Borrow vs Ownership](./essentials/borrow-vs-ownership.md)
-  - [Imp Keyword](./essentials/imp.md)
 
 - [Patterns](./patterns.md)
   - [Behavioral Patterns](./patterns/behavioral.md)
