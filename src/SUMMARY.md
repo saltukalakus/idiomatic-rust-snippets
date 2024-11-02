@@ -1,7 +1,7 @@
 # Summary
 
 - [Essentials](./essentials/intro.md)
-  - [Arithmetic Operations](./essentials/arithmetic-operations.md)
+  - [Arithmetic Operations](./essentials/operands/arithmetic-operations.md)
   - [Requiring Modules](./essentials/modules.md)
   - [Package Names](./essentials/package-names.md)
   - [Tag your Crate](./essentials/crates-tag.md)
@@ -15,6 +15,7 @@
   - [Structs](./essentials/struct.md)
   - [Enums](./essentials/enum.md)
   - [Structs vs Enums](./essentials/struct-vs-enums.md)
+  - [Generics](./essentials/struct-vs-enums.md)
 
 - [Patterns](./patterns.md)
   - [Behavioral Patterns](./patterns/behavioral.md)
