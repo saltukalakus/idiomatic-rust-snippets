@@ -19,7 +19,8 @@
   - [Standard Library](./essentials/std-lib/intro.md)
     - [Self Keyword](./essentials/std-lib/self.md)
     - [Imp Keyword](./essentials/std-lib/imp.md)
-  - [Borrow vs Ownership](./essentials/borrow-vs-ownership.md)
+  - [Core Concepts](./essentials/core-concepts/intro.md)
+    - [Borrow vs Ownership](./essentials/core-concepts/borrow-vs-ownership.md)
 
 - [Patterns](./patterns.md)
   - [Behavioral Patterns](./patterns/behavioral.md)
