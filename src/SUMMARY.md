@@ -1,13 +1,15 @@
 # Summary
 
 - [Essentials](./essentials/intro.md)
-  - [Arithmetic Operations](./essentials/operands/arithmetic-operations.md)
-  - [Requiring Modules](./essentials/modules.md)
+  - [Operators](./essentials/operators/intro.md)
+    - [Arithmetic Operations](./essentials/operators/arithmetic-operations.md)
+  - [Packaging](./essentials/packaging/intro.md)
+    - [![no_std] Attribute](./essentials/packaging/no-std.md)
+    - [Requiring Modules](./essentials/packaging/modules.md)
   - [Package Names](./essentials/package-names.md)
   - [Tag your Crate](./essentials/crates-tag.md)
   - [Feature Attribute](./essentials/feature-attribute.md)
   - [Features Compilation](./essentials/features-compilation.md)
-  - [![no_std] Attribute](./essentials/no-std.md)
   - [Traits](./essentials/trait.md)
   - [Self Keyword](./essentials/self.md)
   - [Borrow vs Ownership](./essentials/borrow-vs-ownership.md)
