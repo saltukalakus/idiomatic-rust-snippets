@@ -24,7 +24,8 @@
     - [Self Keyword](./essentials/std-lib/self.md)
     - [Imp Keyword](./essentials/std-lib/imp.md)
   - [Core Concepts](./essentials/core-concepts/intro.md)
-    - [Borrow vs Ownership](./essentials/core-concepts/borrow-vs-ownership.md)
+    - [Ownership](./essentials/core-concepts/ownership.md)
+    - [Borrow](./essentials/core-concepts/borrow.md)
 
 - [Patterns](./patterns.md)
   - [Behavioral](./patterns/behavioral.md)
