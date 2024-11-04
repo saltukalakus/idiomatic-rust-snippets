@@ -49,7 +49,7 @@ fn main() {
 }
 ```
 
-** Generic Enums**: 
+**Generic Enums**: 
 
 Enums that can hold variants of different types specified at the time of instantiation.
 
