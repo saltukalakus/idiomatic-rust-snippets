@@ -4,7 +4,12 @@ Rust provides several ways to handle concurrency, ensuring safety and performanc
 
 ### 1. Threads
 
-Rust's standard library provides a way to spawn threads using the `std::thread` module.
+Rust's standard library provides a way to spawn threads using the `std::thread` module. The `thread::spawn` function is used to create a new thread. The || syntax is used to define a [closure](./closures.md), which is an anonymous function that can capture variables from its surrounding scope.
+
+Here's a breakdown of the syntax:
+
+`||`: This defines a closure with no parameters. If the closure had parameters, they would be listed between the vertical bars.
+`{ ... }`: This is the body of the closure, which contains the code that will be executed in the new thread.
 
 ```rust
 use std::thread;

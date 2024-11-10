@@ -2,6 +2,8 @@
 
 - [Essentials](./essentials/intro.md)
   - [Core Concepts](./essentials/core-concepts/intro.md)
+    - [Functions](./essentials/core-concepts/function.md)  
+    - [Closures](./essentials/core-concepts/closures.md)  
     - [Ownership](./essentials/core-concepts/ownership.md)
     - [Borrow](./essentials/core-concepts/borrow.md)
     - [Macros](./essentials/core-concepts/macro.md)

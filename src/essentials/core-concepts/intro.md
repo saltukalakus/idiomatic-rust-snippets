@@ -1,4 +1,4 @@
-### Core Concepts Specific to Rust
+### Core Concepts in Rust
 
 Rust has several core concepts that are fundamental to understanding and effectively using the language. These concepts are designed to ensure memory safety, concurrency, and performance without sacrificing ease of use. Here are some of the core concepts specific to Rust:
 
@@ -26,7 +26,7 @@ Traits are Rust's way of defining shared behavior. They are similar to interface
 
 Enums in Rust are more powerful than in many other languages because each variant can have associated data. Enums are often used with pattern matching to handle different cases.
 
-### 7. Concurrency
+### 7. [Concurrency](./concurency.md)
 
 Rust provides powerful concurrency primitives, such as threads and channels, while ensuring memory safety. The ownership and borrowing system helps prevent data races at compile time.
 
@@ -42,3 +42,6 @@ Macros in Rust provide a way to write code that writes other code (metaprogrammi
 
 Modules and crates are Rust's way of organizing code. Modules allow you to group related code together, while crates are the unit of compilation and distribution.
 
+### 11. [Functions](./function.md) and [Closures](./closures.md)
+
+In Rust, functions are a fundamental building block for organizing and reusing code. Functions allow you to encapsulate logic, perform specific tasks, and return values.
