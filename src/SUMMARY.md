@@ -20,7 +20,7 @@
     - [Traits](./essentials/types/trait.md)
     - [Structs](./essentials/types/struct.md)
     - [Enums](./essentials/types/enum.md)
-    - [Structs vs Enums](./essentials/types/struct-vs-enums.md)
+    - [Structs vs Enums](./essentials/types/struct-vs-enum.md)
     - [Generics](./essentials/types/generics.md) 
     - [Type Alias](./essentials/types/type-alias.md) 
     - [Pointers](./essentials/types/pointer.md) 

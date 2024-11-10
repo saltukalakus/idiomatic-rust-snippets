@@ -32,7 +32,7 @@ fn main() {
 
 Smart pointers are data structures that not only act like a pointer but also have additional capabilities, such as automatic memory management. Common smart pointers in Rust include:
 
-**Box**: A heap-allocated pointer.<br\>
+**Box**: A heap-allocated pointer.<br/>
 
 ```rust
 fn main() {
@@ -41,7 +41,7 @@ fn main() {
 }
 ```
 
-**Rc**: A reference-counted pointer for single-threaded scenarios.<br\>
+**Rc**: A reference-counted pointer for single-threaded scenarios.<br/>
 
 ```rust
 use std::rc::Rc;
@@ -53,7 +53,7 @@ fn main() {
 }
 ```
 
-**Arc**: An atomic reference-counted pointer for multi-threaded scenarios.<br\>
+**Arc**: An atomic reference-counted pointer for multi-threaded scenarios.<br/>
 
 ```rust
 use std::sync::Arc;
@@ -69,5 +69,28 @@ fn main() {
 
     println!("a: {}", a);
     handle.join().unwrap();
+}
+```
+
+### Raw Pointers
+
+Raw pointers are unsafe pointers that can be used to perform low-level memory manipulation. They are not subject to Rust's borrowing rules and must be used within an `unsafe` block.
+
+Immutable Raw Pointer (`*const T`): Points to data that cannot be modified.<br/>
+Mutable Raw Pointer (`*mut T`): Points to data that can be modified.<br/>
+
+```rust
+fn main() {
+    let x = 5;
+    let y = &x as *const i32; // Immutable raw pointer
+
+    let mut z = 10;
+    let w = &mut z as *mut i32; // Mutable raw pointer
+
+    unsafe {
+        println!("y: {}", *y);
+        *w += 5;
+        println!("z: {}", *w);
+    }
 }
 ```

@@ -22,7 +22,7 @@ Pattern matching is a powerful feature in Rust that allows you to match complex 
 
 Traits are Rust's way of defining shared behavior. They are similar to interfaces in other languages. Traits allow you to define methods that can be implemented by different types.
 
-### 6. [Enums](../types/enum.md)) and Pattern Matching
+### 6. [Enums](../types/enum.md) and Pattern Matching
 
 Enums in Rust are more powerful than in many other languages because each variant can have associated data. Enums are often used with pattern matching to handle different cases.
 
