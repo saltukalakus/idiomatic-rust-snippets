@@ -1,4 +1,4 @@
-# Idiomatic Rust Snippets  
+# [Idiomatic Rust Snippets](https://idiomatic-rust-snippets.org/)
 
 Rust is known to have a steep learning curve. This guide aims to help you learn idiomatic usage of the language with minimalistic samples to get you off the ground quickly.
 

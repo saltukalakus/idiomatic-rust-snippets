@@ -27,7 +27,11 @@ fn main() {
 
 ### Procedural Macros
 
-Procedural macros are more flexible and powerful. They are defined using functions and can be used to create custom derive macros, attribute-like macros, and function-like macros.
+Procedural macros are more flexible and powerful. They are defined using functions and can be used to create attribute-like macros and function-like macros.
+
+#### Function-like Macros
+
+Function-like macros look like function calls but operate on the code passed to them as arguments. They are defined using the `#[proc_macro]` attribute and can be used to generate code based on the input provided.
 
 #### Example
 
@@ -46,7 +50,7 @@ extern crate proc_macro;
 use proc_macro::TokenStream;
 
 #[proc_macro]
-pub fn my_macro(input: TokenStream) -> TokenStream {
+pub fn my_function_like_macro(input: TokenStream) -> TokenStream {
     // Your macro implementation here
     input
 }
@@ -55,12 +59,60 @@ pub fn my_macro(input: TokenStream) -> TokenStream {
 And use it in your main crate:
 
 ```rust
-use my_macro::my_macro;
+use my_function_like_macro::my_function_like_macro;
 
-my_macro! {
+my_function_like_macro! {
     // Your code here
 }
 ```
+
+In this example, `my_function_like_macro` is a function-like macro that can be invoked with the `!` syntax. The macro processes the input token stream and generates the corresponding code.
+
+#### Attribute-like Macros
+
+Attribute-like macros are used to create custom attributes that can be applied to items such as functions, structs, or modules. They are defined similarly to procedural macros.
+
+#### Example
+
+First, create a new crate with the `proc-macro` attribute:
+
+```rust
+// In your Cargo.toml
+[lib]
+proc-macro = true
+```
+
+Then, define the attribute-like macro in your crate:
+
+```rust
+extern crate proc_macro;
+use proc_macro::TokenStream;
+
+#[proc_macro_attribute]
+pub fn my_attribute(_attr: TokenStream, item: TokenStream) -> TokenStream {
+    // Your macro implementation here
+    item
+}
+```
+
+And use it in your main crate:
+
+```rust
+use my_attribute::my_attribute;
+
+#[my_attribute]
+fn my_function() {
+    println!("This function has a custom attribute!");
+}
+
+fn main() {
+    my_function();
+}
+```
+
+In this example, `my_attribute` is an attribute-like macro that can be applied to a function. When `my_function` is called, it will print a message to the console.
+
+
 
 ### Usage
 
