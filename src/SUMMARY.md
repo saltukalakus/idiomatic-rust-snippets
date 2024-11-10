@@ -5,6 +5,7 @@
     - [Ownership](./essentials/core-concepts/ownership.md)
     - [Borrow](./essentials/core-concepts/borrow.md)
     - [Macros](./essentials/core-concepts/macro.md)
+    - [Concurency](./essentials/core-concepts/concurency.md)
   - [Types](./essentials/types/intro.md)
     - [Scalar Types](./essentials/types/scalar.md)
     - [Compound Types](./essentials/types/compound.md)
