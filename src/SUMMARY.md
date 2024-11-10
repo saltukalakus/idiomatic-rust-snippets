@@ -24,6 +24,7 @@
     - [Generics](./essentials/types/generics.md) 
     - [Type Alias](./essentials/types/type-alias.md) 
     - [Pointers](./essentials/types/pointer.md) 
+    - [Vectors](./essentials/types/vector.md) 
   - [Standard Library](./essentials/std-lib/intro.md)
     - [Self Keyword](./essentials/std-lib/self.md)
     - [Imp Keyword](./essentials/std-lib/imp.md)
