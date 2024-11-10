@@ -2,7 +2,7 @@
 
 Rust is known to have a steep learning curve. This guide aims to help you learn idiomatic usage of the language with minimalistic samples to get you off the ground quickly.
 
-The snippets cover a variety of use cases from the simplest ones to using advanced features of Rust.
+The snippets cover a variety of use cases from the simplest ones to advanced features of Rust.
 
 Please like, share, and contribute. All pull requests are welcome.
 
