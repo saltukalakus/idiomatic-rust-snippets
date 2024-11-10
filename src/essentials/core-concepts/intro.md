@@ -34,7 +34,7 @@ Rust provides powerful concurrency primitives, such as threads and channels, whi
 
 Rust has a robust error handling system that uses the `Result` and `Option` enums. This encourages handling errors explicitly rather than relying on exceptions.
 
-### 9. Macros
+### 9. [Macros](./macro.md)
 
 Macros in Rust provide a way to write code that writes other code (metaprogramming). They are used for code generation and to reduce boilerplate.
 
