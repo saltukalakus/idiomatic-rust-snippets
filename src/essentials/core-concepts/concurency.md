@@ -14,15 +14,23 @@ Here's a breakdown of the syntax:
 ```rust
 use std::thread;
 
+macro_rules! sleep {
+    ($millis:expr) => {
+        std::thread::sleep(std::time::Duration::from_millis($millis));
+    };
+}
+
 fn main() {
     let handle = thread::spawn(|| {
         for i in 1..10 {
             println!("hi number {} from the spawned thread!", i);
+            sleep!(50);
         }
     });
 
     for i in 1..5 {
         println!("hi number {} from the main thread!", i);
+        sleep!(50);
     }
 
     handle.join().unwrap();
@@ -36,7 +44,6 @@ Rust uses channels for message passing between threads, provided by the `std::sy
 ```rust
 use std::sync::mpsc;
 use std::thread;
-use std::time::Duration;
 
 fn main() {
     let (tx, rx) = mpsc::channel();
