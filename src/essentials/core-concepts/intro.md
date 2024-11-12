@@ -30,7 +30,7 @@ Enums in Rust are more powerful than in many other languages because each varian
 
 Rust provides powerful concurrency primitives, such as threads and channels, while ensuring memory safety. The ownership and borrowing system helps prevent data races at compile time.
 
-### 8. Error Handling
+### 8. [Error Handling](./error-handling.md)
 
 Rust has a robust error handling system that uses the `Result` and `Option` enums. This encourages handling errors explicitly rather than relying on exceptions.
 

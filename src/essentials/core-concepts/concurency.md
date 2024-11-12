@@ -60,11 +60,12 @@ fn main() {
 
 ### 3. Shared State
 
-Rust ensures safe access to shared state using `Mutex` and `Arc` from the `std::sync` module.
+Rust ensures safe access to shared state using Arc (Atomic Reference Counting) and Mutex (Mutual Exclusion) from the `std::sync` module.
 
 ```rust
 use std::sync::{Arc, Mutex};
 use std::thread;
+
 
 fn main() {
     let counter = Arc::new(Mutex::new(0));
@@ -86,5 +87,15 @@ fn main() {
     println!("Result: {}", *counter.lock().unwrap());
 }
 ```
+An atomic reference-counted pointer `Arc` is created to manage the shared ownership of a `Mutex` that guards an integer counter initialized to 0. <br/>
 
-These examples demonstrate how Rust's ownership and type system ensure thread safety and prevent data races.
+A vector `handles` is created to store the handles of the spawned threads.<br/>
+
+A loop is used to spawn 10 threads. Each thread:<br/>
+  - Clones the `Arc` pointer to get a new reference to the shared `Mutex`.<br/>
+  - Locks the `Mutex` to get mutable access to the counter.
+  - Increments the counter by 1.<br/>
+
+Another loop is used to join all the spawned threads, ensuring that the main thread waits for all the threads to finish execution.<br/>
+
+Finally, the value of the counter is printed, which should be 10 if all threads have successfully incremented the counter.<br/>
