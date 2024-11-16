@@ -57,7 +57,7 @@ src/
 
 In `main.rs`:
 
-```rust
+```rust,noplaypen
 mod my_module;
 
 fn main() {
@@ -67,7 +67,7 @@ fn main() {
 
 In `my_module.rs`:
 
-```rust
+```rust,noplaypen
 pub fn say_hello() {
     println!("Hello from my_module!");
 }

@@ -49,7 +49,7 @@ my_library_crate/
 
 The `lib.rs` file is the entry point of the library crate.
 
-```rust
+```rust,noplaypen
 pub fn hello() {
     println!("Hello, library!");
 }
@@ -66,7 +66,7 @@ rand = "0.8"
 
 Then, you can use the crate in your code:
 
-```rust
+```rust,noplaypen
 use rand::Rng;
 
 fn main() {
