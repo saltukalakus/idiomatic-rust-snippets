@@ -9,6 +9,7 @@
     - [Macros](./essentials/core-concepts/macro.md)
     - [Concurency](./essentials/core-concepts/concurency.md)
     - [Error Handling](./essentials/core-concepts/error-handling.md)
+    - [Lifetime](./essentials/core-concepts/lifetime.md)
   - [Types](./essentials/types/intro.md)
     - [Scalar Types](./essentials/types/scalar.md)
     - [Compound Types](./essentials/types/compound.md)
