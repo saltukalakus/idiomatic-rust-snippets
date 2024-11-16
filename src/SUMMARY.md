@@ -42,6 +42,6 @@
     - [Self Keyword](./essentials/std-lib/self.md)
     - [Imp Keyword](./essentials/std-lib/imp.md)
 
-- [Patterns](./patterns.md)
-  - [Behavioral](./patterns/behavioral.md)
+- [Patterns](./patterns/intro.md)
+  - [Behavioral](./patterns/behavioral/intro.md)
     - [Observer](./patterns/behavioral/observer.md)
