@@ -38,7 +38,7 @@ Rust has a robust error handling system that uses the `Result` and `Option` enum
 
 Macros in Rust provide a way to write code that writes other code (metaprogramming). They are used for code generation and to reduce boilerplate.
 
-### 10. Modules and Crates
+### 10. [Modules](./module.md) and [Crates](./crate.md)
 
 Modules and crates are Rust's way of organizing code. Modules allow you to group related code together, while crates are the unit of compilation and distribution.
 

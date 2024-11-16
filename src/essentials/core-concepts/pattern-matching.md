@@ -1,8 +1,8 @@
-# Pattern Matching in Rust
+### Pattern Matching in Rust
 
 Pattern matching is a powerful feature in Rust that allows you to match complex data structures and perform different actions based on their shape. Here are some examples of how pattern matching works in Rust:
 
-## Matching Literals
+### Matching Literals
 
 ```rust
 let x = 1;
@@ -14,7 +14,7 @@ match x {
 }
 ```
 
-## Matching Multiple Patterns
+### Matching Multiple Patterns
 
 ```rust
 let x = 1;
@@ -26,7 +26,7 @@ match x {
 }
 ```
 
-## Destructuring Structs
+### Destructuring Structs
 
 ```rust
 struct Point {
@@ -43,7 +43,7 @@ match p {
 }
 ```
 
-## Destructuring Enums
+### Destructuring Enums
 
 ```rust
 enum Message {
@@ -63,7 +63,7 @@ match msg {
 }
 ```
 
-## Ignoring Values in a Pattern
+### Ignoring Values in a Pattern
 
 ```rust
 let numbers = (2, 4, 8, 16, 32);
@@ -75,7 +75,7 @@ match numbers {
 }
 ```
 
-## Matching Ranges of Values
+### Matching Ranges of Values
 
 ```rust
 let x = 5;
@@ -86,7 +86,7 @@ match x {
 }
 ```
 
-## Using `if` Guards
+### Using `if` Guards
 
 ```rust
 let x = Some(4);

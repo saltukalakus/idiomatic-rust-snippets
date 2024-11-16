@@ -12,6 +12,8 @@
     - [Concurency](./essentials/core-concepts/concurency.md)
     - [Error Handling](./essentials/core-concepts/error-handling.md)
     - [Lifetime](./essentials/core-concepts/lifetime.md)
+    - [Modules](./essentials/core-concepts/module.md)
+    - [Crates](./essentials/core-concepts/crate.md)
   - [Types](./essentials/types/intro.md)
     - [Scalar Types](./essentials/types/scalar.md)
     - [Compound Types](./essentials/types/compound.md)
