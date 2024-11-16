@@ -3,6 +3,7 @@
 - [Essentials](./essentials/intro.md)
   - [Core Concepts](./essentials/core-concepts/intro.md)
     - [Functions](./essentials/core-concepts/function.md)  
+    - [Flow Control](./essentials/core-concepts/flow-control.md)  
     - [Closures](./essentials/core-concepts/closures.md)  
     - [Ownership](./essentials/core-concepts/ownership.md)
     - [Borrow](./essentials/core-concepts/borrow.md)

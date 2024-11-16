@@ -14,7 +14,7 @@ Borrowing allows you to reference a value without taking ownership of it.
 
 Lifetimes are a way of ensuring that references are valid as long as they are used. They prevent dangling references and ensure memory safety. Lifetimes are often inferred by the compiler, but they can also be explicitly specified.
 
-### 4. Flow Controls and Pattern Matching
+### 4. [Flow Controls](./flow-control.md) and Pattern Matching
 
 Pattern matching is a powerful feature in Rust that allows you to match complex data structures and execute code based on their shape. It is commonly used with `match` statements and `if let` expressions.
 
