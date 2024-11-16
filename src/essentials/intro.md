@@ -1,6 +1,6 @@
-### Idiomatic Rust Snippets For Web Programmers
+### Idiomatic Rust For Web Programmers
 
-In this book, basic aspects of the Rust programming language are explained with example codes to get you up to speed quickly with the concepts.
+In this book, basic aspects of the Rust programming language are explained with example code snippets to get you up to speed quickly with the concepts.
 
 More advanced topics such as design patterns are explained with complete projects. You may run them locally by downloading from the [project repository](https://github.com/saltukalakus/idiomatic-rust-snippets).
 
