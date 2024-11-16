@@ -4,6 +4,7 @@
   - [Core Concepts](./essentials/core-concepts/intro.md)
     - [Functions](./essentials/core-concepts/function.md)  
     - [Flow Control](./essentials/core-concepts/flow-control.md)  
+    - [Pattern Matching](./essentials/core-concepts/pattern-matching.md)  
     - [Closures](./essentials/core-concepts/closures.md)  
     - [Ownership](./essentials/core-concepts/ownership.md)
     - [Borrow](./essentials/core-concepts/borrow.md)
