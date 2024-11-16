@@ -10,7 +10,7 @@ Ownership is a set of rules that governs how a Rust program manages memory. It e
 
 Borrowing allows you to reference a value without taking ownership of it.
 
-### 3. Lifetimes
+### 3. [Lifetimes](./lifetime.md)
 
 Lifetimes are a way of ensuring that references are valid as long as they are used. They prevent dangling references and ensure memory safety. Lifetimes are often inferred by the compiler, but they can also be explicitly specified.
 
