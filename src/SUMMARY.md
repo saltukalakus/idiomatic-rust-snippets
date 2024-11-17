@@ -41,6 +41,7 @@
   - [Standard Library](./essentials/std-lib/intro.md)
     - [Self Keyword](./essentials/std-lib/self.md)
     - [Imp Keyword](./essentials/std-lib/imp.md)
+    - [New Keyword](./essentials/std-lib/new.md)
 
 - [Patterns](./patterns/intro.md)
   - [Behavioral](./patterns/behavioral/intro.md)
