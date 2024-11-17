@@ -45,3 +45,4 @@
 - [Patterns](./patterns/intro.md)
   - [Behavioral](./patterns/behavioral/intro.md)
     - [Observer](./patterns/behavioral/observer.md)
+    - [Strategy](./patterns/behavioral/strategy.md)
