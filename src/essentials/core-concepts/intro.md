@@ -6,7 +6,7 @@ Rust has several core concepts that are fundamental to understanding and effecti
 
 Ownership is a set of rules that governs how a Rust program manages memory. It ensures memory safety without needing a garbage collector.
 
-### 2. [Borrowing and References](./borrow.md)
+### 2. [Borrowing](./borrow.md) and [References](./reference.md)
 
 Borrowing allows you to reference a value without taking ownership of it.
 
@@ -22,7 +22,7 @@ Pattern matching is a powerful feature in Rust that allows you to match complex 
 
 Traits are Rust's way of defining shared behavior. They are similar to interfaces in other languages. Traits allow you to define methods that can be implemented by different types.
 
-### 6. [Enums](../types/enum.md) and Pattern Matching
+### 6. [Enums](../types/enum.md) and [Pattern Matching](./pattern-matching.md)
 
 Enums in Rust are more powerful than in many other languages because each variant can have associated data. Enums are often used with pattern matching to handle different cases.
 
@@ -42,6 +42,6 @@ Macros in Rust provide a way to write code that writes other code (metaprogrammi
 
 Modules and crates are Rust's way of organizing code. Modules allow you to group related code together, while crates are the unit of compilation and distribution.
 
-### 11. [Functions](./function.md) and [Closures](./closures.md)
+### 11. [Functions](./function.md) and [Closures](./closure.md)
 
 In Rust, functions are a fundamental building block for organizing and reusing code. Functions allow you to encapsulate logic, perform specific tasks, and return values.
