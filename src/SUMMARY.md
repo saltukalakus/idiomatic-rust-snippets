@@ -39,7 +39,9 @@
     - [Feature Attribute](./essentials/packaging/feature-attribute.md)
     - [Features Compilation](./essentials/packaging/features-compilation.md)
   - [Standard Library](./essentials/std-lib/intro.md)
-    - [Self Keyword](./essentials/std-lib/self.md)
+    - [self Keyword](./essentials/std-lib/self.md)
+    - [Self Type](./essentials/std-lib/self-as-type.md)
+    - [Self vs self](./essentials/std-lib/self-vs-self.md)
     - [Imp Keyword](./essentials/std-lib/imp.md)
     - [New Keyword](./essentials/std-lib/new.md)
 
