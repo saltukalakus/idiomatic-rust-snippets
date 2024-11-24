@@ -42,8 +42,8 @@
     - [self Keyword](./essentials/std-lib/self.md)
     - [Self Type](./essentials/std-lib/self-as-type.md)
     - [Self vs self](./essentials/std-lib/self-vs-self.md)
-    - [Imp Keyword](./essentials/std-lib/imp.md)
-    - [New Keyword](./essentials/std-lib/new.md)
+    - [imp Keyword](./essentials/std-lib/imp.md)
+    - [new Keyword](./essentials/std-lib/new.md)
 
 - [Patterns](./patterns/intro.md)
   - [Behavioral](./patterns/behavioral/intro.md)
