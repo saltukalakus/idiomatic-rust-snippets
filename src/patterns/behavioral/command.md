@@ -1,4 +1,4 @@
-### Command Design Pattern in Rust
+### Command Design Pattern
 
 The Command Design Pattern is a behavioral design pattern that turns a request into a stand-alone object that contains all information about the request. This transformation allows for parameterization of methods with different requests, queuing of requests, and logging of the requests. It also provides support for undoable operations.
 

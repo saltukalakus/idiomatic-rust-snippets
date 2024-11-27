@@ -50,3 +50,4 @@
     - [Observer](./patterns/behavioral/observer.md)
     - [Strategy](./patterns/behavioral/strategy.md)
     - [Command](./patterns/behavioral/command.md)
+    - [Chain of Responsibility](./patterns/behavioral/chain-of-responsibility.md)

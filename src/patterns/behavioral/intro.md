@@ -9,3 +9,5 @@ Behavioral Patterns deal with object collaboration and the delegation of respons
 2- [Strategy](./strategy.md): Defines a family of algorithms, encapsulates each one, and makes them interchangeable.
 
 3- [Command](./command.md): Encapsulates a request as an object, thereby allowing for parameterization of clients with queues, requests, and operations.
+
+4- [Chain of Responsibility](./chain-of-responsibility.md): Allows an object to pass a request along a chain of potential handlers until the request is handled.
