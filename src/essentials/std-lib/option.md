@@ -1,4 +1,4 @@
-#### Option Enum
+### Option Enum
 
 The `Option` enum in Rust is a powerful feature that represents a value that can either be something (`Some`) or nothing (`None`). It is commonly used to handle cases where a value might be absent, avoiding the need for null pointers and reducing the risk of null pointer exceptions.
 
@@ -61,19 +61,3 @@ fn main() {
 
 The `unwrap_or` method provides a default value if the `Option` is `None`.
 
-#### Example 4: Using `map`
-
-```rust
-fn main() {
-    let some_number = Some(10);
-    let none_number: Option<i32> = None;
-
-    let new_number = some_number.map(|n| n + 1);
-    let new_none = none_number.map(|n| n + 1);
-
-    println!("New number: {:?}", new_number);
-    println!("New none: {:?}", new_none);
-}
-```
-
-The `map` method applies a function to the value inside `Some`, if it exists, and returns a new `Option`.

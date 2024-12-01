@@ -1,6 +1,6 @@
 ### Command Design Pattern
 
-The Command Design Pattern is a behavioral design pattern that turns a request into a stand-alone object that contains all information about the request. This transformation allows for parameterization of methods with different requests, queuing of requests, and logging of the requests. It also provides support for undoable operations.
+The Command Design Pattern is a behavioral design pattern that turns a request into a stand-alone object that contains all information about the request. This transformation allows for parameterization of methods with different requests, queuing of requests, and logging of the requests. It also provides support for undoable operations. <br/>
 
 ### Components of Command Pattern
 
@@ -10,28 +10,9 @@ The Command Design Pattern is a behavioral design pattern that turns a request i
 4. **Invoker**: Asks the command to carry out the request.
 5. **Receiver**: Knows how to perform the operations associated with carrying out a request.
 
-#### Example in Rust
+Here is an example of the Command Design Pattern:
 
-Below is an example of the Command Design Pattern implemented in Rust:
-
-
-```rust,noplaypen
-{{#include command/src/command.rs}}
-```
-
-```rust,noplaypen
-{{#include command/src/concrete_command.rs}}
-```
-
-```rust,noplaypen
-{{#include command/src/light.rs}}
-```
-
-```rust,noplaypen
-{{#include command/src/remote_control.rs}}
-```
-
-```rust,noplaypen
+```rust
 {{#include command/src/main.rs}}
 ```
 
@@ -42,5 +23,3 @@ In this example:
 - `RemoteControl` is the invoker that triggers the commands.
 
 This pattern decouples the object that invokes the operation from the one that knows how to perform it.
-
-You may find the sample project [here](https://github.com/saltukalakus/idiomatic-rust-snippets/tree/main/src/patterns/behavioral/command).

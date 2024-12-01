@@ -1,4 +1,4 @@
-# Does Rust Have a `new` Keyword?
+### Does Rust Have a `new` Keyword?
 
 Rust does **not** have a `new` keyword like some other programming languages (e.g., C++ or Java). Instead, Rust commonly uses an associated function named `new` to create instances of a type. This is a convention rather than a language feature.
 
