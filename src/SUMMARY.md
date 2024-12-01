@@ -44,6 +44,7 @@
     - [Self vs self](./essentials/std-lib/self-vs-self.md)
     - [imp Keyword](./essentials/std-lib/imp.md)
     - [new Keyword](./essentials/std-lib/new.md)
+    - [Option Enum](./essentials/std-lib/option.md)
 
 - [Patterns](./patterns/intro.md)
   - [Behavioral](./patterns/behavioral/intro.md)
