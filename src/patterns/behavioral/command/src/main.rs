@@ -1,10 +1,12 @@
 use std::cell::RefCell;
 use std::rc::Rc;
 
+// Command
 pub trait Command {
     fn execute(&self);
 }
 
+// ConcreteCommand for turning on the light
 pub struct TurnOnCommand {
     pub light: Rc<RefCell<Light>>,
 }
@@ -26,6 +28,7 @@ impl Command for TurnOffCommand {
     }
 }
 
+// Invoker
 pub struct RemoteControl{
     command: Option<Box<dyn Command>>,
 }
@@ -46,6 +49,7 @@ impl RemoteControl {
     }
 }
 
+// Receiver
 pub struct Light {
     is_on: bool,
 }
@@ -70,6 +74,7 @@ impl Light {
     }
 }
 
+// Client
 fn main() {
     let light = Rc::new(RefCell::new(Light::new()));
     let turn_on_command = TurnOnCommand { light: Rc::clone(&light) };
