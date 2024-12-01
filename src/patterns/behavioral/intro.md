@@ -11,3 +11,5 @@ Behavioral Patterns deal with object collaboration and the delegation of respons
 3- [Command](./command.md): Encapsulates a request as an object, thereby allowing for parameterization of clients with queues, requests, and operations.
 
 4- [Chain of Responsibility](./chain-of-responsibility.md): Allows an object to pass a request along a chain of potential handlers until the request is handled.
+
+5- [Iterator](./iterator.md): Provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation. 

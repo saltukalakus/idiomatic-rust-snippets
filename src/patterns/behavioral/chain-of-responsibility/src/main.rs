@@ -69,17 +69,17 @@ impl Handler for ConcreteHandlerB {
 
 
 fn main() {
-    let mut handler_a = BaseHandler::new();
+    let mut handler = BaseHandler::new();
     let mut handler_b = Box::new(ConcreteHandlerB { next: None });
-    let handler_c = Box::new(ConcreteHandlerA { next: None });
+    let handler_a = Box::new(ConcreteHandlerA { next: None });
 
-    handler_b.set_next(handler_c);
-    handler_a.set_next(handler_b);
+    handler_b.set_next(handler_a);
+    handler.set_next(handler_b);
 
     println!("Handle request A");
-    handler_a.handle("A");
+    handler.handle("A");
     println!("Handle request B");
-    handler_a.handle("B");
+    handler.handle("B");
     println!("Handle request C");
-    handler_a.handle("C");
+    handler.handle("C");
 }

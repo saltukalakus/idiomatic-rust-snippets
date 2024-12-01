@@ -2,7 +2,7 @@
 
 The Chain of Responsibility pattern is a behavioral design pattern that allows an object to pass a request along a chain of potential handlers until the request is handled.
 
-Here is a simple example of the Chain of Responsibility pattern in Rust:
+Here is a simple example of the Chain of Responsibility pattern:
 
 ```rust
 {{#include chain-of-responsibility/src/main.rs}}

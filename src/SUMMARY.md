@@ -51,3 +51,4 @@
     - [Strategy](./patterns/behavioral/strategy.md)
     - [Command](./patterns/behavioral/command.md)
     - [Chain of Responsibility](./patterns/behavioral/chain-of-responsibility.md)
+    - [Iterator](./patterns/behavioral/iterator.md)
