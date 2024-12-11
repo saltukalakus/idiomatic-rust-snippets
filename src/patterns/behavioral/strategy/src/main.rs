@@ -1,10 +1,45 @@
-mod strategy;
-mod concrete_strategy;
-mod context;
+// Strategy type
+pub trait Strategy {
+    fn execute(&self, data: &str);
+}
 
-use concrete_strategy::ConcreteStrategyA;
-use concrete_strategy::ConcreteStrategyB;
-use context::Context;
+pub struct ConcreteStrategyA;
+
+// Concrete Strategy A
+impl Strategy for ConcreteStrategyA {
+    fn execute(&self, data: &str) {
+        println!("ConcreteStrategyA: {}", data);
+    }
+}
+
+pub struct ConcreteStrategyB;
+
+// Concrete Strategy B
+impl Strategy for ConcreteStrategyB {
+    fn execute(&self, data: &str) {
+        println!("ConcreteStrategyB: {}", data);
+    }
+}
+
+// Context type
+pub struct Context {
+    strategy: Box<dyn Strategy>,
+}
+
+// Concrete Context
+impl Context {
+    pub fn new(strategy: Box<dyn Strategy>) -> Self {
+        Context { strategy }
+    }
+
+    pub fn set_strategy(&mut self, strategy: Box<dyn Strategy>) {
+        self.strategy = strategy;
+    }
+
+    pub fn execute_strategy(&self, data: &str) {
+        self.strategy.execute(data);
+    }
+}
 
 fn main() {
     let strategy_a 
