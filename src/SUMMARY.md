@@ -1,5 +1,5 @@
 # Summary
-
+[Ideomatic Rust](./intro.md)
 - [Essentials](./essentials/intro.md)
   - [Core Concepts](./essentials/core-concepts/intro.md)
     - [Functions](./essentials/core-concepts/function.md)  
@@ -46,6 +46,7 @@
     - [self Keyword](./essentials/std-lib/self.md)
     - [imp Keyword](./essentials/std-lib/imp.md)
     - [new Keyword](./essentials/std-lib/new.md)
+    - [Some Keyword](./essentials/std-lib/some.md)
     - [Option Enum](./essentials/std-lib/option.md)
 
 - [Patterns](./patterns/intro.md)
@@ -55,4 +56,5 @@
     - [Command](./patterns/behavioral/command.md)
     - [Chain of Responsibility](./patterns/behavioral/chain-of-responsibility.md)
     - [Iterator](./patterns/behavioral/iterator.md)
+    - [Mediator](./patterns/behavioral/mediator.md)
     - [Visitor](./patterns/behavioral/visitor.md)

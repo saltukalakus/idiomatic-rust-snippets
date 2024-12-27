@@ -13,3 +13,7 @@ Behavioral Patterns deal with object collaboration and the delegation of respons
 4- [Chain of Responsibility](./chain-of-responsibility.md): Allows an object to pass a request along a chain of potential handlers until the request is handled.
 
 5- [Iterator](./iterator.md): Provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation. 
+
+6- [Mediator](./mediator.md): Defines an object that encapsulates how a set of objects interact.
+
+5- [Visitor](./visitor.md):  Allows adding further operations to objects without having to modify them.
