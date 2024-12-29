@@ -50,6 +50,12 @@
     - [Option Enum](./essentials/std-lib/option.md)
 
 - [Patterns](./patterns/intro.md)
+  - [Creational](./patterns/creational/intro.md)
+    - [Singleton](./patterns/creational/singleton.md)
+    - [Factory Method](./patterns/creational/factory-method.md)
+    - [Abstract Factory](./patterns/creational/abstract-method.md)
+    - [Builder](./patterns/creational/builder.md)
+    - [Prototype](./patterns/creational/prototype.md)
   - [Behavioral](./patterns/behavioral/intro.md)
     - [Observer](./patterns/behavioral/observer.md)
     - [Strategy](./patterns/behavioral/strategy.md)
