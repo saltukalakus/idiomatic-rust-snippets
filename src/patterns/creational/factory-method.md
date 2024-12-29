@@ -2,7 +2,7 @@
 
 The Prototype Design Pattern is a creational design pattern that allows an object to create a copy of itself. This pattern is useful when the cost of creating a new object is expensive or complex. Instead of creating a new instance from scratch, you clone an existing instance.
 
-In Rust, we can use the `Clone` trait to implement the Prototype Design Pattern.
+We can use the `Clone` trait to implement the Prototype Design Pattern. Here is an example:
 
 ```rust
 #[derive(Clone)]

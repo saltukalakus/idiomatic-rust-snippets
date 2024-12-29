@@ -2,6 +2,8 @@
 
 The Abstract Factory design pattern provides an interface for creating families of related or dependent objects without specifying their concrete classes. This pattern is particularly useful when the exact types and dependencies of the objects are not known until runtime.
 
+Here is an example of the Abstract Factory Pattern:
+
 ```rust
 // Define traits for products
 trait Chair {

@@ -2,7 +2,7 @@
 
 he Prototype Design Pattern is a creational pattern that allows cloning of objects, even complex ones, without coupling to their specific classes. This pattern is particularly useful when the cost of creating a new instance of a class is expensive or complicated.
 
-We can implement the Prototype pattern using the `Clone` trait.
+We can implement the Prototype pattern using the `Clone` trait. Here is an example:
 
 ```rust
 #[derive(Clone)]
