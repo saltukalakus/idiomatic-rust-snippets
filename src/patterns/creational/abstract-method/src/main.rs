@@ -96,4 +96,11 @@ fn main() {
 
     chair.sit_on();
     sofa.lie_on();
+
+    let factory2: Box<dyn FurnitureFactory> = Box::new(VictorianFurnitureFactory);
+    let chair2 = factory2.create_chair();
+    let sofa2 = factory2.create_sofa();
+
+    chair2.sit_on();
+    sofa2.lie_on();
 }
