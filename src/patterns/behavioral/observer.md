@@ -1,8 +1,8 @@
 ### Observer Pattern
 
-The Observer pattern is a behavioral design pattern where an object (the subject) maintains a list of its dependents (observers) and notifies them of any state changes, usually by calling one of their methods.
+The observer pattern is a behavioral design pattern where an object (the subject) maintains a list of its dependents (observers) and notifies them of any state changes, usually by calling one of their methods.
 
-Here is a simple example of the Observer pattern:
+Here is an example:
 
 ```rust
 {{#include observer/src/main.rs}}

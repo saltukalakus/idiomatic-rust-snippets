@@ -1,39 +1,78 @@
-### Prototype Design Pattern
+### Factory Method Pattern
 
-The Prototype Design Pattern is a creational design pattern that allows an object to create a copy of itself. This pattern is useful when the cost of creating a new object is expensive or complex. Instead of creating a new instance from scratch, you clone an existing instance.
+The Factory Method is a creational design pattern that provides an interface for creating objects in a superclass but allows subclasses to alter the type of objects that will be created.
 
-We can use the `Clone` trait to implement the Prototype Design Pattern. Here is an example:
+In Rust, the Factory Method pattern can be implemented using traits and structs. The trait defines the method for creating objects, and the structs implement this trait to create specific types of objects.
+
+## Example
+
+Let's consider an example where we have a `Shape` trait and two structs `Circle` and `Square` that implement this trait. We will create a `ShapeFactory` trait with a method `create_shape` and two factories `CircleFactory` and `SquareFactory` that implement this trait.
 
 ```rust
-#[derive(Clone)]
-struct Prototype {
-    field1: String,
-    field2: i32,
+// Define the Shape trait
+trait Shape {
+    fn draw(&self);
 }
 
-impl Prototype {
-    fn new(field1: String, field2: i32) -> Self {
-        Prototype { field1, field2 }
-    }
+// Implement the Shape trait for Circle
+struct Circle;
 
-    fn clone_prototype(&self) -> Self {
-        self.clone()
+impl Shape for Circle {
+    fn draw(&self) {
+        println!("Drawing a Circle");
+    }
+}
+
+// Implement the Shape trait for Square
+struct Square;
+
+impl Shape for Square {
+    fn draw(&self) {
+        println!("Drawing a Square");
+    }
+}
+
+// Define the ShapeFactory trait
+trait ShapeFactory {
+    fn create_shape(&self) -> Box<dyn Shape>;
+}
+
+// Implement the ShapeFactory trait for CircleFactory
+struct CircleFactory;
+
+impl ShapeFactory for CircleFactory {
+    fn create_shape(&self) -> Box<dyn Shape> {
+        Box::new(Circle)
+    }
+}
+
+// Implement the ShapeFactory trait for SquareFactory
+struct SquareFactory;
+
+impl ShapeFactory for SquareFactory {
+    fn create_shape(&self) -> Box<dyn Shape> {
+        Box::new(Square)
     }
 }
 
 fn main() {
-    let original = Prototype::new(String::from("Original"), 42);
-    let cloned = original.clone_prototype();
+    // Create a Circle using CircleFactory
+    let circle_factory = CircleFactory;
+    let circle = circle_factory.create_shape();
+    circle.draw();
 
-    println!("Original: {} - {}", original.field1, original.field2);
-    println!("Cloned: {} - {}", cloned.field1, cloned.field2);
+    // Create a Square using SquareFactory
+    let square_factory = SquareFactory;
+    let square = square_factory.create_shape();
+    square.draw();
 }
 ```
 
-1. **Define the Prototype Structure**: We define a `Prototype` struct with some fields.
-2. **Implement the `Clone` Trait**: We derive the `Clone` trait for the `Prototype` struct to enable cloning.
-3. **Constructor Method**: We provide a `new` method to create a new instance of `Prototype`.
-4. **Clone Method**: We define a `clone_prototype` method that returns a clone of the current instance.
-5. **Usage**: In the `main` function, we create an original instance and then clone it using the `clone_prototype` method.
+## Output
 
-This pattern is particularly useful when dealing with complex objects that are expensive to create, as it allows for efficient copying of existing instances.
+```
+Drawing a Circle
+Drawing a Square
+```
+
+In this example, the `ShapeFactory` trait defines the `create_shape` method, and the `CircleFactory` and `SquareFactory` structs implement this method to create specific shapes. This allows for flexibility in creating different types of shapes without changing the client code.

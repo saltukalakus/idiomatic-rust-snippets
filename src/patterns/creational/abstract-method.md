@@ -1,8 +1,8 @@
-### Abstract Factory
+### Abstract Factory Pattern
 
-The Abstract Factory design pattern provides an interface for creating families of related or dependent objects without specifying their concrete classes. This pattern is particularly useful when the exact types and dependencies of the objects are not known until runtime.
+The abstract factory design pattern provides an interface for creating families of related or dependent objects without specifying their concrete classes. This pattern is particularly useful when the exact types and dependencies of the objects are not known until runtime.
 
-Here is an example of the Abstract Factory Pattern:
+Here is an example:
 
 ```rust
 {{#include abstract-method/src/main.rs}}

@@ -1,4 +1,4 @@
-# [Idiomatic Rust Snippets For Web Programmers](https://idiomatic-rust-snippets.org/)
+# [Idiomatic Rust Snippets](https://idiomatic-rust-snippets.org/)
 
 Rust is known to have a steep learning curve. This book does not intend to explain every aspect of Rust; however, you may find it useful while learning Rust. 
 

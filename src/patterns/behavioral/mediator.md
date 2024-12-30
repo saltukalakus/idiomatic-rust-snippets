@@ -1,8 +1,8 @@
 ### Mediator Pattern
 
-The Mediator Design Pattern is a behavioral design pattern that defines an object that encapsulates how a set of objects interact. This pattern promotes loose coupling by keeping objects from referring to each other explicitly and allows their interaction to be varied independently. The pattern centralizes the control logic that would otherwise be distributed among several objects.
+The mediator pattern is a behavioral design pattern that defines an object that encapsulates how a set of objects interact. This pattern promotes loose coupling by keeping objects from referring to each other explicitly and allows their interaction to be varied independently. The pattern centralizes the control logic that would otherwise be distributed among several objects.
 
-Here is an example of the Mediator Design Pattern implemented in Rust:
+Here is an example:
 
 ```rust
 {{#include mediator/src/main.rs}}

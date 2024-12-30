@@ -1,8 +1,8 @@
 ### Visitor Pattern
 
-The Visitor Pattern is a behavioral design pattern that allows you to add further operations to objects without having to modify them. It involves creating a visitor class that implements a visitor interface and then passing it to elements of the object structure.
+The visitor pattern is a behavioral design pattern that allows you to add further operations to objects without having to modify them. It involves creating a visitor class that implements a visitor interface and then passing it to elements of the object structure.
 
-Here is a simple example of the Visitor Pattern in Rust:
+Here is an example:
 
 ```rust
 {{#include visitor/src/main.rs}}

@@ -13,5 +13,3 @@ Creational Patterns deal with object creation mechanisms, trying to create objec
 4- [Builder](./builder.md): Separates the construction of a complex object from its representation so that the same construction process can create different representations.
 
 5- [Prototype](./prototype.md): Specifies the kinds of objects to create using a prototypical instance, and creates new objects by copying this prototype.
-Behavioral Patterns deal with object collaboration and the delegation of responsibilities. 
-
