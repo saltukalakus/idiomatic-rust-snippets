@@ -2,12 +2,12 @@ use std::sync::{Arc, Mutex};
 use std::thread;
 
 struct Singleton {
-    value: i32,
+    data: i32,
 }
 
 impl Singleton {
-    fn new() -> Arc<Mutex<Singleton>> {
-        Arc::new(Mutex::new(Singleton { value: 0 }))
+    fn new() -> Self {
+        Singleton { data: 0 }
     }
 
     fn get_instance() -> Arc<Mutex<Singleton>> {
@@ -16,32 +16,54 @@ impl Singleton {
 
         unsafe {
             ONCE.call_once(|| {
-                SINGLETON = Some(Singleton::new());
+                let singleton = Singleton::new();
+                SINGLETON = Some(Arc::new(Mutex::new(singleton)));
             });
+
             SINGLETON.clone().unwrap()
         }
     }
 
-    fn set_value(&mut self, value: i32) {
-        self.value = value;
+    fn increment(&mut self) {
+        self.data += 1;
     }
 
-    fn get_value(&self) -> i32 {
-        self.value
+    fn get_data(&self) -> i32 {
+        self.data
     }
 }
 
 fn main() {
     let singleton = Singleton::get_instance();
-    let singleton_clone = Arc::clone(&singleton);
 
-    let handle = thread::spawn(move || {
-        let mut instance = singleton_clone.lock().unwrap();
-        instance.set_value(42);
+    // Acquire the lock in the main thread
+    {
+        let mut instance = singleton.lock().unwrap();
+        instance.increment();
+        println!("Main thread data: {}", instance.get_data());
+    } // The lock is released here when `instance` goes out of scope
+
+    let singleton_clone1 = Arc::clone(&singleton);
+    let singleton_clone2 = Arc::clone(&singleton);
+
+    let handle1 = thread::spawn(move || {
+        let mut instance1 = singleton_clone1.lock().unwrap();
+        instance1.increment();
+        println!("Thread 1 data: {}", instance1.get_data());
     });
 
-    handle.join().unwrap();
+    let handle2 = thread::spawn(move || {
+        let mut instance2 = singleton_clone2.lock().unwrap();
+        instance2.increment();
+        println!("Thread 2 data: {}", instance2.get_data());
+    });
 
-    let instance = singleton.lock().unwrap();
-    println!("Singleton value: {}", instance.get_value());
+    handle1.join().unwrap();
+    handle2.join().unwrap();
+
+    // Acquire the lock again in the main thread
+    {
+        let instance = singleton.lock().unwrap();
+        println!("Final data: {}", instance.get_data());
+    }
 }
