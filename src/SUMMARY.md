@@ -49,7 +49,6 @@
     - [Some Keyword](./essentials/std-lib/some.md)
     - [Option Enum](./essentials/std-lib/option.md)
     - [#[derive(Debug)]](./essentials/std-lib/drive(debug).md)
-
 - [Patterns](./patterns/intro.md)
   - [Creational](./patterns/creational/intro.md)
     - [Singleton](./patterns/creational/singleton.md)
