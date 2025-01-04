@@ -5,41 +5,7 @@ The Proxy pattern provides a surrogate or placeholder for another object to cont
 Here is an example of the Proxy Design Pattern:
 
 ```rust
-trait Subject {
-    fn request(&self) -> String;
-}
-
-struct RealSubject;
-
-impl Subject for RealSubject {
-    fn request(&self) -> String {
-        "RealSubject: Handling request.".to_string()
-    }
-}
-
-struct Proxy {
-    real_subject: RealSubject,
-}
-
-impl Proxy {
-    fn new() -> Self {
-        Proxy {
-            real_subject: RealSubject,
-        }
-    }
-}
-
-impl Subject for Proxy {
-    fn request(&self) -> String {
-        println!("Proxy: Logging access to RealSubject.");
-        self.real_subject.request()
-    }
-}
-
-fn main() {
-    let proxy = Proxy::new();
-    println!("{}", proxy.request());
-}
+{{#include proxy/src/main.rs}}
 ```
 
 1. **Subject Trait**: Defines the common interface for `RealSubject` and `Proxy`.

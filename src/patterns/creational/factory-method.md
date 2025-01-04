@@ -4,8 +4,6 @@ The Factory Method is a creational design pattern that provides an interface for
 
 In Rust, the Factory Method pattern can be implemented using traits and structs. The trait defines the method for creating objects, and the structs implement this trait to create specific types of objects.
 
-## Example
-
 Let's consider an example where we have a `Shape` trait and two structs `Circle` and `Square` that implement this trait. We will create a `ShapeFactory` trait with a method `create_shape` and two factories `CircleFactory` and `SquareFactory` that implement this trait.
 
 ```rust
