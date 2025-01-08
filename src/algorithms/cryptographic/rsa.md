@@ -24,6 +24,7 @@ Below is a simple example of RSA encryption and decryption in Rust:
 ```rust
 extern crate num_bigint as bigint;
 extern crate num_traits;
+extern crate rand;
 
 use bigint::{BigInt, ToBigInt};
 use num_traits::{One, Zero};

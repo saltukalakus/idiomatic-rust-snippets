@@ -13,6 +13,8 @@ The Diffie-Hellman key exchange algorithm allows two parties to securely share a
 Below is a simple implementation in Rust without using any external libraries.
 
 ```rust
+extern crate rand;
+
 use rand::Rng;
 
 fn main() {

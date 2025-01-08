@@ -4,6 +4,6 @@
 
 2- [Design Patterns](./patterns/intro.md) section demonstrates several design patterns with minimalistic but complete projects.
 
-3- [Algorithms](./algorithms/intro.md) section explaing various popular algotirms with Rust code samples.
+3- [Algorithms](./algorithms/intro.md) section explaing various popular algorithms with code samples in Rust.
 
 This book does not intend to explain every aspect of Rust; however, you may find it useful while learning Rust. I am expanding it as I use and learn this awesome language.

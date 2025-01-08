@@ -96,7 +96,7 @@
     - [Fibonacci Sequence](./algorithms/dynamic-programming/fibonacci.md)
   - [Divide & Conqure](./algorithms/divide-conquer/intro.md)
     - [Merge Sort](./algorithms/divide-conquer/merge-sort.md)
-    - [QuickSort](./algorithms/divide-conquer/quick-sort.md)
+    - [Quick Sort](./algorithms/divide-conquer/quick-sort.md)
     - [Binary Search](./algorithms/divide-conquer/binary-search.md)
   - [Cryptography](./algorithms/cryptographic/intro.md)
     - [RSA](./algorithms/cryptographic/rsa.md)
