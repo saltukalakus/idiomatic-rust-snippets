@@ -4,3 +4,4 @@
 2- [AES (Symmetric Encryption)](./aes.md)
 3- [SHA-256 (Hashing)](./sha-256.md)
 4- [Diffie-Hellman (Key Exchange)](./diffie-hellman.md)
+5- [Bcrypt (Hashing)](./bcrypt.md)
