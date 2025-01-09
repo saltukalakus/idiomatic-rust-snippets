@@ -6,6 +6,8 @@
 
 3- [Algorithms](./algorithms/intro.md) section explains various popular algorithms with code samples in Rust.
 
-This book does not intend to explain every aspect of Rust; however, you may find it useful while learning Rust. I am expanding it as I use and learn this awesome language. 
+This book does not intend to explain every aspect of Rust; however, you may find it useful while learning Rust. 
 
-This is a personal project and is not associated with the Rust Foundation in any way.
+I am expanding it as I use and learn this awesome language with my friend [Copilot](https://docs.github.com/en/copilot/about-github-copilot/what-is-github-copilot) 😆
+
+This is a personal project and is not associated with the [Rust Foundation](https://foundation.rust-lang.org/) in any way.
