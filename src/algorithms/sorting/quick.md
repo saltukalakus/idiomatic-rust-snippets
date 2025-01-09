@@ -39,7 +39,7 @@ fn partition(arr: &mut [i32]) -> usize {
 }
 
 fn main() {
-     let mut arr = [34, 7, 23, 32, 5, 62];
+     let mut arr = [64, 34, 25, 12, 22, 12, 90, 33];
      println!("Original array: {:?}", arr);
      quick_sort(&mut arr);
      println!("Sorted array: {:?}", arr);
@@ -49,5 +49,3 @@ fn main() {
 - `quick_sort` function: This function takes a mutable slice of integers and sorts it using the Quick Sort algorithm. It recursively sorts the sub-arrays.
 - `partition` function: This function partitions the array around a pivot element and returns the index of the pivot after partitioning.
 - `main` function: This function demonstrates the usage of the `quick_sort` function by sorting an example array.
-
-By running the above code, you will see the original and sorted arrays printed to the console.
