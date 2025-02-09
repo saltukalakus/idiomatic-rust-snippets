@@ -1,4 +1,4 @@
-### Diffie-Hellman Key Exchange
+### Diffie-Hellman Key Exchange (WIP)
 
 The Diffie-Hellman key exchange algorithm allows two parties to securely share a secret key over an insecure channel. 
 

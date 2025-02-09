@@ -1,4 +1,4 @@
-### Matrix Chain Multiplication in Rust
+### Matrix Chain Multiplication (WIP)
 
 Matrix Chain Multiplication is a classic example of dynamic programming. The goal is to find the most efficient way to multiply a given sequence of matrices. The problem is not to perform the multiplications but to decide the order in which to perform the multiplications.
 

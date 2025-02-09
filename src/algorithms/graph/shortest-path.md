@@ -1,4 +1,4 @@
-### Shortest Path Graph (Dijkstra's) Algorithm
+### Shortest Path Graph (Dijkstra's) Algorithm (WIP)
 
 The shortest path algorithm is used to find the shortest path between nodes in a graph. One of the most common algorithms for this purpose is Dijkstra's algorithm. Below is a simple application in Rust demonstrating how Dijkstra's algorithm works.
 

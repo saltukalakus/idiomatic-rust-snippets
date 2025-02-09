@@ -1,4 +1,4 @@
-### Bcrypt Algorithm
+### Bcrypt Algorithm (WIP)
 
 Bcrypt is a password hashing function designed to be computationally expensive to resist brute-force attacks. 
 

@@ -1,4 +1,4 @@
-### Linear Search Algorithm
+### Linear Search Algorithm (WIP)
 
 Linear search is a simple searching algorithm that checks each element in a list sequentially until the desired element is found or the list ends.
 

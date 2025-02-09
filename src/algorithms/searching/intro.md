@@ -1,4 +1,4 @@
-### Searching Algorithms
+### Searching Algorithms (WIP)
 
 Searching algorithms are designed to retrieve information stored within some data structure. They are fundamental to computer science and are used to solve a variety of problems. 
 

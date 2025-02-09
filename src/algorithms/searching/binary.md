@@ -1,8 +1,6 @@
-### Binary Search Algorithm in Rust
+### Binary Search Algorithm (WIP)
 
 Binary search is an efficient algorithm for finding an item from a sorted list of items. It works by repeatedly dividing in half the portion of the list that could contain the item, until you've narrowed down the possible locations to just one.
-
-### How Binary Search Works
 
 1. Start with the middle element of the sorted array.
 2. If the target value is equal to the middle element, the search is complete.

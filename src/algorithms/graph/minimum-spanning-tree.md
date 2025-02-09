@@ -1,8 +1,8 @@
-### Minimum Spanning Tree (MST)
+### Minimum Spanning Tree (MST) (WIP)
 
 A Minimum Spanning Tree (MST) of a graph is a subset of the edges that connects all the vertices together, without any cycles and with the minimum possible total edge weight. One of the most common algorithms to find the MST is Kruskal's algorithm.
 
-## Kruskal's Algorithm
+## Kruskal's Algorithm 
 
 Kruskal's algorithm works as follows:
 1. Sort all the edges in non-decreasing order of their weight.

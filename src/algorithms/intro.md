@@ -1,4 +1,4 @@
-### Algorithms
+### Algorithms (WIP)
 
 1- [Sorting Algorithms](./sorting/intro.md): Arrange data in a specific order (ascending, descending, etc.).
 

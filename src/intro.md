@@ -8,6 +8,6 @@
 
 This book does not intend to explain every aspect of Rust; however, you may find it useful while learning Rust. 
 
-I am expanding it as I use and learn this awesome language with my friend [Copilot](https://docs.github.com/en/copilot/about-github-copilot/what-is-github-copilot) 😆
+I am expanding it as I use and learn this awesome language with my friend [Copilot](https://docs.github.com/en/copilot/about-github-copilot/what-is-github-copilot).Pages with a **WIP** note haven't been reviewed yet and the information in those pages may have incorrect information. 
 
 This is a personal project and is not associated with the [Rust Foundation](https://foundation.rust-lang.org/) in any way.

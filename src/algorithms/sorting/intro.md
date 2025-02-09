@@ -1,4 +1,4 @@
-### Sorting Algorithms
+### Sorting Algorithms (WIP)
 
 Sorting algorithms are methods used to rearrange a list of elements in a particular order, typically in ascending or descending order. They are fundamental in computer science and are used in various applications, such as searching, data analysis, and database management.
 

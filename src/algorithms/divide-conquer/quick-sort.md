@@ -1,4 +1,4 @@
-### Quick Sort Algorithm in Rust
+### Quick Sort Algorithm (WIP)
 
 Quick sort is a highly efficient sorting algorithm and is based on partitioning an array into smaller sub-arrays. A large array is partitioned into two arrays, one of which holds values smaller than the specified value, say pivot, based on which the partition is made, and another array holds values greater than the pivot value.
 

@@ -1,4 +1,4 @@
-### A* Pathfinding Algorithm
+### A* Pathfinding Algorithm (WIP)
 
 The A* (A-star) algorithm is a popular pathfinding and graph traversal algorithm. It is widely used in various applications, such as in games for NPC movement, in robotics for navigation, and in geographic information systems for route planning.
 

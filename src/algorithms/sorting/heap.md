@@ -1,4 +1,4 @@
-### Heap Sort Algorithm
+### Heap Sort Algorithm (WIP)
 
 Heap sort is a comparison-based sorting algorithm that uses a binary heap data structure. It divides its input into a sorted and an unsorted region and iteratively shrinks the unsorted region by extracting the largest element and moving that to the sorted region.
 

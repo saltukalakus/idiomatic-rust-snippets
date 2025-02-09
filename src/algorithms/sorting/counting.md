@@ -1,4 +1,4 @@
-### Counting Sort Algorithm
+### Counting Sort Algorithm (WIP)
 
 Counting sort is an integer sorting algorithm that operates by counting the number of objects that have distinct key values. It is not a comparison-based sorting algorithm and is efficient when the range of input values is not significantly greater than the number of objects to be sorted.
 
