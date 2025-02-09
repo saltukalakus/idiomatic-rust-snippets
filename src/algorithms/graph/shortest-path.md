@@ -90,8 +90,6 @@ fn main() {
 }
 ```
 
-## Explanation
-
 1. **Graph Representation**: The graph is represented as an adjacency list where each node has a list of edges. Each edge has a target node and a cost.
 2. **State Struct**: The `State` struct keeps track of the current position and the cost to reach that position.
 3. **Priority Queue**: A binary heap is used as a priority queue to always expand the least costly node first.

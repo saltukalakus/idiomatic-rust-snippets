@@ -8,8 +8,6 @@ Merge sort is a divide-and-conquer algorithm that splits an array into halves, r
 2. **Conquer**: Recursively sort each half.
 3. **Combine**: Merge the two sorted halves into a single sorted array.
 
-Below is a simple implementation of the merge sort algorithm in Rust:
-
 ```rust
 fn merge_sort<T: Ord + Clone>(arr: &mut [T]) {
     let mid = arr.len() / 2;

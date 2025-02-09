@@ -51,4 +51,3 @@ fn main() {
 
 - `quick_sort` function: This function takes a mutable slice of integers and sorts it using the Quick Sort algorithm. It recursively sorts the sub-arrays.
 - `partition` function: This function partitions the array around a pivot element and returns the index of the pivot after partitioning. Often it is better to select the mid item as the pivot if the array is already semi-sorted.
-- `main` function: This function demonstrates the usage of the `quick_sort` function by sorting an example array.

@@ -2,8 +2,6 @@
 
 The Diffie-Hellman key exchange algorithm allows two parties to securely share a secret key over an insecure channel. 
 
-### Explanation
-
 1. **Choose Prime Numbers**: Both parties agree on a large prime number `p` and a base `g`.
 2. **Generate Private Keys**: Each party generates a private key.
 3. **Compute Public Keys**: Each party computes their public key using the formula `g^private_key % p`.

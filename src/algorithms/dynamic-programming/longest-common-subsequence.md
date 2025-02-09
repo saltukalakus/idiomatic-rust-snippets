@@ -2,8 +2,6 @@
 
 The Longest Common Subsequence (LCS) problem is a classic dynamic programming problem. It involves finding the longest subsequence common to two sequences. A subsequence is a sequence derived from another sequence by deleting some elements without changing the order of the remaining elements.
 
-### Explanation
-
 Given two sequences, `X` and `Y`, the LCS problem is to find the longest subsequence that is present in both sequences. For example, if `X = "ABCBDAB"` and `Y = "BDCAB"`, the LCS is `"BCAB"`.
 
 ### Dynamic Programming Approach

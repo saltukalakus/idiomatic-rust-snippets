@@ -6,7 +6,7 @@ I am expanding it as I use and learn this awesome language with my friend [Copil
 
 This is a personal project and is not associated with the Rust Foundation in any way.
 
-Please like ⭐️⭐️⭐️, share, and contribute. All pull requests are welcome 🙂.
+Please like ⭐️⭐️⭐️, share, and contribute. All pull requests are welcome.
 
 ### How to run the project locally.
 
