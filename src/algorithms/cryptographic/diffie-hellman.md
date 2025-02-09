@@ -63,10 +63,6 @@ fn mod_exp(base: u64, exp: u64, modulus: u64) -> u64 {
 }
 ```
 
-## Explanation of the Code
-
-- `generate_private_key`: Generates a random private key.
-- `mod_exp`: Computes the modular exponentiation using the formula `(base^exp) % modulus`.
-- The main function demonstrates the key exchange process, where both parties compute their public keys, exchange them, and then compute the shared secret.
+`generate_private_key`: Generates a random private key. `mod_exp`: Computes the modular exponentiation using the formula `(base^exp) % modulus`. The main function demonstrates the key exchange process, where both parties compute their public keys, exchange them, and then compute the shared secret.
 
 This example uses small numbers for simplicity. In a real-world scenario, much larger prime numbers should be used to ensure security.

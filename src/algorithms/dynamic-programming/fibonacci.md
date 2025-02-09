@@ -1,8 +1,6 @@
-# Fibonacci Sequence with Dynamic Programming (WIP)
+### Fibonacci Sequence with Dynamic Programming (WIP)
 
 The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones, usually starting with 0 and 1. Dynamic programming is an optimization technique that can be used to solve problems by breaking them down into simpler subproblems and storing the results of these subproblems to avoid redundant computations.
-
-Here is a simple application in Rust to compute the Fibonacci sequence using dynamic programming:
 
 ```rust
 fn fibonacci(n: usize) -> usize {

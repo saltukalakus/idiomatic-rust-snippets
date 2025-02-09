@@ -4,7 +4,7 @@ In Rust, references allow you to refer to some value without taking ownership of
 
 ### Immutable References
 
-An immutable reference is created using the `&` symbol. Here is an example:
+An immutable reference is created using the `&` symbol.
 
 ```rust
 fn main() {
@@ -15,11 +15,11 @@ fn main() {
 }
 ```
 
-In this example, `y` is an immutable reference to `x`. You can read the value of `x` through `y`, but you cannot modify it.
+`y` is an immutable reference to `x`. You can read the value of `x` through `y`, but you cannot modify it.
 
 ### Mutable References
 
-A mutable reference is created using the `&mut` symbol. Here is an example:
+A mutable reference is created using the `&mut` symbol.
 
 ```rust
 fn main() {
@@ -32,7 +32,7 @@ fn main() {
 }
 ```
 
-In this example, `y` is a mutable reference to `x`. You can modify the value of `x` through `y`.
+`y` is a mutable reference to `x`. You can modify the value of `x` through `y`.
 
 ### Rules of References
 
@@ -65,6 +65,6 @@ fn increment(val: &mut i32) {
 }
 ```
 
-In this example, `print_value` takes an immutable reference, and `increment` takes a mutable reference.
+`print_value` takes an immutable reference, and `increment` takes a mutable reference.
 
 References are a powerful feature in Rust that enable safe and efficient access to data without transferring ownership.

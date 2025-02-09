@@ -2,8 +2,6 @@
 
 The Bridge pattern is used to separate the abstraction from its implementation, allowing them to vary independently. It is useful when both the class and what it does vary often.
 
-Here is an example of the Bridge Design Pattern:
-
 ```rust
 {{#include bridge/src/main.rs}}
 ```

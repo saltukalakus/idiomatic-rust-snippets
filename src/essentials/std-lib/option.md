@@ -33,7 +33,7 @@ fn main() {
 }
 ```
 
-In this example, the `find_word` function returns an `Option<usize>`. If the word is found, it returns `Some(index)`, otherwise it returns `None`.
+The `find_word` function returns an `Option<usize>`. If the word is found, it returns `Some(index)`, otherwise it returns `None`.
 
 #### Example 2: Using `unwrap`
 

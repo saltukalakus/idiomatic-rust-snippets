@@ -6,8 +6,6 @@ Enums in Rust are a way to define a type by enumerating its possible values. The
 
 Enums are defined using the enum keyword, followed by the name of the enum and its variants.
 
-Here is an example of a basic enum:
-
 ```rust
 enum Direction {
     North,
@@ -28,7 +26,7 @@ fn main() {
 }
 ```
 
-Enums can have variants with associated data, which makes them very powerful. Here is an example:
+Enums can have variants with associated data, which makes them very powerful.
 
 ```rust
 enum Message {
@@ -53,7 +51,7 @@ fn main() {
 }
 ```
 
-You can also define methods on enums using the impl keyword. Here is an example:
+You can also define methods on enums using the impl keyword.
 
 ```rust
 enum Message {

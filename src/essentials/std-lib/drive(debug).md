@@ -2,8 +2,6 @@
 
 The `#[derive(Debug)]` attribute in Rust automatically generates an implementation of the `Debug` trait for a struct or enum. This trait allows you to format the value using the `{:?}` formatter, which is useful for debugging purposes.
 
-Here is a sample Rust code demonstrating the use of `#[derive(Debug)]`:
-
 ```rust
 #[derive(Debug)]
 struct Person {
@@ -22,7 +20,7 @@ fn main() {
 }
 ```
 
-In this example, the `Person` struct derives the `Debug` trait, allowing us to print its value using `println!("{:?}", person);`. The output will be:
+The `Person` struct derives the `Debug` trait, allowing us to print its value using `println!("{:?}", person);`. The output will be:
 
 ```
 Person { name: "Alice", age: 30 }

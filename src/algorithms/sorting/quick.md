@@ -10,8 +10,6 @@ A large array is partitioned into two arrays, one of which holds values smaller 
     - Elements greater than the pivot.
 3. Recursively apply the above steps to the sub-arrays.
 
-Here is a simple implementation of the Quick Sort algorithm in Rust:
-
 ```rust
 fn quick_sort(arr: &mut [i32]) {
      let len = arr.len();
@@ -27,8 +25,11 @@ fn quick_sort(arr: &mut [i32]) {
 
 fn partition(arr: &mut [i32]) -> usize {
      let len = arr.len();
+
+     // Pick the mid element as pivot
      let pivot_index = len / 2;
      arr.swap(pivot_index, len - 1);
+     
      let mut store_index = 0;
      for i in 0..len - 1 {
           if arr[i] < arr[len - 1] {
@@ -49,5 +50,5 @@ fn main() {
 ```
 
 - `quick_sort` function: This function takes a mutable slice of integers and sorts it using the Quick Sort algorithm. It recursively sorts the sub-arrays.
-- `partition` function: This function partitions the array around a pivot element and returns the index of the pivot after partitioning.
+- `partition` function: This function partitions the array around a pivot element and returns the index of the pivot after partitioning. Often it is better to select the mid item as the pivot if the array is already semi-sorted.
 - `main` function: This function demonstrates the usage of the `quick_sort` function by sorting an example array.

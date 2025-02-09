@@ -4,7 +4,7 @@ The `Rc` (Reference Counted) type in Rust is used when you need multiple ownersh
 
 ### `Rc::new`
 
-The `Rc::new` function is used to create a new reference-counted instance of a value. Here is a simple example:
+The `Rc::new` function is used to create a new reference-counted instance of a value.
 
 ```rust
 use std::rc::Rc;
@@ -15,11 +15,11 @@ fn main() {
 }
 ```
 
-In this example, `Rc::new(5)` creates a new `Rc` instance that holds the value `5`.
+`Rc::new(5)` creates a new `Rc` instance that holds the value `5`.
 
 ### `Rc::clone`
 
-The `Rc::clone` function is used to create a new reference to the same data. This increases the reference count, allowing multiple parts of your program to share ownership of the data. Here is an example:
+The `Rc::clone` function is used to create a new reference to the same data. This increases the reference count, allowing multiple parts of your program to share ownership of the data.
 
 ```rust
 use std::rc::Rc;
@@ -33,7 +33,7 @@ fn main() {
 }
 ```
 
-In this example, `Rc::clone(&value)` creates a new reference to the same data. Both `value` and `value_clone` point to the same data, and the reference count is increased.
+`Rc::clone(&value)` creates a new reference to the same data. Both `value` and `value_clone` point to the same data, and the reference count is increased.
 
 ### Summary
 

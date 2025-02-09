@@ -19,7 +19,7 @@ fn main() {
 }
 ```
 
-In this example, `some_number` and `some_string` are both [`Option`](./option.md) types. The `if let` syntax is used to check if they contain a value (`Some`) and to extract that value.
+`some_number` and `some_string` are both [`Option`](./option.md) types. The `if let` syntax is used to check if they contain a value (`Some`) and to extract that value.
 
 ### Usage
 

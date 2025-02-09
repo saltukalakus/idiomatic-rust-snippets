@@ -116,6 +116,6 @@ fn main() {
 }
 ```
 
-In this example, we define a custom error type `MyError` that can represent both I/O errors and parsing errors. We then implement the `fmt::Display` trait for `MyError` to provide a user-friendly error message. Additionally, we implement the `From` trait to convert from `std::io::Error` and `std::num::ParseIntError` to `MyError`. This allows us to use the `?` operator to propagate these errors in the `read_and_parse_file` function.
+We define a custom error type `MyError` that can represent both I/O errors and parsing errors. We then implement the `fmt::Display` trait for `MyError` to provide a user-friendly error message. Additionally, we implement the `From` trait to convert from `std::io::Error` and `std::num::ParseIntError` to `MyError`. This allows us to use the `?` operator to propagate these errors in the `read_and_parse_file` function.
 
 These patterns cover the basics of error handling in Rust. By using `Result`, `Option`, the `?` operator, and custom error types, you can write code that gracefully handles errors and provides useful feedback.

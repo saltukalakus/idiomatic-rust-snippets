@@ -16,8 +16,6 @@ Here's a simple example to illustrate how `RefCell` works:
 {{#include refcell/src/main.rs}}
 ```
 
-### Explanation
-
 1. We create a `RefCell` containing the value `5`.
 2. We borrow the value immutably using `borrow()`.
 3. We borrow the value mutably using `borrow_mut()` and modify it.

@@ -17,4 +17,4 @@ Drawing a Circle
 Drawing a Square
 ```
 
-In this example, the `ShapeFactory` trait defines the `create_shape` method, and the `CircleFactory` and `SquareFactory` structs implement this method to create specific shapes. This allows for flexibility in creating different types of shapes without changing the client code.
+The `ShapeFactory` trait defines the `create_shape` method, and the `CircleFactory` and `SquareFactory` structs implement this method to create specific shapes. This allows for flexibility in creating different types of shapes without changing the client code.

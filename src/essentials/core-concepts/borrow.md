@@ -6,8 +6,6 @@ Borrowing allows you to reference a value without taking ownership of it. There 
 
 You can have multiple immutable references to a value.
 
-In this example, s1 is borrowed immutably by the calculate_length function. The function can read the value but cannot modify it. After the function call, s1 is still valid.
-
 ```rust
 fn main() {
     let s1 = String::from("hello");
@@ -21,11 +19,11 @@ fn calculate_length(s: &String) -> usize {
 }
 ```
 
+s1 is borrowed immutably by the calculate_length function. The function can read the value but cannot modify it. After the function call, s1 is still valid.
+
 **Mutable Borrowing (&mut T)**: 
 
-You can have only one mutable reference to a value at a time.
-
-In this example, s is borrowed mutably by the change function. The function can modify the value. After the function call, s is still valid and has been modified.
+You can have only one mutable reference to a value at a time. 
 
 ```rust
 fn main() {
@@ -39,4 +37,4 @@ fn change(some_string: &mut String) {
     some_string.push_str(", world"); // Modify the borrowed value
 }
 ```
-
+s is borrowed mutably by the change function. The function can modify the value. After the function call, s is still valid and has been modified.

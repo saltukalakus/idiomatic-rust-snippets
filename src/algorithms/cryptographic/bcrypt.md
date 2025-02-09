@@ -49,8 +49,6 @@ fn main() {
 }
 ```
 
-1. **Generate Salt**: A random salt of length 16 is generated using the `rand` crate.
-2. **Hash Function**: The `bcrypt_hash` function simulates the bcrypt hashing process. It combines the password, salt, and cost to produce a hashed password.
-3. **Main Function**: The main function demonstrates the usage of the above functions to hash a password.
+A random salt of length 16 is generated using the `rand` crate. The `bcrypt_hash` function simulates the bcrypt hashing process. It combines the password, salt, and cost to produce a hashed password.
 
 Note: This is a simplified version of the bcrypt algorithm for educational purposes. In a real-world application, you should use a well-tested library like `bcrypt` crate for password hashing.

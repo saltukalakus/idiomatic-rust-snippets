@@ -2,8 +2,6 @@
 
 The Flyweight pattern is used to minimize memory usage by sharing as much data as possible with similar objects. It is particularly useful when dealing with a large number of objects that have some shared state.
 
-Here is an example of the Flyweight Design Pattern:
-
 ```rust
 {{#include flyweight/src/main.rs}}
 ```

@@ -2,8 +2,6 @@
 
 The Facade pattern provides a simplified interface to a complex subsystem. It defines a higher-level interface that makes the subsystem easier to use.
 
-Here is an example of the Facade Design Pattern:
-
 ```rust
 {{#include facade/src/main.rs}}
 ```

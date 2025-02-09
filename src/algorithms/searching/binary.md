@@ -8,8 +8,6 @@ Binary search is an efficient algorithm for finding an item from a sorted list o
 4. If the target value is greater than the middle element, repeat the search on the right half of the array.
 5. Continue this process until the target value is found or the subarray size becomes zero.
 
-Here is a simple implementation of the binary search algorithm in Rust:
-
 ```rust
 fn binary_search(arr: &[i32], target: i32) -> Option<usize> {
     let mut low = 0;

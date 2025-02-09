@@ -2,8 +2,6 @@
 
 The Composite pattern allows you to compose objects into tree structures to represent part-whole hierarchies. It lets clients treat individual objects and compositions of objects uniformly.
 
-Here is an example of the Composite Design Pattern:
-
 ```rust
 {{#include composite/src/main.rs}}
 ```

@@ -2,8 +2,6 @@
 
 The Decorator pattern allows behavior to be added to an individual object, dynamically, without affecting the behavior of other objects from the same class. This is useful for adhering to the Single Responsibility Principle by allowing functionality to be divided between classes with unique areas of concern.
 
-Here is an example of the Decorator Design Pattern in Rust:
-
 ```rust
 {{#include decorator/src/main.rs}}
 ```

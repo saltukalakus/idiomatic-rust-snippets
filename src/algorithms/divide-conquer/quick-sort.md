@@ -8,9 +8,6 @@ Quick sort is a highly efficient sorting algorithm and is based on partitioning 
 2. **Partitioning**: Rearrange the array so that elements less than the pivot are on the left, elements greater than the pivot are on the right.
 3. **Recursively apply**: Apply the above steps to the sub-arrays of elements with smaller and larger values.
 
-
-Here is a simple implementation of the quick sort algorithm in Rust:
-
 ```rust
 fn quick_sort(arr: &mut [i32]) {
     let len = arr.len();

@@ -20,7 +20,7 @@ Cargo.toml file content
 
 ### Legacy solution for Rust 2015 edition or earlier 
 
-On the Rust file you may call `extern crate PACKAGE_NAME` to use an external library. This is a handy solution when you want to use [Rust Playground](https://play.rust-lang.org/) like in this example below. Otherwise, you would get an error when you execute the file.
+On the Rust file you may call `extern crate PACKAGE_NAME` to use an external library. This is a handy solution when you want to use [Rust Playground](https://play.rust-lang.org/) like in this example. Otherwise, you would get an error when you execute the file.
 
 ```rust
 {{#include modules/src/rand/main.rs}}

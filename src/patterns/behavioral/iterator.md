@@ -2,8 +2,6 @@
 
 The iterator pattern is a design pattern that provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation. In Rust, the iterator pattern is implemented using the `Iterator` trait.
 
-Here is an example of how to implement and use the pattern by defining a simple iterator that iterates over a range of numbers:
-
 ```rust
 {{#include iterator/src/main.rs}}
 ```

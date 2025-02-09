@@ -19,8 +19,6 @@ The dynamic programming approach involves breaking the problem into smaller subp
 3. Use a nested loop to calculate the minimum cost for chains of increasing length.
 4. Store the results in a table and use them to build up the solution for the entire chain.
 
-Here is a simple Rust implementation of the Matrix Chain Multiplication problem using dynamic programming:
-
 ```rust
 fn matrix_chain_order(p: &[usize]) -> Vec<Vec<usize>> {
     let n = p.len() - 1;

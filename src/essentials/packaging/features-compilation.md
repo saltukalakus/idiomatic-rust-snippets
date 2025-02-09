@@ -51,8 +51,6 @@ If you want to depend on a crate but do not want to enable its default features,
 my_crate = { version = "1.0", default-features = false, features = ["feature1"] }
 ```
 
-In this example:
-
 `default-features = false` disables the **default** features.
 `features = ["feature1"]` enables the **feature1** specifically.
 

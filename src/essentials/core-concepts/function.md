@@ -4,19 +4,17 @@ Functions are a fundamental building block in Rust. They allow you to encapsulat
 
 ### Defining a Function
 
-Here is a simple example of a function in Rust:
-
 ```rust
 fn main() {
     println!("Hello, world!");
 }
 ```
 
-In this example, `main` is a special function that serves as the entry point of a Rust program.
+`main` is a special function that serves as the entry point of a Rust program.
 
 ### Function Parameters
 
-Functions can take parameters, which are specified in the parentheses after the function name. Here is an example:
+Functions can take parameters, which are specified in the parentheses after the function name.
 
 ```rust
 fn greet(name: &str) {
@@ -29,11 +27,11 @@ fn main() {
 }
 ```
 
-In this example, the `greet` function takes a single parameter `name` of type `&str`.
+The `greet` function takes a single parameter `name` of type `&str`.
 
 ### Return Values
 
-Functions can also return values. The return type is specified after an arrow (`->`). Here is an example:
+Functions can also return values. The return type is specified after an arrow (`->`).
 
 ```rust
 fn add(a: i32, b: i32) -> i32 {
@@ -46,7 +44,7 @@ fn main() {
 }
 ```
 
-In this example, the `add` function takes two parameters of type `i32` and returns their sum, which is also of type `i32`.
+The `add` function takes two parameters of type `i32` and returns their sum, which is also of type `i32`.
 
 ### Early Returns
 
@@ -70,7 +68,7 @@ fn main() {
 }
 ```
 
-In this example, the `is_even` function returns `true` if the number is even and `false` otherwise.
+The `is_even` function returns `true` if the number is even and `false` otherwise.
 
 ### Conclusion
 

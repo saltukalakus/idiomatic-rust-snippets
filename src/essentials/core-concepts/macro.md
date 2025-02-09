@@ -66,7 +66,7 @@ my_function_like_macro! {
 }
 ```
 
-In this example, `my_function_like_macro` is a function-like macro that can be invoked with the `!` syntax. The macro processes the input token stream and generates the corresponding code.
+`my_function_like_macro` is a function-like macro that can be invoked with the `!` syntax. The macro processes the input token stream and generates the corresponding code.
 
 #### Attribute-like Macros
 
@@ -110,7 +110,7 @@ fn main() {
 }
 ```
 
-In this example, `my_attribute` is an attribute-like macro that can be applied to a function. When `my_function` is called, it will print a message to the console.
+`my_attribute` is an attribute-like macro that can be applied to a function. When `my_function` is called, it will print a message to the console.
 
 
 
@@ -122,4 +122,4 @@ Macros are invoked using the `!` syntax. For example:
 println!("Hello, {}!", "world");
 ```
 
-In this example, `println!` is a macro that prints formatted text to the console.
+`println!` is a macro that prints formatted text to the console.

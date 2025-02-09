@@ -17,8 +17,6 @@ We can solve the LCS problem using dynamic programming by constructing a 2D tabl
     - Otherwise, `dp[i][j] = max(dp[i-1][j], dp[i][j-1])`
 3. The value at `dp[m][n]` will be the length of the LCS.
 
-Here is a simple Rust implementation of the LCS algorithm:
-
 ```rust
 fn longest_common_subsequence(X: &str, Y: &str) -> String {
      let m = X.len();

@@ -112,4 +112,4 @@ fn main() {
 }
 ```
 
-In this example, we create a graph with 4 vertices and 5 edges. We then use Kruskal's algorithm to find the MST and print the edges of the MST.
+We create a graph with 4 vertices and 5 edges. We then use Kruskal's algorithm to find the MST and print the edges of the MST.

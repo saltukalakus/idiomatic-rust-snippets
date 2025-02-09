@@ -18,7 +18,6 @@ fn main() {
 }
 ```
 
-In this example:
 - `mod my_module` defines a module named `my_module`.
 - `pub fn say_hello()` defines a public function within the module.
 - `my_module::say_hello()` calls the function from the main function.
@@ -41,7 +40,6 @@ fn main() {
 }
 ```
 
-In this example:
 - `pub mod inner_module` defines a nested module within `outer_module`.
 - `outer_module::inner_module::say_hello()` calls the function from the main function.
 

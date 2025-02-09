@@ -2,8 +2,6 @@
 
 The Proxy pattern provides a surrogate or placeholder for another object to control access to it. This can be useful for various purposes such as lazy initialization, access control, logging, etc.
 
-Here is an example of the Proxy Design Pattern:
-
 ```rust
 {{#include proxy/src/main.rs}}
 ```

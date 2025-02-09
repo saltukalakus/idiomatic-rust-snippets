@@ -2,8 +2,6 @@
 
 The Adapter pattern allows incompatible interfaces to work together. This is useful when you want to use a class that doesn't have the exact interface you need.
 
-Here is an example of the Adapter Design Pattern:
-
 ```rust
 {{#include adapter/src/main.rs}}
 ```

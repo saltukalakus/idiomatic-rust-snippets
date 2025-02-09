@@ -16,8 +16,6 @@ We can solve this problem using dynamic programming by creating a 2D array `dp` 
 2. Iterate through each item and each capacity, updating the `dp` array based on whether the current item is included or excluded.
 3. The value at `dp[n][W]` will be the maximum value that can be obtained with the given items and knapsack capacity.
 
-Here is a simple Rust implementation of the Knapsack Problem using dynamic programming:
-
 ```rust
 fn knapsack(weights: &[usize], values: &[usize], capacity: usize) -> usize {
     let n = weights.len();
