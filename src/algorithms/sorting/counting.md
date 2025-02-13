@@ -1,8 +1,6 @@
-### Counting Sort Algorithm (WIP)
+### Counting Sort Algorithm
 
 Counting sort is an integer sorting algorithm that operates by counting the number of objects that have distinct key values. It is not a comparison-based sorting algorithm and is efficient when the range of input values is not significantly greater than the number of objects to be sorted.
-
-### How Counting Sort Works
 
 1. **Find the range of the input values**: Determine the minimum and maximum values in the input array.
 2. **Create a count array**: Create an array of size equal to the range of the input values, initialized to zero.
@@ -19,15 +17,19 @@ fn counting_sort(arr: &mut [usize], max_value: usize) {
     for &num in arr.iter() {
         count[num] += 1;
     }
+    println!("Count array: {:?}", count);
 
     // Accumulate the counts
     for i in 1..=max_value {
         count[i] += count[i - 1];
     }
+    println!("Accumulated count array: {:?}", count);
 
     // Build the output array
     for &num in arr.iter().rev() {
+        println!("Current number being processed: {}", num);
         output[count[num] - 1] = num;
+        println!("Output: {:?}", output);
         count[num] -= 1;
     }
 
