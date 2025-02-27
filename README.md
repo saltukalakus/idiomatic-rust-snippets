@@ -14,6 +14,7 @@ Please like ⭐️⭐️⭐️, share, and contribute. All pull requests are wel
 git clone https://github.com/saltukalakus/idiomatic-rust-snippets
 cd idiomatic-rust-snippets
 cargo install mdbook
+cargo install mdbook-metadata
 mdbook build
 mdbook serve
 ```
