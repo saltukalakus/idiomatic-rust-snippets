@@ -2,11 +2,9 @@
 
 Merge sort is a divide-and-conquer algorithm that splits an array into halves, recursively sorts each half, and then merges the sorted halves to produce the final sorted array.
 
-### How Merge Sort Works
-
-1. **Divide**: Split the array into two halves.
-2. **Conquer**: Recursively sort each half.
-3. **Combine**: Merge the two sorted halves into a single sorted array.
+1. Split the array into two halves.
+2. Recursively sort each half.
+3. Merge the two sorted halves into a single sorted array.
 
 ```rust
 fn merge_sort<T: Ord + Clone>(arr: &mut [T]) {
@@ -66,6 +64,5 @@ fn main() {
 
 - `merge_sort` function: Recursively splits the array into halves and sorts each half.
 - `merge` function: Merges two sorted slices into a single sorted slice.
-- `main` function: Demonstrates the usage of the `merge_sort` function with an example array.
 
 This implementation ensures that the array is sorted in-place using the merge sort algorithm.

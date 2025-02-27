@@ -1,12 +1,12 @@
 ### Counting Sort Algorithm
 
-Counting sort is an integer sorting algorithm that operates by counting the number of objects that have distinct key values. It is not a comparison-based sorting algorithm and is efficient when the range of input values is not significantly greater than the number of objects to be sorted.
+Counting sort is an integer sorting algorithm that operates by counting the number of objects that have distinct key values. It is not a comparison-based sorting algorithm and is efficient when the range of input values is not significantly greater than the number of objects to be sorted.  For a visual explanation of the algorithm please visit [Programiz](https://www.programiz.com/dsa/counting-sort).
 
-1. **Find the range of the input values**: Determine the minimum and maximum values in the input array.
-2. **Create a count array**: Create an array of size equal to the range of the input values, initialized to zero.
-3. **Count the occurrences**: Iterate through the input array and count the occurrences of each value, storing the counts in the count array.
-4. **Accumulate the counts**: Modify the count array such that each element at each index stores the sum of previous counts. This step helps in placing the elements in the correct position in the output array.
-5. **Build the output array**: Iterate through the input array in reverse order, placing each element in its correct position in the output array based on the count array, and then decrease the count by one.
+1. Determine the minimum and maximum values in the input array.
+2. Create an array of size equal to the range of the input values, initialized to zero.
+3. Iterate through the input array and count the occurrences of each value, storing the counts in the count array.
+4. Modify the count array such that each element at each index stores the sum of previous counts. This step helps in placing the elements in the correct position in the output array.
+5. Iterate through the input array in reverse order, placing each element in its correct position in the output array based on the count array, and then decrease the count by one.
 
 ```rust
 fn counting_sort(arr: &mut [usize], max_value: usize) {

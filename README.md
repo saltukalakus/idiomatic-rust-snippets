@@ -4,7 +4,7 @@ Rust is known to have a steep learning curve. This book does not intend to expla
 
 I am expanding it as I use and learn this awesome language with my friend [Copilot](https://docs.github.com/en/copilot/about-github-copilot/what-is-github-copilot) 😆. Pages with a **WIP** note haven't been reviewed and the information in those pages may have incorrect information. 
 
-This is a personal project and is not associated with the Rust Foundation in any way.
+This is a personal project and is not associated with the Rust Foundation.
 
 Please like ⭐️⭐️⭐️, share, and contribute. All pull requests are welcome.
 

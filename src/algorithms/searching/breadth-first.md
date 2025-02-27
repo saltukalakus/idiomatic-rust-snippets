@@ -2,8 +2,6 @@
 
 Breadth-First Search (BFS) is an algorithm for traversing or searching tree or graph data structures. It starts at the tree root (or an arbitrary node of a graph) and explores the neighbor nodes at the present depth prior to moving on to nodes at the next depth level.
 
-Below is a simple example of how BFS can be implemented in Rust using a graph represented by an adjacency list.
-
 ```rust
 use std::collections::{HashMap, VecDeque};
 

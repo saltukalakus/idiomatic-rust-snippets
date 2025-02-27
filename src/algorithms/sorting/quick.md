@@ -1,8 +1,6 @@
 ### Quick Sort Algorithm
 
-Quick sort is a highly efficient sorting algorithm and is based on partitioning of an array of data into smaller arrays. 
-
-A large array is partitioned into two arrays, one of which holds values smaller than the specified value, say pivot, based on which the partition is made and another array holds values greater than the pivot value.
+Quick sort is based on partitioning of an array of data into smaller arrays. A large array is partitioned into two arrays, one of which holds values smaller than the specified value, say pivot, based on which the partition is made and another array holds values greater than the pivot value.
 
 1. Pick an element, called a pivot, from the array.
 2. Partition the array into two sub-arrays:

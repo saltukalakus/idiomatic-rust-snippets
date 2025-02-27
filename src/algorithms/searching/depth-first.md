@@ -2,8 +2,6 @@
 
 Depth First Search (DFS) is an algorithm for traversing or searching tree or graph data structures. The algorithm starts at the root node (selecting some arbitrary node as the root in the case of a graph) and explores as far as possible along each branch before backtracking.
 
-Below is a simple example of how to implement DFS in Rust. We'll use an adjacency list to represent the graph.
-
 ```rust
 use std::collections::HashMap;
 

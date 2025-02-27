@@ -26,8 +26,6 @@ fn main() {
 }
 ```
 
-## Explanation
-
 1. **Base Cases**: The function first checks if `n` is 0 or 1, returning 0 or 1 respectively, as these are the base cases of the Fibonacci sequence.
 2. **Initialization**: A vector `fib` is initialized with `n + 1` elements, all set to 0. The second element is set to 1, representing the first Fibonacci number.
 3. **Iteration**: A loop runs from 2 to `n`, calculating each Fibonacci number by summing the two preceding numbers and storing the result in the vector.

@@ -21,3 +21,8 @@ additional-css = ["custom.css"]
 
 [output.html.print]
 enable = false    # include support for printable output
+
+[preprocessor.metadata]
+valid-tags = ["title", "author", "keywords", "released"]
+default-author = "Jane Doe"
+continue-on-error = true # default: true
