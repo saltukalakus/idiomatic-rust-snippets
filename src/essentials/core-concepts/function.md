@@ -69,7 +69,3 @@ fn main() {
 ```
 
 The `is_even` function returns `true` if the number is even and `false` otherwise.
-
-### Conclusion
-
-Functions in Rust are powerful tools for organizing and reusing code. They can take parameters, return values, and even return early if needed. Understanding how to define and use functions is essential for writing idiomatic Rust code.
