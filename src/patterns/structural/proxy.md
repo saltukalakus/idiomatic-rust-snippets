@@ -10,6 +10,3 @@ The Proxy pattern provides a surrogate or placeholder for another object to cont
 2. **RealSubject Struct**: Implements the `Subject` trait and contains the actual business logic.
 3. **Proxy Struct**: Contains a reference to `RealSubject` and implements the `Subject` trait to control access to `RealSubject`.
 4. **Proxy::new() Method**: Creates a new instance of the `Proxy` with an instance of `RealSubject`.
-5. **main() Function**: Demonstrates the usage of the proxy to control access to the `RealSubject`.
-
-This example shows how the `Proxy` can control access to the `RealSubject` and add additional behavior such as logging.

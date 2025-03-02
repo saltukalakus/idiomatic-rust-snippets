@@ -15,9 +15,7 @@ enum Option<T> {
 
 Here, `T` is a generic type parameter, meaning `Option` can hold a value of any type.
 
-### Usage
-
-#### Example 1: Basic Usage
+Basic Usage
 
 ```rust
 fn find_word(word: &str) -> Option<usize> {
@@ -35,7 +33,7 @@ fn main() {
 
 The `find_word` function returns an `Option<usize>`. If the word is found, it returns `Some(index)`, otherwise it returns `None`.
 
-#### Example 2: Using `unwrap`
+Using `unwrap`
 
 ```rust
 fn main() {
@@ -47,7 +45,7 @@ fn main() {
 
 The `unwrap` method extracts the value inside `Some`, but it will panic if called on a `None` value. Use it only when you are sure that the `Option` is `Some`.
 
-#### Example 3: Using `unwrap_or`
+Using `unwrap_or`
 
 ```rust
 fn main() {

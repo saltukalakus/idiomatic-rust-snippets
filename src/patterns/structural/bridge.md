@@ -10,6 +10,3 @@ The Bridge pattern is used to separate the abstraction from its implementation, 
 2. **Color Trait**: Defines the implementor with a `fill` method.
 3. **Red and Blue Structs**: Concrete implementors of the `Color` trait.
 4. **Circle and Square Structs**: Refined abstractions that implement the `Shape` trait and use a `Color` to fill the shape.
-5. **main() Function**: Demonstrates the usage of the bridge pattern by creating shapes with different colors and drawing them.
-
-This example shows how the Bridge pattern allows the abstraction (Shape) and the implementation (Color) to vary independently.

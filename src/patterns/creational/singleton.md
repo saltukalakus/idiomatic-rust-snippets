@@ -10,6 +10,3 @@ The Singleton pattern ensures that a class has only one instance and provides a 
 2. **new() Method**: Creates a new instance of the singleton wrapped in `Arc` and `Mutex` for thread safety.
 3. **get_instance() Method**: Provides a global point of access to the singleton instance. It uses `std::sync::Once` to ensure that the instance is only created once.
 4. **set_value() and get_value() Methods**: Allow modification and retrieval of the singleton's value.
-5. **main() Function**: Demonstrates the usage of the singleton in a multi-threaded context.
-
-This example ensures that only one instance of `Singleton` is created and shared across threads safely.

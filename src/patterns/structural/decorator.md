@@ -10,6 +10,3 @@ The Decorator pattern allows behavior to be added to an individual object, dynam
 2. **SimpleCoffee Struct**: Implements the `Coffee` trait with basic cost and description.
 3. **MilkDecorator Struct**: A decorator that adds milk to the coffee, increasing the cost and updating the description.
 4. **SugarDecorator Struct**: A decorator that adds sugar to the coffee, increasing the cost and updating the description.
-5. **main() Function**: Demonstrates the usage of the decorators to dynamically add behavior to the coffee object.
-
-This example shows how the Decorator pattern can be used to extend the functionality of objects in a flexible and reusable way.

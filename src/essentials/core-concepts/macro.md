@@ -11,8 +11,6 @@ Macros in Rust are a way of writing code that writes other code, which is known 
 
 Declarative macros are defined using the `macro_rules!` keyword. They allow you to match against patterns and generate code based on those patterns.
 
-#### Example
-
 ```rust
 macro_rules! say_hello {
     () => {
@@ -32,8 +30,6 @@ Procedural macros are more flexible and powerful. They are defined using functio
 #### Function-like Macros
 
 Function-like macros look like function calls but operate on the code passed to them as arguments. They are defined using the `#[proc_macro]` attribute and can be used to generate code based on the input provided.
-
-#### Example
 
 To create a procedural macro, you need to create a new crate with the `proc-macro` attribute:
 
@@ -71,8 +67,6 @@ my_function_like_macro! {
 #### Attribute-like Macros
 
 Attribute-like macros are used to create custom attributes that can be applied to items such as functions, structs, or modules. They are defined similarly to procedural macros.
-
-#### Example
 
 First, create a new crate with the `proc-macro` attribute:
 

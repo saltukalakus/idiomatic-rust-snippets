@@ -4,8 +4,6 @@ Generics in Rust allow you to write flexible and reusable code by enabling you t
 
 ### Key Concepts of Generics
 
-**Generic Functions**: 
-
 Generic Functions can operate on different types specified at the time of function call.
 
 In the example, the **first** function is defined with a generic type parameter T. This means that T can be any type. The function takes two parameters, x and _y, both of type T. The function returns the first parameter x of type T. In the main function, the first function is called with different types of arguments (integers and strings), demonstrating its flexibility.
@@ -28,8 +26,6 @@ fn main() {
 }
 ```
 
-**Generic Structs**: 
-
 Structs that can hold data of different types specified at the time of instantiation.
 
 Here the Point struct has been implemented to work with both integer and floating type.
@@ -48,8 +44,6 @@ fn main() {
     println!("Float Point: ({}, {})", float_point.x, float_point.y);
 }
 ```
-
-**Generic Enums**: 
 
 Enums that can hold variants of different types specified at the time of instantiation.
 

@@ -19,8 +19,6 @@ feature2 = ["dependency1/featureA"]
 
 You can use features in your Rust code with conditional compilation attributes like `#[cfg(feature = "feature_name")]` and `#[cfg_attr(feature = "feature_name", some_attribute)]`.
 
-Example:
-
 ```rust, noplaypen
 #[cfg(feature = "feature1")]
 fn feature1_function() {
@@ -33,16 +31,12 @@ fn feature2_function() {
 }
 ```
 
-### Enabling Features
-
 When you depend on a crate, you can enable features in your Cargo.toml file:
 
 ```toml
 [dependencies]
 my_crate = { version = "1.0", features = ["feature1", "feature2"] }
 ```
-
-### Example of no-default-features
 
 If you want to depend on a crate but do not want to enable its default features, you can use the `default-features = false` option:
 
@@ -54,9 +48,7 @@ my_crate = { version = "1.0", default-features = false, features = ["feature1"] 
 `default-features = false` disables the **default** features.
 `features = ["feature1"]` enables the **feature1** specifically.
 
-### Summary
-
 `features`: Allow conditional compilation and optional dependencies.<br/>
 `default` attribute: Default features is enabled by default unless explicitly disabled.<br/>
 
-Custom Features can be added in Cargo.toml and enabled or disabled as needed. You can use `#[cfg(feature = "feature_name")]` at the top of the function to include/exclude from teh code based on the feature availability.Features provide a powerful way to manage optional functionality and dependencies in Rust projects.<br/>
+Custom Features can be added in Cargo.toml and enabled or disabled as needed. You can use `#[cfg(feature = "feature_name")]` at the top of the function to include/exclude from teh code based on the feature availability.<br/>
