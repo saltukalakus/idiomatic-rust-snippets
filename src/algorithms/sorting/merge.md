@@ -1,4 +1,4 @@
-### Merge Sort Algorithm
+### Merge Sort Algorithm (WIP)
 
 Merge sort is a divide-and-conquer algorithm that splits an array into halves, recursively sorts each half, and then merges the sorted halves to produce the final sorted array.
 
