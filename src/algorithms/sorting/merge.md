@@ -1,6 +1,7 @@
-### Merge Sort Algorithm (WIP)
+### Merge Sort Algorithm
 
-Merge sort is a divide-and-conquer algorithm that splits an array into halves, recursively sorts each half, and then merges the sorted halves to produce the final sorted array.
+Merge sort is a divide-and-conquer algorithm that splits an array into halves, recursively sorts each half, and then merges the sorted halves to produce the final sorted array. For a visual explanation of the algorithm please visit [Programiz](https://www.programiz.com/dsa/merge-sort).
+
 
 1. Split the array into two halves.
 2. Recursively sort each half.
@@ -20,9 +21,10 @@ fn merge_sort<T: Ord + Clone>(arr: &mut [T]) {
 
     merge(&arr[..mid], &arr[mid..], &mut ret[..]);
 
-    arr.copy_from_slice(&ret);
+    arr.clone_from_slice(&ret);
 }
 
+// Merge two subarrays left and right into ret array
 fn merge<T: Ord + Clone>(left: &[T], right: &[T], ret: &mut [T]) {
     let mut left_iter = left.iter();
     let mut right_iter = right.iter();
@@ -30,6 +32,8 @@ fn merge<T: Ord + Clone>(left: &[T], right: &[T], ret: &mut [T]) {
     let mut right_peek = right_iter.next();
     let mut i = 0;
 
+    // Until we reach either end of either left or right array, pick the smaller 
+    // among the elements and place it in the correct position at the returned array
     while let (Some(left_val), Some(right_val)) = (left_peek, right_peek) {
         if left_val <= right_val {
             ret[i] = left_val.clone();
@@ -40,6 +44,10 @@ fn merge<T: Ord + Clone>(left: &[T], right: &[T], ret: &mut [T]) {
         }
         i += 1;
     }
+
+    // At this point either left or right array may have elements 
+    // not cloned to the returned array yet, those elements are 
+    // cloned next.
 
     while let Some(left_val) = left_peek {
         ret[i] = left_val.clone();
@@ -64,5 +72,3 @@ fn main() {
 
 - `merge_sort` function: Recursively splits the array into halves and sorts each half.
 - `merge` function: Merges two sorted slices into a single sorted slice.
-
-This implementation ensures that the array is sorted in-place using the merge sort algorithm.

@@ -1,4 +1,4 @@
-### Algorithms (WIP)
+### Algorithms
 
 1- [Sorting Algorithms](./sorting/intro.md): Arrange data in a specific order (ascending, descending, etc.).
 
@@ -9,9 +9,7 @@
 4- [Dynamic Programming Algorithms](./dynamic-programming/intro.md): Solve complex problems by breaking them 
 down into overlapping subproblems.
 
-5- [Divide and Conquer Algorithms](./divide-conquer/intro.md): Divide a problem into smaller subproblems, solve them independently, and combine results.
-
-6- [Cryptographic Algorithms](./cryptographic): Secure data and communications.
+5- [Cryptographic Algorithms](./cryptographic): Secure data and communications.
 
 <!-- 
 
