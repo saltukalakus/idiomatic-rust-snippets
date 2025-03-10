@@ -7,6 +7,8 @@
 
 ### Idiomatic Rust Snippets
 
+Rust is known to have a steep learning curve. This book does not intend to explain every aspect of Rust; however, you may find it useful while learning Rust. 
+
 1. [Essentials](./essentials/intro.md) covers the basic aspects of the Rust programming language. They are explained with easy-to-understand examples.
 
 2. [Design Patterns](./patterns/intro.md) section demonstrates several design patterns with minimalistic but complete projects.
@@ -15,12 +17,9 @@
 
 This book does not intend to explain every aspect of Rust; however, you may find it useful while learning Rust. 
 
-I am expanding it as I use and learn this awesome language with my friend [Copilot](https://docs.github.com/en/copilot/about-github-copilot). 
-
 Code samples are intentionally simple and as clear as possible. External documentation is referenced when necessary.
 
-Pages with a **WIP** note haven't been reviewed yet, and the information in those pages may contain incorrect information. This project is always a work in progress.
+This is a personal project and is not associated with the [Rust Foundation](https://foundation.rust-lang.org/). 
 
-This is a personal project and is not associated with the [Rust Foundation](https://foundation.rust-lang.org/).
-
+Last but not least, please like ⭐️⭐️⭐️ [the project](https://github.com/saltukalakus/idiomatic-rust-snippets) on Github if you find it useful. This is a great motivation to keep the project active.
 
