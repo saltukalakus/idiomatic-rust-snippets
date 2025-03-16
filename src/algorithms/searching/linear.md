@@ -1,4 +1,4 @@
-### Linear Search Algorithm (WIP)
+### Linear Search Algorithm
 
 Linear search is a simple searching algorithm that checks each element in a list sequentially until the desired element is found or the list ends.
 
@@ -23,4 +23,5 @@ fn main() {
 }
 ```
 
-The `linear_search` function takes a slice of integers (`arr`) and a target integer (`target`) as arguments. It returns an `Option<usize>` which is `Some(index)` if the target is found, or `None` if it is not. The function iterates over the array using `enumerate()` which provides both the index and the value of each element. For each element, it checks if the element is equal to the target. If a match is found, it returns the index wrapped in `Some`. If the loop completes without finding the target, the function returns `None`.
+- The `linear_search` function takes a slice of integers (`arr`) and a target integer (`target`) as arguments. 
+- The function iterates over the array using `enumerate()` which provides both the index and the value of each element. For each element, it checks if the element is equal to the target. If a match is found, it returns the index wrapped in `Some`. If the loop completes without finding the target, the function returns `None`.
