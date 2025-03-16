@@ -1,15 +1,11 @@
-### Concurrency in Rust
+### Concurrency
 
-Rust provides several ways to handle concurrency, ensuring safety and performance. Here are some key concepts and examples:
+Concurrency is the mechanism of handling tasks in parallel. This helps use the available system resources such as CPUs more efficiently. As code runs in different contexts in threads, passing messages and handling shared variables becomes an important part of the implementation. Rust's standard library provides solutions to these concurrency needs out of the box.
 
-### 1. Threads
+
+#### Threads
 
 Rust's standard library provides a way to spawn threads using the `std::thread` module. The `thread::spawn` function is used to create a new thread. The || syntax is used to define a [closure](./closure.md), which is an anonymous function that can capture variables from its surrounding scope.
-
-Here's a breakdown of the syntax:
-
-`||`: This defines a closure with no parameters. If the closure had parameters, they would be listed between the vertical bars.
-`{ ... }`: This is the body of the closure, which contains the code that will be executed in the new thread.
 
 ```rust
 use std::thread;
@@ -37,9 +33,10 @@ fn main() {
 }
 ```
 
-### 2. Message Passing
+- `||`: This defines a closure with no parameters. If the closure had parameters, they would be listed between the vertical bars.
+- `{ ... }`: This is the body of the closure, which contains the code that will be executed in the new thread.
 
-Rust uses channels for message passing between threads, provided by the `std::sync::mpsc` module.
+#### Message Passing
 
 ```rust
 use std::sync::mpsc;
@@ -57,10 +54,9 @@ fn main() {
     println!("Got: {}", received);
 }
 ```
+- channels from `std::sync::mpsc` module can be used for message passing between threads
 
-### 3. Shared State
-
-Rust ensures safe access to shared state using Arc (Atomic Reference Counting) and Mutex (Mutual Exclusion) from the `std::sync` module.
+#### Shared State
 
 ```rust
 use std::sync::{Arc, Mutex};
@@ -87,15 +83,15 @@ fn main() {
     println!("Result: {}", *counter.lock().unwrap());
 }
 ```
-An atomic reference-counted pointer `Arc` is created to manage the shared ownership of a `Mutex` that guards an integer counter initialized to 0. <br/>
+- An atomic reference-counted pointer `Arc` is created to manage the shared ownership of a `Mutex` that guards an integer counter initialized to 0. <br/>
 
-A vector `handles` is created to store the handles of the spawned threads.<br/>
+- A vector `handles` is created to store the handles of the spawned threads.<br/>
 
-A loop is used to spawn 10 threads. Each thread:<br/>
+- A loop is used to spawn 10 threads. Each thread:<br/>
   - Clones the `Arc` pointer to get a new reference to the shared `Mutex`.<br/>
   - Locks the `Mutex` to get mutable access to the counter.
   - Increments the counter by 1.<br/>
 
-Another loop is used to join all the spawned threads, ensuring that the main thread waits for all the threads to finish execution.<br/>
+- Another loop is used to join all the spawned threads, ensuring that the main thread waits for all the threads to finish execution.<br/>
 
-Finally, the value of the counter is printed, which should be 10 if all threads have successfully incremented the counter.<br/>
+- Finally, the value of the counter is printed, which should be 10 if all threads have successfully incremented the counter.<br/>

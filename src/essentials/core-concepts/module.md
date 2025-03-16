@@ -1,6 +1,6 @@
 ### Modules in Rust
 
-In Rust, modules are a way to organize code into separate namespaces. They help in managing scope and privacy, making the code more modular and easier to maintain.
+Modules are a way to organize code into separate namespaces. They help in managing scope and privacy, making the code more modular and easier to maintain.
 
 ### Defining a Module
 

@@ -7,7 +7,7 @@
 
 ### Idiomatic Rust Snippets
 
-Rust is known to have a steep learning curve. This book does not intend to explain every aspect of Rust; however, you may find it useful while learning Rust. This is a personal project and is not associated with the [Rust Foundation](https://foundation.rust-lang.org/). 
+Rust is known to have a steep learning curve. This book does not intend to explain every aspect; however, you may find it useful while learning Rust. This is a personal project and is not associated with the [Rust Foundation](https://foundation.rust-lang.org/). 
 
 1. [Essentials](./essentials/intro.md) covers the basic aspects of the Rust programming language. They are explained with easy-to-understand examples.
 

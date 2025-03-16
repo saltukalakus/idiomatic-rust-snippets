@@ -1,8 +1,8 @@
 ### Ownership
 
-Ownership is a set of rules that governs how a Rust program manages memory. The ownership system is designed to prevent memory leaks and ensure memory safety. Here are the key rules of ownership:
+Ownership is a set of rules that governs how the program manages memory. The ownership system is designed to prevent memory leaks and ensure memory safety. Here are the key rules of ownership:
 
-1. Each value in Rust has a variable that’s called its owner.
+1. Each value has a variable that’s called its owner.
 2. There can only be one owner at a time.
 3. When the owner goes out of scope, the value will be dropped.
 

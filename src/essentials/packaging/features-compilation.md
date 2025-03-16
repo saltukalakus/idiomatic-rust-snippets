@@ -1,9 +1,9 @@
 ### What is features?
 
-In Rust, **features** are a way to conditionally compile code based on specified configurations. They allow you to enable or disable certain functionalities in your crate or its dependencies. Features are defined in the Cargo.toml file and can be used to control optional dependencies, conditional compilation.
+Features are a way to conditionally compile code based on specified configurations. They allow you to enable or disable certain functionalities in your crate or its dependencies. Features are defined in the Cargo.toml file and can be used to control optional dependencies, conditional compilation.
 
 ### Defining Features
-You define features in your crate's Cargo.toml file under the [features] section. Here’s an example:
+You define features in your crate's Cargo.toml file under the [features] section.
 
 ```toml
 [features]

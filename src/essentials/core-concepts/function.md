@@ -1,6 +1,6 @@
-### Functions in Rust
+### Functions
 
-Functions are a fundamental building block in Rust. They allow you to encapsulate code into reusable blocks. Functions in Rust are defined using the `fn` keyword, followed by the function name, parameters, and the body of the function.
+Functions are a fundamental building block in Rust. They allow you to encapsulate code into reusable blocks. Functions are defined using the `fn` keyword, followed by the function name, parameters, and the body of the function.
 
 ### Defining a Function
 
@@ -27,7 +27,7 @@ fn main() {
 }
 ```
 
-The `greet` function takes a single parameter `name` of type `&str`.
+- The `greet` function takes a single parameter `name` of type `&str`.
 
 ### Return Values
 
@@ -44,7 +44,7 @@ fn main() {
 }
 ```
 
-The `add` function takes two parameters of type `i32` and returns their sum, which is also of type `i32`.
+- The `add` function takes two parameters of type `i32` and returns their sum, which is also of type `i32`.
 
 ### Early Returns
 
@@ -68,4 +68,4 @@ fn main() {
 }
 ```
 
-The `is_even` function returns `true` if the number is even and `false` otherwise.
+- The `is_even` function returns `true` if the number is even and `false` otherwise.

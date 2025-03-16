@@ -2,8 +2,6 @@
 
 Bcrypt is a password hashing function designed to be computationally expensive to resist brute-force attacks. 
 
-Below is a simple implementation of the bcrypt algorithm in Rust without using any external libraries.
-
 ```rust
 extern crate rand;
 use rand::{thread_rng, Rng};

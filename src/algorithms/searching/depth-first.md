@@ -42,5 +42,3 @@ fn main() {
 4. **Visit Node**: The current node is added to the visited vector.
 5. **Recursive Call**: The function recursively visits all the neighbors of the current node.
 6. **Main Function**: The `main` function initializes the graph, creates a vector to track visited nodes, and calls the `dfs` function starting from node 2. Finally, it prints the visited nodes.
-
-This example demonstrates a basic implementation of the DFS algorithm in Rust. You can modify the graph and the starting node to see how the traversal changes.

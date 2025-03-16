@@ -1,6 +1,6 @@
-### References in Rust
+### References
 
-In Rust, references allow you to refer to some value without taking ownership of it. References are immutable by default, meaning you cannot modify the value they point to. However, you can create mutable references that allow you to change the value.
+References allow you to refer to some value without taking ownership of it. References are immutable by default, meaning you cannot modify the value they point to. However, you can create mutable references that allow you to change the value.
 
 ### Immutable References
 
@@ -66,5 +66,3 @@ fn increment(val: &mut i32) {
 ```
 
 `print_value` takes an immutable reference, and `increment` takes a mutable reference.
-
-References are a powerful feature in Rust that enable safe and efficient access to data without transferring ownership.

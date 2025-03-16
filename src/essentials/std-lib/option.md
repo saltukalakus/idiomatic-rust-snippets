@@ -1,6 +1,6 @@
 ### Option Enum
 
-The `Option` enum in Rust is a powerful feature that represents a value that can either be something (`Some`) or nothing (`None`). It is commonly used to handle cases where a value might be absent, avoiding the need for null pointers and reducing the risk of null pointer exceptions.
+The `Option` enum represents a value that can either be something (`Some`) or nothing (`None`). It is commonly used to handle cases where a value might be absent, avoiding the need for null pointers and reducing the risk of null pointer exceptions.
 
 ### Definition
 
@@ -33,7 +33,7 @@ fn main() {
 
 The `find_word` function returns an `Option<usize>`. If the word is found, it returns `Some(index)`, otherwise it returns `None`.
 
-Using `unwrap`
+#### Using `unwrap`
 
 ```rust
 fn main() {
@@ -43,9 +43,9 @@ fn main() {
 }
 ```
 
-The `unwrap` method extracts the value inside `Some`, but it will panic if called on a `None` value. Use it only when you are sure that the `Option` is `Some`.
+- The `unwrap` method extracts the value inside `Some`, but it will panic if called on a `None` value. Use it only when you are sure that the `Option` is `Some`.
 
-Using `unwrap_or`
+#### Using `unwrap_or`
 
 ```rust
 fn main() {
@@ -57,5 +57,5 @@ fn main() {
 }
 ```
 
-The `unwrap_or` method provides a default value if the `Option` is `None`.
+- The `unwrap_or` method provides a default value if the `Option` is `None`.
 

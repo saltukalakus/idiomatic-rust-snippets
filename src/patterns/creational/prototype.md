@@ -12,5 +12,3 @@ We can implement the pattern using the `Clone` trait.
 - We derive the `Clone` trait for the `Prototype` struct, which provides the `clone` method.
 - We implement a `clone_prototype` method that clones the current instance.
 - In the `main` function, we create an instance of `Prototype` and then clone it using the `clone_prototype` method.
-
-This demonstrates how the Prototype pattern can be implemented in Rust using the `Clone` trait.

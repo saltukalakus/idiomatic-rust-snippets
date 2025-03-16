@@ -21,4 +21,4 @@ fn main() {
 }
 ```
 
-The `new` function is defined as an associated function of `MyStruct` and is used to create a new instance of `MyStruct`.
+- The `new` function is defined as an associated function of `MyStruct` and is used to create a new instance of `MyStruct`.

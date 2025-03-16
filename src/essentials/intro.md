@@ -1,3 +1,3 @@
-### Idiomatic Rust For Web Programmers
+### Essentials
 
 This section covers varios aspects of Rust programming language from basic to some complex topics.

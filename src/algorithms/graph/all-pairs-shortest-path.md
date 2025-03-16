@@ -14,8 +14,6 @@ The Floyd-Warshall algorithm works by iteratively improving the shortest path es
 
 3. **Result**: After considering all nodes as intermediate points, the distance matrix `dist` will contain the shortest distances between all pairs of nodes.
 
-Below is a simple implementation of the Floyd-Warshall algorithm in Rust:
-
 ```rust
 const INF: i32 = i32::MAX / 2; // Use a large value to represent infinity
 
@@ -63,5 +61,3 @@ fn main() {
 - **Initialization**: The `graph` is represented as an adjacency matrix where `graph[i][j]` is the weight of the edge from node `i` to node `j`. If there is no edge, it is set to `INF`.
 - **Iterative Update**: The nested loops update the distance matrix by considering each node as an intermediate point.
 - **Result**: The final distance matrix `shortest_paths` contains the shortest distances between all pairs of nodes.
-
-This implementation demonstrates the basic concept of the Floyd-Warshall algorithm in Rust. You can modify the graph and test with different inputs to see how the algorithm computes the shortest paths.

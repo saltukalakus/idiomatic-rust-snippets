@@ -1,6 +1,6 @@
-### Error Handling in Rust
+### Error Handling
 
-Error handling in Rust is a critical part of writing robust and reliable software. Rust provides powerful tools for handling errors, primarily through the `Result` and `Option` types. Below are some common patterns for error handling in Rust.
+Error handling is a critical part of writing robust and reliable software. Rust provides powerful tools for handling errors, primarily through the `Result` and `Option` types.
 
 ### The `Result` Type
 
@@ -70,7 +70,7 @@ fn main() {
 
 ### Custom Error Types
 
-You can define your own error types to provide more context about errors. Below is an example of how to create and use custom error types in Rust.
+You can define your own error types to provide more context about errors.
 
 ```rust
 use std::fmt;

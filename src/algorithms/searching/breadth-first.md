@@ -44,5 +44,3 @@ fn main() {
 2. **BFS Function**: The `bfs` function takes a reference to the graph and a starting node. It uses a `VecDeque` as a queue to manage the nodes to be explored.
 3. **Traversal**: The function iterates over the queue, marking nodes as visited and adding their neighbors to the queue if they haven't been visited yet.
 4. **Main Function**: The `main` function initializes the graph, calls the `bfs` function, and prints the result of the BFS traversal.
-
-This example demonstrates a basic BFS traversal of a graph in Rust. You can modify the graph and the starting node to see how the traversal changes.

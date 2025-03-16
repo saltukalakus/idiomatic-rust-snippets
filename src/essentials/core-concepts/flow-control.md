@@ -1,4 +1,4 @@
-### Flow Control in Rust
+### Flow Control
 
 Rust provides several options for flow control, including `if` statements, `while` loops, and more. Here are some simple examples for each:
 

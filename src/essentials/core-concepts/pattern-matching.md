@@ -1,6 +1,6 @@
-### Pattern Matching in Rust
+### Pattern Matching
 
-Pattern matching is a powerful feature in Rust that allows you to match complex data structures and perform different actions based on their shape. Here are some examples of how pattern matching works in Rust:
+Pattern matching is a powerful feature that allows you to match complex data structures and perform different actions based on their shape. 
 
 ### Matching Literals
 
@@ -97,5 +97,3 @@ match x {
     None => (),
 }
 ```
-
-Pattern matching in Rust is a versatile tool that can simplify your code and make it more readable. These examples cover some of the most common use cases, but there are many more ways to use pattern matching in Rust.

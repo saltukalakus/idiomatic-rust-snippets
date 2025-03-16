@@ -1,6 +1,6 @@
 ### Shortest Path Graph (Dijkstra's) Algorithm (WIP)
 
-The shortest path algorithm is used to find the shortest path between nodes in a graph. One of the most common algorithms for this purpose is Dijkstra's algorithm. Below is a simple application in Rust demonstrating how Dijkstra's algorithm works.
+The shortest path algorithm is used to find the shortest path between nodes in a graph. One of the most common algorithms for this purpose is Dijkstra's algorithm. 
 
 ```rust
 use std::collections::{BinaryHeap, HashMap};
@@ -94,5 +94,3 @@ fn main() {
 2. **State Struct**: The `State` struct keeps track of the current position and the cost to reach that position.
 3. **Priority Queue**: A binary heap is used as a priority queue to always expand the least costly node first.
 4. **Dijkstra's Algorithm**: The algorithm initializes the distance to the start node as 0 and all other distances as infinity. It then iteratively explores the graph, updating the shortest path to each node.
-
-This example demonstrates the basic implementation of Dijkstra's algorithm in Rust. You can modify the graph and the start node to see how the shortest paths change.
