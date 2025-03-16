@@ -1,4 +1,4 @@
-### Understanding `RefCell` in Rust
+### Understanding `RefCell`
 
 `RefCell` is a type that provides interior mutability in Rust. It allows you to mutate data even when there are immutable references to that data. This is achieved by enforcing borrowing rules at runtime rather than compile time.
 

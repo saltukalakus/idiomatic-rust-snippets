@@ -1,4 +1,4 @@
-### Depth First Search (DFS) Algorithm (WIP)
+### Depth First Search (DFS) Algorithm
 
 Depth First Search (DFS) is an algorithm for traversing or searching tree or graph data structures. The algorithm starts at the root node (selecting some arbitrary node as the root in the case of a graph) and explores as far as possible along each branch before backtracking.
 
@@ -36,9 +36,9 @@ fn main() {
 }
 ```
 
-1. **Graph Representation**: The graph is represented using a `HashMap` where each key is a node, and the value is a vector of its neighbors.
-2. **DFS Function**: The `dfs` function takes a reference to the graph, the current node, and a mutable reference to a vector of visited nodes.
-3. **Base Case**: If the current node has already been visited, the function returns.
-4. **Visit Node**: The current node is added to the visited vector.
-5. **Recursive Call**: The function recursively visits all the neighbors of the current node.
-6. **Main Function**: The `main` function initializes the graph, creates a vector to track visited nodes, and calls the `dfs` function starting from node 2. Finally, it prints the visited nodes.
+- The graph is represented using a `HashMap` where each key is a node, and the value is a vector of its neighbors.
+- The `dfs` function takes a reference to the graph, the current node, and a mutable reference to a vector of visited nodes.
+- If the current node has already been visited, the function returns.
+- The current node is added to the visited vector.
+- The function recursively visits all the neighbors of the current node.
+- The `main` function initializes the graph, creates a vector to track visited nodes, and calls the `dfs` function starting from node 2. Finally, it prints the visited nodes.
