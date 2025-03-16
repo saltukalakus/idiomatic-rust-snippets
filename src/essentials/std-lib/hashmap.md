@@ -1,4 +1,4 @@
-# HashMap
+### HashMap
 
 `HashMap` is a collection that stores key-value pairs where you can look up values by their associated key.
 

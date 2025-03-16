@@ -42,6 +42,7 @@
     - [RefCell Struct](./essentials/std-lib/refcell.md)
     - [Rc Type](./essentials/std-lib/rc.md)
     - [Self Type](./essentials/std-lib/self-as-type.md)
+    - [Vector Type](./essentials/std-lib/vec.md)
     - [Self vs self](./essentials/std-lib/self-vs-self.md)
     - [self Keyword](./essentials/std-lib/self.md)
     - [imp Keyword](./essentials/std-lib/imp.md)
