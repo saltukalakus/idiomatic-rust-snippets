@@ -2,11 +2,17 @@
 
 Asynchronous programming in Rust allows you to write concurrent code that doesn't block threads while waiting for I/O operations. The `async`/`await` syntax makes asynchronous code look and behave like synchronous code, making it easier to read and write.
 
+**Note**: The examples below require an async runtime like Tokio. Add to your `Cargo.toml`:
+```toml
+[dependencies]
+tokio = { version = "1", features = ["full"] }
+```
+
 ### What is Async/Await?
 
 The `async` keyword transforms a function into an asynchronous function that returns a `Future`. The `await` keyword pauses execution of an async function until the awaited `Future` completes, without blocking the thread.
 
-```rust
+```rust,ignore
 async fn fetch_data() -> String {
     // This is an async function
     "data".to_string()
@@ -22,7 +28,7 @@ async fn process_data() {
 
 At the core of Rust's async system is the `Future` trait. When you mark a function as `async`, it returns a type that implements `Future`:
 
-```rust
+```rust,ignore
 use std::future::Future;
 
 // An async function
@@ -40,7 +46,7 @@ fn example_desugared() -> impl Future<Output = i32> {
 
 Rust's standard library provides the async/await syntax, but you need a runtime like Tokio or async-std to execute async code:
 
-```rust
+```rust,ignore
 use tokio::time::{sleep, Duration};
 
 #[tokio::main]
@@ -56,7 +62,7 @@ async fn main() {
 
 ### Running Multiple Tasks Concurrently
 
-```rust
+```rust,ignore
 use tokio::time::{sleep, Duration};
 
 async fn task_one() {
@@ -93,7 +99,7 @@ async fn main() {
 - Higher overhead for context switching
 - OS handles scheduling
 
-```rust
+```rust,ignore
 use tokio::time::{sleep, Duration};
 use std::thread;
 
@@ -127,7 +133,7 @@ async fn main() {
 
 Use `Result` with `.await` just like synchronous code:
 
-```rust
+```rust,ignore
 use std::io;
 
 async fn read_file() -> io::Result<String> {
@@ -153,7 +159,7 @@ async fn main() {
 
 Create independent async tasks that run concurrently:
 
-```rust
+```rust,ignore
 use tokio::task;
 use tokio::time::{sleep, Duration};
 
@@ -176,7 +182,7 @@ async fn main() {
 
 Execute multiple futures and act on the first one to complete:
 
-```rust
+```rust,ignore
 use tokio::time::{sleep, Duration};
 
 #[tokio::main]
@@ -197,7 +203,13 @@ async fn main() {
 
 Currently, async functions in traits require workarounds or the `async-trait` crate:
 
-```rust
+```toml
+# Add to Cargo.toml
+[dependencies]
+async-trait = "0.1"
+```
+
+```rust,ignore
 use async_trait::async_trait;
 
 #[async_trait]
