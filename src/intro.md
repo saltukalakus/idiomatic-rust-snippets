@@ -13,8 +13,16 @@ Rust is known to have a steep learning curve. This book does not intend to expla
 
 2. [Design Patterns](./patterns/intro.md) section demonstrates several design patterns with minimalistic but complete projects.
 
-3. [Algorithms](./algorithms/intro.md) section explains various popular algorithms with code samples in Rust.
+3. [Anti Patterns](./anti-patterns/intro.md) section explains various non-idiomatic usages that needs to be avoided. 
+
+4. [Algorithms](./algorithms/intro.md) section explains various popular algorithms with code samples in Rust.
 
 The project follows a minimalistic approach, where almost all pages are short with simple, easy-to-follow code samples. Most samples can run. External documentation is referenced when necessary for extended information.
 
-Last but not least, please like ⭐️⭐️⭐️ [the project](https://github.com/saltukalakus/idiomatic-rust-snippets) on Github if you find it useful. This is a great motivation to keep the project active.
+---
+
+**If you find this project useful, please star ⭐ it on GitHub!** [![GitHub stars](https://img.shields.io/github/stars/saltukalakus/idiomatic-rust-snippets?style=social)](https://github.com/saltukalakus/idiomatic-rust-snippets/stargazers)
+
+Your support helps keep the project active and motivates continued development.
+
+**Contributions are welcome!** If you'd like to improve existing content, add new examples, or fix issues, feel free to open a [pull request](https://github.com/saltukalakus/idiomatic-rust-snippets/pulls). All contributions are appreciated and help make this resource better for everyone.
