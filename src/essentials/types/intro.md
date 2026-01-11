@@ -14,12 +14,16 @@ Types in Rust define the kind of data that can be stored and manipulated within 
 
 6- [Generic](./generic.md): Write flexible and reusable code that can operate on many different types without sacrificing performance.
 
-7- [Pointer](./pointer.md): Types that represent memory addresses, used to reference data stored in memory with Rust's safety guarantees.
+7- [Associated Types](./associated-types.md): Associate type placeholders with traits for cleaner APIs and better type inference.
 
-8- [Vector](./vector.md): A growable array type for dynamic collections that can grow or shrink at runtime.
+8- [Pointer](./pointer.md): Types that represent memory addresses, used to reference data stored in memory with Rust's safety guarantees.
 
-9- [Type Alias](./type-alias.md): Create alternative names for existing types to improve code readability.
+9- [Vector](./vector.md): A growable array type for dynamic collections that can grow or shrink at runtime.
 
-10- [Reference vs Smart Pointer](./reference-vs-smart-pointer.md): Understanding the differences between regular references and smart pointers.
+10- [Type Alias](./type-alias.md): Create alternative names for existing types to improve code readability.
 
-11- [Struct vs Enum](./struct-vs-enum.md): When to use structs versus enums in your Rust code.
+11- [PhantomData](./phantom-data.md): Zero-sized marker type for compile-time type checking and type-state patterns.
+
+12- [Reference vs Smart Pointer](./reference-vs-smart-pointer.md): Understanding the differences between regular references and smart pointers.
+
+13- [Struct vs Enum](./struct-vs-enum.md): When to use structs versus enums in your Rust code.

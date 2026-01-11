@@ -13,3 +13,7 @@ This section contains information about Cargo and various aspects of building an
 5- [No Std](./no-std.md): Building Rust projects without the standard library for embedded or constrained environments.
 
 6- [Package Names](./package-names.md): Best practices and conventions for naming your Rust packages.
+
+7- [Workspaces](./workspaces.md): Managing multiple related crates in a single workspace with shared dependencies and build configuration.
+
+8- [Cargo Commands](./cargo-commands.md): Essential Cargo commands for building, testing, documenting, and managing Rust projects.
