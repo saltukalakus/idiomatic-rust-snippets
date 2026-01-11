@@ -1,11 +1,6 @@
-### Builder Pattern (Rust's Idiomatic Alternative to Decorator)
+### Builder Pattern
 
-**Traditional Pattern**: Decorator Pattern  
-**Rust Idiomatic Approach**: Builder Pattern with Method Chaining
-
-The traditional Decorator pattern allows behavior to be added to objects dynamically. While the traditional OOP approach works in Rust, there are more idiomatic alternatives that leverage Rust's ownership system and zero-cost abstractions.
-
-**Why Builder Pattern is Better in Rust**: The builder pattern with method chaining provides the same composability as decorators but with zero heap allocations and compile-time dispatch.
+The builder pattern uses method chaining to construct objects step-by-step with various configurations. Each method consumes `self` and returns a modified version, allowing fluent and flexible object construction.
 
 ```rust
 {{#include builder-pattern/src/main.rs}}
@@ -13,28 +8,24 @@ The traditional Decorator pattern allows behavior to be added to objects dynamic
 
 **Two Approaches Shown**:
 
-1. **Traditional Decorator** (Box<dyn Trait>):
+1. **With Trait Objects** (Box<dyn Trait>):
    - Uses trait objects and heap allocation
    - Requires dynamic dispatch (runtime cost)
-   - Each decorator wraps the previous one
-   - Familiar to developers from OOP backgrounds
-   - **Downside**: Multiple heap allocations and pointer indirection
+   - Each wrapper wraps the previous one
+   - Multiple heap allocations and pointer indirection
 
-2. **Idiomatic Rust** (Builder/Newtype Pattern):
+2. **With Method Chaining** (Builder Pattern):
    - Methods consume and return `self`, allowing chaining
    - Zero heap allocations (stack-based)
    - All dispatch resolved at compile time
    - More performant and cleaner API
-   - **Advantage**: Follows Rust's builder pattern idiom
 
-**Other Rust Alternatives**:
-- **Generics with type parameters**: For compile-time decoration without trait objects
+**Other Approaches**:
+- **Generics with type parameters**: For compile-time composition without trait objects
 - **Extension traits**: Add methods to existing types
 - **Procedural macros**: For complex compile-time wrapping
 
 **When to Use Each**:
-- Use **traditional decorator** when you need runtime composition with unknown decorator combinations
-- Use **builder pattern** for known set of optional features that can be compiled away
-- Use **generics** when decorator types are known at compile time
-
-**Key Takeaway**: In Rust, the builder pattern with method chaining is often more idiomatic and performant than the traditional decorator pattern.
+- Use **trait objects** when you need runtime composition with unknown combinations
+- Use **method chaining** for known set of optional features that can be compiled away
+- Use **generics** when types are known at compile time

@@ -2,15 +2,13 @@
 
 Structural Patterns deal with object composition and relationships between entities. Rust's ownership system and trait-based polymorphism influence how these patterns are implemented.
 
-**Note**: Some patterns have been renamed to emphasize Rust-idiomatic approaches. Composite has been removed - use enums for tree structures instead.
-
 ### Rust-Adapted Structural Patterns
 
 1- [Adapter](./adapter.md): Allows objects with incompatible interfaces to work together. In Rust, this often uses trait implementations and newtype patterns.
 
 2- [Bridge](./bridge.md): Decouples an abstraction from its implementation so that the two can vary independently.
 
-3- [Builder Pattern](./builder-pattern.md): **Rust's Idiomatic Alternative to Decorator** - Uses method chaining for zero-cost composition. Traditional decorator with trait objects works but adds heap allocation overhead.
+3- [Builder Pattern](./builder-pattern.md): Uses method chaining for zero-cost composition without heap allocation overhead.
 
 4- [Facade](./facade.md): Provides a simplified interface to a complex subsystem, making it easier to use.
 
