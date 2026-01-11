@@ -13,11 +13,11 @@ RAII is a fundamental pattern in Rust where resources (memory, files, locks, con
 ```
 
 **Key Points**:
-- Resources are acquired in constructors (`new`)
-- Resources are released in `Drop::drop()`
-- Drop is called automatically when value goes out of scope
-- Drop order is LIFO (Last In, First Out) for nested resources
-- Works correctly with `?` operator and early returns
+- The example shows `DatabaseConnection` created in `new()` (prints "Opening"), automatically closed via `Drop` (prints "Closing")
+- When `conn` goes out of scope (closing brace), `drop()` is called automatically
+- Nested example: `conn2` dropped before `conn1` due to LIFO order (inner scopes first)
+- `might_fail()` returns early with error, but connection still closes - `Drop` runs even on early returns
+- No manual cleanup needed - Rust's ownership ensures `Drop::drop()` always runs
 
 **Common RAII Types in std**:
 - `File` - closes file handle on drop

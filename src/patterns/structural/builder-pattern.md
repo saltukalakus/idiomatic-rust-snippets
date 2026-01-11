@@ -1,31 +1,26 @@
-### Builder Pattern
+### Builder Pattern (Method Chaining)
 
-The builder pattern uses method chaining to construct objects step-by-step with various configurations. Each method consumes `self` and returns a modified version, allowing fluent and flexible object construction.
+The builder pattern with method chaining allows composing behavior by chaining method calls. Each method modifies and returns `self`, enabling fluent APIs and zero-cost abstractions.
+
+**Benefits**:
+- Zero heap allocations - entirely stack-based
+- Compile-time dispatch - no vtable overhead
+- Fluent, readable API
+- Type-safe composition at compile time
 
 ```rust
 {{#include builder-pattern/src/main.rs}}
 ```
 
-**Two Approaches Shown**:
+**Key Points**:
+- The example compares trait object approach (`Box<dyn Text>`) with method chaining
+- Trait object version: `Bold` wraps `Italic` which wraps `PlainText` - each allocation on heap
+- Method chaining version: `TextBuilder` has `content`, `bold`, and `italic` fields
+- Each builder method (`bold()`, `italic()`) sets a flag and returns `self`
+- `render()` applies formatting based on flags - all stack-allocated, zero heap overhead
 
-1. **With Trait Objects** (Box<dyn Trait>):
-   - Uses trait objects and heap allocation
-   - Requires dynamic dispatch (runtime cost)
-   - Each wrapper wraps the previous one
-   - Multiple heap allocations and pointer indirection
-
-2. **With Method Chaining** (Builder Pattern):
-   - Methods consume and return `self`, allowing chaining
-   - Zero heap allocations (stack-based)
-   - All dispatch resolved at compile time
-   - More performant and cleaner API
-
-**Other Approaches**:
-- **Generics with type parameters**: For compile-time composition without trait objects
-- **Extension traits**: Add methods to existing types
-- **Procedural macros**: For complex compile-time wrapping
-
-**When to Use Each**:
-- Use **trait objects** when you need runtime composition with unknown combinations
-- Use **method chaining** for known set of optional features that can be compiled away
-- Use **generics** when types are known at compile time
+**When to Use**:
+- Composing optional features or behaviors
+- Building fluent APIs
+- Zero-cost abstractions over runtime dispatch
+- When the set of behaviors is known at compile time

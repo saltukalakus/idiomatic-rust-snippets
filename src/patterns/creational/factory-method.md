@@ -1,20 +1,26 @@
 ### Factory Method Pattern
 
-The Factory Method is a creational design pattern that provides an interface for creating objects in a superclass but allows subclasses to alter the type of objects that will be created.
+The Factory Method provides an interface for creating objects, allowing implementations to decide which concrete type to instantiate. This decouples object creation from the code that uses the objects.
 
-Tthe Factory Method pattern can be implemented using traits and structs. The trait defines the method for creating objects, and the structs implement this trait to create specific types of objects.
-
-In this example we have a `Shape` trait and two structs `Circle` and `Square` that implement this trait. We will create a `ShapeFactory` trait with a method `create_shape` and two factories `CircleFactory` and `SquareFactory` that implement this trait.
+**Benefits**:
+- Decouples object creation from usage
+- Easy to add new types without modifying existing code
+- Promotes dependency injection and testability
+- Uses traits for polymorphic behavior
 
 ```rust
 {{#include factory-method/src/main.rs}}
 ```
 
-## Output
+**Key Points**:
+- The example defines `Shape` trait with `draw()` method, implemented by `Circle` and `Square`
+- `ShapeFactory` trait declares `create_shape()` which returns `Box<dyn Shape>`
+- `CircleFactory` creates circles, `SquareFactory` creates squares - each returns the appropriate type
+- In `main()`, factories create shapes without client knowing concrete types
+- To add new shapes (e.g., Triangle), just implement `Shape` trait and create a `TriangleFactory`
 
-```
-Drawing a Circle
-Drawing a Square
-```
-
-- The `ShapeFactory` trait defines the `create_shape` method, and the `CircleFactory` and `SquareFactory` structs implement this method to create specific shapes. This allows for flexibility in creating different types of shapes without changing the client code.
+**When to Use**:
+- When the exact type to create isn't known until runtime
+- To decouple object creation from business logic
+- When you want to extend object creation without changing existing code
+- For testability (inject mock factories)

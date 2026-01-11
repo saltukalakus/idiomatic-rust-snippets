@@ -13,11 +13,12 @@ The Type State pattern encodes the state of an object in its type, making invali
 ```
 
 **Key Points**:
-- States are zero-sized types (no runtime cost)
-- State transitions consume `self` and return a new type
-- Methods are only available in valid states
-- `PhantomData` is used when the type parameter isn't stored
-- The compiler enforces valid state transitions
+- The example shows `Document<Draft>`, `Document<Review>`, and `Document<Published>` as separate types
+- `Document<Draft>` has `write()` and `submit_for_review()` methods; others don't
+- `submit_for_review()` consumes `Document<Draft>` and returns `Document<Review>` - state transition at type level
+- Calling `doc.write()` on `Document<Published>` is a compile error - method doesn't exist for that type
+- Second example: `ConnectionBuilder` with `build()` only available when both host AND port are set
+- `PhantomData<State>` marks the type parameter without storing it - zero runtime size
 
 **When to Use**:
 - State machines (documents, connections, protocols)

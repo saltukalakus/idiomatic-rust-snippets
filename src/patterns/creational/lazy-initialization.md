@@ -2,17 +2,25 @@
 
 Lazy initialization ensures that a value is initialized only once on first access. This is useful for global state like logging, metrics, or application-wide configuration that should be initialized exactly once, even in multi-threaded environments.
 
+**Benefits**:
+- Thread-safe initialization without unsafe code
+- Deferred initialization until first use
+- Guaranteed single initialization even with concurrent access
+- Zero runtime cost after first initialization
+
 ```rust
 {{#include lazy-initialization/src/main.rs}}
 ```
 
 **Key Points**:
-1. **OnceLock**: Provides safe, lazy initialization. The value is initialized exactly once on first access.
-2. **Arc<Mutex<T>>**: Enables thread-safe shared ownership and interior mutability.
-3. **Thread-safe**: Multiple threads can safely access and modify the value through the Mutex.
-4. **Zero-cost after initialization**: After the first call, `get_or_init` just returns the cached reference.
+- The example shows `AppConfig` as a global singleton accessed via `get_config()`
+- `OnceLock` ensures `AppConfig` is initialized only once on first access using `get_or_init()`
+- `Arc<Mutex<AppConfig>>` wraps the config for thread-safe shared access and mutation
+- Main thread and spawned threads all access the same instance - incrementing from 0 to 3
+- After initialization, subsequent calls to `get_config()` return the cached static reference with zero overhead
 
-**Idiomatic Alternatives**:
-- For read-only config: Use `OnceLock<T>` or `LazyLock<T>` directly without Arc/Mutex
-- For dependency injection: Pass configuration through function parameters or struct fields
-- For async code: Use `tokio::sync::OnceCell` for async initialization
+**When to Use**:
+- Global state like logging, metrics, or configuration
+- Expensive initialization that should be deferred
+- Singleton-like patterns where you need exactly one instance
+- Thread-safe lazy evaluation

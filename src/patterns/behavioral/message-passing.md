@@ -1,30 +1,26 @@
 ### Message Passing
 
-Message passing allows an object (the subject) to notify multiple dependents (subscribers) of state changes. This pattern decouples publishers from subscribers, making code more modular and easier to test.
+Message passing allows publishers to notify subscribers of events through channels. This decouples publishers from subscribers, making code more modular and thread-safe.
 
-**Why Message Passing Works Well in Rust**:
-- Avoids shared mutable state - data is sent through channels
-- Natural thread safety - channels can be used across threads
+**Benefits**:
+- Avoids shared mutable state - data sent through channels
+- Natural thread safety - channels work across threads
 - Clear ownership - subscribers own their receiving end
-- Flexible - subscribers can be added/removed dynamically
+- Automatic cleanup when receivers are dropped
 
 ```rust
 {{#include message-passing/src/main.rs}}
 ```
 
-**Two Approaches Shown**:
+**Key Points**:
+- The example shows two approaches: traditional observers with `Arc<dyn Observer>` and channel-based pub-sub
+- Traditional: `Subject` maintains `Vec<Arc<dyn Observer>>`, calls `update()` on each during `notify()`
+- Channel-based: `ChannelSubject` stores `Vec<Sender<String>>`, sends messages via `send()`
+- Receivers automatically dropped when subscribers go out of scope - no manual cleanup
+- Channel approach avoids trait objects and provides better thread safety
 
-1. **With Callbacks** (Arc<dyn Observer>): Uses shared ownership for observers. Observers can be subscribed and unsubscribed. Requires heap allocation and reference counting.
-
-2. **With Channels**: Uses built-in message passing with `mpsc::channel`:
-   - Automatic cleanup when receivers are dropped
-   - Thread-safe by default
-   - Can be moved across threads
-   - No trait objects needed
-   - Clear ownership semantics
-
-**Recommendations**:
-- **Use channels** for pub-sub patterns (crossbeam-channel or tokio channels for async)
-- **Use callbacks** when you need dynamic subscription/unsubscription
-- **Consider async streams** for async code (futures::Stream, tokio::watch)
-- Avoid circular references - use `Weak` if needed
+**When to Use**:
+- Pub-sub patterns (event buses, notifications)
+- Cross-thread communication
+- Decoupling components that react to state changes
+- When automatic cleanup on subscriber drop is desired

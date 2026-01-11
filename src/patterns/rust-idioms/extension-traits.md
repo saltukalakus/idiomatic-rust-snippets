@@ -13,11 +13,12 @@ Extension traits allow you to add methods to types you don't own. This is a comm
 ```
 
 **Key Points**:
-- Define a trait with the methods you want to add
-- Implement the trait for the external type
-- Users must import the trait to use the extension methods
-- Convention: name the trait `{TypeName}Ext`
-- Use `Self: Sized` bound for methods that consume self
+- The example defines `StringExt` trait with `is_blank()` and `truncate_with_ellipsis()` methods
+- Implemented on `str` type (not owned by us) - adds methods like `.is_blank()` to all string slices
+- `IteratorExt` adds `sum_by()` method to all iterators - maps items before summing
+- `OptionExt` adds `ok_or_else_log()` that logs errors to stderr before returning `Err`
+- `VecExt` adds `push_if_not_exists()` that only pushes if value not already in vector
+- Users must `use` the trait to access extension methods
 
 **Common Extension Traits in Rust Ecosystem**:
 - `itertools::Itertools` - extends Iterator with many methods
