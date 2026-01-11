@@ -1,1 +1,19 @@
 <script defer src="https://cloud.umami.is/script.js" data-website-id="4df1ac86-a91b-43e3-8d74-0d320677bf2a"></script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    const badge = document.createElement('a');
+    badge.href = 'https://github.com/saltukalakus/idiomatic-rust-snippets/stargazers';
+    badge.target = '_blank';
+    badge.className = 'github-stars-badge';
+    badge.style.display = 'inline-flex';
+    badge.style.alignItems = 'center';
+    badge.style.marginRight = '10px';
+    badge.innerHTML = '<img src="https://img.shields.io/github/stars/saltukalakus/idiomatic-rust-snippets?style=social" alt="GitHub stars">';
+    
+    const rightButtons = document.querySelector('.right-buttons');
+    if (rightButtons) {
+        rightButtons.insertBefore(badge, rightButtons.firstChild);
+    }
+});
+</script>

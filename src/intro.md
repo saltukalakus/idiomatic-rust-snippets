@@ -5,12 +5,6 @@
  released: true
 ---
 
-<div align="right">
-
-[![GitHub stars](https://img.shields.io/github/stars/saltukalakus/idiomatic-rust-snippets?style=social)](https://github.com/saltukalakus/idiomatic-rust-snippets/stargazers)
-
-</div>
-
 ### Idiomatic Rust Snippets
 
 Rust is known to have a steep learning curve. This book is intended to be beginner-friendly and get you up to speed with the core Rust concepts and is one of the best "cheat sheets" for Rust developers. 

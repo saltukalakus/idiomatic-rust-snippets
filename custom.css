@@ -25,3 +25,20 @@
 .fa-bars {
     font-size: 2em !important; /* Adjust the size as needed */
 }
+
+/* GitHub stars badge in menu bar */
+.github-stars-badge {
+    display: inline-flex !important;
+    align-items: center;
+}
+
+.github-stars-badge img {
+    height: 20px;
+    vertical-align: middle;
+}
+
+@media only screen and (max-width: 768px) {
+    .github-stars-badge {
+        display: none !important;
+    }
+}
