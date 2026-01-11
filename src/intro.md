@@ -5,6 +5,12 @@
  released: true
 ---
 
+<div align="right">
+
+[![GitHub stars](https://img.shields.io/github/stars/saltukalakus/idiomatic-rust-snippets?style=social)](https://github.com/saltukalakus/idiomatic-rust-snippets/stargazers)
+
+</div>
+
 ### Idiomatic Rust Snippets
 
 Rust is known to have a steep learning curve. This book is intended to be beginner-friendly and get you up to speed with the core Rust concepts and is one of the best "cheat sheets" for Rust developers. 
@@ -19,12 +25,6 @@ Rust is known to have a steep learning curve. This book is intended to be beginn
 
 The project follows a minimalistic approach, where almost all pages are short with simple, easy-to-follow code samples. Most samples can run. External documentation is referenced when necessary for extended information.
 
----
-
-**If you find this project useful, please star ⭐ it on GitHub!** [![GitHub stars](https://img.shields.io/github/stars/saltukalakus/idiomatic-rust-snippets?style=social)](https://github.com/saltukalakus/idiomatic-rust-snippets/stargazers)
-
-Your support helps keep the project active and motivates continued development.
-
-**Contributions are welcome!** If you'd like to improve existing content, add new examples, or fix issues, feel free to open a [pull request](https://github.com/saltukalakus/idiomatic-rust-snippets/pulls). All contributions are appreciated and help make this resource better for everyone.
+If you find this project useful, please consider giving a star ⭐ on GitHub! If you'd like to improve existing content, add new examples, or fix issues, feel free to open a [pull request](https://github.com/saltukalakus/idiomatic-rust-snippets/pulls). All contributions are appreciated.
 
 This project is not associated with the [Rust Foundation](https://foundation.rust-lang.org/). 
