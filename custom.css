@@ -1,22 +1,22 @@
 /* custom.css */
 
 /* Increase the size of the GitHub icon */
-.fa-github{
-    font-size: 2em; /* Adjust the size as needed */
+.fa-github, #git-repository-button {
+    font-size: 2em !important; /* Adjust the size as needed */
 }
 
-.fa-edit{
-    font-size: 2em; /* Adjust the size as needed */
+.fa-edit, #git-edit-button {
+    font-size: 2em !important; /* Adjust the size as needed */
 }
 
-.fa-search{
-    font-size: 2em; /* Adjust the size as needed */
+.fa-search, #search-toggle i {
+    font-size: 2em !important; /* Adjust the size as needed */
 }
 
-.fa-paint-brush{
-    font-size: 2em; /* Adjust the size as needed */
+.fa-paint-brush {
+    font-size: 2em !important; /* Adjust the size as needed */
 }
 
-.fa-bars{
-    font-size: 2em; /* Adjust the size as needed */
+.fa-bars {
+    font-size: 2em !important; /* Adjust the size as needed */
 }
