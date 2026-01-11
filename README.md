@@ -1,6 +1,6 @@
 # [Idiomatic Rust Snippets](https://idiomatic-rust-snippets.org/)
 
-Rust is known to have a steep learning curve. This book is intended to be beginner friendly and get you up to speed with the core Rust concepts. 
+Rust is known to have a steep learning curve. This book is intended to be beginner friendly and get you up to speed with the core Rust concepts and is one of the best "cheat sheets" for Rust developers. 
 
 1. [Essentials](./src/essentials/intro.md) covers the basic aspects of the Rust programming language. They are explained with easy to understand examples.
 
