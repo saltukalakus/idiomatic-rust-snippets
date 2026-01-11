@@ -6,11 +6,9 @@ Rust is known to have a steep learning curve. This book does not intend to expla
 
 2. [Design Patterns](https://idiomatic-rust-snippets.org/patterns/intro.html) section demonstrates several design patterns with minimalistic but complete projects.
 
-3. [Algorithms](https://idiomatic-rust-snippets.org/algorithms/intro.html) section explains various popular algorithms with code samples in Rust. (WIP)
+3. [Algorithms](https://idiomatic-rust-snippets.org/algorithms/intro.html) section explains various popular algorithms with code samples in Rust.
 
 The project follows a minimalistic approach, where almost all pages are short with simple, easy-to-follow code samples. Most samples can run. External documentation is referenced when necessary for extended information.
-
-**Note**: Pages with a **WIP** note haven't been reviewed yet, and the information in those pages may contain incorrect information.
 
 ### How to run the project locally.
 
