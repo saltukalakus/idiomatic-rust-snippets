@@ -9,7 +9,7 @@
     - [Ownership](./essentials/core-concepts/ownership.md)
     - [Borrow](./essentials/core-concepts/borrow.md)
     - [Macros](./essentials/core-concepts/macro.md)
-    - [Concurency](./essentials/core-concepts/concurency.md)
+    - [Concurrency](./essentials/core-concepts/concurrency.md)
     - [Error Handling](./essentials/core-concepts/error-handling.md)
     - [Lifetime](./essentials/core-concepts/lifetime.md)
     - [Modules](./essentials/core-concepts/module.md)

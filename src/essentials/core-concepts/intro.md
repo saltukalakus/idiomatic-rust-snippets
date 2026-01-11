@@ -26,7 +26,7 @@ Traits help defining shared behavior. They are similar to interfaces in other la
 
 Enums in Rust are more powerful than in many other languages because each variant can have associated data. Enums are often used with pattern matching to handle different cases.
 
-### 7. [Concurrency](./concurency.md)
+### 7. [Concurrency](./concurrency.md)
 
 Rust provides powerful concurrency primitives, such as threads and channels, while ensuring memory safety. The ownership and borrowing system helps prevent data races at compile time.
 

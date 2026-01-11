@@ -5,28 +5,23 @@ Concurrency is the mechanism of handling tasks in parallel. This helps use the a
 
 #### Threads
 
-Rust's standard library provides a way to spawn threads using the `std::thread` module. The `thread::spawn` function is used to create a new thread. The || syntax is used to define a [closure](./closure.md), which is an anonymous function that can capture variables from its surrounding scope.
+Rust's standard library provides a way to spawn threads using the `std::thread` module. The `thread::spawn` function is used to create a new thread. The `||` syntax is used to define a [closure](./closure.md), which is an anonymous function that can capture variables from its surrounding scope.
 
 ```rust
 use std::thread;
-
-macro_rules! sleep {
-    ($millis:expr) => {
-        std::thread::sleep(std::time::Duration::from_millis($millis));
-    };
-}
+use std::time::Duration;
 
 fn main() {
     let handle = thread::spawn(|| {
         for i in 1..10 {
             println!("hi number {} from the spawned thread!", i);
-            sleep!(50);
+            thread::sleep(Duration::from_millis(50));
         }
     });
 
     for i in 1..5 {
         println!("hi number {} from the main thread!", i);
-        sleep!(50);
+        thread::sleep(Duration::from_millis(50));
     }
 
     handle.join().unwrap();
@@ -35,6 +30,7 @@ fn main() {
 
 - `||`: This defines a closure with no parameters. If the closure had parameters, they would be listed between the vertical bars.
 - `{ ... }`: This is the body of the closure, which contains the code that will be executed in the new thread.
+- `thread::sleep(Duration)`: Pauses the current thread for the specified duration.
 
 #### Message Passing
 

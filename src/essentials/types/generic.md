@@ -6,23 +6,27 @@ Generics in Rust allow you to write flexible and reusable code by enabling you t
 
 Generic Functions can operate on different types specified at the time of function call.
 
-In the example, the **first** function is defined with a generic type parameter T. This means that T can be any type. The function takes two parameters, x and _y, both of type T. The function returns the first parameter x of type T. In the main function, the first function is called with different types of arguments (integers and strings), demonstrating its flexibility.
+In the example, the **larger** function is defined with a generic type parameter `T`. The type `T` must implement the `PartialOrd` trait (for comparison) and the `Copy` trait (so we can return it by value). The function compares two values and returns the larger one.
 
 ```rust
-fn first<T>(x: T, _y: T) -> T {
-    x
+fn larger<T: PartialOrd + Copy>(x: T, y: T) -> T {
+    if x > y {
+        x
+    } else {
+        y
+    }
 }
 
 fn main() {
     let a = 10;
     let b = 20;
-    let result = first(a, b);
-    println!("The first value is: {}", result);
+    let result = larger(a, b);
+    println!("The larger value is: {}", result);  // Prints: 20
 
-    let c = "hello";
-    let d = "world";
-    let result = first(c, d);
-    println!("The first value is: {}", result);
+    let c = 5.5;
+    let d = 2.3;
+    let result = larger(c, d);
+    println!("The larger value is: {}", result);  // Prints: 5.5
 }
 ```
 
@@ -47,17 +51,24 @@ fn main() {
 
 Enums that can hold variants of different types specified at the time of instantiation.
 
+Here's a custom generic enum similar to the standard library's `Option<T>`:
+
 ```rust
-enum Option<T> {
+#[derive(Debug)]
+enum MyOption<T> {
     Some(T),
     None,
 }
 
 fn main() {
-    let some_number = Option::Some(5);
-    let some_string = Option::Some("a string");
+    let some_number = MyOption::Some(5);
+    let some_string = MyOption::Some("a string");
+    let no_value: MyOption<i32> = MyOption::None;
 
     println!("Some number: {:?}", some_number);
     println!("Some string: {:?}", some_string);
+    println!("No value: {:?}", no_value);
 }
 ```
+
+**Note**: Rust's standard library provides `Option<T>` with the same structure, which is automatically available in every Rust program.

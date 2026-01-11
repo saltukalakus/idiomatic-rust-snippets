@@ -1,6 +1,6 @@
 ### What is a struct?
 
-Structs in Rust are custom data types that allow you to group related data together. They are similar to classes in object-oriented languages but without the associated methods for encapsulation. Structs are used to create complex data types that can be used to model real-world entities.
+Structs in Rust are custom data types that allow you to group related data together. They are similar to classes in object-oriented languages and can have associated methods defined through `impl` blocks. Structs are used to create complex data types that can be used to model real-world entities.
 
 ### Types of Structs
 
