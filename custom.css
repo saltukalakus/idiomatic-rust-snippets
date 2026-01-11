@@ -1,5 +1,10 @@
 /* custom.css */
 
+/* Hide keyboard shortcuts overlay by default */
+#keyboard-shortcuts-help {
+    display: none !important;
+}
+
 /* Increase the size of the GitHub icon */
 .fa-github, #git-repository-button {
     font-size: 2em !important; /* Adjust the size as needed */

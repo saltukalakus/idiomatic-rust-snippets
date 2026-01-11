@@ -53,8 +53,12 @@ jobs:
           key: ${{ runner.os }}-cargo-${{ env.MDBOOK_VERSION }}-${{ env.MDBOOK_METADATA_VERSION }}-v2
       - name: Install mdBook
         run: |
-          cargo install --version ${MDBOOK_VERSION} mdbook
-          cargo install --version ${MDBOOK_METADATA_VERSION} mdbook-metadata
+          if ! command -v mdbook &> /dev/null || [ "$(mdbook --version | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')" != "${MDBOOK_VERSION}" ]; then
+            cargo install --version ${MDBOOK_VERSION} mdbook --force
+          fi
+          if ! command -v mdbook-metadata &> /dev/null || [ "$(mdbook-metadata --version | grep -oE '[0-9]+\.[0-9]+\.[0-9]+')" != "${MDBOOK_METADATA_VERSION}" ]; then
+            cargo install --version ${MDBOOK_METADATA_VERSION} mdbook-metadata --force
+          fi
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5
