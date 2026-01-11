@@ -4,11 +4,11 @@ Rust is known to have a steep learning curve. This book is intended to be beginn
 
 1. [Essentials](./src/essentials/intro.md) covers the basic aspects of the Rust programming language. They are explained with easy to understand examples.
 
-2. [Design Patterns](./src/patterns/intro.md) section demonstrates several design patterns with minimalistic but complete projects. This section is for more advanced developers and design architects.
+2. [Anti Patterns](./src/anti-patterns/intro.md) section explains various non-idiomatic usages that need to be avoided. This is the best section to read for developers who have started building projects with Rust.
 
-3. [Anti Patterns](./src/anti-patterns/intro.md) section explains various non-idiomatic usages that need to be avoided. This is the best section to read for developers who have started building projects with Rust.
+3. [Design Patterns](./src/patterns/intro.md) section demonstrates several design patterns with minimalistic but complete projects. This section is for more advanced developers and design architects.
 
-4. [Algorithms](./src/algorithms/intro.md) section explains various popular algorithms with code samples in Rust. This is the most advanced section of the book so keep it to the last after digesting the first three sections.
+4. [Algorithms](./src/algorithms/intro.md) section explains various popular algorithms with code samples in Rust.
 
 The project follows a minimalistic approach, where almost all pages are short with simple, easy-to-follow code samples. Most samples can run. External documentation is referenced when necessary for extended information.
 
