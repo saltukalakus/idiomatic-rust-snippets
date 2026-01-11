@@ -1,3 +1,15 @@
-### Packing and related topics
+### Packaging
 
-This section contains random information about Cargo and various other bits and pieces on building a Rust project.
+This section contains information about Cargo and various aspects of building and managing Rust projects with proper dependency management.
+
+1- [Modules](./modules.md): How to organize code and call functions from standard library and other modules.
+
+2- [Crates Tag](./crates-tag.md): Keywords to tag your crate for improved discoverability and SEO.
+
+3- [Feature Attribute](./feature-attribute.md): Conditional compilation and optional features in your crate.
+
+4- [Features Compilation](./features-compilation.md): Managing feature flags and compilation settings.
+
+5- [No Std](./no-std.md): Building Rust projects without the standard library for embedded or constrained environments.
+
+6- [Package Names](./package-names.md): Best practices and conventions for naming your Rust packages.
