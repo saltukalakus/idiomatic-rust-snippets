@@ -2,7 +2,7 @@
 
 Creational Patterns deal with object creation mechanisms. In Rust, these patterns often look different from traditional OOP implementations due to ownership, borrowing, and Rust's type system.
 
-**Note**: Some patterns have been renamed to reflect Rust-idiomatic approaches rather than traditional OOP patterns.
+**Note**: Some patterns have been renamed to reflect Rust-idiomatic approaches rather than traditional OOP patterns. Prototype has been removed as it's just the `Clone` trait in Rust.
 
 ### Rust-Adapted Creational Patterns
 
@@ -13,5 +13,3 @@ Creational Patterns deal with object creation mechanisms. In Rust, these pattern
 3- [Abstract Factory](./abstract-factory.md): Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
 
 4- [Builder](./builder.md): Separates the construction of a complex object from its representation. This pattern is very common and idiomatic in Rust.
-
-5- [Prototype](./prototype.md): Creates new objects by copying existing ones. In Rust, this is implemented using the `Clone` trait.
