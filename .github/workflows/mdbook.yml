@@ -37,6 +37,7 @@ jobs:
           echo "MDBOOK_VERSION=$MDBOOK_VERSION" >> $GITHUB_ENV
           echo "MDBOOK_METADATA_VERSION=$MDBOOK_METADATA_VERSION" >> $GITHUB_ENV
           echo "RUST_VERSION=$RUST_VERSION" >> $GITHUB_ENV
+          echo "Loaded versions: mdBook=$MDBOOK_VERSION, metadata=$MDBOOK_METADATA_VERSION, Rust=$RUST_VERSION"
       - name: Install Rust toolchain
         uses: dtolnay/rust-toolchain@stable
         with:
@@ -49,7 +50,7 @@ jobs:
             ~/.cargo/registry/index/
             ~/.cargo/registry/cache/
             ~/.cargo/git/db/
-          key: ${{ runner.os }}-cargo-${{ env.MDBOOK_VERSION }}-${{ env.MDBOOK_METADATA_VERSION }}
+          key: ${{ runner.os }}-cargo-${{ env.MDBOOK_VERSION }}-${{ env.MDBOOK_METADATA_VERSION }}-v2
       - name: Install mdBook
         run: |
           cargo install --version ${MDBOOK_VERSION} mdbook
