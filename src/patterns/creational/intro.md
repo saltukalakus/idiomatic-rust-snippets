@@ -1,15 +1,17 @@
 ### Creational Patterns
 
-Creational Patterns deal with object creation mechanisms, trying to create objects in a manner suitable to the situation.
+Creational Patterns deal with object creation mechanisms. In Rust, these patterns often look different from traditional OOP implementations due to ownership, borrowing, and Rust's type system.
 
-### Some Common Creational Design Patterns
+**Note**: Some patterns have been renamed to reflect Rust-idiomatic approaches rather than traditional OOP patterns.
 
-1- [Singleton](./singleton.md): Ensures a class has only one instance and provides a global point of access to it.
+### Rust-Adapted Creational Patterns
+
+1- [Lazy Initialization](./lazy-initialization.md): **Rust Alternative to Singleton** - Safe global state management using `OnceLock` and `LazyLock` without unsafe code. Rust discourages traditional singletons in favor of dependency injection.
 
 2- [Factory Method](./factory-method.md): Defines an interface for creating an object, but lets subclasses alter the type of objects that will be created.
 
 3- [Abstract Factory](./abstract-factory.md): Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
 
-4- [Builder](./builder.md): Separates the construction of a complex object from its representation so that the same construction process can create different representations.
+4- [Builder](./builder.md): Separates the construction of a complex object from its representation. This pattern is very common and idiomatic in Rust.
 
-5- [Prototype](./prototype.md): Specifies the kinds of objects to create using a prototypical instance, and creates new objects by copying this prototype.
+5- [Prototype](./prototype.md): Creates new objects by copying existing ones. In Rust, this is implemented using the `Clone` trait.

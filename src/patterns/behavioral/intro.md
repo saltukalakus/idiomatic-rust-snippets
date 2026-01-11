@@ -1,19 +1,19 @@
 ### Behavioral Patterns
 
-Behavioral Patterns deal with object collaboration and the delegation of responsibilities. 
+Behavioral Patterns deal with object collaboration and the delegation of responsibilities. In Rust, ownership and borrowing rules significantly influence how these patterns are implemented.
 
-### Some Common Behavioral Design Patterns
+**Note**: Several patterns have been renamed to reflect Rust-idiomatic approaches. Traditional OOP patterns often don't work well or are unnecessary in Rust.
 
-1- [Observer](./observer.md): Defines a one-to-many dependency between objects so that when one object changes state, all its dependents are notified and updated automatically.
+### Rust-Adapted Behavioral Patterns
 
-2- [Strategy](./strategy.md): Defines a family of algorithms, encapsulates each one, and makes them interchangeable.
+1- [Message Passing](./message-passing.md): **Rust Alternative to Observer** - Uses channels for pub-sub communication instead of traditional observer callbacks. This approach avoids ownership conflicts and is thread-safe by default.
 
-3- [Command](./command.md): Encapsulates a request as an object, thereby allowing for parameterization of clients with queues, requests, and operations.
+2- [Strategy](./strategy.md): Defines a family of algorithms, encapsulates each one, and makes them interchangeable. Works well in Rust using traits.
+
+3- [Command](./command.md): Encapsulates a request as an object. In Rust, closures and function pointers often provide simpler alternatives.
 
 4- [Chain of Responsibility](./chain-of-responsibility.md): Allows an object to pass a request along a chain of potential handlers until the request is handled.
 
-5- [Iterator](./iterator.md): Provides a way to access the elements of an aggregate object sequentially without exposing its underlying representation. 
+5- [Mediator](./mediator.md): Defines an object that encapsulates how a set of objects interact.
 
-6- [Mediator](./mediator.md): Defines an object that encapsulates how a set of objects interact.
-
-5- [Visitor](./visitor.md):  Allows adding further operations to objects without having to modify them.
+6- [Enum Polymorphism](./enum-polymorphism.md): **Rust Alternative to Visitor** - Uses enums with pattern matching instead of the traditional visitor pattern. This provides exhaustive checking and better performance.

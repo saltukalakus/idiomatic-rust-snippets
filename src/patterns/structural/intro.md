@@ -1,19 +1,21 @@
 ### Structural Patterns
 
-Structural Patterns deal with object composition, trying to realize new functionality by composing objects in various ways.
+Structural Patterns deal with object composition and relationships between entities. Rust's ownership system and trait-based polymorphism influence how these patterns are implemented.
 
-### Some Common Structural Design Patterns
+**Note**: Some patterns have been renamed to emphasize Rust-idiomatic approaches over traditional OOP implementations.
 
-1- [Adapter](./adapter.md): Allows objects with incompatible interfaces to work together by wrapping their own interface around that of an already existing class.
+### Rust-Adapted Structural Patterns
+
+1- [Adapter](./adapter.md): Allows objects with incompatible interfaces to work together. In Rust, this often uses trait implementations and newtype patterns.
 
 2- [Bridge](./bridge.md): Decouples an abstraction from its implementation so that the two can vary independently.
 
-3- [Composite](./composite.md): Composes objects into tree structures to represent part-whole hierarchies, allowing clients to treat individual objects and compositions uniformly.
+3- [Composite](./composite.md): Composes objects into tree structures. In Rust, enums are often more idiomatic than trait objects for tree-like structures.
 
-4- [Decorator](./decorator.md): Adds additional responsibilities to an object dynamically, providing a flexible alternative to subclassing for extending functionality.
+4- [Builder Pattern](./builder-pattern.md): **Rust's Idiomatic Alternative to Decorator** - Uses method chaining for zero-cost composition. Traditional decorator with trait objects works but adds heap allocation overhead.
 
 5- [Facade](./facade.md): Provides a simplified interface to a complex subsystem, making it easier to use.
 
-6- [Flyweight](./flyweight.md): Reduces the cost of creating and manipulating a large number of similar objects by sharing as much data as possible.
+6- [Flyweight](./flyweight.md): Reduces the cost of creating and manipulating similar objects by sharing data. Rust's `Arc` and `Cow` types facilitate this.
 
 7- [Proxy](./proxy.md): Provides a surrogate or placeholder for another object to control access to it.
