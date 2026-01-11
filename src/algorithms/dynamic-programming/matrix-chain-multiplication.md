@@ -1,23 +1,8 @@
-### Matrix Chain Multiplication (WIP)
+### Matrix Chain Multiplication
 
-Matrix Chain Multiplication is a classic example of dynamic programming. The goal is to find the most efficient way to multiply a given sequence of matrices. The problem is not to perform the multiplications but to decide the order in which to perform the multiplications.
+Matrix Chain Multiplication is a classic dynamic programming problem that determines the most efficient way to multiply a sequence of matrices. The goal is not to perform the actual multiplications, but to find the order that minimizes the total number of scalar multiplications. For example, with matrices of dimensions 10x30, 30x5, and 5x60, different parenthesizations result in different numbers of operations.
 
-### Problem Explanation
-
-Given a sequence of matrices, the task is to find the most efficient way to multiply these matrices together. The efficiency is measured in terms of the number of scalar multiplications needed.
-
-For example, if you have matrices A, B, and C of dimensions 10x30, 30x5, and 5x60 respectively, you need to determine the order of multiplication that minimizes the total number of scalar multiplications.
-
-### Dynamic Programming Solution
-
-The dynamic programming approach involves breaking the problem into smaller subproblems and solving each subproblem only once, storing the results for future use.
-
-### Steps:
-
-1. Define the cost of multiplying matrices from index `i` to `j` as `m[i][j]`.
-2. Initialize the cost of multiplying one matrix as zero, i.e., `m[i][i] = 0`.
-3. Use a nested loop to calculate the minimum cost for chains of increasing length.
-4. Store the results in a table and use them to build up the solution for the entire chain.
+The algorithm builds a table `m` where `m[i][j]` represents the minimum cost of multiplying matrices from index `i` to `j`. It considers all possible split points to find the optimal parenthesization.
 
 ```rust
 fn matrix_chain_order(p: &[usize]) -> Vec<Vec<usize>> {
@@ -47,8 +32,10 @@ fn main() {
 }
 ```
 
-- `p` is an array where the `i`-th matrix has dimensions `p[i-1] x p[i]`.
-- `m[i][j]` stores the minimum number of scalar multiplications needed to compute the matrix `A[i]A[i+1]...A[j]`.
-- The nested loops calculate the minimum cost for multiplying matrices from `i` to `j` by trying all possible positions to split the product.
-
-This implementation efficiently computes the minimum number of multiplications needed to multiply the given sequence of matrices.
+- The function takes an array `p` where the `i`-th matrix has dimensions `p[i-1] x p[i]`. For example, `[10, 30, 5, 60]` represents three matrices: 10×30, 30×5, and 5×60.
+- A 2D vector `m` is initialized with zeros, where `m[i][j]` will store the minimum number of scalar multiplications needed to compute matrices from `i` to `j`.
+- The outer loop `l` iterates over chain lengths from 2 to `n` (number of matrices).
+- For each chain length, the algorithm tries all possible split points `k` between `i` and `j`.
+- For each split point, it calculates the cost: `m[i][k] + m[k+1][j] + p[i] * p[k+1] * p[j+1]`, representing the cost of two sub-chains plus the cost of multiplying the results.
+- The minimum cost among all split points is stored in `m[i][j]`.
+- The `main` function demonstrates finding the minimum multiplications for three matrices (10×30, 30×5, 5×60), which is 4500.

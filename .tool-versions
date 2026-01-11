@@ -1,0 +1,5 @@
+# Tool versions for the project
+# This file is used by both Makefile and GitHub Actions workflow
+MDBOOK_VERSION=0.4.52
+MDBOOK_METADATA_VERSION=0.1.1
+RUST_VERSION=1.87.0

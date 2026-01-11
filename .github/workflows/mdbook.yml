@@ -28,16 +28,32 @@ jobs:
   # Build job
   build:
     runs-on: ubuntu-latest
-    env:
-      MDBOOK_VERSION: 0.4.36
     steps:
       - uses: actions/checkout@v4
+      - name: Load tool versions
+        id: versions
+        run: |
+          source .tool-versions
+          echo "MDBOOK_VERSION=$MDBOOK_VERSION" >> $GITHUB_ENV
+          echo "MDBOOK_METADATA_VERSION=$MDBOOK_METADATA_VERSION" >> $GITHUB_ENV
+          echo "RUST_VERSION=$RUST_VERSION" >> $GITHUB_ENV
+      - name: Install Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
+        with:
+          toolchain: ${{ env.RUST_VERSION }}
+      - name: Cache cargo installations
+        uses: actions/cache@v4
+        with:
+          path: |
+            ~/.cargo/bin/
+            ~/.cargo/registry/index/
+            ~/.cargo/registry/cache/
+            ~/.cargo/git/db/
+          key: ${{ runner.os }}-cargo-${{ env.MDBOOK_VERSION }}-${{ env.MDBOOK_METADATA_VERSION }}
       - name: Install mdBook
         run: |
-          curl --proto '=https' --tlsv1.2 https://sh.rustup.rs -sSf -y | sh
-          rustup update
           cargo install --version ${MDBOOK_VERSION} mdbook
-          cargo install mdbook-metadata
+          cargo install --version ${MDBOOK_METADATA_VERSION} mdbook-metadata
       - name: Setup Pages
         id: pages
         uses: actions/configure-pages@v5

@@ -1,6 +1,6 @@
-### Dynamic Programming Algorithms (WIP)
+### Dynamic Programming Algorithms
 
-Dynamic programming is a method for solving complex problems by breaking them down into simpler subproblems. It is applicable when the problem can be divided into overlapping subproblems which can be solved independently. The solutions to these subproblems are stored to avoid redundant computations, making the overall algorithm more efficient.
+Dynamic programming is a method for solving complex problems by breaking them down into simpler subproblems. It is applicable when the problem has overlapping subproblems that can be solved independently. The solutions are stored (memoized) to avoid redundant computations, making the algorithm more efficient.
 
 1- [Knapsack Problem](./knapsack-problem.md): This problem involves selecting a subset of items with given weights and values to maximize the total value without exceeding a specified weight limit.
 

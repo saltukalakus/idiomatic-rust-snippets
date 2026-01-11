@@ -1,25 +1,21 @@
-### Bcrypt Algorithm (WIP)
+### Bcrypt Algorithm
 
-Bcrypt is a password hashing function designed to be computationally expensive to resist brute-force attacks. 
+Bcrypt is a password hashing function designed to be computationally expensive, which helps protect against brute-force attacks. It incorporates a salt to defend against rainbow table attacks and has an adjustable cost factor to remain resistant as hardware improves. 
 
 ```rust
-extern crate rand;
-use rand::{thread_rng, Rng};
-use rand::distributions::Alphanumeric;
 use std::time::{SystemTime, UNIX_EPOCH};
-use std::convert::TryInto;
 
 const BCRYPT_COST: u32 = 12;
-const BCRYPT_SALT_LEN: usize = 16;
 const BCRYPT_HASH_LEN: usize = 24;
 
 fn generate_salt() -> String {
-    let salt: String = thread_rng()
-        .sample_iter(&Alphanumeric)
-        .take(BCRYPT_SALT_LEN)
-        .map(char::from)
-        .collect();
-    salt
+    // Generate a simple salt based on timestamp for demonstration
+    let timestamp = SystemTime::now()
+        .duration_since(UNIX_EPOCH)
+        .unwrap()
+        .as_nanos();
+    
+    format!("{:016x}", timestamp % (1u128 << 64))
 }
 
 fn bcrypt_hash(password: &str, salt: &str) -> String {
@@ -30,10 +26,16 @@ fn bcrypt_hash(password: &str, salt: &str) -> String {
 
     // Simulate bcrypt hashing (this is a simplified version)
     for i in 0..BCRYPT_HASH_LEN {
-        hash[i] = password_bytes[i % password_bytes.len()] ^ salt_bytes[i % salt_bytes.len()] ^ (cost as u8);
+        hash[i] = password_bytes[i % password_bytes.len()] 
+                ^ salt_bytes[i % salt_bytes.len()] 
+                ^ (cost as u8)
+                ^ ((i * 7) as u8); // Add some variation
     }
 
-    base64::encode(&hash)
+    // Simple base64-like encoding
+    hash.iter()
+        .map(|&b| format!("{:02x}", b))
+        .collect::<String>()
 }
 
 fn main() {
@@ -44,9 +46,21 @@ fn main() {
     println!("Password: {}", password);
     println!("Salt: {}", salt);
     println!("Hashed Password: {}", hashed_password);
+    
+    // Verify that same password with same salt produces same hash
+    let verify_hash = bcrypt_hash(password, &salt);
+    assert_eq!(hashed_password, verify_hash);
+    println!("Hash verification successful!");
 }
 ```
 
-A random salt of length 16 is generated using the `rand` crate. The `bcrypt_hash` function simulates the bcrypt hashing process. It combines the password, salt, and cost to produce a hashed password.
-
-Note: This is a simplified version of the bcrypt algorithm for educational purposes. In a real-world application, you should use a well-tested library like `bcrypt` crate for password hashing.
+- The `BCRYPT_COST` constant determines the computational complexity; higher cost means more iterations and slower hashing.
+- The `generate_salt` function creates a salt using a timestamp for demonstration; real implementations use cryptographically secure random number generators.
+- The `bcrypt_hash` function simulates the bcrypt hashing process by combining the password, salt, and cost factor.
+- This simplified implementation XORs password bytes with salt bytes and the cost value, plus some variation, for demonstration purposes.
+- The resulting hash is hex-encoded (a simplified version of base64 encoding) for display.
+- The `main` function demonstrates generating a salt, hashing a password, and verifying that the same input produces the same hash.
+- **Important**: This is a highly simplified educational example and should NOT be used in production.
+- Real bcrypt uses the Blowfish cipher with a key-stretching technique that iterates 2^cost times.
+- For production applications, always use well-tested libraries like the `bcrypt` crate, which properly implements the algorithm with all security considerations.
+- Proper bcrypt implementations also encode the cost and salt into the hash output for verification purposes.

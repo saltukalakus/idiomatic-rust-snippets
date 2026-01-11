@@ -1,25 +1,30 @@
-### RSA Algorithm (WIP)
+### RSA Algorithm
 
-RSA (Rivest-Shamir-Adleman) is a widely used public-key cryptosystem for secure data transmission. It is based on the mathematical difficulty of factoring the product of two large prime numbers.
+RSA (Rivest-Shamir-Adleman) is a widely used public-key cryptosystem for secure data transmission. Its security is based on the mathematical difficulty of factoring the product of two large prime numbers.
+
+**Note**: This example requires external crates. Add to your `Cargo.toml`:
+```toml
+[dependencies]
+num-bigint = "0.4"
+num-traits = "0.2"
+```
 
 ### How RSA Works
 
-1. **Key Generation**:
-    - Choose two distinct large random prime numbers `p` and `q`.
-    - Compute `n = p * q`. `n` is used as the modulus for both the public and private keys.
-    - Compute the totient function `φ(n) = (p-1) * (q-1)`.
-    - Choose an integer `e` such that `1 < e < φ(n)` and `e` is coprime with `φ(n)`. `e` is the public exponent.
-    - Determine `d` as `d ≡ e^(-1) (mod φ(n))`. `d` is the private exponent.
+**Key Generation:**
+- Choose two distinct large random prime numbers `p` and `q`.
+- Compute `n = p * q`. `n` is used as the modulus for both the public and private keys.
+- Compute the totient function `φ(n) = (p-1) * (q-1)`.
+- Choose an integer `e` such that `1 < e < φ(n)` and `e` is coprime with `φ(n)`. `e` is the public exponent.
+- Determine `d` as `d ≡ e^(-1) (mod φ(n))`. `d` is the private exponent.
 
-2. **Encryption**:
-    - The public key is `(e, n)`.
-    - The plaintext message `m` is encrypted to ciphertext `c` using the formula: `c ≡ m^e (mod n)`.
+**Encryption:**
+- The public key is `(e, n)`.
+- The plaintext message `m` is encrypted to ciphertext `c` using the formula: `c ≡ m^e (mod n)`.
 
-3. **Decryption**:
-    - The private key is `(d, n)`.
-    - The ciphertext `c` is decrypted back to plaintext `m` using the formula: `m ≡ c^d (mod n)`.
-
-Below is a simple example of RSA encryption and decryption in Rust:
+**Decryption:**
+- The private key is `(d, n)`.
+- The ciphertext `c` is decrypted back to plaintext `m` using the formula: `m ≡ c^d (mod n)`.
 
 ```rust
 extern crate num_bigint as bigint;
@@ -87,4 +92,11 @@ fn extended_gcd(a: &BigInt, b: &BigInt) -> (BigInt, BigInt, BigInt) {
 }
 ```
 
-This example demonstrates the basic steps of RSA key generation, encryption, and decryption. Note that in a real-world application, you should use much larger prime numbers and a cryptographic library for secure key generation and operations.
+- This example uses the `num_bigint` crate for arbitrary-precision arithmetic to handle large numbers in RSA operations.
+- Two small prime numbers (61 and 53) are used for demonstration; real-world implementations require much larger primes (typically 1024-4096 bits).
+- The public exponent `e` is commonly chosen as 17 or 65537 for efficiency and security.
+- The `mod_exp` function uses modular exponentiation (`modpow`) for efficient computation of large powers modulo n.
+- The `mod_inverse` function computes the multiplicative inverse of e modulo φ(n) using the extended Euclidean algorithm.
+- The `extended_gcd` function implements the extended Euclidean algorithm to find coefficients for the Bézout's identity.
+- The example encrypts the message 42 and successfully decrypts it back to the original value.
+- In production, use well-tested cryptographic libraries like `rsa` or `openssl` crates instead of implementing RSA from scratch.

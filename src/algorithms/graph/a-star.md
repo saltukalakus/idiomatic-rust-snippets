@@ -1,13 +1,9 @@
-### A* Pathfinding Algorithm (WIP)
+### A* Pathfinding Algorithm
 
-The A* (A-star) algorithm is a popular pathfinding and graph traversal algorithm. It is widely used in various applications, such as in games for NPC movement, in robotics for navigation, and in geographic information systems for route planning.
+The A* (A-star) algorithm is a popular pathfinding and graph traversal algorithm. It is widely used in various applications, such as in games for NPC movement, in robotics for navigation, and in geographic information systems for route planning. A* combines the strengths of Dijkstra's Algorithm and Greedy Best-First-Search by using a heuristic to guide its search efficiently.
 
-### How A* Algorithm Works
-
-A* algorithm combines the strengths of Dijkstra's Algorithm and Greedy Best-First-Search. It uses a heuristic to guide its search and find the shortest path efficiently.
-
-The algorithm maintains two lists:
-- **Open List**: Nodes that need to be evaluated.
+A* algorithm maintains two lists:
+- **Open List**: Nodes that need to be evaluated (implemented as a priority queue).
 - **Closed List**: Nodes that have already been evaluated.
 
 The algorithm follows these steps:
@@ -23,10 +19,8 @@ The algorithm follows these steps:
 
 Where:
 - `g` is the cost from the start node to the current node.
-- `h` is the heuristic estimate of the cost from the current node to the goal.
-- `f` is the sum of `g` and `h`.
-
-Below is a simple implementation of the A* algorithm in Rust:
+- `h` is the heuristic estimate of the cost from the current node to the goal (using Manhattan distance in this example).
+- `f` is the sum of `g` and `h`, representing the estimated total cost.
 
 ```rust
 use std::collections::{BinaryHeap, HashMap};
@@ -130,4 +124,9 @@ fn main() {
 }
 ```
 
-This example demonstrates a simple A* pathfinding algorithm in Rust. The `a_star` function takes the start and goal positions, as well as a list of obstacles, and returns the shortest path if one exists.
+- The `Node` struct represents a position in the search space with `g` (cost from start) and `h` (heuristic estimate to goal) values. It implements `Ord` to enable the binary heap to work as a min-heap based on `f` values.
+- The `heuristic` function calculates the Manhattan distance between two points, which is admissible for grid-based pathfinding.
+- The `a_star` function implements the A* algorithm using a binary heap as the open list and a hash map as the closed list.
+- The algorithm explores neighbors in four directions (up, down, left, right), avoiding obstacles and already-evaluated nodes.
+- When the goal is reached, the path is reconstructed by backtracking through the `came_from` map.
+- The `main` function demonstrates finding a path from (0,0) to (4,4) while avoiding obstacles at (1,1), (2,2), and (3,3).

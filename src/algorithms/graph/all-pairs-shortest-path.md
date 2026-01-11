@@ -1,12 +1,8 @@
-### All Pairs Shortest Path Algorithm (WIP)
-
-The All Pairs Shortest Path (APSP) algorithm is used to find the shortest paths between all pairs of nodes in a graph. One of the most common algorithms to solve this problem is the Floyd-Warshall algorithm.
-
 ### Floyd-Warshall Algorithm
 
-The Floyd-Warshall algorithm works by iteratively improving the shortest path estimates between all pairs of nodes. It uses a dynamic programming approach to build up the shortest paths by considering each node as an intermediate point.
+The All Pairs Shortest Path (APSP) algorithm is used to find the shortest paths between all pairs of nodes in a graph. The Floyd-Warshall algorithm is one of the most efficient algorithms to solve this problem using dynamic programming.
 
-### Steps of the Algorithm
+The Floyd-Warshall algorithm uses dynamic programming to build up the shortest paths by considering each node as an intermediate point. The algorithm follows these steps:
 
 1. **Initialization**: Create a distance matrix `dist` where `dist[i][j]` represents the shortest distance from node `i` to node `j`. Initialize `dist[i][j]` to the weight of the edge from `i` to `j` if it exists, otherwise set it to infinity. Set `dist[i][i]` to 0 for all nodes `i`.
 
@@ -58,6 +54,8 @@ fn main() {
 }
 ```
 
-- **Initialization**: The `graph` is represented as an adjacency matrix where `graph[i][j]` is the weight of the edge from node `i` to node `j`. If there is no edge, it is set to `INF`.
-- **Iterative Update**: The nested loops update the distance matrix by considering each node as an intermediate point.
-- **Result**: The final distance matrix `shortest_paths` contains the shortest distances between all pairs of nodes.
+- The graph is represented as an adjacency matrix where `graph[i][j]` is the weight of the edge from node `i` to node `j`. If there is no edge, it is set to `INF` (a large value representing infinity).
+- The `floyd_warshall` function implements the algorithm using three nested loops to consider each node as an intermediate point.
+- For each pair of nodes `(i, j)`, the algorithm checks if going through node `k` provides a shorter path than the current known path.
+- The algorithm has a time complexity of O(n³), making it efficient for small to medium-sized dense graphs.
+- The `main` function creates a sample directed weighted graph with 4 nodes and runs the algorithm, printing the shortest distances between all pairs of nodes.

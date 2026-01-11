@@ -14,11 +14,30 @@ The project follows a minimalistic approach, where almost all pages are short wi
 
 ### How to run the project locally.
 
+This project uses Rust 1.87.0. The `rust-toolchain.toml` file ensures the correct version is used automatically when you run cargo commands.
+
+**Using Make (recommended):**
 ```
 git clone https://github.com/saltukalakus/idiomatic-rust-snippets
 cd idiomatic-rust-snippets
-cargo install mdbook
-cargo install mdbook-metadata
+make all        # Check Rust version, install dependencies and build
+make serve      # Serve the book locally
+```
+***Available Make commands:***
+- `make check-rust` - Verify Rust toolchain version
+- `make install` - Install mdbook and mdbook-metadata
+- `make build` - Build the book
+- `make serve` - Build and serve the book locally
+- `make clean` - Clean build artifacts
+- `make all` - Check Rust, install dependencies and build
+
+**Manual installation:**
+```
+git clone https://github.com/saltukalakus/idiomatic-rust-snippets
+cd idiomatic-rust-snippets
+rustup install 1.87.0  # Install the correct Rust version (optional, rust-toolchain.toml handles this)
+cargo install mdbook --version 0.4.52
+cargo install mdbook-metadata --version 0.1.1
 mdbook build
 mdbook serve
 ```

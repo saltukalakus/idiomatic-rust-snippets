@@ -1,20 +1,8 @@
-### Knapsack Problem (WIP)
+### Knapsack Problem
 
-The Knapsack Problem is a classic dynamic programming problem. Given a set of items, each with a weight and a value, determine the number of each item to include in a collection so that the total weight is less than or equal to a given limit and the total value is as large as possible.
+The Knapsack Problem is a classic dynamic programming problem. Given a set of items, each with a weight and a value, the goal is to select items to maximize the total value while keeping the total weight within a given limit.
 
-### Problem Statement
-
-You are given weights and values of `n` items, put these items in a knapsack of capacity `W` to get the maximum total value in the knapsack. 
-
-### Dynamic Programming Approach
-
-We can solve this problem using dynamic programming by creating a 2D array `dp` where `dp[i][w]` represents the maximum value that can be obtained with the first `i` items and a knapsack capacity of `w`.
-
-### Steps
-
-1. Initialize a 2D array `dp` with dimensions `(n+1) x (W+1)` where `n` is the number of items and `W` is the maximum capacity of the knapsack.
-2. Iterate through each item and each capacity, updating the `dp` array based on whether the current item is included or excluded.
-3. The value at `dp[n][W]` will be the maximum value that can be obtained with the given items and knapsack capacity.
+The solution uses a 2D array `dp` where `dp[i][w]` represents the maximum value achievable with the first `i` items and a knapsack capacity of `w`. For each item, we decide whether to include it or exclude it based on which choice yields a higher value.
 
 ```rust
 fn knapsack(weights: &[usize], values: &[usize], capacity: usize) -> usize {
@@ -43,9 +31,9 @@ fn main() {
 }
 ```
 
-- `weights` and `values` are arrays representing the weights and values of the items.
-- `capacity` is the maximum weight the knapsack can hold.
-- The `knapsack` function initializes the `dp` array and iterates through each item and capacity to fill the `dp` array.
-- The `main` function demonstrates how to use the `knapsack` function with a sample input.
-
-This implementation ensures that we find the maximum value that can be obtained without exceeding the knapsack's capacity.
+- The `knapsack` function takes slices of weights and values, plus the knapsack capacity.
+- A 2D vector `dp` with dimensions `(n+1) x (capacity+1)` is initialized with zeros.
+- For each item `i` and capacity `w`, the algorithm decides: if the item's weight fits (`weights[i-1] <= w`), choose the maximum between including the item (`dp[i-1][w-weights[i-1]] + values[i-1]`) or excluding it (`dp[i-1][w]`).
+- If the item doesn't fit, carry forward the previous best value (`dp[i-1][w]`).
+- The value at `dp[n][capacity]` contains the maximum achievable value.
+- The `main` function demonstrates the algorithm with 4 items and a capacity of 7, printing the maximum value of 9.

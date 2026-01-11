@@ -1,6 +1,8 @@
-### Cryptographic Algorithms (WIP)
+### Cryptographic Algorithms
 
 Cryptographic algorithms are methods used to secure data through encryption, hashing, and key exchange techniques. They ensure the confidentiality, integrity, and authenticity of information in digital communications.
+
+This directory contains simplified educational implementations that are runnable and demonstrate core concepts. For production use, always use well-tested cryptographic libraries.
 
 1- [RSA (Asymmetric Encryption)](./rsa.md): RSA is a public-key encryption algorithm that uses two keys, one for encryption and one for decryption. It is widely used for secure data transmission.
 

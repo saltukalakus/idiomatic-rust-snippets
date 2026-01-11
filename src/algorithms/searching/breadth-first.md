@@ -1,6 +1,6 @@
-### Breadth-First Search (BFS) Algorithm (WIP)
+### Breadth-First Search (BFS) Algorithm
 
-Breadth-First Search (BFS) is an algorithm for traversing or searching tree or graph data structures. It starts at the tree root (or an arbitrary node of a graph) and explores the neighbor nodes at the present depth prior to moving on to nodes at the next depth level.
+Breadth-First Search (BFS) is an algorithm for traversing or searching tree or graph data structures. It starts at the tree root (or an arbitrary node of a graph) and explores all neighbor nodes at the present depth before moving on to nodes at the next depth level.
 
 ```rust
 use std::collections::{HashMap, VecDeque};
@@ -40,7 +40,9 @@ fn main() {
 }
 ```
 
-1. **Graph Representation**: The graph is represented using a `HashMap` where each key is a node, and the value is a vector of its neighbors.
-2. **BFS Function**: The `bfs` function takes a reference to the graph and a starting node. It uses a `VecDeque` as a queue to manage the nodes to be explored.
-3. **Traversal**: The function iterates over the queue, marking nodes as visited and adding their neighbors to the queue if they haven't been visited yet.
-4. **Main Function**: The `main` function initializes the graph, calls the `bfs` function, and prints the result of the BFS traversal.
+- The graph is represented using a `HashMap` where each key is a node, and the value is a vector of its neighbors.
+- The `bfs` function takes a reference to the graph and a starting node, returning a vector of visited nodes in BFS order.
+- A `VecDeque` is used as a queue to manage the nodes to be explored, following the First-In-First-Out (FIFO) principle essential for BFS.
+- The function iterates over the queue, checking if each node has been visited. If not, it marks the node as visited and adds all its unvisited neighbors to the queue.
+- The algorithm ensures each node is visited exactly once, processing nodes level by level from the starting node.
+- The `main` function initializes a sample graph with 7 nodes, calls the `bfs` function starting from node 1, and prints the BFS traversal order.

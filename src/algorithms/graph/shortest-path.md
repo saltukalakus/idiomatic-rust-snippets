@@ -1,9 +1,9 @@
-### Shortest Path Graph (Dijkstra's) Algorithm (WIP)
+### Shortest Path Graph (Dijkstra's) Algorithm
 
-The shortest path algorithm is used to find the shortest path between nodes in a graph. One of the most common algorithms for this purpose is Dijkstra's algorithm. 
+Dijkstra's algorithm is used to find the shortest path between nodes in a graph. It works by maintaining a set of unvisited nodes and iteratively selecting the node with the smallest tentative distance, updating the distances to its neighbors, and marking it as visited. 
 
 ```rust
-use std::collections::{BinaryHeap, HashMap};
+use std::collections::BinaryHeap;
 use std::cmp::Ordering;
 
 #[derive(Debug, Clone, Eq, PartialEq)]
@@ -60,9 +60,9 @@ fn dijkstra(adj_list: &Vec<Vec<Edge>>, start: usize) -> Vec<usize> {
 
             // If so, add it to the frontier and continue
             if next.cost < dist[next.position] {
-                heap.push(next);
                 // Relaxation, we have now found a better way
                 dist[next.position] = next.cost;
+                heap.push(next);
             }
         }
     }
@@ -90,7 +90,9 @@ fn main() {
 }
 ```
 
-1. **Graph Representation**: The graph is represented as an adjacency list where each node has a list of edges. Each edge has a target node and a cost.
-2. **State Struct**: The `State` struct keeps track of the current position and the cost to reach that position.
-3. **Priority Queue**: A binary heap is used as a priority queue to always expand the least costly node first.
-4. **Dijkstra's Algorithm**: The algorithm initializes the distance to the start node as 0 and all other distances as infinity. It then iteratively explores the graph, updating the shortest path to each node.
+- The graph is represented as an adjacency list where each node has a list of edges. Each edge has a target node and a cost.
+- The `State` struct keeps track of the current position and the cost to reach that position. It implements `Ord` and `PartialOrd` to enable the binary heap to function as a min-heap.
+- A `BinaryHeap` is used as a priority queue to always expand the least costly node first.
+- The `dijkstra` function initializes the distance to the start node as 0 and all other distances as `usize::MAX` (infinity).
+- The algorithm iteratively explores the graph, updating the shortest path to each node using edge relaxation.
+- The `main` function creates a sample graph, runs Dijkstra's algorithm from node 0, and prints the shortest distances to all other nodes.
