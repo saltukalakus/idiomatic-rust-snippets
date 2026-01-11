@@ -20,6 +20,8 @@ Your support helps keep the project active and motivates continued development.
 
 **Contributions are welcome!** If you'd like to improve existing content, add new examples, or fix issues, feel free to open a [pull request](https://github.com/saltukalakus/idiomatic-rust-snippets/pulls). All contributions are appreciated and help make this resource better for everyone.
 
+---
+
 ### How to run the project locally.
 
 This project uses Rust 1.87.0. The `rust-toolchain.toml` file ensures the correct version is used automatically when you run cargo commands.
@@ -49,5 +51,3 @@ cargo install mdbook-metadata --version 0.1.1
 mdbook build
 mdbook serve
 ```
-
-Last but not least, please like ⭐️⭐️⭐️ [the project](https://github.com/saltukalakus/idiomatic-rust-snippets) on Github if you find it useful. This is a great motivation to keep the project active.
