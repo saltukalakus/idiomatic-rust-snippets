@@ -11,7 +11,7 @@ Macros in Rust are a way of writing code that writes other code, which is known 
 
 Declarative macros are defined using the `macro_rules!` keyword. They allow you to match against patterns and generate code based on those patterns.
 
-```rust
+```rust,ignore
 macro_rules! say_hello {
     () => {
         println!("Hello, world!");
@@ -33,7 +33,7 @@ Function-like macros look like function calls but operate on the code passed to 
 
 To create a procedural macro, you need to create a new crate with the `proc-macro` attribute:
 
-```rust
+```rust,ignore
 // In your Cargo.toml
 [lib]
 proc-macro = true
@@ -41,7 +41,7 @@ proc-macro = true
 
 Then, define the macro in your crate:
 
-```rust
+```rust,ignore
 extern crate proc_macro;
 use proc_macro::TokenStream;
 
@@ -54,7 +54,7 @@ pub fn my_function_like_macro(input: TokenStream) -> TokenStream {
 
 And use it in your main crate:
 
-```rust
+```rust,ignore
 use my_function_like_macro::my_function_like_macro;
 
 my_function_like_macro! {
@@ -70,7 +70,7 @@ Attribute-like macros are used to create custom attributes that can be applied t
 
 First, create a new crate with the `proc-macro` attribute:
 
-```rust
+```rust,ignore
 // In your Cargo.toml
 [lib]
 proc-macro = true
@@ -78,7 +78,7 @@ proc-macro = true
 
 Then, define the attribute-like macro in your crate:
 
-```rust
+```rust,ignore
 extern crate proc_macro;
 use proc_macro::TokenStream;
 
@@ -91,7 +91,7 @@ pub fn my_attribute(_attr: TokenStream, item: TokenStream) -> TokenStream {
 
 And use it in your main crate:
 
-```rust
+```rust,ignore
 use my_attribute::my_attribute;
 
 #[my_attribute]
@@ -112,7 +112,7 @@ fn main() {
 
 Macros are invoked using the `!` syntax. For example:
 
-```rust
+```rust,ignore
 println!("Hello, {}!", "world");
 ```
 

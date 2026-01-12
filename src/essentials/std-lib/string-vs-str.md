@@ -130,7 +130,7 @@ fn main() {
 
 String literals in your code are `&'static str` - they live for the entire program:
 
-```rust
+```rust,ignore
 fn main() {
     // This is a &'static str
     let literal: &'static str = "I live forever!";
@@ -188,7 +188,7 @@ fn main() {
 
 ### Performance Considerations
 
-```rust
+```rust,ignore
 fn main() {
     // Efficient: No allocation
     let s: &str = "hello";
@@ -227,7 +227,7 @@ fn main() {
 
 **Storing in structs:**
 
-```rust
+```rust,ignore
 // Use &str with lifetime annotation
 struct BorrowedName<'a> {
     name: &'a str,

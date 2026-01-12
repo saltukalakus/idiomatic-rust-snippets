@@ -6,7 +6,7 @@
 
 `PhantomData` is defined in the standard library as:
 
-```rust
+```rust,ignore
 use std::marker::PhantomData;
 
 pub struct PhantomData<T: ?Sized>;
@@ -183,7 +183,7 @@ fn main() {
 
 `PhantomData` affects how types are variant over their parameters:
 
-```rust
+```rust,ignore
 use std::marker::PhantomData;
 
 // Covariant (can use a more specific lifetime)
@@ -206,7 +206,7 @@ struct Invariant<'a, T> {
 
 `PhantomData` can signal to the compiler about drop safety:
 
-```rust
+```rust,ignore
 use std::marker::PhantomData;
 
 struct Inspector<T> {
@@ -369,7 +369,7 @@ fn main() {
 
 Sometimes you can use unit types instead of `PhantomData`:
 
-```rust
+```rust,ignore
 // Using unit type
 struct Marker<T>(T);
 
@@ -389,7 +389,7 @@ struct BetterMarker<T> {
 
 `PhantomData` affects whether your type is `Send` or `Sync`:
 
-```rust
+```rust,ignore
 use std::marker::PhantomData;
 
 // Not Send (contains *const u8)

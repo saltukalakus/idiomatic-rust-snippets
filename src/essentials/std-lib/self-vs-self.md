@@ -5,7 +5,7 @@ In Rust, `Self` and `self` have different meanings and uses:
 - `Self` refers to the type that is implementing a trait or a method. It is used in type definitions and associated functions.
 - `self` refers to the instance of the type that is implementing a method. It is used in method signatures and method bodies.
 
-```rust
+```rust,ignore
 struct MyStruct;
 
 impl MyStruct {

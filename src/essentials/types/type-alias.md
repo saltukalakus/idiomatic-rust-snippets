@@ -46,7 +46,8 @@ Type aliases are particularly useful for complex types, such as function pointer
 type Thunk = Box<dyn Fn() + Send + 'static>;
 
 fn takes_long_type(f: Thunk) {
-    // Do something with the function
+    // Execute the function
+    f();
 }
 
 fn returns_long_type() -> Thunk {

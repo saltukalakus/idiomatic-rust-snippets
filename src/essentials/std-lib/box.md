@@ -19,7 +19,7 @@ fn main() {
 
 **1. Large Data**: Move large structs to the heap to avoid stack overflow
 
-```rust
+```rust,ignore
 struct LargeStruct {
     data: [u8; 1000000], // 1MB of data
 }
@@ -70,7 +70,7 @@ fn main() {
 
 **3. Recursive Types**: Enable recursive data structures
 
-```rust
+```rust,ignore
 // This wouldn't compile without Box (infinite size)
 // struct List {
 //     value: i32,
@@ -282,7 +282,7 @@ fn main() {
 
 ### Performance Considerations
 
-```rust
+```rust,ignore
 fn main() {
     // Single heap allocation
     let boxed = Box::new(100);

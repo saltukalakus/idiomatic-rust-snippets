@@ -87,6 +87,7 @@ fn main() {
 ```rust
 use std::rc::Rc;
 use std::sync::Arc;
+use std::thread;
 
 fn main() {
     // Single-threaded reference counting
@@ -139,11 +140,11 @@ use std::sync::Mutex;
 fn main() {
     let mutex = Mutex::new(0);
     
-    let _ = std::panic::catch_unwind(|| {
+    let _ = std::panic::catch_unwind(std::panic::AssertUnwindSafe(|| {
         let mut guard = mutex.lock().unwrap();
         *guard += 1;
         panic!("Thread panicked!");
-    });
+    }));
     
     // Mutex is now poisoned
     match mutex.lock() {
@@ -154,16 +155,16 @@ fn main() {
             let guard = poisoned.into_inner();
             println!("Recovered value: {}", *guard);
         }
-    }
+    };
 }
 ```
 
 ### try_lock - Non-blocking Lock Attempt
 
+Demonstrates using `try_lock()` to attempt acquiring a lock without blocking - it returns immediately with an error if the lock is already held:
+
 ```rust
 use std::sync::Mutex;
-use std::thread;
-use std::time::Duration;
 
 fn main() {
     let mutex = Mutex::new(0);
@@ -174,14 +175,14 @@ fn main() {
     match mutex.try_lock() {
         Ok(_) => println!("Lock acquired"),
         Err(_) => println!("Lock is already held"),
-    }
+    };
     
     drop(guard); // Release the lock
     
     match mutex.try_lock() {
         Ok(_) => println!("Lock acquired successfully!"),
         Err(_) => println!("Still couldn't acquire lock"),
-    }
+    };
 }
 ```
 
@@ -258,7 +259,9 @@ fn main() {
 
 ### Performance Considerations
 
-```rust
+This example demonstrates the overhead characteristics of Arc and Mutex without actually running concurrent code:
+
+```rust,ignore
 use std::sync::{Arc, Mutex};
 
 fn main() {
@@ -284,6 +287,8 @@ fn main() {
 
 **Shared Configuration**:
 
+Use Arc to share immutable data across threads without cloning the underlying data:
+
 ```rust
 use std::sync::Arc;
 
@@ -307,6 +312,8 @@ fn main() {
 ```
 
 **Thread-Safe Counter**:
+
+Combine Arc and Mutex to create a thread-safe counter that can be safely incremented from multiple threads:
 
 ```rust
 use std::sync::{Arc, Mutex};

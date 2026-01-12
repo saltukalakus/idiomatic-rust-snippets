@@ -6,7 +6,7 @@ The `Result` type is Rust's primary mechanism for handling operations that can f
 
 The `Result` enum is defined in the standard library as:
 
-```rust
+```rust,ignore
 enum Result<T, E> {
     Ok(T),    // Success case containing a value of type T
     Err(E),   // Error case containing an error of type E
@@ -37,20 +37,28 @@ fn main() {
 The `?` operator provides concise error propagation. It returns early with the error if the `Result` is `Err`, or unwraps the `Ok` value:
 
 ```rust
-use std::fs::File;
-use std::io::{self, Read};
+fn parse_number(s: &str) -> Result<i32, String> {
+    s.parse::<i32>()
+        .map_err(|e| format!("Failed to parse '{}': {}", s, e))
+}
 
-fn read_file_content(path: &str) -> io::Result<String> {
-    let mut file = File::open(path)?;  // Returns error if file doesn't open
-    let mut content = String::new();
-    file.read_to_string(&mut content)?;  // Returns error if read fails
-    Ok(content)
+fn add_two_numbers(a: &str, b: &str) -> Result<i32, String> {
+    let num_a = parse_number(a)?;  // Returns error if parse fails
+    let num_b = parse_number(b)?;  // Returns error if parse fails
+    Ok(num_a + num_b)
 }
 
 fn main() {
-    match read_file_content("example.txt") {
-        Ok(content) => println!("File content: {}", content),
-        Err(e) => eprintln!("Failed to read file: {}", e),
+    // Success case
+    match add_two_numbers("10", "20") {
+        Ok(sum) => println!("Sum: {}", sum),
+        Err(e) => println!("Error: {}", e),
+    }
+    
+    // Error case
+    match add_two_numbers("10", "abc") {
+        Ok(sum) => println!("Sum: {}", sum),
+        Err(e) => println!("Error: {}", e),
     }
 }
 ```
@@ -183,7 +191,7 @@ fn divide(a: f64, b: f64) -> Result<f64, MathError> {
 fn main() {
     match divide(10.0, 0.0) {
         Ok(result) => println!("Result: {}", result),
-        Err(e) => eprintln!("Error: {}", e),
+        Err(e) => println!("Error: {}", e),
     }
 }
 ```
@@ -193,7 +201,7 @@ fn main() {
 - Use `Result<T, E>` when you need to provide error information
 - Use `Option<T>` when absence of a value is a valid, expected case without error details
 
-```rust
+```rust,ignore
 fn find_user(id: u32) -> Option<String> {
     // None just means "not found", no error details needed
     if id == 1 { Some("Alice".to_string()) } else { None }

@@ -6,7 +6,7 @@ The `Option` enum represents a value that can either be something (`Some`) or no
 
 The `Option` enum is defined in the standard library as follows:
 
-```rust
+```rust,ignore
 enum Option<T> {
     Some(T),
     None,

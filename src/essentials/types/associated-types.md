@@ -4,6 +4,8 @@ Associated types are a way of associating a type placeholder with a trait. They 
 
 ### Basic Syntax
 
+Demonstrates defining a trait with an associated type and implementing it for a concrete type:
+
 ```rust
 trait Container {
     type Item;  // Associated type
@@ -39,6 +41,8 @@ fn main() {
 
 **Associated Types** - One implementation per type:
 
+Shows how a type can only have one implementation of a trait with associated types:
+
 ```rust
 trait Graph {
     type Node;
@@ -54,13 +58,21 @@ impl Graph for SimpleGraph {
     type Edge = (usize, usize);
     
     fn has_edge(&self, from: &Self::Node, to: &Self::Node) -> bool {
-        // Implementation
-        true
+        // Simple implementation for demonstration
+        from < to
     }
+}
+
+fn main() {
+    let graph = SimpleGraph;
+    println!("Has edge from 1 to 5: {}", graph.has_edge(&1, &5));
+    println!("Has edge from 5 to 1: {}", graph.has_edge(&5, &1));
 }
 ```
 
 **Generic Parameters** - Multiple implementations per type:
+
+Demonstrates how generics allow multiple trait implementations for the same type with different type parameters:
 
 ```rust
 trait Convert<T> {
@@ -85,12 +97,16 @@ fn main() {
     let num = Number(42);
     let s: String = num.convert();
     let f: f64 = num.convert();
+    println!("Converted to String: {}", s);
+    println!("Converted to f64: {}", f);
 }
 ```
 
 ### Iterator Trait Example
 
 The `Iterator` trait is the most famous example of associated types:
+
+Implements a custom iterator that counts from 1 to max, showing practical use of associated types:
 
 ```rust
 trait Iterator {
@@ -130,22 +146,41 @@ fn main() {
 
 **1. Cleaner API**: No need to specify type parameters at call site
 
+Shows how associated types simplify function signatures by eliminating explicit type parameters:
+
 ```rust
+trait Container {
+    type Item;
+    fn get(&self) -> &Self::Item;
+}
+
+struct Box<T> {
+    value: T,
+}
+
+impl<T> Container for Box<T> {
+    type Item = T;
+    fn get(&self) -> &T {
+        &self.value
+    }
+}
+
 // With associated type
 fn process_container<C: Container>(container: &C) {
     // Clean! No need to specify Item type
+    println!("Processing container");
 }
 
-// With generic parameter (hypothetical)
-fn process_container_generic<C, T>(container: &C)
-where
-    C: ContainerGeneric<T>,
-{
-    // Must specify both C and T
+fn main() {
+    let box_int = Box { value: 42 };
+    process_container(&box_int);
+    println!("Container value: {}", box_int.get());
 }
 ```
 
 **2. Single Implementation**: Each type can only have one associated type per trait
+
+Demonstrates how associated types ensure a type can only have one Connection type, enforcing consistency:
 
 ```rust
 trait Database {
@@ -166,13 +201,27 @@ impl Database for PostgresDB {
 
 struct PostgresConnection;
 
+impl PostgresConnection {
+    fn execute(&self, query: &str) {
+        println!("Executing query: {}", query);
+    }
+}
+
 // Can't have multiple Connection types for PostgresDB
 // This ensures consistency
+
+fn main() {
+    let db = PostgresDB;
+    let conn = db.connect();
+    conn.execute("SELECT * FROM users");
+}
 ```
 
 **3. Type Inference**: Compiler can often infer associated types
 
-```rust
+Shows how the compiler can deduce associated types from context:
+
+```rust,ignore
 trait FromIterator {
     type Item;
     
@@ -183,6 +232,8 @@ trait FromIterator {
 ```
 
 ### Multiple Associated Types
+
+Demonstrates using multiple associated types in a single trait for input, output, and error types:
 
 ```rust
 trait Converter {
@@ -218,6 +269,8 @@ fn main() {
 
 You can constrain associated types with trait bounds:
 
+Shows how to require an associated type to implement a specific trait (Display):
+
 ```rust
 trait Collection {
     type Item: std::fmt::Display;  // Item must implement Display
@@ -238,11 +291,20 @@ impl Collection for Numbers {
         }
     }
 }
+
+fn main() {
+    let numbers = Numbers {
+        items: vec![1, 2, 3, 4, 5],
+    };
+    numbers.display_all();
+}
 ```
 
 ### Associated Types with Default
 
-```rust
+Demonstrates providing default associated types that can be overridden in implementations:
+
+```rust,ignore
 trait Producer {
     type Output = String;  // Default associated type
     
@@ -270,6 +332,8 @@ impl Producer for CustomProducer {
 ```
 
 ### Using Associated Types in Generic Functions
+
+Shows how to write generic functions that work with traits using associated types:
 
 ```rust
 trait Animal {
@@ -313,7 +377,9 @@ fn main() {
 
 ### Associated Types with Lifetimes
 
-```rust
+Demonstrates combining associated types with lifetime parameters for borrowed data:
+
+```rust,ignore
 trait Parser<'a> {
     type Output;
     
@@ -332,6 +398,8 @@ impl<'a> Parser<'a> for IntParser {
 ```
 
 ### Real-World Example: Add Trait
+
+Shows a practical example similar to Rust's std::ops::Add trait for adding Points:
 
 ```rust
 trait Add {

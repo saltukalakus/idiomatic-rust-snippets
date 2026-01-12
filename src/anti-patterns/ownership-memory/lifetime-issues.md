@@ -37,8 +37,8 @@ The `first_word` function doesn't need `'b` - the `_other` parameter isn't used 
 The next sample uses lifetime elision and simplifies signatures.
 
 ```rust
-// Lifetimes elided - compiler infers them
-fn first_word(s: &str, _other: &str) -> &str {
+// Lifetimes elided where possible - compiler infers them
+fn first_word<'a>(s: &'a str, _other: &str) -> &'a str {
     s.split_whitespace().next().unwrap_or("")
 }
 
@@ -63,8 +63,8 @@ fn main() {
 ```
 
 **Key Improvements**:
-- `first_word` has no explicit lifetimes - elision rules apply
+- `first_word` only annotates the lifetime of the returned reference - clearly showing it comes from `s`
 - `longest` returns an owned `String` instead of managing mutable buffer lifetimes
 - Much clearer function signatures - easier to understand at a glance
 - Simpler to use - no need to pass mutable buffers around
-- Follows the principle: only add lifetimes when necessary
+- Follows the principle: only add lifetimes when necessary for disambiguation

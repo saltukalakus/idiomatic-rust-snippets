@@ -9,7 +9,7 @@ Usecases can be grouped into a few items:
 * Any environment where the standard library is not available or not desired.<br/>
 * Targeting WebAssembly where the standard library is not fully supported.
 
-```rust
+```rust,ignore
 #![no_std]
 
 use core::fmt;

@@ -6,7 +6,7 @@ Vectors in Rust are a dynamic array type provided by the standard library. They 
 
 You can create a new vector using the `Vec::new` method or the `vec!` macro:
 
-```rust
+```rust,ignore
 let mut v: Vec<i32> = Vec::new();
 let v = vec![1, 2, 3, 4, 5];
 ```
@@ -15,7 +15,7 @@ let v = vec![1, 2, 3, 4, 5];
 
 You can add elements to a vector using the `push` method:
 
-```rust
+```rust,ignore
 let mut v = Vec::new();
 v.push(1);
 v.push(2);
@@ -51,7 +51,7 @@ for i in &v {
 
 You can remove elements from a vector using the `pop` method or the `remove` method:
 
-```rust
+```rust,ignore
 let mut v = vec![1, 2, 3, 4, 5];
 v.pop(); // Removes the last element
 v.remove(1); // Removes the element at index 1

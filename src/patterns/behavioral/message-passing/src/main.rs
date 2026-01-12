@@ -1,4 +1,4 @@
-use std::sync::{Arc, Mutex};
+use std::sync::Arc;
 use std::sync::mpsc::{channel, Sender};
 
 // Approach 1: Traditional Observer with proper ownership
@@ -80,11 +80,11 @@ impl ChannelSubject {
 }
 
 fn main() {
-    println!("=== Approach 1: Traditional Observer ===")
+    println!("=== Approach 1: Traditional Observer ===");
     let mut subject = Subject::new();
 
-    let observer1 = Arc::new(ConcreteObserver::new("Observer 1"));
-    let observer2 = Arc::new(ConcreteObserver::new("Observer 2"));
+    let observer1: Arc<dyn Observer> = Arc::new(ConcreteObserver::new("Observer 1"));
+    let observer2: Arc<dyn Observer> = Arc::new(ConcreteObserver::new("Observer 2"));
 
     subject.subscribe(Arc::clone(&observer1));
     subject.subscribe(Arc::clone(&observer2));
@@ -95,7 +95,7 @@ fn main() {
     subject.unsubscribe(&observer1);
     subject.notify("Observer 1 is gone");
 
-    println!("\n=== Approach 2: Channel-based (Idiomatic) ===")
+    println!("\n=== Approach 2: Channel-based (Idiomatic) ===");
     let mut channel_subject = ChannelSubject::new();
 
     let rx1 = channel_subject.subscribe();
