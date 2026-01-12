@@ -19,11 +19,8 @@ Rust is known to have a steep learning curve. This book is intended to be beginn
 
 The project follows a minimalistic approach, where almost all pages are short with simple, easy-to-follow code samples. Most samples can run. External documentation is referenced when necessary for extended information.
 
-**If you find this project useful, please consider giving a ⭐star⭐ on GitHub!** 
+If you find this project useful, please consider giving a ⭐star⭐ on GitHub!
 
 Help me improve it by adding new examples, or fixing issues by opening [pull requests](https://github.com/saltukalakus/idiomatic-rust-snippets/pulls). All contributions are welcome.
 
 This project is not associated with the [Rust Foundation](https://foundation.rust-lang.org/). 
-
-<img width="1156" height="630" alt="Screenshot 2026-01-12 at 13 08 07" src="https://github.com/user-attachments/assets/d3e03730-8d11-4590-8d9a-82e48213c5af" />
-
