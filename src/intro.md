@@ -17,9 +17,9 @@ Rust is known to have a steep learning curve. This book is intended to be beginn
 
 4. [Algorithms](./algorithms/intro.md) section explains various popular algorithms with code samples in Rust.
 
-The project follows a minimalistic approach, where almost all pages are short with simple, easy-to-follow code samples. Most samples can run. External documentation is referenced when necessary for extended information.
+The project follows a minimalistic approach, where almost all pages are short with simple, easy-to-follow code samples. Most samples can run. For those samples that allow execution you can tweak the code on the online editor and test your ideas live. 
 
-If you find this project useful, please consider giving a ⭐star⭐ on GitHub!
+If you find this project useful, please consider giving a ⭐STAR⭐ on GitHub!
 
 Help me improve it by adding new examples, or fixing issues by opening [pull requests](https://github.com/saltukalakus/idiomatic-rust-snippets/pulls). All contributions are welcome.
 

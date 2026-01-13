@@ -2,7 +2,7 @@
 
 Bcrypt is a password hashing function designed to be computationally expensive, which helps protect against brute-force attacks. It incorporates a salt to defend against rainbow table attacks and has an adjustable cost factor to remain resistant as hardware improves. 
 
-```rust
+```rust, editable
 use std::time::{SystemTime, UNIX_EPOCH};
 
 const BCRYPT_COST: u32 = 12;

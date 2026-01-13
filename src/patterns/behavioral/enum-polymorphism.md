@@ -8,7 +8,7 @@ Enum polymorphism uses Rust's algebraic data types with pattern matching to perf
 - Simple borrowing semantics
 - Adding operations is straightforward
 
-```rust
+```rust, editable
 {{#include enum-polymorphism/src/main.rs}}
 ```
 

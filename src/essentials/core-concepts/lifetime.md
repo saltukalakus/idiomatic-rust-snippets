@@ -2,7 +2,7 @@
 
 In Rust, lifetimes are a way of ensuring that references are valid for as long as they are needed and no longer. Lifetimes prevent dangling references, which can lead to undefined behavior.
 
-```rust
+```rust, editable
 fn longest<'a>(x: &'a str, y: &'a str) -> &'a str {
     if x.len() > y.len() {
         x

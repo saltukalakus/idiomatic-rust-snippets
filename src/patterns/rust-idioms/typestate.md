@@ -8,7 +8,7 @@ The Type State pattern encodes the state of an object in its type, making invali
 - Zero runtime cost - states are types, not values
 - No need for runtime state checks
 
-```rust
+```rust, editable
 {{#include typestate/src/main.rs}}
 ```
 

@@ -8,7 +8,7 @@ The facade pattern provides a simplified, high-level interface to a complex subs
 - Provides a single entry point for common operations
 - Makes subsystems easier to test and refactor
 
-```rust
+```rust, editable
 {{#include facade/src/main.rs}}
 ```
 

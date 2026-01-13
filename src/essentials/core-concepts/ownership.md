@@ -6,7 +6,7 @@ Ownership is a set of rules that governs how the program manages memory. The own
 2. There can only be one owner at a time.
 3. When the owner goes out of scope, the value will be dropped.
 
-```rust
+```rust, editable
 fn main() {
     let s1 = String::from("hello");
     let s2 = s1; // s1 is moved to s2

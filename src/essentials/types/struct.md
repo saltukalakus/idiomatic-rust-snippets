@@ -8,7 +8,7 @@ Structs in Rust are custom data types that allow you to group related data toget
 
 These are the most common type of structs, where each field has a name and a type. Classic structs have named fields. E.g.:
 
-```rust
+```rust, editable
 struct Person {
     name: String,
     age: u8,
@@ -28,7 +28,7 @@ fn main() {
 
 These are similar to tuples but have a name and can be used to create new types. Tuple structs have unnamed fields. E.g.:
 
-```rust
+```rust, editable
 struct Color(u8, u8, u8);
 
 fn main() {
@@ -42,7 +42,7 @@ fn main() {
 
 These are structs without any fields and are useful for generics or traits. Unit-like structs have no fields. E.g.:
 
-```rust
+```rust, editable
 struct Unit;
 
 fn main() {

@@ -8,7 +8,7 @@ Bitwise operators are used to perform operations on individual bits of integer t
 `<<` : Left shift<br/>
 `>>` : Right shift<br/>
 
-```rust
+```rust, editable
 fn main() {
     let a = 0b1100;
     let b = 0b1010;

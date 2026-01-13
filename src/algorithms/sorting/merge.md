@@ -7,7 +7,7 @@ Merge sort is a divide-and-conquer algorithm that splits an array into halves, r
 2. Recursively sort each half.
 3. Merge the two sorted halves into a single sorted array.
 
-```rust
+```rust, editable
 fn merge_sort<T: Ord + Clone>(arr: &mut [T]) {
     let mid = arr.len() / 2;
     if mid == 0 {

@@ -8,7 +8,7 @@ Message passing allows publishers to notify subscribers of events through channe
 - Clear ownership - subscribers own their receiving end
 - Automatic cleanup when receivers are dropped
 
-```rust
+```rust, editable
 {{#include message-passing/src/main.rs}}
 ```
 

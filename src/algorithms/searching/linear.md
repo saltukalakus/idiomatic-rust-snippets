@@ -2,7 +2,7 @@
 
 Linear search is a simple searching algorithm that checks each element in a list sequentially until the desired element is found or the list ends.
 
-```rust
+```rust, editable
 fn linear_search(arr: &[i32], target: i32) -> Option<usize> {
     for (index, &item) in arr.iter().enumerate() {
         if item == target {

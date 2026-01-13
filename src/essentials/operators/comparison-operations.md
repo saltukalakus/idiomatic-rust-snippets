@@ -9,7 +9,7 @@ Comparison operators are used to compare two values and return a boolean result.
 `>=` : Greater than or equal to<br/>
 `<=` : Less than or equal to<br/>
 
-```rust
+```rust, editable
 fn main() {
     let a = 10;
     let b = 3;

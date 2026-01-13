@@ -4,7 +4,7 @@ Pattern matching is a powerful feature that allows you to match complex data str
 
 ### Matching Literals
 
-```rust
+```rust, editable
 let x = 1;
 
 match x {
@@ -16,7 +16,7 @@ match x {
 
 ### Matching Multiple Patterns
 
-```rust
+```rust, editable
 let x = 1;
 
 match x {
@@ -28,7 +28,7 @@ match x {
 
 ### Destructuring Structs
 
-```rust
+```rust, editable
 struct Point {
     x: i32,
     y: i32,
@@ -45,7 +45,7 @@ match p {
 
 ### Destructuring Enums
 
-```rust
+```rust, editable
 enum Message {
     Quit,
     Move { x: i32, y: i32 },
@@ -65,7 +65,7 @@ match msg {
 
 ### Ignoring Values in a Pattern
 
-```rust
+```rust, editable
 let numbers = (2, 4, 8, 16, 32);
 
 match numbers {
@@ -77,7 +77,7 @@ match numbers {
 
 ### Matching Ranges of Values
 
-```rust
+```rust, editable
 let x = 5;
 
 match x {
@@ -88,7 +88,7 @@ match x {
 
 ### Using `if` Guards
 
-```rust
+```rust, editable
 let x = Some(4);
 
 match x {

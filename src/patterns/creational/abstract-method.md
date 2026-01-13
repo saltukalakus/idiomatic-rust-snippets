@@ -8,7 +8,7 @@ The abstract factory provides an interface for creating families of related obje
 - Easy to swap entire product families
 - Ensures consistency among related products
 
-```rust
+```rust, editable
 {{#include abstract-method/src/main.rs}}
 ```
 

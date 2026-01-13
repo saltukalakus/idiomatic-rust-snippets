@@ -4,7 +4,7 @@ Implementing `Deref` to create inheritance-like relationships is a misuse of the
 
 `Deref` should only be implemented for types that act like smart pointers. For composition, use explicit fields and methods.
 
-```rust
+```rust, editable
 use std::ops::Deref;
 
 struct User {
@@ -49,7 +49,7 @@ fn main() {
 
 The next sample uses explicit composition.
 
-```rust
+```rust, editable
 struct User {
     name: String,
     email: String,

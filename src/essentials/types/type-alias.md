@@ -8,7 +8,7 @@ Improved Readability: By giving a meaningful name to a type, you can make your c
 Simplified Code: Type aliases can simplify complex type signatures, making the code easier to write and read.<br/>
 Consistency: Using type aliases can help maintain consistency across your codebase.<br/>
 
-```rust
+```rust, editable
 // type NewName = ExistingType;
 
 type Kilometers = i32;
@@ -21,7 +21,7 @@ fn main() {
 
 `Kilometers` is a type alias for `i32`. This makes it clear that the distance variable represents a distance in kilometers.
 
-```rust
+```rust, editable
 struct Point<T> {
     x: T,
     y: T,
@@ -42,7 +42,7 @@ fn main() {
 
 Type aliases are particularly useful for complex types, such as function pointers or nested types. 
 
-```rust
+```rust, editable
 type Thunk = Box<dyn Fn() + Send + 'static>;
 
 fn takes_long_type(f: Thunk) {

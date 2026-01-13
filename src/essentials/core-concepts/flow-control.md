@@ -6,7 +6,7 @@ Rust provides several options for flow control, including `if` statements, `whil
 
 The `if` statement allows you to execute code based on a condition.
 
-```rust
+```rust, editable
 let number = 5;
 
 if number < 10 {
@@ -20,7 +20,7 @@ if number < 10 {
 
 The `while` loop allows you to execute code repeatedly as long as a condition is true.
 
-```rust
+```rust, editable
 let mut count = 0;
 
 while count < 5 {
@@ -33,7 +33,7 @@ while count < 5 {
 
 The `for` loop allows you to iterate over a range or collection.
 
-```rust
+```rust, editable
 for number in 1..5 {
     println!("The number is: {}", number);
 }
@@ -43,7 +43,7 @@ for number in 1..5 {
 
 The `match` statement allows you to compare a value against a series of patterns and execute code based on which pattern matches.
 
-```rust
+```rust, editable
 let number = 3;
 
 match number {

@@ -9,7 +9,7 @@ The Diffie-Hellman key exchange algorithm allows two parties to securely establi
 - The public keys are exchanged between the parties.
 - Each party computes the shared secret using the received public key and their own private key: `public_key^private_key mod p`.
 
-```rust
+```rust, editable
 fn main() {
     // Step 1: Agree on a prime number p and base g
     let p: u64 = 23; // A small prime number for simplicity

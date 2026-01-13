@@ -7,7 +7,7 @@ Concurrency is the mechanism of handling tasks in parallel. This helps use the a
 
 Rust's standard library provides a way to spawn threads using the `std::thread` module. The `thread::spawn` function is used to create a new thread. The `||` syntax is used to define a [closure](./closure.md), which is an anonymous function that can capture variables from its surrounding scope.
 
-```rust
+```rust, editable
 use std::thread;
 use std::time::Duration;
 
@@ -34,7 +34,7 @@ fn main() {
 
 #### Message Passing
 
-```rust
+```rust, editable
 use std::sync::mpsc;
 use std::thread;
 
@@ -54,7 +54,7 @@ fn main() {
 
 #### Shared State
 
-```rust
+```rust, editable
 use std::sync::{Arc, Mutex};
 use std::thread;
 

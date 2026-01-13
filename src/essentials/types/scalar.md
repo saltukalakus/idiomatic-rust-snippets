@@ -7,7 +7,7 @@ Scalar types represent a single value. Rust has four primary scalar types:
 **Booleans**: True or false values.<br/>
 **Characters**: Single Unicode characters.<br/>
 
-```rust
+```rust, editable
 fn main() {
     let x: i32 = 42; // Integer
     let y: f64 = 3.14; // Floating-point number

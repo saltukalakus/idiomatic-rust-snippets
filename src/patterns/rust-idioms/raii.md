@@ -8,7 +8,7 @@ RAII is a fundamental pattern in Rust where resources (memory, files, locks, con
 - No garbage collector needed
 - Explicit resource lifetime tied to scope
 
-```rust
+```rust, editable
 {{#include raii/src/main.rs}}
 ```
 

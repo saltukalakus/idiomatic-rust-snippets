@@ -2,7 +2,7 @@
 
 Dijkstra's algorithm is used to find the shortest path between nodes in a graph. It works by maintaining a set of unvisited nodes and iteratively selecting the node with the smallest tentative distance, updating the distances to its neighbors, and marking it as visited. 
 
-```rust
+```rust, editable
 use std::collections::BinaryHeap;
 use std::cmp::Ordering;
 

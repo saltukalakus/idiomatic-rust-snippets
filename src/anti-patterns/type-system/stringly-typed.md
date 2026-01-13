@@ -4,7 +4,7 @@ Using strings to represent data that has a fixed set of values is fragile and er
 
 Enums make invalid states unrepresentable. If your data has a fixed set of values, use an enum.
 
-```rust
+```rust, editable
 fn process_status(status: &str) -> String {
     match status {
         "success" => "Operation completed".to_string(),
@@ -37,7 +37,7 @@ String parameters accept any value - typos like `"sucess"` or invalid values lik
 
 The next sample uses enums for type safety.
 
-```rust
+```rust, editable
 #[derive(Debug)]
 enum Status {
     Success,

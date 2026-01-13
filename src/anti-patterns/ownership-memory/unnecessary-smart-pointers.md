@@ -4,7 +4,7 @@ Using `Box<T>`, `Rc<T>`, or `Arc<T>` when simple references or owned values work
 
 Using smart pointers unnecessarily complicates code and degrades performance. Prefer direct ownership or references unless you have a specific reason for indirection.
 
-```rust
+```rust, editable
 struct Config {
     timeout: Box<u32>,      // Unnecessary heap allocation
     max_retries: Box<u32>,  // Unnecessary heap allocation
@@ -38,7 +38,7 @@ Boxing primitive types like `u32` adds heap allocation overhead for no benefit. 
 
 The next sample uses direct ownership.
 
-```rust
+```rust, editable
 struct Config {
     timeout: u32,
     max_retries: u32,

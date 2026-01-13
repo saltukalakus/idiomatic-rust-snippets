@@ -4,7 +4,7 @@ Libraries should never panic in normal operation - they should return `Result` t
 
 A library that panics is saying "I know better than you how to handle this error" - this is almost never true.
 
-```rust
+```rust, editable
 // Library code - BAD
 pub fn parse_port(s: &str) -> u16 {
     if s.is_empty() {
@@ -33,7 +33,7 @@ The library panics on invalid input (`"0"` or `"invalid"`), crashing the entire 
 
 The next sample returns `Result` instead of panicking.
 
-```rust
+```rust, editable
 // Library code - GOOD
 pub fn parse_port(s: &str) -> Result<u16, String> {
     if s.is_empty() {

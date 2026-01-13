@@ -4,7 +4,7 @@ Overusing explicit lifetime annotations when Rust's lifetime elision rules apply
 
 Rust's lifetime elision rules cover most common cases. Only add explicit lifetimes when the compiler can't infer relationships or when you need to express specific borrowing constraints.
 
-```rust
+```rust, editable
 // Overly explicit lifetimes that can be elided
 fn first_word<'a, 'b>(s: &'a str, _other: &'b str) -> &'a str {
     s.split_whitespace().next().unwrap_or("")
@@ -36,7 +36,7 @@ The `first_word` function doesn't need `'b` - the `_other` parameter isn't used 
 
 The next sample uses lifetime elision and simplifies signatures.
 
-```rust
+```rust, editable
 // Lifetimes elided where possible - compiler infers them
 fn first_word<'a>(s: &'a str, _other: &str) -> &'a str {
     s.split_whitespace().next().unwrap_or("")

@@ -6,7 +6,7 @@ Understanding the difference between `String` and `&str` is crucial in Rust. Bot
 
 `&str` (string slice) is an immutable reference to a sequence of UTF-8 encoded bytes. It's a borrowed view into string data stored elsewhere.
 
-```rust
+```rust, editable
 fn main() {
     // String literals are &str
     let greeting: &str = "Hello, world!";
@@ -22,7 +22,7 @@ fn main() {
 
 `String` is an owned, growable, heap-allocated string type. It owns its data and can be modified.
 
-```rust
+```rust, editable
 fn main() {
     // String owns the data
     let mut owned = String::from("Hello");
@@ -61,7 +61,7 @@ fn main() {
 
 ### Common Conversions
 
-```rust
+```rust, editable
 fn main() {
     // &str to String
     let str_slice: &str = "hello";
@@ -82,7 +82,7 @@ fn main() {
 
 Always prefer `&str` for function parameters - it's more flexible:
 
-```rust
+```rust, editable
 // Good: accepts both &str and String
 fn print_text(text: &str) {
     println!("{}", text);
@@ -111,7 +111,7 @@ fn main() {
 
 You can create `&str` slices from `String`:
 
-```rust
+```rust, editable
 fn main() {
     let s = String::from("Hello, world!");
     
@@ -142,7 +142,7 @@ fn main() {
 
 ### Building Strings
 
-```rust
+```rust, editable
 fn main() {
     // Using String::new() and push_str
     let mut s = String::new();
@@ -170,7 +170,7 @@ fn main() {
 
 ### Memory Layout
 
-```rust
+```rust, editable
 fn main() {
     // &str: Just a pointer and length (stack)
     let str_slice: &str = "hello";
@@ -208,7 +208,7 @@ fn main() {
 
 **Returning strings from functions:**
 
-```rust
+```rust, editable
 // Return &str when returning string literals or slices
 fn get_greeting() -> &'static str {
     "Hello!"

@@ -4,7 +4,7 @@ Using `String` when `&str` would suffice causes unnecessary allocations. `String
 
 Prefer `&str` in function parameters unless you need ownership. This makes your API more flexible and efficient.
 
-```rust
+```rust, editable
 fn greet(name: String) -> String {
     format!("Hello, {}!", name)
 }
@@ -35,7 +35,7 @@ Every function call requires cloning or allocating a new `String`. `greet(user.c
 
 The next sample uses `&str` for read-only parameters.
 
-```rust
+```rust, editable
 fn greet(name: &str) -> String {
     format!("Hello, {}!", name)
 }

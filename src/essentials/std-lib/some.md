@@ -4,7 +4,7 @@ In Rust, the `Some` keyword is used to represent a value within the [`Option`](.
 
 #### Example
 
-```rust
+```rust, editable
 fn main() {
     let some_number = Some(5);
     let some_string = Some("Hello");

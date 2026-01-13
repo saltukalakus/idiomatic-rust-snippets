@@ -6,7 +6,7 @@ Enums in Rust are a way to define a type by enumerating its possible values. The
 
 Enums are defined using the enum keyword, followed by the name of the enum and its variants.
 
-```rust
+```rust, editable
 enum Direction {
     North,
     South,
@@ -28,7 +28,7 @@ fn main() {
 
 Enums can have variants with associated data, which makes them very powerful.
 
-```rust
+```rust, editable
 enum Message {
     Quit,
     Move { x: i32, y: i32 },
@@ -53,7 +53,7 @@ fn main() {
 
 You can also define methods on enums using the impl keyword.
 
-```rust
+```rust, editable
 enum Message {
     Quit,
     Move { x: i32, y: i32 },

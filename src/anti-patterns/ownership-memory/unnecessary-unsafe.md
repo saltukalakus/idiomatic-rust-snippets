@@ -4,7 +4,7 @@ Using `unsafe` blocks when safe Rust alternatives exist defeats the purpose of R
 
 Unsafe should be a last resort. Most performance-critical code doesn't need it, and safe abstractions are usually fast enough.
 
-```rust
+```rust, editable
 fn get_middle_element(data: &Vec<i32>) -> Option<i32> {
     if data.is_empty() {
         return None;
@@ -36,7 +36,7 @@ Using `get_unchecked()` bypasses bounds checking, assuming the programmer verifi
 
 The next sample uses safe indexing.
 
-```rust
+```rust, editable
 fn get_middle_element(data: &Vec<i32>) -> Option<i32> {
     let mid = data.len() / 2;
     data.get(mid).copied()

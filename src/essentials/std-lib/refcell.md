@@ -6,7 +6,7 @@
 - It enables mutable borrowing checked at runtime.
 - Useful in scenarios where you need to mutate data but only have an immutable reference.
 
-```rust
+```rust, editable
 {{#include refcell/src/main.rs}}
 ```
 

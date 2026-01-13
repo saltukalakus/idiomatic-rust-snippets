@@ -4,7 +4,7 @@ Marking variables as `mut` when they don't need to change is a common anti-patte
 
 Immutability communicates intent: this value won't change. It makes code more predictable and easier to debug.
 
-```rust
+```rust, editable
 fn calculate_price(base_price: f64, quantity: u32) -> f64 {
     let mut price = base_price;
     let mut qty = quantity;
@@ -29,7 +29,7 @@ All three variables are marked `mut` but only used once - none actually need mut
 
 The next sample uses immutability by default.
 
-```rust
+```rust, editable
 fn calculate_price(base_price: f64, quantity: u32) -> f64 {
     let price = base_price;
     let qty = quantity;

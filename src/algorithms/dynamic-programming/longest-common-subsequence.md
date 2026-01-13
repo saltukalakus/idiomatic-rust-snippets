@@ -4,7 +4,7 @@ The Longest Common Subsequence (LCS) problem is a classic dynamic programming pr
 
 The solution constructs a 2D table `dp` where `dp[i][j]` represents the length of the LCS of the sequences `X[0..i-1]` and `Y[0..j-1]`. The table is filled using the rule: if characters match, increment the diagonal value; otherwise, take the maximum from the left or top cell.
 
-```rust
+```rust, editable
 fn longest_common_subsequence(x: &str, y: &str) -> String {
      let m = x.len();
      let n = y.len();

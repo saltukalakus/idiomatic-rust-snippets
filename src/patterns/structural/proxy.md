@@ -8,7 +8,7 @@ The proxy pattern provides a surrogate or placeholder for another object, contro
 - Real object can be remote, expensive to create, or needs protection
 - Transparent to clients - same interface as real object
 
-```rust
+```rust, editable
 {{#include proxy/src/main.rs}}
 ```
 

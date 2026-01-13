@@ -6,7 +6,7 @@ Iterators are one of Rust's most powerful features for working with sequences of
 
 The core of Rust's iterator system is the `Iterator` trait, which requires implementing the `next` method:
 
-```rust
+```rust, editable
 pub trait Iterator {
     type Item;
     fn next(&mut self) -> Option<Self::Item>;
@@ -15,7 +15,7 @@ pub trait Iterator {
 
 ### Basic Usage
 
-```rust
+```rust, editable
 fn main() {
     let numbers = vec![1, 2, 3, 4, 5];
     
@@ -37,7 +37,7 @@ fn main() {
 
 Iterator adapters transform one iterator into another. They are lazy and don't consume the iterator until a consumer method is called.
 
-```rust
+```rust, editable
 fn main() {
     let numbers = vec![1, 2, 3, 4, 5];
     
@@ -75,7 +75,7 @@ fn main() {
 
 ### Iterator Types
 
-```rust
+```rust, editable
 fn main() {
     let v = vec![1, 2, 3];
     
@@ -101,7 +101,7 @@ fn main() {
 
 You can create custom iterators by implementing the `Iterator` trait:
 
-```rust
+```rust, editable
 struct Counter {
     count: u32,
     max: u32,
@@ -139,7 +139,7 @@ fn main() {
 
 Iterators in Rust are zero-cost abstractions. The compiler optimizes iterator chains into efficient machine code, often as fast as hand-written loops:
 
-```rust
+```rust, editable
 fn main() {
     let numbers: Vec<i32> = (1..=1000).collect();
     
@@ -158,7 +158,7 @@ fn main() {
 
 Iterators don't perform work until consumed. This allows for efficient chaining without intermediate allocations:
 
-```rust
+```rust, editable
 fn main() {
     let numbers = vec![1, 2, 3, 4, 5];
     

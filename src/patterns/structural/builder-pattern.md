@@ -8,7 +8,7 @@ The builder pattern with method chaining allows composing behavior by chaining m
 - Fluent, readable API
 - Type-safe composition at compile time
 
-```rust
+```rust, editable
 {{#include builder-pattern/src/main.rs}}
 ```
 

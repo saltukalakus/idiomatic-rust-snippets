@@ -8,7 +8,7 @@ The builder pattern constructs complex objects step-by-step, separating construc
 - Immutable objects with flexible construction
 - Compile-time validation of required fields possible
 
-```rust
+```rust, editable
 {{#include builder/src/main.rs}}
 ```
 

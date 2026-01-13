@@ -6,7 +6,7 @@
 
 `Arc<T>` is a thread-safe reference-counting pointer. Multiple threads can own the same data, and the data is deallocated when the last `Arc` is dropped.
 
-```rust
+```rust, editable
 use std::sync::Arc;
 use std::thread;
 
@@ -34,7 +34,7 @@ fn main() {
 
 `Mutex<T>` provides interior mutability with thread-safe locking. Only one thread can access the data at a time.
 
-```rust
+```rust, editable
 use std::sync::Mutex;
 
 fn main() {
@@ -53,7 +53,7 @@ fn main() {
 
 Combining `Arc` and `Mutex` enables shared mutable state across threads:
 
-```rust
+```rust, editable
 use std::sync::{Arc, Mutex};
 use std::thread;
 
@@ -84,7 +84,7 @@ fn main() {
 
 `Rc<T>` is single-threaded, `Arc<T>` is thread-safe with atomic operations:
 
-```rust
+```rust, editable
 use std::rc::Rc;
 use std::sync::Arc;
 use std::thread;
@@ -114,7 +114,7 @@ fn main() {
 
 `Mutex::lock()` returns a `MutexGuard` that automatically releases the lock when dropped:
 
-```rust
+```rust, editable
 use std::sync::Mutex;
 
 fn main() {
@@ -134,7 +134,7 @@ fn main() {
 
 A `Mutex` becomes poisoned if a thread panics while holding the lock:
 
-```rust
+```rust, editable
 use std::sync::Mutex;
 
 fn main() {
@@ -163,7 +163,7 @@ fn main() {
 
 Demonstrates using `try_lock()` to attempt acquiring a lock without blocking - it returns immediately with an error if the lock is already held:
 
-```rust
+```rust, editable
 use std::sync::Mutex;
 
 fn main() {
@@ -190,7 +190,7 @@ fn main() {
 
 Be careful to avoid deadlocks when using multiple mutexes:
 
-```rust
+```rust, editable
 use std::sync::{Arc, Mutex};
 use std::thread;
 
@@ -224,7 +224,7 @@ fn main() {
 
 `RwLock` allows multiple readers or one writer:
 
-```rust
+```rust, editable
 use std::sync::{Arc, RwLock};
 use std::thread;
 
@@ -289,7 +289,7 @@ fn main() {
 
 Use Arc to share immutable data across threads without cloning the underlying data:
 
-```rust
+```rust, editable
 use std::sync::Arc;
 
 struct Config {
@@ -315,7 +315,7 @@ fn main() {
 
 Combine Arc and Mutex to create a thread-safe counter that can be safely incremented from multiple threads:
 
-```rust
+```rust, editable
 use std::sync::{Arc, Mutex};
 use std::thread;
 

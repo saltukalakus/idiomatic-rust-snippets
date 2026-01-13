@@ -22,7 +22,7 @@ Where:
 - `h` is the heuristic estimate of the cost from the current node to the goal (using Manhattan distance in this example).
 - `f` is the sum of `g` and `h`, representing the estimated total cost.
 
-```rust
+```rust, editable
 use std::collections::{BinaryHeap, HashMap};
 use std::cmp::Ordering;
 

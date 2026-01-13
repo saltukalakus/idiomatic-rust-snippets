@@ -4,7 +4,7 @@
 
 ### Basic Usage
 
-```rust
+```rust, editable
 fn main() {
     // Store an integer on the heap
     let boxed_int = Box::new(5);
@@ -35,7 +35,7 @@ fn main() {
 
 **2. Trait Objects**: Enable dynamic dispatch with traits
 
-```rust
+```rust, editable
 trait Animal {
     fn make_sound(&self);
 }
@@ -95,7 +95,7 @@ fn main() {
 
 ### Memory Layout
 
-```rust
+```rust, editable
 fn main() {
     let x = 5;           // Stack: 4 bytes
     let boxed = Box::new(5); // Stack: 8 bytes (pointer), Heap: 4 bytes (value)
@@ -107,7 +107,7 @@ fn main() {
 
 ### Dereferencing
 
-```rust
+```rust, editable
 fn main() {
     let boxed = Box::new(5);
     
@@ -126,7 +126,7 @@ fn main() {
 
 ### Ownership and Moves
 
-```rust
+```rust, editable
 fn consume_box(boxed: Box<i32>) {
     println!("Consumed: {}", boxed);
     // Box is dropped here, heap memory is freed
@@ -144,7 +144,7 @@ fn main() {
 
 ### Box vs Stack Allocation
 
-```rust
+```rust, editable
 fn create_on_stack() -> i32 {
     42 // Returns a copy
 }
@@ -163,7 +163,7 @@ fn main() {
 
 ### Box with Complex Types
 
-```rust
+```rust, editable
 struct Person {
     name: String,
     age: u32,
@@ -182,7 +182,7 @@ fn main() {
 
 ### Converting from Box
 
-```rust
+```rust, editable
 fn main() {
     let boxed = Box::new(5);
     
@@ -196,7 +196,7 @@ fn main() {
 
 ### Box::leak - Creating Static References
 
-```rust
+```rust, editable
 fn main() {
     let boxed = Box::new(String::from("leaked"));
     
@@ -210,7 +210,7 @@ fn main() {
 
 ### Box with Sized and Unsized Types
 
-```rust
+```rust, editable
 fn main() {
     // Box can hold unsized types like trait objects
     let numbers: Box<[i32]> = Box::new([1, 2, 3, 4, 5]);
@@ -225,7 +225,7 @@ fn main() {
 
 ### Box in Data Structures
 
-```rust
+```rust, editable
 struct Node {
     value: i32,
     left: Option<Box<Node>>,
@@ -263,7 +263,7 @@ fn main() {
 
 For FFI and low-level control:
 
-```rust
+```rust, editable
 fn main() {
     let boxed = Box::new(42);
     

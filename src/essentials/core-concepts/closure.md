@@ -4,7 +4,7 @@ Closures are anonymous functions that can capture their environment. They are si
 
 ### Basic Syntax
 
-```rust
+```rust, editable
 let add = |a, b| a + b;
 println!("Sum: {}", add(2, 3)); // Output: Sum: 5
 ```
@@ -13,7 +13,7 @@ println!("Sum: {}", add(2, 3)); // Output: Sum: 5
 
 Closures can capture variables from their enclosing scope.
 
-```rust
+```rust, editable
 let x = 10;
 let print_x = || println!("x: {}", x);
 print_x(); // Output: x: 10
@@ -23,7 +23,7 @@ print_x(); // Output: x: 10
 
 Closures can also capture variables mutably.
 
-```rust
+```rust, editable
 let mut x = 10;
 {
     let mut add_to_x = || x += 5;
@@ -36,7 +36,7 @@ println!("x: {}", x); // Output: x: 15
 
 Closures can take ownership of captured variables using the `move` keyword.
 
-```rust
+```rust, editable
 let x = vec![1, 2, 3];
 let print_x = move || println!("x: {:?}", x);
 print_x(); // Output: x: [1, 2, 3]

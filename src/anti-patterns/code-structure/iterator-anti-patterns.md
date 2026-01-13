@@ -4,7 +4,7 @@ Collecting intermediate results when iterators can chain operations directly is 
 
 Iterator chains are lazy, meaning they only process elements as needed, and the compiler can optimize the entire chain as a single operation.
 
-```rust
+```rust, editable
 fn process_numbers(numbers: Vec<i32>) -> Vec<String> {
     // Step 1: Filter
     let mut filtered = Vec::new();
@@ -40,7 +40,7 @@ This code creates three temporary vectors (`filtered`, `squared`, `result`), eac
 
 The next sample uses iterator chaining.
 
-```rust
+```rust, editable
 fn process_numbers(numbers: Vec<i32>) -> Vec<String> {
     numbers.into_iter()
         .filter(|&n| n > 0)

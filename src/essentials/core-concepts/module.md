@@ -6,7 +6,7 @@ Modules are a way to organize code into separate namespaces. They help in managi
 
 You can define a module using the `mod` keyword. Here's a basic example:
 
-```rust
+```rust, editable
 mod my_module {
     pub fn say_hello() {
         println!("Hello from my_module!");
@@ -26,7 +26,7 @@ fn main() {
 
 Modules can be nested within other modules:
 
-```rust
+```rust, editable
 mod outer_module {
     pub mod inner_module {
         pub fn say_hello() {

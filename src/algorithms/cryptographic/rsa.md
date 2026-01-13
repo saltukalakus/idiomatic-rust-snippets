@@ -26,7 +26,7 @@ num-traits = "0.2"
 - The private key is `(d, n)`.
 - The ciphertext `c` is decrypted back to plaintext `m` using the formula: `m ≡ c^d (mod n)`.
 
-```rust
+```rust, editable
 extern crate num_bigint as bigint;
 extern crate num_traits;
 extern crate rand;

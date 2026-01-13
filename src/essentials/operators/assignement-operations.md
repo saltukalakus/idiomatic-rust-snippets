@@ -9,7 +9,7 @@ Assignment operators are used to assign values to variables. Rust also supports 
 `/=` : Division assignment<br/>
 `%=` : Remainder assignment<br/>
 
-```rust
+```rust, editable
 fn main() {
     let mut a = 10;
 

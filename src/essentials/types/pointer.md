@@ -15,7 +15,7 @@ References are the most common type of pointer in Rust. They allow you to borrow
 Immutable References (`&T`): Allow you to read data but not modify it.<br/>
 Mutable References (`&mut T`): Allow you to modify data.<br/>
 
-```rust
+```rust, editable
 fn main() {
     let x = 5;
     let y = &x; // Immutable reference
@@ -34,7 +34,7 @@ Smart pointers are data structures that not only act like a pointer but also hav
 
 **Box**: A heap-allocated pointer.<br/>
 
-```rust
+```rust, editable
 fn main() {
     let b = Box::new(5);
     println!("b: {}", b);
@@ -43,7 +43,7 @@ fn main() {
 
 **Rc**: A reference-counted pointer for single-threaded scenarios.<br/>
 
-```rust
+```rust, editable
 use std::rc::Rc;
 
 fn main() {
@@ -55,7 +55,7 @@ fn main() {
 
 **Arc**: An atomic reference-counted pointer for multi-threaded scenarios.<br/>
 
-```rust
+```rust, editable
 use std::sync::Arc;
 use std::thread;
 
@@ -79,7 +79,7 @@ Raw pointers are unsafe pointers that can be used to perform low-level memory ma
 Immutable Raw Pointer (`*const T`): Points to data that cannot be modified.<br/>
 Mutable Raw Pointer (`*mut T`): Points to data that can be modified.<br/>
 
-```rust
+```rust, editable
 fn main() {
     let x = 5;
     let y = &x as *const i32; // Immutable raw pointer

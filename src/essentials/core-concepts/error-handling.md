@@ -6,7 +6,7 @@ Error handling is a critical part of writing robust and reliable software. Rust 
 
 The `Result` type is used for functions that can return an error. It is an enum with two variants: `Ok(T)` for successful results and `Err(E)` for errors.
 
-```rust
+```rust, editable
 fn divide(a: f64, b: f64) -> Result<f64, String> {
     if b == 0.0 {
         Err(String::from("Division by zero"))
@@ -32,7 +32,7 @@ fn main() {
 
 The `Option` type is used for values that may or may not be present. It is an enum with two variants: `Some(T)` for a value and `None` for no value.
 
-```rust
+```rust, editable
 fn find_word(s: &str, word: &str) -> Option<usize> {
     s.find(word)
 }
@@ -49,7 +49,7 @@ fn main() {
 
 The `?` operator is a shorthand for propagating errors. It can be used in functions that return a `Result` or `Option`.
 
-```rust
+```rust, editable
 use std::fs::File;
 use std::io::Read;
 
@@ -72,7 +72,7 @@ fn main() {
 
 You can define your own error types to provide more context about errors.
 
-```rust
+```rust, editable
 use std::fmt;
 
 #[derive(Debug)]

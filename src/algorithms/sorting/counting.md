@@ -8,7 +8,7 @@ Counting sort is an integer sorting algorithm that operates by counting the numb
 4. Modify the count array such that each element at each index stores the sum of previous counts. This step helps in placing the elements in the correct position in the output array.
 5. Iterate through the input array in reverse order, placing each element in its correct position in the output array based on the count array, and then decrease the count by one.
 
-```rust
+```rust, editable
 fn counting_sort(arr: &mut [usize], max_value: usize) {
     let mut count = vec![0; max_value + 1];
     let mut output = vec![0; arr.len()];

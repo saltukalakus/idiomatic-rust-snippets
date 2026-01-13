@@ -4,7 +4,7 @@ Binary search is an efficient algorithm for finding an item from a sorted list o
 
 This implementation assumes that the input array is sorted. If the array is not sorted, the binary search algorithm will not work correctly. Check out the [sorting section](../sorting/intro.html) for implementations of some of array sorting algorithms.
 
-```rust
+```rust, editable
 fn binary_search(arr: &[i32], target: i32) -> Option<usize> {
     let mut low = 0;
     let mut high = arr.len() - 1;

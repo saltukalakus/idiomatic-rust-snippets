@@ -4,7 +4,7 @@ Calling `.unwrap()` or `.expect()` on `Result` and `Option` types turns recovera
 
 Rust's type system makes errors explicit with `Result<T, E>`. Unwrapping throws away this safety and turns Rust into a language that crashes like C.
 
-```rust
+```rust, editable
 use std::fs;
 use std::env;
 
@@ -24,7 +24,7 @@ This code panics if `CONFIG_PATH` isn't set or if the file doesn't exist. The pa
 
 The next sample uses proper error propagation.
 
-```rust
+```rust, editable
 use std::fs;
 use std::env;
 use std::error::Error;

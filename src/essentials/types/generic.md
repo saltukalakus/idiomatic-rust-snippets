@@ -8,7 +8,7 @@ Generic Functions can operate on different types specified at the time of functi
 
 In the example, the **larger** function is defined with a generic type parameter `T`. The type `T` must implement the `PartialOrd` trait (for comparison) and the `Copy` trait (so we can return it by value). The function compares two values and returns the larger one.
 
-```rust
+```rust, editable
 fn larger<T: PartialOrd + Copy>(x: T, y: T) -> T {
     if x > y {
         x
@@ -34,7 +34,7 @@ Structs that can hold data of different types specified at the time of instantia
 
 Here the Point struct has been implemented to work with both integer and floating type.
 
-```rust
+```rust, editable
 struct Point<T> {
     x: T,
     y: T,
@@ -53,7 +53,7 @@ Enums that can hold variants of different types specified at the time of instant
 
 Here's a custom generic enum similar to the standard library's `Option<T>`:
 
-```rust
+```rust, editable
 #[derive(Debug)]
 enum MyOption<T> {
     Some(T),

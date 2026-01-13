@@ -8,7 +8,7 @@ The mediator centralizes complex communications between objects. Instead of obje
 - Components can be reused independently
 - Easy to understand object interactions
 
-```rust
+```rust, editable
 {{#include mediator/src/main.rs}}
 ```
 

@@ -4,7 +4,7 @@ Matrix Chain Multiplication is a classic dynamic programming problem that determ
 
 The algorithm builds a table `m` where `m[i][j]` represents the minimum cost of multiplying matrices from index `i` to `j`. It considers all possible split points to find the optimal parenthesization.
 
-```rust
+```rust, editable
 fn matrix_chain_order(p: &[usize]) -> Vec<Vec<usize>> {
     let n = p.len() - 1;
     let mut m = vec![vec![0; n]; n];

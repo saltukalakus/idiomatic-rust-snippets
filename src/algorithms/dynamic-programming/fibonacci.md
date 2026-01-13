@@ -2,7 +2,7 @@
 
 The Fibonacci sequence is a series of numbers where each number is the sum of the two preceding ones, usually starting with 0 and 1. This implementation uses dynamic programming to efficiently compute Fibonacci numbers by storing previously computed values, avoiding redundant calculations.
 
-```rust
+```rust, editable
 fn fibonacci(n: usize) -> usize {
     if n == 0 {
         return 0;

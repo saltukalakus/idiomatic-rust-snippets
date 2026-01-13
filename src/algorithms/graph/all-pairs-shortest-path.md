@@ -10,7 +10,7 @@ The Floyd-Warshall algorithm uses dynamic programming to build up the shortest p
 
 3. **Result**: After considering all nodes as intermediate points, the distance matrix `dist` will contain the shortest distances between all pairs of nodes.
 
-```rust
+```rust, editable
 const INF: i32 = i32::MAX / 2; // Use a large value to represent infinity
 
 fn floyd_warshall(graph: &Vec<Vec<i32>>) -> Vec<Vec<i32>> {

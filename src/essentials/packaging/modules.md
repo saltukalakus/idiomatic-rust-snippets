@@ -1,6 +1,6 @@
 ### How to call a function from a standard library:
 
-```rust
+```rust, editable
 {{#include modules/src/stdlib/main.rs}}
 ```
 
@@ -22,6 +22,6 @@ Cargo.toml file content
 
 On the Rust file you may call `extern crate PACKAGE_NAME` to use an external library. This is a handy solution when you want to use [Rust Playground](https://play.rust-lang.org/) like in this example. Otherwise, you would get an error when you execute the file.
 
-```rust
+```rust, editable
 {{#include modules/src/rand/main.rs}}
 ```

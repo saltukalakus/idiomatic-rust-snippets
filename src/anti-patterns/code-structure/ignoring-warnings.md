@@ -4,7 +4,7 @@ Rust's compiler provides helpful warnings that point to potential bugs, performa
 
 Common warning scenarios include unused variables, unused `Result` values (silently ignoring errors), unreachable code, and non-exhaustive pattern matches.
 
-```rust
+```rust, editable
 fn calculate_total(prices: Vec<&str>) -> i32 {
     let mut total = 0;
     
@@ -27,7 +27,7 @@ The compiler warns that `parse()` returns a `Result` that must be used, but we'r
 
 The next sample fixes the issue and avoids the compiler warning.
 
-```rust
+```rust, editable
 fn calculate_total(prices: Vec<&str>) -> Result<i32, String> {
     let mut total = 0;
     

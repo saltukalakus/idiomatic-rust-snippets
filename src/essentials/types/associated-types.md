@@ -6,7 +6,7 @@ Associated types are a way of associating a type placeholder with a trait. They 
 
 Demonstrates defining a trait with an associated type and implementing it for a concrete type:
 
-```rust
+```rust, editable
 trait Container {
     type Item;  // Associated type
     
@@ -43,7 +43,7 @@ fn main() {
 
 Shows how a type can only have one implementation of a trait with associated types:
 
-```rust
+```rust, editable
 trait Graph {
     type Node;
     type Edge;
@@ -74,7 +74,7 @@ fn main() {
 
 Demonstrates how generics allow multiple trait implementations for the same type with different type parameters:
 
-```rust
+```rust, editable
 trait Convert<T> {
     fn convert(&self) -> T;
 }
@@ -108,7 +108,7 @@ The `Iterator` trait is the most famous example of associated types:
 
 Implements a custom iterator that counts from 1 to max, showing practical use of associated types:
 
-```rust
+```rust, editable
 trait Iterator {
     type Item;
     
@@ -148,7 +148,7 @@ fn main() {
 
 Shows how associated types simplify function signatures by eliminating explicit type parameters:
 
-```rust
+```rust, editable
 trait Container {
     type Item;
     fn get(&self) -> &Self::Item;
@@ -182,7 +182,7 @@ fn main() {
 
 Demonstrates how associated types ensure a type can only have one Connection type, enforcing consistency:
 
-```rust
+```rust, editable
 trait Database {
     type Connection;
     
@@ -235,7 +235,7 @@ trait FromIterator {
 
 Demonstrates using multiple associated types in a single trait for input, output, and error types:
 
-```rust
+```rust, editable
 trait Converter {
     type Input;
     type Output;
@@ -271,7 +271,7 @@ You can constrain associated types with trait bounds:
 
 Shows how to require an associated type to implement a specific trait (Display):
 
-```rust
+```rust, editable
 trait Collection {
     type Item: std::fmt::Display;  // Item must implement Display
     
@@ -335,7 +335,7 @@ impl Producer for CustomProducer {
 
 Shows how to write generic functions that work with traits using associated types:
 
-```rust
+```rust, editable
 trait Animal {
     type Sound;
     
@@ -401,7 +401,7 @@ impl<'a> Parser<'a> for IntParser {
 
 Shows a practical example similar to Rust's std::ops::Add trait for adding Points:
 
-```rust
+```rust, editable
 trait Add {
     type Output;
     

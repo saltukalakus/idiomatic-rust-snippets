@@ -16,7 +16,7 @@ It has no runtime representation (zero size) but affects compile-time type check
 
 ### Basic Usage
 
-```rust
+```rust, editable
 use std::marker::PhantomData;
 
 struct Wrapper<T> {
@@ -46,7 +46,7 @@ fn main() {
 
 `PhantomData` is commonly used to implement compile-time state machines:
 
-```rust
+```rust, editable
 use std::marker::PhantomData;
 
 // State types
@@ -95,7 +95,7 @@ fn main() {
 
 `PhantomData` can track lifetimes without storing references:
 
-```rust
+```rust, editable
 use std::marker::PhantomData;
 
 struct Context<'a> {
@@ -126,7 +126,7 @@ fn main() {
 
 When you have a generic type parameter that isn't directly used in fields:
 
-```rust
+```rust, editable
 use std::marker::PhantomData;
 
 trait Format {}
@@ -232,7 +232,7 @@ impl<T> Inspector<T> {
 
 ### Builder Pattern with Type States
 
-```rust
+```rust, editable
 use std::marker::PhantomData;
 
 struct Incomplete;
@@ -299,7 +299,7 @@ fn main() {
 
 Implementing compile-time protocol validation:
 
-```rust
+```rust, editable
 use std::marker::PhantomData;
 
 struct Connecting;

@@ -8,7 +8,7 @@ The Factory Method provides an interface for creating objects, allowing implemen
 - Promotes dependency injection and testability
 - Uses traits for polymorphic behavior
 
-```rust
+```rust, editable
 {{#include factory-method/src/main.rs}}
 ```
 

@@ -6,7 +6,7 @@ Borrowing allows you to reference a value without taking ownership of it. There 
 
 You can have multiple immutable references to a value.
 
-```rust
+```rust, editable
 fn main() {
     let s1 = String::from("hello");
     let len = calculate_length(&s1); // Borrow s1 immutably
@@ -25,7 +25,7 @@ s1 is borrowed immutably by the calculate_length function. The function can read
 
 You can have only one mutable reference to a value at a time. 
 
-```rust
+```rust, editable
 fn main() {
     let mut s = String::from("hello");
     change(&mut s); // Borrow s mutably

@@ -8,7 +8,7 @@ The adapter pattern allows incompatible interfaces to work together by wrapping 
 - Decouple client code from specific implementations
 - Wrap external types to implement local traits
 
-```rust
+```rust, editable
 {{#include adapter/src/main.rs}}
 ```
 

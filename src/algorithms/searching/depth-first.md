@@ -2,7 +2,7 @@
 
 Depth First Search (DFS) is an algorithm for traversing or searching tree or graph data structures. The algorithm starts at the root node (selecting some arbitrary node as the root in the case of a graph) and explores as far as possible along each branch before backtracking.
 
-```rust
+```rust, editable
 use std::collections::HashMap;
 
 fn dfs(graph: &HashMap<i32, Vec<i32>>, start: i32, visited: &mut Vec<i32>) {

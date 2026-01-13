@@ -4,7 +4,7 @@ Pattern matching in Rust is exhaustive by nature, but using catch-all patterns t
 
 Exhaustive pattern matching is one of Rust's strengths - the compiler ensures all cases are handled. Overly broad patterns bypass this safety feature.
 
-```rust
+```rust, editable
 enum Status {
     Success(String),
     Warning(String),
@@ -31,7 +31,7 @@ The catch-all pattern `_` swallows important information. Warnings and errors pr
 
 The next sample uses exhaustive pattern matching.
 
-```rust
+```rust, editable
 enum Status {
     Success(String),
     Warning(String),

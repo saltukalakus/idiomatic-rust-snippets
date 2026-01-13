@@ -4,7 +4,7 @@ Cloning data to satisfy the borrow checker is a common beginner anti-pattern. Wh
 
 Understanding Rust's borrowing rules allows you to share data efficiently without cloning. References are zero-cost abstractions.
 
-```rust
+```rust, editable
 fn analyze_text(text: String) -> (usize, usize) {
     let word_count = text.clone().split_whitespace().count();
     let char_count = text.clone().chars().count();
@@ -23,7 +23,7 @@ Cloning the string three times creates three separate ~600KB allocations for a s
 
 The next sample uses borrowing instead of cloning.
 
-```rust
+```rust, editable
 fn analyze_text(text: &str) -> (usize, usize) {
     let word_count = text.split_whitespace().count();
     let char_count = text.chars().count();

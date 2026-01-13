@@ -2,7 +2,7 @@
 
 Breadth-First Search (BFS) is an algorithm for traversing or searching tree or graph data structures. It starts at the tree root (or an arbitrary node of a graph) and explores all neighbor nodes at the present depth before moving on to nodes at the next depth level.
 
-```rust
+```rust, editable
 use std::collections::{HashMap, VecDeque};
 
 fn bfs(graph: &HashMap<i32, Vec<i32>>, start: i32) -> Vec<i32> {

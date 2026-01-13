@@ -10,7 +10,7 @@ The `Rc` (Reference Counted) type is used when you need multiple ownership of da
 
 #### `Rc::new`
 
-```rust
+```rust, editable
 use std::rc::Rc;
 
 fn main() {
@@ -23,7 +23,7 @@ fn main() {
 
 #### `Rc::clone`
 
-```rust
+```rust, editable
 use std::rc::Rc;
 
 fn main() {

@@ -8,7 +8,7 @@ Quick sort is based on partitioning of an array of data into smaller arrays. A l
     - Elements greater than the pivot.
 3. Recursively apply the above steps to the sub-arrays.
 
-```rust
+```rust, editable
 fn quick_sort(arr: &mut [i32]) {
      let len = arr.len();
      if len < 2 {

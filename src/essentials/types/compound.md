@@ -7,7 +7,7 @@ Arrays: Group multiple values of the same type.<br/>
 
 Example:
 
-```rust
+```rust, editable
 fn main() {
     // Tuple
     let tuple: (i32, f64, char) = (42, 3.14, 'A');

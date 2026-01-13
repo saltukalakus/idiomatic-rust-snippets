@@ -15,7 +15,7 @@ enum Result<T, E> {
 
 ### Basic Usage
 
-```rust
+```rust, editable
 fn divide(a: f64, b: f64) -> Result<f64, String> {
     if b == 0.0 {
         Err("Cannot divide by zero".to_string())
@@ -36,7 +36,7 @@ fn main() {
 
 The `?` operator provides concise error propagation. It returns early with the error if the `Result` is `Err`, or unwraps the `Ok` value:
 
-```rust
+```rust, editable
 fn parse_number(s: &str) -> Result<i32, String> {
     s.parse::<i32>()
         .map_err(|e| format!("Failed to parse '{}': {}", s, e))
@@ -75,7 +75,7 @@ fn main() {
 - `unwrap_or(default)`: Returns value or a default
 - `unwrap_or_else(f)`: Returns value or computes default from closure
 
-```rust
+```rust, editable
 fn main() {
     let good_result: Result<i32, &str> = Ok(10);
     let bad_result: Result<i32, &str> = Err("error");
@@ -99,7 +99,7 @@ fn main() {
 
 **`map()` and `map_err()`**: Transform the contained value or error
 
-```rust
+```rust, editable
 fn main() {
     let result: Result<i32, &str> = Ok(2);
     
@@ -116,7 +116,7 @@ fn main() {
 
 **`and_then()`**: Chain operations that return Results
 
-```rust
+```rust, editable
 fn parse_number(s: &str) -> Result<i32, String> {
     s.parse().map_err(|_| format!("Not a number: {}", s))
 }
@@ -141,7 +141,7 @@ fn main() {
 
 When working with iterators of Results, you can collect them into a single Result:
 
-```rust
+```rust, editable
 fn parse_numbers(strings: Vec<&str>) -> Result<Vec<i32>, std::num::ParseIntError> {
     strings.into_iter()
         .map(|s| s.parse::<i32>())
@@ -160,7 +160,7 @@ fn main() {
 
 For complex applications, define custom error types:
 
-```rust
+```rust, editable
 use std::fmt;
 
 #[derive(Debug)]
@@ -215,7 +215,7 @@ fn load_config(path: &str) -> Result<String, std::io::Error> {
 
 ### Converting Between Result and Option
 
-```rust
+```rust, editable
 fn main() {
     let result: Result<i32, &str> = Ok(5);
     let option: Option<i32> = result.ok();  // Ok(5) -> Some(5)

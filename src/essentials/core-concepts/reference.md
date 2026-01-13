@@ -6,7 +6,7 @@ References allow you to refer to some value without taking ownership of it. Refe
 
 An immutable reference is created using the `&` symbol.
 
-```rust
+```rust, editable
 fn main() {
     let x = 5;
     let y = &x; // y is an immutable reference to x
@@ -21,7 +21,7 @@ fn main() {
 
 A mutable reference is created using the `&mut` symbol.
 
-```rust
+```rust, editable
 fn main() {
     let mut x = 5;
     let y = &mut x; // y is a mutable reference to x
@@ -45,7 +45,7 @@ These rules ensure memory safety and prevent data races at compile time.
 
 You can also pass references to functions:
 
-```rust
+```rust, editable
 fn main() {
     let x = 5;
     print_value(&x); // pass an immutable reference to the function

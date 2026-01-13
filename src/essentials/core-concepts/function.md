@@ -4,7 +4,7 @@ Functions are a fundamental building block in Rust. They allow you to encapsulat
 
 ### Defining a Function
 
-```rust
+```rust, editable
 fn main() {
     println!("Hello, world!");
 }
@@ -16,7 +16,7 @@ fn main() {
 
 Functions can take parameters, which are specified in the parentheses after the function name.
 
-```rust
+```rust, editable
 fn greet(name: &str) {
     println!("Hello, {}!", name);
 }
@@ -33,7 +33,7 @@ fn main() {
 
 Functions can also return values. The return type is specified after an arrow (`->`).
 
-```rust
+```rust, editable
 fn add(a: i32, b: i32) -> i32 {
     a + b
 }
@@ -50,7 +50,7 @@ fn main() {
 
 You can return a value early from a function using the `return` keyword:
 
-```rust
+```rust, editable
 fn is_even(num: i32) -> bool {
     if num % 2 == 0 {
         return true;

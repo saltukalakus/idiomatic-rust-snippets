@@ -11,7 +11,7 @@
 
 When a method takes &self as a parameter, it means the method borrows the instance immutably.
 
-```rust
+```rust, editable
 pub struct Person {
     name: String,
 }
@@ -35,7 +35,7 @@ fn main() {
 
 When a method takes &mut self as a parameter, it means the method borrows the instance mutably.
 
-```rust
+```rust, editable
 pub struct Counter {
     count: i32,
 }
@@ -60,7 +60,7 @@ fn main() {
 
 When a method takes self as a parameter, it means the method takes ownership of the instance.
 
-```rust
+```rust, editable
 pub struct Person {
     name: String,
 }

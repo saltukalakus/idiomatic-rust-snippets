@@ -8,7 +8,7 @@ The chain of responsibility passes a request along a chain of handlers. Each han
 - Each handler has single responsibility
 - Easy to add or reorder handlers
 
-```rust
+```rust, editable
 {{#include chain-of-responsibility/src/main.rs}}
 ```
 

@@ -4,7 +4,7 @@ Rust provides powerful iterator methods that make code more expressive, safer, a
 
 Iterators also compose better, allowing you to chain operations like `.filter()`, `.map()`, and `.collect()` in a clear, functional style.
 
-```rust
+```rust, editable
 fn sum_adjacent_pairs(numbers: Vec<i32>) -> Vec<i32> {
     let mut sums = Vec::new();
     
@@ -27,7 +27,7 @@ Manual indexing with `numbers[i + 1]` causes a runtime panic. When `i` reaches t
 
 The next sample uses idiomatic iterator methods to avoid this issue.
 
-```rust
+```rust, editable
 fn sum_adjacent_pairs(numbers: Vec<i32>) -> Vec<i32> {
     numbers.windows(2)
         .map(|pair| pair[0] + pair[1])

@@ -9,7 +9,7 @@ The Newtype pattern wraps an existing type in a tuple struct with a single field
 - Hide implementation details
 - Add semantic meaning to primitive types
 
-```rust
+```rust, editable
 {{#include newtype/src/main.rs}}
 ```
 

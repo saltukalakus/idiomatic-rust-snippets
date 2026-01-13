@@ -4,7 +4,7 @@ Using type casts, transmutes, or `as` conversions to force types to fit instead 
 
 When the type system resists, it's usually highlighting a design issue. Work with the types, not against them.
 
-```rust
+```rust, editable
 fn calculate_average(numbers: Vec<i32>) -> i32 {
     let sum: i32 = numbers.iter().sum();
     let count = numbers.len() as i32;
@@ -35,7 +35,7 @@ fn main() {
 
 The next sample uses appropriate types.
 
-```rust
+```rust, editable
 fn calculate_average(numbers: &[i32]) -> Option<f64> {
     if numbers.is_empty() {
         return None;

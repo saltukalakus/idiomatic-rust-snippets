@@ -8,7 +8,7 @@ Lazy initialization ensures that a value is initialized only once on first acces
 - Guaranteed single initialization even with concurrent access
 - Zero runtime cost after first initialization
 
-```rust
+```rust, editable
 {{#include lazy-initialization/src/main.rs}}
 ```
 

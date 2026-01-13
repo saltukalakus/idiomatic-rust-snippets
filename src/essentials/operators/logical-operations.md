@@ -6,7 +6,7 @@ Logical operators are used to combine multiple boolean expressions.
 `||` : Logical OR<br/>
 `!` : Logical NOT<br/>
 
-```rust
+```rust, editable
 fn main() {
     let a = true;
     let b = false;

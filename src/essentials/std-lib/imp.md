@@ -10,7 +10,7 @@ You can define methods that are associated with a struct or enum.
 
 `pub fn new(name: String, age: u8) -> Self` is an associated function (often used as a constructor) that creates a new instance of Person. `pub fn greet(&self)` and `pub fn have_birthday(&mut self)` are methods associated with the Person struct. The `greet` method borrows the instance immutably, while the `have_birthday` method borrows it mutably.
 
-```rust
+```rust, editable
 pub struct Person {
     name: String,
     age: u8,
@@ -47,7 +47,7 @@ You can implement traits for a struct or enum, defining the behavior required by
 
 The `Greet` trait defines a method `greet`. The `impl Greet for Dog` block implements the Greet trait for the `Dog` struct, providing the behavior required by the trait.
 
-```rust
+```rust, editable
 pub trait Greet {
     fn greet(&self);
 }

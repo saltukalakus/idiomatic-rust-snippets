@@ -8,7 +8,7 @@ The bridge pattern separates an abstraction from its implementation, allowing bo
 - Reduces the number of classes needed
 - Implementation details hidden from clients
 
-```rust
+```rust, editable
 {{#include bridge/src/main.rs}}
 ```
 

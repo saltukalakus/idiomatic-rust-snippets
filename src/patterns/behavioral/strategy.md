@@ -8,7 +8,7 @@ The strategy pattern defines a family of interchangeable algorithms. Each algori
 - Each algorithm is independently testable
 - Easy to add new strategies without modifying existing code
 
-```rust
+```rust, editable
 {{#include strategy/src/main.rs}}
 ```
 

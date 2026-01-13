@@ -8,7 +8,7 @@ Arithmetic operators are used to perform basic mathematical operations.
 `/` : Division<br/>
 `%` : Remainder (modulus)<br/>
 
-```rust
+```rust, editable
 fn main() {
     let a = 10;
     let b = 3;

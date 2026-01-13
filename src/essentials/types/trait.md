@@ -11,7 +11,7 @@ In Rust, a trait is a way to define shared behavior in an abstract way. It is si
 In the sample code below the Greet trait is defined with a single method greet. The Greet trait is implemented for two structs, Person and Dog. 
 
 
-```rust
+```rust, editable
 // Define a trait named `Greet`
 pub trait Greet {
     fn greet(&self);

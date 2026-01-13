@@ -13,7 +13,7 @@ References are the most basic form of indirection in Rust. They borrow data with
 - Cannot outlive the data they reference
 - No heap allocation involved
 
-```rust
+```rust, editable
 fn main() {
     let x = 5;
     let y = &x;  // Immutable reference
@@ -37,7 +37,7 @@ Smart pointers are data structures that act like pointers but have additional me
 - Can have runtime overhead (reference counting, atomic operations)
 - Enable patterns not possible with references alone
 
-```rust
+```rust, editable
 use std::rc::Rc;
 
 fn main() {

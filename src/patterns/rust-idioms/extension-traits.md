@@ -8,7 +8,7 @@ Extension traits allow you to add methods to types you don't own. This is a comm
 - Work around Rust's orphan rule for traits
 - Create domain-specific APIs on existing types
 
-```rust
+```rust, editable
 {{#include extension-traits/src/main.rs}}
 ```
 

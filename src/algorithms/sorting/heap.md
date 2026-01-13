@@ -6,7 +6,7 @@ Heap sort is a comparison-based sorting algorithm that uses a [binary heap data 
 2. At this point, the largest item is stored at the root of the heap. Replace it with the last item of the heap followed by reducing the size of the heap by one. Finally, heapify the root of the tree.
 3. Repeat step 2 while the size of the heap is greater than 1.
 
-```rust
+```rust, editable
 fn heapify(arr: &mut [i32], n: usize, i: usize) {
     // Find largest among root, left child and right child
     let mut largest = i;

@@ -8,7 +8,7 @@ The flyweight pattern minimizes memory usage by sharing data among similar objec
 - Separates shared state from unique state
 - Particularly effective with immutable shared data
 
-```rust
+```rust, editable
 {{#include flyweight/src/main.rs}}
 ```
 

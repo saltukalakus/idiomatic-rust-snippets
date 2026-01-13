@@ -24,7 +24,7 @@ my_binary_crate/
 
 The `main.rs` file is the entry point of the binary crate.
 
-```rust
+```rust, editable
 fn main() {
     println!("Hello, world!");
 }

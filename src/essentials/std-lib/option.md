@@ -17,7 +17,7 @@ Here, `T` is a generic type parameter, meaning `Option` can hold a value of any 
 
 Basic Usage
 
-```rust
+```rust, editable
 fn find_word(word: &str) -> Option<usize> {
     let words = vec!["hello", "world", "rust"];
     words.iter().position(|&w| w == word)
@@ -35,7 +35,7 @@ The `find_word` function returns an `Option<usize>`. If the word is found, it re
 
 #### Using `unwrap`
 
-```rust
+```rust, editable
 fn main() {
     let some_number = Some(10);
     let number = some_number.unwrap();
@@ -47,7 +47,7 @@ fn main() {
 
 #### Using `unwrap_or`
 
-```rust
+```rust, editable
 fn main() {
     let some_number = Some(10);
     let none_number: Option<i32> = None;

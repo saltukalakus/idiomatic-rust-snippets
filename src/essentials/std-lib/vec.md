@@ -4,7 +4,7 @@
 
 Vec is particularly useful when you need a dynamic collection that can grow or shrink at runtime.
 
-```rust
+```rust, editable
 // Creating vectors
 let v1: Vec<i32> = Vec::new();     // empty vector
 let v2 = vec![1, 2, 3];            // vector with initial values

@@ -4,7 +4,7 @@ The Knapsack Problem is a classic dynamic programming problem. Given a set of it
 
 The solution uses a 2D array `dp` where `dp[i][w]` represents the maximum value achievable with the first `i` items and a knapsack capacity of `w`. For each item, we decide whether to include it or exclude it based on which choice yields a higher value.
 
-```rust
+```rust, editable
 fn knapsack(weights: &[usize], values: &[usize], capacity: usize) -> usize {
     let n = weights.len();
     let mut dp = vec![vec![0; capacity + 1]; n + 1];

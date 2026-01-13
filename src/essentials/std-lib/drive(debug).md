@@ -2,7 +2,7 @@
 
 The `#[derive(Debug)]` attribute in Rust automatically generates an implementation of the `Debug` trait for a struct or enum. This trait allows you to format the value using the `{:?}` formatter, which is useful for debugging purposes.
 
-```rust
+```rust, editable
 #[derive(Debug)]
 struct Person {
     name: String,
