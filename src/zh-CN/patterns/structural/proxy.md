@@ -1,10 +1,26 @@
-### 代理（Proxy）模式
+### Proxy Pattern
 
-代理模式提供对象的占位或代表，可在访问真实对象前进行控制（如延迟加载、访问控制或缓存）。Rust 中可使用封装类型或智能指针实现代理。
+The proxy pattern provides a surrogate or placeholder for another object, controlling access to it. The proxy has the same interface as the real object.
+
+**Benefits**:
+- Controls access to the real object
+- Can add functionality (logging, caching, lazy loading)
+- Real object can be remote, expensive to create, or needs protection
+- Transparent to clients - same interface as real object
 
 ```rust, editable
-trait Subject { fn request(&self); }
-struct Real; impl Subject for Real { fn request(&self) { println!("真实"); } }
-struct Proxy { real: Real }
-impl Subject for Proxy { fn request(&self) { println!("代理中"); self.real.request(); } }
+{{#include proxy/src/main.rs}}
 ```
+
+**Key Points**:
+- The example defines `Subject` trait with `request()` method
+- `RealSubject` implements the actual business logic
+- `Proxy` wraps `RealSubject` and implements same `Subject` trait
+- In `Proxy::request()`, proxy adds logging before/after calling `real_subject.request()`
+- Client code works with `Subject` trait - can use proxy or real subject interchangeably
+
+**When to Use**:
+- Lazy initialization of expensive objects
+- Access control or authentication
+- Logging, caching, or monitoring object usage
+- Remote objects (network proxies), smart references

@@ -1,15 +1,26 @@
-### 基于枚举的多态（Enum Polymorphism）
+### Enum Polymorphism
 
-在 Rust 中，枚举可用于表达不同变体的多态行为，通常配合 `match` 或实现 trait 的方式进行分发。
+Enum polymorphism uses Rust's algebraic data types with pattern matching to perform different operations on different types. This provides compile-time exhaustiveness checking and excellent performance.
+
+**Benefits**:
+- Exhaustive matching - compiler ensures all variants are handled
+- Zero-cost abstraction - faster than dynamic dispatch
+- Simple borrowing semantics
+- Adding operations is straightforward
 
 ```rust, editable
-enum Message { Quit, Echo(String), Move{x:i32,y:i32} }
-
-fn process(msg: Message) {
-    match msg {
-        Message::Quit => println!("退出"),
-        Message::Echo(s) => println!("回显: {}", s),
-        Message::Move{x,y} => println!("移动到 {},{}", x, y),
-    }
-}
+{{#include enum-polymorphism/src/main.rs}}
 ```
+
+**Key Points**:
+- The example defines `Shape` enum with `Circle`, `Rectangle`, and `Triangle` variants
+- Each variant stores its specific data (radius, width/height, sides)
+- `area()` and `perimeter()` methods use `match` to handle each variant differently
+- Compiler ensures all variants are handled - adding a new variant causes compile errors until all matches updated
+- In `main()`, shapes stored in `Vec<Shape>` and processed uniformly - no heap allocation or vtables needed
+
+**When to Use**:
+- Fixed set of types that need different behaviors
+- Performance-critical code (no dynamic dispatch)
+- Abstract syntax trees, expression evaluators
+- When you control all the types (not for plugins)

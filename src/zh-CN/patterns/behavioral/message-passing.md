@@ -1,14 +1,26 @@
-### 消息传递（Message Passing）模式
+### Message Passing
 
-消息传递是一种并发模型，通过发送消息在任务或线程之间通信。Rust 的 `mpsc` 通道与 `async`/`await` 生态使消息传递成为主要并发模式之一。
+Message passing allows publishers to notify subscribers of events through channels. This decouples publishers from subscribers, making code more modular and thread-safe.
+
+**Benefits**:
+- Avoids shared mutable state - data sent through channels
+- Natural thread safety - channels work across threads
+- Clear ownership - subscribers own their receiving end
+- Automatic cleanup when receivers are dropped
 
 ```rust, editable
-use std::sync::mpsc;
-use std::thread;
-
-fn main() {
-    let (tx, rx) = mpsc::channel();
-    thread::spawn(move || tx.send(42).unwrap());
-    println!("接收：{}", rx.recv().unwrap());
-}
+{{#include ../../../patterns/behavioral/message-passing/src/main.rs}}
 ```
+
+**Key Points**:
+- The example shows two approaches: traditional observers with `Arc<dyn Observer>` and channel-based pub-sub
+- Traditional: `Subject` maintains `Vec<Arc<dyn Observer>>`, calls `update()` on each during `notify()`
+- Channel-based: `ChannelSubject` stores `Vec<Sender<String>>`, sends messages via `send()`
+- Receivers automatically dropped when subscribers go out of scope - no manual cleanup
+- Channel approach avoids trait objects and provides better thread safety
+
+**When to Use**:
+- Pub-sub patterns (event buses, notifications)
+- Cross-thread communication
+- Decoupling components that react to state changes
+- When automatic cleanup on subscriber drop is desired

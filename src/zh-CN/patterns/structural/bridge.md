@@ -1,12 +1,26 @@
-### 桥接（Bridge）模式
+### Bridge Pattern
 
-桥接模式将抽象与实现分离，使得两者可以独立变化。Rust 可通过 trait 对象或泛型参数来解耦抽象与实现。
+The bridge pattern separates an abstraction from its implementation, allowing both to vary independently. This avoids a proliferation of classes when both abstraction and implementation have multiple variants.
+
+**Benefits**:
+- Decouples abstraction from implementation
+- Both can be extended independently
+- Reduces the number of classes needed
+- Implementation details hidden from clients
 
 ```rust, editable
-trait Implementor { fn do_it(&self); }
-struct ConcreteImpl;
-impl Implementor for ConcreteImpl { fn do_it(&self) { println!("正在执行"); } }
-
-struct Abstraction<T: Implementor> { imp: T }
-impl<T: Implementor> Abstraction<T> { fn new(imp: T) -> Self { Self { imp } } fn op(&self) { self.imp.do_it() } }
+{{#include bridge/src/main.rs}}
 ```
+
+**Key Points**:
+- The example defines `Shape` trait (abstraction) and `Color` trait (implementation)
+- `Circle` and `Square` implement `Shape`, each holding a `Box<dyn Color>`
+- `Red` and `Blue` implement `Color` trait with different fill behaviors
+- In `main()`, shapes created with different colors: red circle, blue square
+- When `draw()` is called, shape delegates to its color's `fill()` method - shape and color vary independently
+
+**When to Use**:
+- Both abstraction and implementation have multiple variants
+- Want to avoid Cartesian product of classes (N abstractions × M implementations)
+- Platform-specific implementations (OS, rendering backends)
+- Database drivers with multiple query languages and connection types

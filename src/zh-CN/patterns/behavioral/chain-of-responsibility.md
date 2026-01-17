@@ -1,19 +1,26 @@
-### 责任链（Chain of Responsibility）
+### Chain of Responsibility Pattern
 
-责任链模式将请求沿一条处理链传递，直到某个处理器处理它。Rust 中可用闭包、函数指针或 trait 对象来实现动态链路。
+The chain of responsibility passes a request along a chain of handlers. Each handler decides whether to process the request or pass it to the next handler.
+
+**Benefits**:
+- Decouples request senders from receivers
+- Dynamic handler chain configuration
+- Each handler has single responsibility
+- Easy to add or reorder handlers
 
 ```rust, editable
-trait Handler { fn handle(&self, req: &str) -> bool; }
-
-struct Logger;
-impl Handler for Logger { fn handle(&self, req: &str) -> bool { println!("日志：{}", req); false } }
-
-struct Auth;
-impl Handler for Auth { fn handle(&self, req: &str) -> bool { req == "allowed" } }
-
-fn main() {
-    let handlers: Vec<Box<dyn Handler>> = vec![Box::new(Logger), Box::new(Auth)];
-    let req = "allowed";
-    for h in &handlers { if h.handle(req) { println!("已处理"); break; } }
-}
+{{#include chain-of-responsibility/src/main.rs}}
 ```
+
+**Key Points**:
+- The example defines `Handler` trait with `handle(&mut self, request: &str)` method
+- `BaseHandler` stores `Option<Box<dyn Handler>>` for the next handler in chain
+- `ConcreteHandlerA` handles requests starting with 'A', otherwise passes to next
+- `ConcreteHandlerB` handles requests starting with 'B', otherwise passes to next
+- In `main()`, chain is built: Handler A → Handler B, requests flow through until matched
+
+**When to Use**:
+- Multiple objects might handle a request
+- Handler set should be determined dynamically
+- Middleware pipelines (logging, auth, validation)
+- Event handling systems with fallback behaviors
