@@ -21,7 +21,7 @@ Rust 众所周知有较陡峭的学习曲线。本书旨在对初学者友好，
 
 如需更多信息，必要时会引用外部文档。
 
-如果你觉得本项目有帮助，欢迎在 GitHub 上给个 ⭐star⭐！
+如果你觉得本项目有帮助，欢迎在 GitHub 上给个 ⭐STAR⭐！
 
 欢迎通过提交 [pull request](https://github.com/saltukalakus/idiomatic-rust-snippets/pulls) 来帮助我改进内容（添加新示例或修复问题）。所有贡献都非常受欢迎。
 
