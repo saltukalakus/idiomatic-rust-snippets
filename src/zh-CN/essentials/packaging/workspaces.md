@@ -1,6 +1,6 @@
 ### Cargo 工作区
 
-Cargo 工作区是一组共享相同 `Cargo.lock` 文件和输出目录的包。工作区非常适合管理拆分为多个相关 crate 的大型项目，可在保持单一构建配置的同时实现代码重用。
+Cargo 工作区是一组共享同一个 `Cargo.lock` 文件和输出目录的包。工作区非常适合管理拆分为多个相关 crate 的大型项目，可以在保持单一构建配置的同时实现代码重用。
 
 ### 创建工作区
 
@@ -26,8 +26,8 @@ exclude = [
 ```
 my-workspace/
 ├── Cargo.toml          # 工作区清单
-├── Cargo.lock          # 共享锁文件
-├── target/             # 共享构建目录
+├── Cargo.lock          # 共享的 lock 文件
+├── target/             # 共享的构建目录
 ├── crate1/
 │   ├── Cargo.toml      # 包清单
 │   └── src/
@@ -87,17 +87,17 @@ serde = { workspace = true }
 
 ### 工作区的优势
 
-**1. 统一的依赖管理**：所有 crate 共享相同的 `Cargo.lock`
+**1. 统一的依赖管理**：所有 crate 共享同一个 `Cargo.lock`
 
 ```toml
 # 而不是每个 crate 都有不同的版本：
 # crate1: serde = "1.0.150"
 # crate2: serde = "1.0.152"
 
-# 工作区确保所有 crate 都使用相同的版本
+# 工作区确保所有 crate 使用相同的版本
 ```
 
-**2. 共享构建产物**：单一的 `target/` 目录节省了磁盘空间和构建时间
+**2. 共享的构建产物**：单个 `target/` 目录节省了磁盘空间和构建时间
 
 ```bash
 # 没有工作区：多个 target 目录
@@ -105,18 +105,18 @@ crate1/target/
 crate2/target/
 crate3/target/
 
-# 有工作区：单一的共享目录
+# 有工作区：单个共享目录
 target/
 ```
 
-**3. 原子化版本更新**：一次性更新所有 crate
+**3. 原子版本更新**：一次性更新所有 crate
 
 ```bash
-# 更新所有工作区依赖
+# 更新所有工作区依赖项
 cargo update
 ```
 
-### 构建工作区 Crates
+### 构建工作区 Crate
 
 ```bash
 # 构建所有工作区成员
@@ -135,9 +135,9 @@ cargo test --workspace
 cargo run -p my-cli
 ```
 
-### 工作区依赖
+### 工作区依赖项
 
-**共享依赖**（定义一次，随处使用）：
+**共享依赖项**（定义一次，随处使用）：
 
 ```toml
 [workspace]
@@ -153,7 +153,7 @@ serde = { workspace = true }
 tokio = { workspace = true }
 ```
 
-**本地依赖**（依赖于其他工作区成员）：
+**本地依赖项**（依赖于其他工作区成员）：
 
 ```toml
 # 在 cli/Cargo.toml 中
@@ -251,16 +251,16 @@ cargo test
 cd ..
 cargo run -p backend
 
-# 更新所有 crate 的依赖
+# 更新所有 crate 的依赖项
 cargo update
 
-# 检查所有 crates
+# 检查所有 crate
 cargo check --workspace
 ```
 
-### 发布工作区 Crates
+### 发布工作区 Crate
 
-工作区中的 Crates 可以独立发布：
+工作区中的 Crate 可以独立发布：
 
 ```bash
 # 从 crate 目录发布
@@ -277,7 +277,7 @@ cargo publish -p backend
 
 ### 虚拟工作区
 
-一个没有根包的工作区（只聚合其他包）：
+一个没有根包的工作区（仅聚合其他包）：
 
 ```toml
 # Cargo.toml (没有 [package] 部分)
@@ -301,7 +301,7 @@ default-members = ["crate1", "crate2"]
 # 除非指定了 --workspace
 ```
 
-### 排除 Crates
+### 排除 Crate
 
 ```toml
 [workspace]
@@ -338,63 +338,13 @@ cargo doc --open -p crate1          # 打开特定 crate 的文档
 
 ### 最佳实践
 
-- **为相关的 crates 使用工作区** - 共享代码、工具和主应用程序
-- **通过 `[workspace.dependencies]` 共享通用依赖** 以保持一致性
+- **对相关的 crate 使用工作区** - 共享代码、工具和主应用程序
+- **通过 `[workspace.dependencies]` 共享通用依赖项** 以保持一致性
 - **每个工作区一个 `Cargo.lock`** 确保可复现的构建
-- **按功能拆分** - 为核心逻辑、CLI、服务器等分离 crates
-- **为工作区成员使用路径依赖**
+- **按功能拆分** - 为核心逻辑、CLI、服务器等分离 crate
+- **对工作区成员使用路径依赖**
 - **保持工作区根目录最小化** - 通常只有工作区配置
 - **根据需要一起或独立地对工作区成员进行版本控制**
 - **在 README 中记录工作区结构**
-- **为大型工作区使用 `default-members`** 以加快默认构建速度
+- **对大型工作区使用 `default-members`** 以加快默认构建速度
 - **定期使用 `cargo test --workspace` 测试整个工作区**
-
-```bash
-# 构建工作区中的所有 crate
-cargo build --workspace
-
-# 运行特定的二进制 crate
-cargo run -p my-cli-crate
-
-# 测试所有 crate
-cargo test --workspace
-
-# 测试特定的 crate
-cargo test -p my-lib-crate
-
-# 将 clippy 应用于所有 crate
-cargo clippy --workspace
-```
-
-### 虚拟工作区
-
-虚拟工作区是一个 `Cargo.toml` 文件，它只定义了一个 `[workspace]` 部分，而没有 `[package]` 部分。这对于组织一组不属于同一个包的 crate 非常有用。
-
-**虚拟 `Cargo.toml` 示例：**
-
-```toml
-[workspace]
-members = [
-    "project1",
-    "project2",
-]
-resolver = "2" # 推荐用于工作区
-```
-
-### 依赖项覆盖
-
-你可以在工作区级别覆盖依赖项，这对于测试本地或分叉版本的 crate 非常有用。
-
-```toml
-[patch.crates-io]
-# 临时使用本地版本的 `serde`
-serde = { path = "../forks/serde" }
-```
-
-### 最佳实践
-
-- **使用 `workspace.dependencies`**：在 `[workspace.dependencies]` 中定义共享依赖项，以确保版本一致。
-- **使用 `workspace.package`**：在 `[workspace.package]` 中定义共享的元数据，如 `authors`、`license` 和 `repository`。
-- **使用路径依赖**：对于工作区内的 crate，使用 `path = "../other-crate"` 引用它们。
-- **运行 `cargo check`**：在开发过程中使用 `cargo check --workspace` 进行快速编译检查。
-- **CI/CD 设置**：在持续集成管道中，使用 `--workspace` 标志来构建和测试所有 crate。
