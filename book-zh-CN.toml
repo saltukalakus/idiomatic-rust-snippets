@@ -1,0 +1,28 @@
+[book]
+authors = ["saltukalakus"]
+language = "zh-CN"
+multilingual = false
+src = "src/zh-CN"
+title = "惯用 Rust 代码片段"
+
+[output.html.playpen]
+editable = true
+editor = "ace"
+line-numbers = false
+
+[output.html.fold]
+enable = true
+
+[output.html]
+git-repository-url = "https://github.com/saltukalakus/idiomatic-rust-snippets"
+git-repository-icon = "fa-github"
+edit-url-template = "https://github.com/saltukalakus/idiomatic-rust-snippets/edit/main/{path}"
+additional-css = ["custom.css"]
+
+[output.html.print]
+enable = false
+
+[preprocessor.metadata]
+valid-tags = ["title", "author", "keywords", "released"]
+default-author = "Jane Doe"
+continue-on-error = true
