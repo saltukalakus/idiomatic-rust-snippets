@@ -5,25 +5,34 @@
 反模式：
 
 ```rust, editable
-let mut i = 0;
-while i < v.len() {
-    process(v[i]);
-    i += 1;
+fn main() {
+    let v = vec![1, 2, 3, 4, 5];
+    let mut i = 0;
+    while i < v.len() {
+        println!("{}", v[i]);
+        i += 1;
+    }
 }
 ```
 
 更好的替代：
 
 ```rust, editable
-for item in &v {
-    process(item);
+fn main() {
+    let v = vec![1, 2, 3, 4, 5];
+    for item in &v {
+        println!("{}", item);
+    }
 }
 ```
 
 需要索引信息时使用 `enumerate()`：
 
 ```rust, editable
-for (i, item) in v.iter().enumerate() {
-    println!("{}: {}", i, item);
+fn main() {
+    let v = vec![1, 2, 3, 4, 5];
+    for (i, item) in v.iter().enumerate() {
+        println!("{}: {}", i, item);
+    }
 }
 ```

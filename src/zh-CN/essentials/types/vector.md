@@ -27,12 +27,14 @@ v.push(3);
 可以使用索引或 `get` 方法访问向量中的元素：
 
 ```rust, editable
-let v = vec![1, 2, 3, 4, 5];
-println!("The third element is {}", v[2]);
+fn main() {
+    let v = vec![1, 2, 3, 4, 5];
+    println!("The third element is {}", v[2]);
 
-match v.get(2) {
-    Some(third) => println!("The third element is {}", third),
-    None => println!("There is no third element."),
+    match v.get(2) {
+        Some(third) => println!("The third element is {}", third),
+        None => println!("There is no third element."),
+    }
 }
 ```
 
@@ -41,9 +43,11 @@ match v.get(2) {
 可以使用 `for` 循环遍历向量元素：
 
 ```rust, editable
-let v = vec![1, 2, 3, 4, 5];
-for i in &v {
-    println!("{}", i);
+fn main() {
+    let v = vec![1, 2, 3, 4, 5];
+    for i in &v {
+        println!("{}", i);
+    }
 }
 ```
 

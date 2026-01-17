@@ -5,19 +5,26 @@
 反模式示例：手动索引并在循环中进行条件处理：
 
 ```rust, editable
-let v = vec![1, 2, 3, 4];
-let mut doubled = Vec::new();
-for i in 0..v.len() {
-    if v[i] % 2 == 0 {
-        doubled.push(v[i] * 2);
+fn main() {
+    let v = vec![1, 2, 3, 4];
+    let mut doubled = Vec::new();
+    for i in 0..v.len() {
+        if v[i] % 2 == 0 {
+            doubled.push(v[i] * 2);
+        }
     }
+    println!("{:?}", doubled);
 }
 ```
 
 更好的写法：
 
 ```rust, editable
-let doubled: Vec<_> = v.iter().filter(|&&x| x % 2 == 0).map(|&x| x * 2).collect();
+fn main() {
+    let v = vec![1, 2, 3, 4];
+    let doubled: Vec<_> = v.iter().filter(|&&x| x % 2 == 0).map(|&x| x * 2).collect();
+    println!("{:?}", doubled);
+}
 ```
 
 当需要索引时，考虑使用 `enumerate()` 而不是手工管理索引变量。

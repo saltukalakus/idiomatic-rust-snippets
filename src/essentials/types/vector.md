@@ -27,12 +27,14 @@ v.push(3);
 You can access elements in a vector using indexing or the `get` method:
 
 ```rust, editable
-let v = vec![1, 2, 3, 4, 5];
-println!("The third element is {}", v[2]);
+fn main() {
+    let v = vec![1, 2, 3, 4, 5];
+    println!("The third element is {}", v[2]);
 
-match v.get(2) {
-    Some(third) => println!("The third element is {}", third),
-    None => println!("There is no third element."),
+    match v.get(2) {
+        Some(third) => println!("The third element is {}", third),
+        None => println!("There is no third element."),
+    }
 }
 ```
 
@@ -41,9 +43,11 @@ match v.get(2) {
 You can iterate over the elements of a vector using a `for` loop:
 
 ```rust, editable
-let v = vec![1, 2, 3, 4, 5];
-for i in &v {
-    println!("{}", i);
+fn main() {
+    let v = vec![1, 2, 3, 4, 5];
+    for i in &v {
+        println!("{}", i);
+    }
 }
 ```
 
