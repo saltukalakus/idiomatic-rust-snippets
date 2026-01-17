@@ -1,4 +1,3 @@
-````markdown
 ### Crates（包）
 
 在 Rust 中，crate 是代码发布与分发的最小单元。crate 可以生成可执行程序或库。crate 分为两类：
@@ -79,4 +78,3 @@ fn main() {
 
 理解如何创建和使用 crate 可以帮助你充分利用 Rust 强大的模块系统。
 
-````

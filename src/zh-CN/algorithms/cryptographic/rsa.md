@@ -1,4 +1,3 @@
-````markdown
 ### RSA 算法
 
 RSA（Rivest-Shamir-Adleman）是一种广泛使用的公钥密码体系，用于安全的数据传输。其安全性基于将两个大素数相乘所得积进行因式分解的困难性。
@@ -101,4 +100,3 @@ fn extended_gcd(a: &BigInt, b: &BigInt) -> (BigInt, BigInt, BigInt) {
 - `extended_gcd` 函数实现扩展欧几里得算法以求贝祖等式的系数。
 - 示例对消息 42 进行加密并成功解密回原始值。
 - 在生产环境中，请使用像 `rsa` 或 `openssl` 这样的经过充分测试的密码库，而非自行实现 RSA。
-````

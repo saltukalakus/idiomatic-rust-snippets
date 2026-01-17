@@ -1,4 +1,3 @@
-````markdown
 ### 与类型系统对抗（Fighting the Type System）
 
 使用类型转换、transmute 或 `as` 强制转换类型以“凑合”类型，是导致 bug 的常见做法。Rust 的类型系统可以在编译时防止许多错误。与之对抗（使用不安全转换或忽略类型不匹配）会引入在运行时才暴露的问题。
@@ -77,4 +76,3 @@ fn main() {
 - `process_bytes` 在转换前检查长度
 - 使用 `u32::from_le_bytes()` 代替不安全的 transmute
 
-````

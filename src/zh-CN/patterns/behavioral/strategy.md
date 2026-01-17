@@ -9,7 +9,7 @@
 - 添加新策略无需修改现有代码
 
 ```rust, editable
-{{#include strategy/src/main.rs}}
+{{#include ../../../patterns/behavioral/strategy/src/main.rs}}
 ```
 
 **要点**:
