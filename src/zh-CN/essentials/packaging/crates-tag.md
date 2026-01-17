@@ -1,7 +1,9 @@
-```markdown
-### Crates.io Tag（版本与标签）
+### 使用关键词标记 Crate 以提高 SEO
 
-在 `Cargo.toml` 中通过版本号与特性（features）管理依赖。Crates.io 提供包发布与版本分发机制。
+要为 crate 添加标签，可以在 Cargo.toml 文件的 [package] 部分使用 `keywords` 命令。例如：
 
-（翻译说明：说明语义化版本与版本选择器的用法。）
+```toml
+[package]
+
+keywords = ["bcrypt", "password", "web", "hash"]
 ```
