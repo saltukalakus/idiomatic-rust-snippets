@@ -4,10 +4,15 @@ Diffie-Hellman 密钥交换算法允许两个通信方在不安全信道上安�
 
 **密钥交换步骤：**
 - 双方约定一个大素数 `p` 和基数 `g`（模 p 的原根）。
-- 每一方独立生成私钥。
-- 每一方使用公式 `g^private_key mod p` 计算公钥。
-- 公钥在双方之间交换。
-- 每一方使用接收到的公钥和自己的私钥计算共享密钥：`public_key^private_key mod p`。
+- A 方生成私钥并计算公钥：`public_A = g^private_A mod p`。
+- B 方生成私钥并计算公钥：`public_B = g^private_B mod p`。
+- 双方通过不安全信道交换公钥（窃听者可以看到公钥，但无法推导出私钥）。
+- A 方计算共享密钥：`secret_A = public_B^private_A mod p`。
+- B 方计算共享密钥：`secret_B = public_A^private_B mod p`。
+- 由于数学性质 `(g^a)^b = (g^b)^a = g^(ab) mod p`，两个共享密钥是相等的。
+- 断言确认双方计算出相同的共享密钥。
+- 共享密钥随后可用作对称密钥，用于进一步的加密通信。
+- 此示例为清晰起见使用了较小的数字；生产实现应使用像 `ring` 或 `openssl` 这样的加密库，并配合适当大小的参数和安全的随机数生成。
 
 ```rust, editable
 fn main() {
