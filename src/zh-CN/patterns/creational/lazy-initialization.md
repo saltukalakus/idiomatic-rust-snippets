@@ -1,26 +1,26 @@
-### Lazy Initialization
+### 延迟初始化（Lazy Initialization）
 
-Lazy initialization ensures that a value is initialized only once on first access. This is useful for global state like logging, metrics, or application-wide configuration that should be initialized exactly once, even in multi-threaded environments.
+延迟初始化确保值仅在首次访问时初始化一次。这对于全局状态（如日志、指标或应用程序范围的配置）很有用，即使在多线程环境中也应该只初始化一次。
 
-**Benefits**:
-- Thread-safe initialization without unsafe code
-- Deferred initialization until first use
-- Guaranteed single initialization even with concurrent access
-- Zero runtime cost after first initialization
+**优势**：
+- 线程安全的初始化，无需 unsafe 代码
+- 延迟初始化直到首次使用
+- 即使并发访问也保证单次初始化
+- 首次初始化后零运行时成本
 
 ```rust, editable
 {{#include lazy-initialization/src/main.rs}}
 ```
 
-**Key Points**:
-- The example shows `AppConfig` as a global singleton accessed via `get_config()`
-- `OnceLock` ensures `AppConfig` is initialized only once on first access using `get_or_init()`
-- `Arc<Mutex<AppConfig>>` wraps the config for thread-safe shared access and mutation
-- Main thread and spawned threads all access the same instance - incrementing from 0 to 3
-- After initialization, subsequent calls to `get_config()` return the cached static reference with zero overhead
+**关键点**：
+- 示例展示了通过 `get_config()` 访问的全局单例 `AppConfig`
+- `OnceLock` 确保 `AppConfig` 仅在首次访问时使用 `get_or_init()` 初始化一次
+- `Arc<Mutex<AppConfig>>` 包装配置以实现线程安全的共享访问和修改
+- 主线程和生成的线程都访问相同的实例 - 从 0 递增到 3
+- 初始化后，对 `get_config()` 的后续调用返回缓存的静态引用，零开销
 
-**When to Use**:
-- Global state like logging, metrics, or configuration
-- Expensive initialization that should be deferred
-- Singleton-like patterns where you need exactly one instance
-- Thread-safe lazy evaluation
+**何时使用**：
+- 全局状态，如日志、指标或配置
+- 应该延迟的昂贵初始化
+- 需要恰好一个实例的单例模式
+- 线程安全的延迟求值

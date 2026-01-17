@@ -1,26 +1,26 @@
-### Bridge Pattern
+### 桥接模式（Bridge Pattern）
 
-The bridge pattern separates an abstraction from its implementation, allowing both to vary independently. This avoids a proliferation of classes when both abstraction and implementation have multiple variants.
+桥接模式将抽象与其实现分离，允许两者独立变化。当抽象和实现都有多个变体时，这避免了类的增殖。
 
-**Benefits**:
-- Decouples abstraction from implementation
-- Both can be extended independently
-- Reduces the number of classes needed
-- Implementation details hidden from clients
+**优势**：
+- 解耦抽象与实现
+- 两者可以独立扩展
+- 减少所需的类数量
+- 向客户端隐藏实现细节
 
 ```rust, editable
 {{#include bridge/src/main.rs}}
 ```
 
-**Key Points**:
-- The example defines `Shape` trait (abstraction) and `Color` trait (implementation)
-- `Circle` and `Square` implement `Shape`, each holding a `Box<dyn Color>`
-- `Red` and `Blue` implement `Color` trait with different fill behaviors
-- In `main()`, shapes created with different colors: red circle, blue square
-- When `draw()` is called, shape delegates to its color's `fill()` method - shape and color vary independently
+**关键点**：
+- 示例定义了 `Shape` trait（抽象）和 `Color` trait（实现）
+- `Circle` 和 `Square` 实现 `Shape`，每个都持有 `Box<dyn Color>`
+- `Red` 和 `Blue` 实现 `Color` trait，具有不同的填充行为
+- 在 `main()` 中，使用不同颜色创建形状：红色圆形、蓝色正方形
+- 当调用 `draw()` 时，形状委托给其颜色的 `fill()` 方法 - 形状和颜色独立变化
 
-**When to Use**:
-- Both abstraction and implementation have multiple variants
-- Want to avoid Cartesian product of classes (N abstractions × M implementations)
-- Platform-specific implementations (OS, rendering backends)
-- Database drivers with multiple query languages and connection types
+**何时使用**：
+- 抽象和实现都有多个变体
+- 想要避免类的笛卡尔积（N 个抽象 × M 个实现）
+- 平台特定实现（操作系统、渲染后端）
+- 具有多种查询语言和连接类型的数据库驱动程序

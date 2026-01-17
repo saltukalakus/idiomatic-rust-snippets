@@ -1,26 +1,26 @@
-### Builder Pattern
+### 构建器模式（Builder Pattern）
 
-The builder pattern constructs complex objects step-by-step, separating construction logic from the final object representation. This is one of the most idiomatic patterns in Rust.
+构建器模式逐步构造复杂对象，将构造逻辑与最终对象表示分离。这是 Rust 中最惯用的模式之一。
 
-**Benefits**:
-- Construct complex objects with many optional parameters
-- Readable, self-documenting API
-- Immutable objects with flexible construction
-- Compile-time validation of required fields possible
+**优势**：
+- 构造具有许多可选参数的复杂对象
+- 可读、自文档化的 API
+- 具有灵活构造的不可变对象
+- 可能对必填字段进行编译时验证
 
 ```rust, editable
 {{#include builder/src/main.rs}}
 ```
 
-**Key Points**:
-- The example shows `HouseBuilder` with methods like `bedrooms()`, `bathrooms()`, `garage()` that return `self`
-- Each method modifies the builder and returns it, enabling chaining: `.bedrooms(3).bathrooms(2).garage(true)`
-- `build()` consumes the builder and constructs the final `House` struct
-- Default values can be set in `new()` - only specify what differs from defaults
-- Very common in Rust APIs (e.g., `std::process::Command`, HTTP client builders)
+**关键点**：
+- 示例展示了 `HouseBuilder`，具有 `bedrooms()`、`bathrooms()`、`garage()` 等返回 `self` 的方法
+- 每个方法修改构建器并返回它，允许链式调用：`.bedrooms(3).bathrooms(2).garage(true)`
+- `build()` 消耗构建器并构造最终的 `House` 结构体
+- 可以在 `new()` 中设置默认值 - 仅指定与默认值不同的部分
+- 在 Rust API 中非常常见（例如 `std::process::Command`、HTTP 客户端构建器）
 
-**When to Use**:
-- Objects with many optional configuration parameters
-- Complex construction logic that shouldn't be in constructors
-- When you want an immutable object with flexible construction
-- APIs that prioritize readability and discoverability
+**何时使用**：
+- 具有许多可选配置参数的对象
+- 不应在构造函数中的复杂构造逻辑
+- 当您需要具有灵活构造的不可变对象时
+- 优先考虑可读性和可发现性的 API

@@ -1,26 +1,26 @@
-### Flyweight Pattern
+### 享元模式（Flyweight Pattern）
 
-The flyweight pattern minimizes memory usage by sharing data among similar objects. Intrinsic (shared) state is separated from extrinsic (unique) state.
+享元模式通过在类似对象之间共享数据来最小化内存使用。内在（共享）状态与外在（独特）状态分离。
 
-**Benefits**:
-- Reduces memory usage when many similar objects exist
-- Improves cache locality by sharing data
-- Separates shared state from unique state
-- Particularly effective with immutable shared data
+**优势**：
+- 当存在许多类似对象时减少内存使用
+- 通过共享数据改善缓存局部性
+- 将共享状态与独特状态分离
+- 对不可变共享数据特别有效
 
 ```rust, editable
 {{#include flyweight/src/main.rs}}
 ```
 
-**Key Points**:
-- The example shows `Flyweight` struct storing shared intrinsic state (color, size)
-- `FlyweightFactory` maintains `HashMap<String, Arc<Flyweight>>` to cache flyweights by key
-- `get_flyweight()` checks if flyweight exists; if so, clones the `Arc`, otherwise creates new one
-- In `main()`, multiple objects share same flyweight - requesting "red" twice returns same instance
-- Memory saved by sharing common data; extrinsic state (position, context) passed when using flyweight
+**关键点**：
+- 示例展示了存储共享内在状态（颜色、大小）的 `Flyweight` 结构体
+- `FlyweightFactory` 维护 `HashMap<String, Arc<Flyweight>>` 按键缓存享元
+- `get_flyweight()` 检查享元是否存在；如果存在，则克隆 `Arc`，否则创建新的
+- 在 `main()` 中，多个对象共享同一享元 - 两次请求 "red" 返回相同实例
+- 通过共享公共数据节省内存；外在状态（位置、上下文）在使用享元时传递
 
-**When to Use**:
-- Large numbers of similar objects consuming memory
-- Object state can be divided into intrinsic (shared) and extrinsic (unique)
-- Text rendering (shared font data), game entities (shared sprites)
-- Immutable cached data shared across instances
+**何时使用**：
+- 大量类似对象消耗内存
+- 对象状态可以分为内在（共享）和外在（独特）
+- 文本渲染（共享字体数据）、游戏实体（共享精灵）
+- 跨实例共享的不可变缓存数据

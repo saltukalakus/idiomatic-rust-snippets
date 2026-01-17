@@ -1,32 +1,32 @@
-### Extension Traits
+### 扩展 Trait
 
-Extension traits allow you to add methods to types you don't own. This is a common pattern in Rust to extend functionality of external types (like those from `std` or other crates) without modifying them.
+扩展 trait 允许你为不属于你的类型添加方法。这是 Rust 中常见的模式，用于在不修改外部类型（如来自 `std` 或其他 crate 的类型）的情况下扩展其功能。
 
-**Benefits**:
-- Add methods to types from external crates
-- Keep implementations organized and modular
-- Work around Rust's orphan rule for traits
-- Create domain-specific APIs on existing types
+**优势**：
+- 为来自外部 crate 的类型添加方法
+- 保持实现的组织性和模块化
+- 解决 Rust 的 trait 孤儿规则
+- 在现有类型上创建特定领域的 API
 
 ```rust, editable
 {{#include extension-traits/src/main.rs}}
 ```
 
-**Key Points**:
-- The example defines `StringExt` trait with `is_blank()` and `truncate_with_ellipsis()` methods
-- Implemented on `str` type (not owned by us) - adds methods like `.is_blank()` to all string slices
-- `IteratorExt` adds `sum_by()` method to all iterators - maps items before summing
-- `OptionExt` adds `ok_or_else_log()` that logs errors to stderr before returning `Err`
-- `VecExt` adds `push_if_not_exists()` that only pushes if value not already in vector
-- Users must `use` the trait to access extension methods
+**关键点**：
+- 示例定义了带有 `is_blank()` 和 `truncate_with_ellipsis()` 方法的 `StringExt` trait
+- 在 `str` 类型（不属于我们）上实现 - 为所有字符串切片添加如 `.is_blank()` 的方法
+- `IteratorExt` 为所有迭代器添加 `sum_by()` 方法 - 在求和前映射元素
+- `OptionExt` 添加 `ok_or_else_log()` 方法，在返回 `Err` 前将错误记录到 stderr
+- `VecExt` 添加 `push_if_not_exists()` 方法，仅在值不在向量中时才推入
+- 用户必须 `use` trait 才能访问扩展方法
 
-**Common Extension Traits in Rust Ecosystem**:
-- `itertools::Itertools` - extends Iterator with many methods
-- `futures::StreamExt` - async stream extensions
-- `anyhow::Context` - extends Result with context methods
+**Rust 生态系统中的常见扩展 Trait**：
+- `itertools::Itertools` - 用许多方法扩展 Iterator
+- `futures::StreamExt` - async stream 扩展
+- `anyhow::Context` - 用上下文方法扩展 Result
 
-**When to Use**:
-- Adding utility methods to standard library types
-- Creating domain-specific APIs for existing types
-- Providing convenience methods in your library
-- When you can't modify the original type
+**何时使用**：
+- 为标准库类型添加实用方法
+- 为现有类型创建特定领域的 API
+- 在库中提供便捷方法
+- 当无法修改原始类型时

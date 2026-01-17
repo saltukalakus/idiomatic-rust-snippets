@@ -1,26 +1,26 @@
-### Enum Polymorphism
+### 枚举多态（Enum Polymorphism）
 
-Enum polymorphism uses Rust's algebraic data types with pattern matching to perform different operations on different types. This provides compile-time exhaustiveness checking and excellent performance.
+枚举多态使用 Rust 的代数数据类型和模式匹配对不同类型执行不同操作。这提供了编译时详尽检查和出色的性能。
 
-**Benefits**:
-- Exhaustive matching - compiler ensures all variants are handled
-- Zero-cost abstraction - faster than dynamic dispatch
-- Simple borrowing semantics
-- Adding operations is straightforward
+**优势**：
+- 详尽匹配 - 编译器确保处理所有变体
+- 零成本抽象 - 比动态分派更快
+- 简单的借用语义
+- 添加操作很简单
 
 ```rust, editable
 {{#include enum-polymorphism/src/main.rs}}
 ```
 
-**Key Points**:
-- The example defines `Shape` enum with `Circle`, `Rectangle`, and `Triangle` variants
-- Each variant stores its specific data (radius, width/height, sides)
-- `area()` and `perimeter()` methods use `match` to handle each variant differently
-- Compiler ensures all variants are handled - adding a new variant causes compile errors until all matches updated
-- In `main()`, shapes stored in `Vec<Shape>` and processed uniformly - no heap allocation or vtables needed
+**关键点**：
+- 示例定义了带有 `Circle`、`Rectangle` 和 `Triangle` 变体的 `Shape` 枚举
+- 每个变体存储其特定数据（半径、宽/高、边）
+- `area()` 和 `perimeter()` 方法使用 `match` 对每个变体进行不同处理
+- 编译器确保处理所有变体 - 添加新变体会导致编译错误，直到所有匹配更新
+- 在 `main()` 中，形状存储在 `Vec<Shape>` 中并统一处理 - 不需要堆分配或虚表
 
-**When to Use**:
-- Fixed set of types that need different behaviors
-- Performance-critical code (no dynamic dispatch)
-- Abstract syntax trees, expression evaluators
-- When you control all the types (not for plugins)
+**何时使用**：
+- 需要不同行为的固定类型集
+- 性能关键代码（无动态分派）
+- 抽象语法树、表达式评估器
+- 当您控制所有类型时（不适用于插件）

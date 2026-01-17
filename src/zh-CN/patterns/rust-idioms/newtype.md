@@ -1,27 +1,27 @@
-### Newtype Pattern
+### Newtype 模式
 
-The Newtype pattern wraps an existing type in a tuple struct with a single field. This provides type safety, encapsulation, and the ability to implement traits on the wrapper type without affecting the original type.
+Newtype 模式在单字段元组结构中包装现有类型。这提供了类型安全、封装性，以及在不影响原始类型的情况下为包装器类型实现 trait 的能力。
 
-**Benefits**:
-- Zero-cost abstraction (compiled away at runtime)
-- Type safety - distinct types even if they wrap the same underlying type
-- Implement external traits on external types (orphan rule workaround)
-- Hide implementation details
-- Add semantic meaning to primitive types
+**优势**：
+- 零成本抽象（在运行时编译消除）
+- 类型安全 - 即使包装相同的底层类型也是不同的类型
+- 可为外部类型实现外部 trait（解决孤儿规则）
+- 隐藏实现细节
+- 为原始类型添加语义含义
 
 ```rust, editable
 {{#include newtype/src/main.rs}}
 ```
 
-**Key Points**:
-- The example shows `UserId` and `AccountId` wrapping `u64` - prevents mixing them up accidentally
-- Each newtype has `new()` constructor and `value()` accessor for the inner type
-- `process_user()` takes specific types - compiler rejects `process_user(account, user)` (wrong order)
-- Second example: `Meters` and `Kilometers` wrapping `f64` with `From` trait for conversions
-- All wrapper types compiled away - zero runtime overhead, just compile-time safety
+**关键点**：
+- 示例展示了包装 `u64` 的 `UserId` 和 `AccountId` - 防止意外混淆
+- 每个 newtype 都有 `new()` 构造器和 `value()` 访问器用于获取内部类型
+- `process_user()` 接受特定类型 - 编译器会拒绝 `process_user(account, user)`（顺序错误）
+- 第二个示例：包装 `f64` 的 `Meters` 和 `Kilometers`，使用 `From` trait 进行转换
+- 所有包装器类型都会被编译消除 - 零运行时开销，仅编译时安全
 
-**When to Use**:
-- When you have multiple parameters of the same type (like `u64`)
-- When you want to add semantic meaning to a type
-- When you need to implement external traits on external types
-- When you want to restrict what operations are valid on a type
+**何时使用**：
+- 当有多个相同类型的参数时（如 `u64`）
+- 当想为类型添加语义含义时
+- 当需要为外部类型实现外部 trait 时
+- 当想限制类型的有效操作时

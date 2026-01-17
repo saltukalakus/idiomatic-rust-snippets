@@ -1,26 +1,26 @@
-### Factory Method Pattern
+### 工厂方法模式（Factory Method Pattern）
 
-The Factory Method provides an interface for creating objects, allowing implementations to decide which concrete type to instantiate. This decouples object creation from the code that uses the objects.
+工厂方法提供了创建对象的接口，允许实现决定实例化哪个具体类型。这将对象创建与使用对象的代码解耦。
 
-**Benefits**:
-- Decouples object creation from usage
-- Easy to add new types without modifying existing code
-- Promotes dependency injection and testability
-- Uses traits for polymorphic behavior
+**优势**：
+- 将对象创建与使用解耦
+- 易于添加新类型而无需修改现有代码
+- 促进依赖注入和可测试性
+- 使用 trait 实现多态行为
 
 ```rust, editable
 {{#include factory-method/src/main.rs}}
 ```
 
-**Key Points**:
-- The example defines `Shape` trait with `draw()` method, implemented by `Circle` and `Square`
-- `ShapeFactory` trait declares `create_shape()` which returns `Box<dyn Shape>`
-- `CircleFactory` creates circles, `SquareFactory` creates squares - each returns the appropriate type
-- In `main()`, factories create shapes without client knowing concrete types
-- To add new shapes (e.g., Triangle), just implement `Shape` trait and create a `TriangleFactory`
+**关键点**：
+- 示例定义了带有 `draw()` 方法的 `Shape` trait，由 `Circle` 和 `Square` 实现
+- `ShapeFactory` trait 声明了 `create_shape()`，返回 `Box<dyn Shape>`
+- `CircleFactory` 创建圆形，`SquareFactory` 创建正方形 - 每个都返回适当的类型
+- 在 `main()` 中，工厂创建形状而客户端不知道具体类型
+- 要添加新形状（例如 Triangle），只需实现 `Shape` trait 并创建 `TriangleFactory`
 
-**When to Use**:
-- When the exact type to create isn't known until runtime
-- To decouple object creation from business logic
-- When you want to extend object creation without changing existing code
-- For testability (inject mock factories)
+**何时使用**：
+- 当要创建的确切类型直到运行时才知道时
+- 将对象创建与业务逻辑解耦
+- 当您想在不更改现有代码的情况下扩展对象创建时
+- 为了可测试性（注入模拟工厂）

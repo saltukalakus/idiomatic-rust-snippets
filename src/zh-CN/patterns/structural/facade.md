@@ -1,26 +1,26 @@
-### Facade Pattern
+### 外观模式（Facade Pattern）
 
-The facade pattern provides a simplified, high-level interface to a complex subsystem. It makes the subsystem easier to use by hiding internal complexity.
+外观模式为复杂子系统提供简化的高层接口。它通过隐藏内部复杂性使子系统更易于使用。
 
-**Benefits**:
-- Simplifies complex subsystems with a clean API
-- Reduces coupling between clients and subsystem components
-- Provides a single entry point for common operations
-- Makes subsystems easier to test and refactor
+**优势**：
+- 使用清晰的 API 简化复杂子系统
+- 减少客户端与子系统组件之间的耦合
+- 为常见操作提供单一入口点
+- 使子系统更易于测试和重构
 
 ```rust, editable
 {{#include facade/src/main.rs}}
 ```
 
-**Key Points**:
-- The example shows `SubsystemA` and `SubsystemB` with their own `operation()` methods
-- `Facade` struct wraps both subsystems as private fields
-- `Facade::operation()` provides a single entry point that coordinates both subsystems
-- In `main()`, client calls `facade.operation()` instead of managing subsystems directly
-- Facade simplifies the interface - client doesn't need to know about subsystem details or order of operations
+**关键点**：
+- 示例展示了 `SubsystemA` 和 `SubsystemB`，它们各自有 `operation()` 方法
+- `Facade` 结构体将两个子系统作为私有字段包装
+- `Facade::operation()` 提供了一个单一入口点，协调两个子系统
+- 在 `main()` 中，客户端调用 `facade.operation()` 而不是直接管理子系统
+- 外观简化了接口 - 客户端不需要了解子系统细节或操作顺序
 
-**When to Use**:
-- Complex subsystems with many interdependent classes
-- Simplify library or framework usage
-- Provide a clean API for common use cases
-- Layer architecture (API facade over business logic)
+**何时使用**：
+- 具有许多相互依赖类的复杂子系统
+- 简化库或框架的使用
+- 为常见用例提供清晰的 API
+- 分层架构（业务逻辑上的 API 外观）
