@@ -42,6 +42,11 @@ make serve      # Serve the book locally
 - `make clean` - Clean build artifacts
 - `make all` - Check Rust, install dependencies and build
 
+If you want to build or view the Chinese translation locally, the book now
+supports multiple languages. `mdbook build` will produce language-specific
+output directories (for example `book/zh-CN/` for Simplified Chinese). You can
+also serve the site and navigate to the Chinese version at `/zh-CN/`.
+
 **Manual installation:**
 ```
 git clone https://github.com/saltukalakus/idiomatic-rust-snippets

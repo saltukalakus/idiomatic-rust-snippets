@@ -1,7 +1,13 @@
 [book]
 authors = ["saltukalakus"]
 language = "en"
-multilingual = false
+multilingual = true
+
+# Enabled languages for the book. mdBook will expose each language under
+# `book/<code>/` when built. Make sure `src/zh-CN` exists (it does).
+[languages]
+en = "English"
+"zh-CN" = "简体中文"
 src = "src"
 title = "Idiomatic Rust Snippets"
 
