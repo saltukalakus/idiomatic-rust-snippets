@@ -21,12 +21,12 @@ fn main() {
     let a = 10;
     let b = 20;
     let result = larger(a, b);
-    println!("The larger value is: {}", result);  // Prints: 20
+    println!("较大的值为：{}", result);  // Prints: 20
 
     let c = 5.5;
     let d = 2.3;
     let result = larger(c, d);
-    println!("The larger value is: {}", result);  // Prints: 5.5
+    println!("较大的值为：{}", result);  // Prints: 5.5
 }
 ```
 
@@ -44,8 +44,8 @@ fn main() {
     let integer_point = Point { x: 5, y: 10 };
     let float_point = Point { x: 1.0, y: 4.0 };
 
-    println!("Integer Point: ({}, {})", integer_point.x, integer_point.y);
-    println!("Float Point: ({}, {})", float_point.x, float_point.y);
+    println!("整数点：({}, {})", integer_point.x, integer_point.y);
+    println!("浮点点：({}, {})", float_point.x, float_point.y);
 }
 ```
 

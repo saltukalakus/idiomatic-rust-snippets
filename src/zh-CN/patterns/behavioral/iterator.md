@@ -5,7 +5,7 @@ Rust 的迭代器是构建在 trait 基础上的强大抽象，提供惰性计�
 ```rust, editable
 let v = vec![1, 2, 3];
 let sum: i32 = v.iter().sum();
-println!("sum: {}", sum);
+println!("和: {}", sum);
 ```
 
 在需要自定义迭代行为时，实现 `Iterator` trait：

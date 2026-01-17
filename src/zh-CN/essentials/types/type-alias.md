@@ -52,7 +52,7 @@ fn takes_long_type(f: Thunk) {
 }
 
 fn returns_long_type() -> Thunk {
-    Box::new(|| println!("Hello, world!"))
+    Box::new(|| println!("你好，世界！"))
 }
 
 fn main() {

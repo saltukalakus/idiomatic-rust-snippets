@@ -4,7 +4,7 @@
 
 ```rust, editable
 trait Subject { fn request(&self); }
-struct Real; impl Subject for Real { fn request(&self) { println!("real"); } }
+struct Real; impl Subject for Real { fn request(&self) { println!("真实"); } }
 struct Proxy { real: Real }
-impl Subject for Proxy { fn request(&self) { println!("proxying"); self.real.request(); } }
+impl Subject for Proxy { fn request(&self) { println!("代理中"); self.real.request(); } }
 ```

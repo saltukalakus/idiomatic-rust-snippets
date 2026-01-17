@@ -12,6 +12,6 @@ fn linear_search(slice: &[i32], target: i32) -> Option<usize> {
 
 fn main() {
     let a = [2, 4, 6, 8];
-    println!("pos: {:?}", linear_search(&a, 6));
+    println!("位置：{:?}", linear_search(&a, 6));
 }
 ```

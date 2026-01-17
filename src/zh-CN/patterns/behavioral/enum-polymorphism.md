@@ -7,9 +7,9 @@ enum Message { Quit, Echo(String), Move{x:i32,y:i32} }
 
 fn process(msg: Message) {
     match msg {
-        Message::Quit => println!("quit"),
-        Message::Echo(s) => println!("echo: {}", s),
-        Message::Move{x,y} => println!("move to {},{}", x, y),
+        Message::Quit => println!("退出"),
+        Message::Echo(s) => println!("回显: {}", s),
+        Message::Move{x,y} => println!("移动到 {},{}", x, y),
     }
 }
 ```

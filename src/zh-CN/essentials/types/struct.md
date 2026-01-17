@@ -20,7 +20,7 @@ fn main() {
         age: 30,
     };
 
-    println!("Name: {}, Age: {}", person.name, person.age);
+    println!("名字：{}，年龄：{}", person.name, person.age);
 }
 ```
 
@@ -48,7 +48,7 @@ struct Unit;
 fn main() {
     let unit = Unit;
 
-    println!("Unit struct created!");
+    println!("单元结构已创建！");
 }
 ```
 

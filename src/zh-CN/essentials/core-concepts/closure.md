@@ -6,7 +6,7 @@
 
 ```rust, editable
 let add = |a, b| a + b;
-println!("Sum: {}", add(2, 3)); // Output: Sum: 5
+println!("和: {}", add(2, 3)); // Output: 和: 5
 ```
 
 ### 捕获环境

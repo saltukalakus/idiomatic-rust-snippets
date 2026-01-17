@@ -26,8 +26,8 @@ fn divide(a: f64, b: f64) -> Result<f64, String> {
 
 fn main() {
     match divide(10.0, 2.0) {
-        Ok(result) => println!("Result: {}", result),
-        Err(e) => eprintln!("Error: {}", e),
+        Ok(result) => println!("结果：{}", result),
+        Err(e) => eprintln!("错误：{}", e),
     }
 }
 ```
@@ -51,14 +51,14 @@ fn add_two_numbers(a: &str, b: &str) -> Result<i32, String> {
 fn main() {
     // 成功示例
     match add_two_numbers("10", "20") {
-        Ok(sum) => println!("Sum: {}", sum),
-        Err(e) => println!("Error: {}", e),
+        Ok(sum) => println!("和: {}", sum),
+        Err(e) => println!("错误：{}", e),
     }
     
     // 错误示例
     match add_two_numbers("10", "abc") {
-        Ok(sum) => println!("Sum: {}", sum),
-        Err(e) => println!("Error: {}", e),
+        Ok(sum) => println!("和: {}", sum),
+        Err(e) => println!("错误：{}", e),
     }
 }
 ```
@@ -109,7 +109,7 @@ fn main() {
     
     // 转换 Err 值
     let err: Result<i32, &str> = Err("oops");
-    let mapped_err = err.map_err(|e| format!("Error: {}", e));
+    let mapped_err = err.map_err(|e| format!("错误：{}", e));
     println!("{:?}", mapped_err); // Err("Error: oops")
 }
 ```
@@ -190,8 +190,8 @@ fn divide(a: f64, b: f64) -> Result<f64, MathError> {
 
 fn main() {
     match divide(10.0, 0.0) {
-        Ok(result) => println!("Result: {}", result),
-        Err(e) => println!("Error: {}", e),
+        Ok(result) => println!("结果：{}", result),
+        Err(e) => println!("错误：{}", e),
     }
 }
 ```

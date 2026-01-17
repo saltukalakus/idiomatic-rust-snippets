@@ -18,10 +18,10 @@ fn main() {
     let direction = Direction::North;
 
     match direction {
-        Direction::North => println!("Heading North!"),
-        Direction::South => println!("Heading South!"),
-        Direction::East => println!("Heading East!"),
-        Direction::West => println!("Heading West!"),
+        Direction::North => println!("朝北！"),
+        Direction::South => println!("朝南！"),
+        Direction::East => println!("朝东！"),
+        Direction::West => println!("朝西！"),
     }
 }
 ```
@@ -43,10 +43,10 @@ fn main() {
     let msg4 = Message::ChangeColor(255, 0, 0);
 
     match msg1 {
-        Message::Quit => println!("Quit message"),
-        Message::Move { x, y } => println!("Move to ({}, {})", x, y),
-        Message::Write(text) => println!("Write message: {}", text),
-        Message::ChangeColor(r, g, b) => println!("Change color to ({}, {}, {})", r, g, b),
+        Message::Quit => println!("退出消息"),
+        Message::Move { x, y } => println!("移动到 ({}, {})", x, y),
+        Message::Write(text) => println!("写消息：{}", text),
+        Message::ChangeColor(r, g, b) => println!("将颜色改为 ({}, {}, {})", r, g, b),
     }
 }
 ```
@@ -64,10 +64,10 @@ enum Message {
 impl Message {
     fn call(&self) {
         match self {
-            Message::Quit => println!("Quit message"),
-            Message::Move { x, y } => println!("Move to ({}, {})", x, y),
-            Message::Write(text) => println!("Write message: {}", text),
-            Message::ChangeColor(r, g, b) => println!("Change color to ({}, {}, {})", r, g, b),
+            Message::Quit => println!("退出消息"),
+            Message::Move { x, y } => println!("移动到 ({}, {})", x, y),
+            Message::Write(text) => println!("写消息：{}", text),
+            Message::ChangeColor(r, g, b) => println!("将颜色改为 ({}, {}, {})", r, g, b),
         }
     }
 }

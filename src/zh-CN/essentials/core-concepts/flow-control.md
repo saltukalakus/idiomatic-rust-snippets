@@ -10,9 +10,9 @@ Rust 提供了多种流程控制选项，包括 `if` 语句、`while` 循环等�
 let number = 5;
 
 if number < 10 {
-    println!("The number is less than 10");
+    println!("数字小于 10");
 } else {
-    println!("The number is 10 or greater");
+    println!("数字大于等于 10");
 }
 ```
 
@@ -24,7 +24,7 @@ if number < 10 {
 let mut count = 0;
 
 while count < 5 {
-    println!("Count is: {}", count);
+    println!("计数：{}", count);
     count += 1;
 }
 ```
@@ -35,7 +35,7 @@ while count < 5 {
 
 ```rust, editable
 for number in 1..5 {
-    println!("The number is: {}", number);
+    println!("数字是：{}", number);
 }
 ```
 
@@ -47,10 +47,10 @@ for number in 1..5 {
 let number = 3;
 
 match number {
-    1 => println!("One"),
-    2 => println!("Two"),
-    3 => println!("Three"),
-    _ => println!("Something else"),
+    1 => println!("一"),
+    2 => println!("二"),
+    3 => println!("三"),
+    _ => println!("其他"),
 }
 ```
 

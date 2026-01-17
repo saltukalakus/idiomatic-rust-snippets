@@ -6,9 +6,9 @@
 
 ```rust, editable
 match option {
-    Some(1) => println!("one"),
-    Some(2) => println!("two"),
-    Some(3) => println!("three"),
+    Some(1) => println!("一"),
+    Some(2) => println!("二"),
+    Some(3) => println!("三"),
     _ => println!("other"),
 }
 ```
@@ -17,7 +17,7 @@ match option {
 
 ```rust, editable
 match option {
-    Some(1..=3) => println!("one to three"),
+    Some(1..=3) => println!("一 to 三"),
     Some(_) => println!("other"),
     None => println!("none"),
 }

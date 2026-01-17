@@ -25,8 +25,8 @@ fn find_word(word: &str) -> Option<usize> {
 
 fn main() {
     match find_word("rust") {
-        Some(index) => println!("Found at index: {}", index),
-        None => println!("Not found"),
+        Some(index) => println!("找到索引：{}", index),
+        None => println!("未找到"),
     }
 }
 ```
@@ -39,7 +39,7 @@ fn main() {
 fn main() {
     let some_number = Some(10);
     let number = some_number.unwrap();
-    println!("The number is: {}", number);
+    println!("数字是：{}", number);
 }
 ```
 
@@ -52,8 +52,8 @@ fn main() {
     let some_number = Some(10);
     let none_number: Option<i32> = None;
 
-    println!("The number is: {}", some_number.unwrap_or(0));
-    println!("The number is: {}", none_number.unwrap_or(0));
+    println!("数字是：{}", some_number.unwrap_or(0));
+    println!("数字是：{}", none_number.unwrap_or(0));
 }
 ```
 

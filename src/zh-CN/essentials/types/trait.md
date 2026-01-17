@@ -24,7 +24,7 @@ pub struct Person {
 // Implement the `Greet` trait for the `Person` struct
 impl Greet for Person {
     fn greet(&self) {
-        println!("Hello, my name is {}!", self.name);
+        println!("你好，我的名字是 {}！", self.name);
     }
 }
 
@@ -36,7 +36,7 @@ pub struct Dog {
 // Implement the `Greet` trait for the `Dog` struct
 impl Greet for Dog {
     fn greet(&self) {
-        println!("Woof! My name is {}!", self.name);
+        println!("汪！我的名字是 {}！", self.name);
     }
 }
 

@@ -9,6 +9,6 @@ use std::thread;
 fn main() {
     let (tx, rx) = mpsc::channel();
     thread::spawn(move || tx.send(42).unwrap());
-    println!("received: {}", rx.recv().unwrap());
+    println!("接收：{}", rx.recv().unwrap());
 }
 ```

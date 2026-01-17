@@ -5,8 +5,8 @@
 ```rust, editable
 trait Component { fn op(&self); }
 struct Concrete;
-impl Component for Concrete { fn op(&self) { println!("core"); } }
+impl Component for Concrete { fn op(&self) { println!("核心"); } }
 
 struct Decorator<T: Component> { inner: T }
-impl<T: Component> Component for Decorator<T> { fn op(&self) { println!("before"); self.inner.op(); println!("after"); } }
+impl<T: Component> Component for Decorator<T> { fn op(&self) { println!("之前"); self.inner.op(); println!("之后"); } }
 ```

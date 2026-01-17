@@ -9,7 +9,7 @@
 ```rust, editable
 fn main() {
     // 字符串字面量是 &str
-    let greeting: &str = "Hello, world!";
+    let greeting: &str = "你好，世界！";
     
     // &str 不拥有数据
     let slice: &str = &greeting[0..5]; // "Hello"
@@ -30,7 +30,7 @@ fn main() {
     // 可以修改拥有的字符串
     owned.push_str(", world!");
     
-    println!("{}", owned); // "Hello, world!"
+    println!("{}", owned); // "你好，世界！"
 }
 ```
 
@@ -103,7 +103,7 @@ fn main() {
 
 ```rust, editable
 fn main() {
-    let s = String::from("Hello, world!");
+    let s = String::from("你好，世界！");
     
     // 创建切片
     let hello: &str = &s[0..5];
@@ -142,7 +142,7 @@ fn main() {
     
     // 使用 format! 宏
     let name = "Alice";
-    let greeting = format!("Hello, {}!", name);
+    let greeting = format!("你好，{}！", name);
     
     // 使用 + 操作符（移动第一个 String）
     let s1 = String::from("Hello, ");

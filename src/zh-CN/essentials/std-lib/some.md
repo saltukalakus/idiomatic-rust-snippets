@@ -9,7 +9,7 @@ fn divide(a: i32, b: i32) -> Option<i32> {
 
 fn main() {
     match divide(10, 2) {
-        Some(v) => println!("Result: {}", v),
+        Some(v) => println!("结果：{}", v),
         None => println!("Divide by zero"),
     }
 }

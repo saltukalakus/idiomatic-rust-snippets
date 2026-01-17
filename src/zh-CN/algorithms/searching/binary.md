@@ -17,6 +17,6 @@ fn binary_search(slice: &[i32], target: i32) -> Option<usize> {
 
 fn main() {
     let a = [1, 3, 5, 7, 9];
-    println!("pos: {:?}", binary_search(&a, 5));
+    println!("位置：{:?}", binary_search(&a, 5));
 }
 ```

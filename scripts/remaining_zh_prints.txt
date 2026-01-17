@@ -1,0 +1,199 @@
+src/zh-CN/patterns/creational/abstract-method.md:9:impl Renderer for Svg { fn render(&self) { println!("svg"); } }
+src/zh-CN/patterns/behavioral/message-passing.md:12:    println!("received: {}", rx.recv().unwrap());
+src/zh-CN/patterns/behavioral/chain-of-responsibility.md:9:impl Handler for Logger { fn handle(&self, req: &str) -> bool { println!("log: {}", req); false } }
+src/zh-CN/patterns/behavioral/chain-of-responsibility.md:17:    for h in &handlers { if h.handle(req) { println!("handled"); break; } }
+src/zh-CN/patterns/structural/bridge.md:8:impl Implementor for ConcreteImpl { fn do_it(&self) { println!("doing"); } }
+src/zh-CN/patterns/structural/decorator.md:8:impl Component for Concrete { fn op(&self) { println!("core"); } }
+src/zh-CN/patterns/structural/decorator.md:11:impl<T: Component> Component for Decorator<T> { fn op(&self) { println!("before"); self.inner.op(); println!("after"); } }
+src/zh-CN/patterns/structural/proxy.md:7:struct Real; impl Subject for Real { fn request(&self) { println!("real"); } }
+src/zh-CN/patterns/structural/proxy.md:9:impl Subject for Proxy { fn request(&self) { println!("proxying"); self.real.request(); } }
+src/zh-CN/algorithms/searching/binary.md:20:    println!("pos: {:?}", binary_search(&a, 5));
+src/zh-CN/algorithms/searching/linear.md:15:    println!("pos: {:?}", linear_search(&a, 6));
+src/zh-CN/algorithms/graph/a-star.md:121:          println!("Path found: {:?}", path);
+src/zh-CN/algorithms/graph/a-star.md:123:          println!("No path found.");
+src/zh-CN/algorithms/graph/shortest-path.md:89:        println!("The shortest path from node {} to node {} is {}", start_node, i, d);
+src/zh-CN/algorithms/graph/minimum-spanning-tree.md:103:    println!("Edges in the constructed MST:");
+src/zh-CN/algorithms/graph/all-pairs-shortest-path.md:44:    println!("Shortest distances between every pair of vertices:");
+src/zh-CN/algorithms/graph/all-pairs-shortest-path.md:48:                print!("INF ");
+src/zh-CN/algorithms/dynamic-programming/knapsack-problem.md:31:    println!("The maximum value that can be obtained is: {}", max_value);
+src/zh-CN/algorithms/dynamic-programming/longest-common-subsequence.md:49:     println!("The Longest Common Subsequence is: {}", lcs);
+src/zh-CN/algorithms/dynamic-programming/fibonacci.md:26:    println!("Fibonacci number at position {} is {}", n, fibonacci(n));
+src/zh-CN/algorithms/dynamic-programming/matrix-chain-multiplication.md:32:    println!("Minimum number of multiplications is {}", m[0][p.len() - 2]);
+src/zh-CN/algorithms/cryptographic/bcrypt.md:47:    println!("Password: {}", password);
+src/zh-CN/algorithms/cryptographic/bcrypt.md:48:    println!("Salt: {}", salt);
+src/zh-CN/algorithms/cryptographic/bcrypt.md:49:    println!("Hashed Password: {}", hashed_password);
+src/zh-CN/algorithms/cryptographic/bcrypt.md:54:    println!("Hash verification successful!");
+src/zh-CN/algorithms/cryptographic/diffie-hellman.md:28:    println!("Public Key A: {}", public_key_a);
+src/zh-CN/algorithms/cryptographic/diffie-hellman.md:29:    println!("Public Key B: {}", public_key_b);
+src/zh-CN/algorithms/cryptographic/diffie-hellman.md:36:    println!("Shared Secret A: {}", shared_secret_a);
+src/zh-CN/algorithms/cryptographic/diffie-hellman.md:37:    println!("Shared Secret B: {}", shared_secret_b);
+src/zh-CN/algorithms/cryptographic/diffie-hellman.md:40:    println!("Key exchange successful!");
+src/zh-CN/algorithms/cryptographic/aes.md:136:    println!("Original block: {:02x?}", block);
+src/zh-CN/algorithms/cryptographic/aes.md:138:    println!("Encrypted block: {:02x?}", block);
+src/zh-CN/algorithms/cryptographic/rsa.md:57:     println!("Public Key: (e: {}, n: {})", e, n);
+src/zh-CN/algorithms/cryptographic/rsa.md:58:     println!("Private Key: (d: {}, n: {})", d, n);
+src/zh-CN/algorithms/cryptographic/rsa.md:63:     println!("Encrypted message: {}", ciphertext);
+src/zh-CN/algorithms/cryptographic/rsa.md:67:     println!("Decrypted message: {}", decrypted_message);
+src/zh-CN/anti-patterns/error-handling/unwrap-abuse.md:20:    println!("Config loaded: {} bytes", config.len());
+src/zh-CN/anti-patterns/error-handling/unwrap-abuse.md:42:            println!("Config loaded: {} bytes", config.len());
+src/zh-CN/anti-patterns/error-handling/unwrap-abuse.md:45:            eprintln!("Failed to load config: {}", e);
+src/zh-CN/anti-patterns/error-handling/unwrap-abuse.md:46:            eprintln!("Please set CONFIG_PATH environment variable");
+src/zh-CN/anti-patterns/error-handling/panic-in-libraries.md:28:        println!("Using port: {}", port);
+src/zh-CN/anti-patterns/error-handling/panic-in-libraries.md:57:            Ok(port) => println!("Using port: {}", port),
+src/zh-CN/anti-patterns/error-handling/panic-in-libraries.md:58:            Err(e) => eprintln!("Skipping invalid port '{}': {}", port_str, e),
+src/zh-CN/anti-patterns/type-system/deref-abuse.md:45:    println!("Name: {}", admin.name); // 也能通过 Deref 强制转换访问
+src/zh-CN/anti-patterns/type-system/deref-abuse.md:77:        println!("Permissions: {:?}", self.permissions);
+src/zh-CN/anti-patterns/type-system/deref-abuse.md:91:    println!("Name: {}", admin.user().name); // 明确访问 user 的数据
+src/zh-CN/anti-patterns/type-system/string-vs-str.md:27:        println!("Valid email: {}", email);
+src/zh-CN/anti-patterns/type-system/string-vs-str.md:58:        println!("Valid email: {}", email);
+src/zh-CN/anti-patterns/type-system/fighting-type-system.md:26:    println!("Average: {}", avg); // Prints: Average: 20
+src/zh-CN/anti-patterns/type-system/fighting-type-system.md:31:    println!("Average: {}", avg);
+src/zh-CN/anti-patterns/type-system/fighting-type-system.md:62:        println!("Average: {:.2}", avg); // Prints: Average: 20.00
+src/zh-CN/anti-patterns/type-system/fighting-type-system.md:67:        Some(avg) => println!("Average: {:.2}", avg),
+src/zh-CN/anti-patterns/type-system/fighting-type-system.md:68:        None => println!("Cannot calculate average of empty list"), // Prints this
+src/zh-CN/anti-patterns/type-system/stringly-typed.md:21:            println!("Log level set to: {}", level);
+src/zh-CN/anti-patterns/type-system/stringly-typed.md:23:        _ => println!("Invalid log level: {}", level), // 运行时错误
+src/zh-CN/anti-patterns/type-system/stringly-typed.md:66:    println!("Log level set to: {:?}", level);
+src/zh-CN/anti-patterns/code-structure/poor-pattern-matching.md:12:    _ => println!("other"),
+src/zh-CN/anti-patterns/code-structure/poor-pattern-matching.md:21:    Some(_) => println!("other"),
+src/zh-CN/anti-patterns/code-structure/poor-pattern-matching.md:22:    None => println!("none"),
+src/zh-CN/anti-patterns/ownership-memory/excessive-cloning.md:19:    println!("Words: {}, Lines: {}", words, lines);
+src/zh-CN/anti-patterns/ownership-memory/excessive-cloning.md:38:    println!("Words: {}, Lines: {}", words, lines);
+src/zh-CN/anti-patterns/ownership-memory/unnecessary-unsafe.md:24:        println!("Middle: {}", mid); // Prints: Middle: 30
+src/zh-CN/anti-patterns/ownership-memory/unnecessary-unsafe.md:29:        println!("Middle: {}", mid);
+src/zh-CN/anti-patterns/ownership-memory/unnecessary-unsafe.md:31:        println!("Empty vector"); // Prints: Empty vector
+src/zh-CN/anti-patterns/ownership-memory/unnecessary-unsafe.md:49:        println!("Middle: {}", mid); // Prints: Middle: 30
+src/zh-CN/anti-patterns/ownership-memory/unnecessary-unsafe.md:54:        println!("Empty vector"); // Prints: Empty vector
+src/zh-CN/anti-patterns/ownership-memory/unnecessary-unsafe.md:56:        println!("No middle element");
+src/zh-CN/anti-patterns/ownership-memory/unnecessary-smart-pointers.md:25:        println!("Timeout: {}s", self.timeout);
+src/zh-CN/anti-patterns/ownership-memory/unnecessary-smart-pointers.md:26:        println!("Retries: {}", self.max_retries);
+src/zh-CN/anti-patterns/ownership-memory/unnecessary-smart-pointers.md:27:        println!("Endpoint: {}", self.endpoint);
+src/zh-CN/anti-patterns/ownership-memory/unnecessary-smart-pointers.md:59:        println!("Timeout: {}s", self.timeout);
+src/zh-CN/anti-patterns/ownership-memory/unnecessary-smart-pointers.md:60:        println!("Retries: {}", self.max_retries);
+src/zh-CN/anti-patterns/ownership-memory/unnecessary-smart-pointers.md:61:        println!("Endpoint: {}", self.endpoint);
+src/zh-CN/anti-patterns/ownership-memory/lifetime-issues.md:28:    println!("First word: {}", word); // Prints: First word: Hello
+src/zh-CN/anti-patterns/ownership-memory/lifetime-issues.md:32:    println!("Longest: {}", result); // Prints: Longest: very long string
+src/zh-CN/anti-patterns/ownership-memory/lifetime-issues.md:59:    println!("First word: {}", word); // Prints: First word: Hello
+src/zh-CN/anti-patterns/ownership-memory/lifetime-issues.md:62:    println!("Longest: {}", result); // Prints: Longest: very long string
+src/zh-CN/anti-patterns/ownership-memory/excessive-mutability.md:22:    println!("Total: ${:.2}", total); // Prints: $55.00 (错误，应为 $54.00)
+src/zh-CN/anti-patterns/ownership-memory/excessive-mutability.md:25:    println!("Expected: ${:.2}", expected); // Prints: $54.00
+src/zh-CN/anti-patterns/ownership-memory/excessive-mutability.md:47:    println!("Total: ${:.2}", total); // Prints: $54.00 (正确)
+src/zh-CN/anti-patterns/ownership-memory/excessive-mutability.md:50:    println!("Expected: ${:.2}", expected); // Prints: $54.00
+src/zh-CN/essentials/std-lib/result.md:84:    println!("Is ok: {}", good_result.is_ok());  // true
+src/zh-CN/essentials/std-lib/result.md:85:    println!("Is err: {}", bad_result.is_err()); // true
+src/zh-CN/essentials/std-lib/result.md:92:        eprintln!("Error occurred: {}", e);
+src/zh-CN/essentials/std-lib/result.md:153:        Ok(numbers) => println!("Numbers: {:?}", numbers),
+src/zh-CN/essentials/std-lib/result.md:154:        Err(e) => eprintln!("Parse error: {}", e),
+src/zh-CN/essentials/std-lib/arc-mutex.md:21:            println!("Thread {} sees: {:?}", i, data_clone);
+src/zh-CN/essentials/std-lib/arc-mutex.md:48:    println!("Counter: {}", *counter.lock().unwrap());
+src/zh-CN/essentials/std-lib/arc-mutex.md:79:    println!("Final count: {}", *counter.lock().unwrap());
+src/zh-CN/essentials/std-lib/arc-mutex.md:151:        Ok(guard) => println!("Value: {}", *guard),
+src/zh-CN/essentials/std-lib/arc-mutex.md:153:            println!("Mutex was poisoned!");
+src/zh-CN/essentials/std-lib/arc-mutex.md:156:            println!("Recovered value: {}", *guard);
+src/zh-CN/essentials/std-lib/arc-mutex.md:176:        Ok(_) => println!("Lock acquired"),
+src/zh-CN/essentials/std-lib/arc-mutex.md:177:        Err(_) => println!("Lock is already held"),
+src/zh-CN/essentials/std-lib/arc-mutex.md:183:        Ok(_) => println!("Lock acquired successfully!"),
+src/zh-CN/essentials/std-lib/arc-mutex.md:184:        Err(_) => println!("Still couldn't acquire lock"),
+src/zh-CN/essentials/std-lib/imp.md:20:    println!("distance: {}", p.dist_from_origin());
+src/zh-CN/essentials/std-lib/hashmap.md:14:        println!("Blue: {}", score);
+src/zh-CN/essentials/std-lib/some.md:13:        None => println!("Divide by zero"),
+src/zh-CN/essentials/std-lib/rc.md:18:    println!("Value: {}", value);
+src/zh-CN/essentials/std-lib/rc.md:33:    println!("Value: {}", value);
+src/zh-CN/essentials/std-lib/rc.md:34:    println!("Cloned Value: {}", value_clone);
+src/zh-CN/essentials/std-lib/box.md:12:    println!("Boxed value: {}", boxed_int);
+src/zh-CN/essentials/std-lib/box.md:48:        println!("Woof!");
+src/zh-CN/essentials/std-lib/box.md:54:        println!("Meow!");
+src/zh-CN/essentials/std-lib/box.md:103:    println!("Stack size of Box: {}", std::mem::size_of::<Box<i32>>());
+src/zh-CN/essentials/std-lib/box.md:104:    println!("Stack size of i32: {}", std::mem::size_of::<i32>());
+src/zh-CN/essentials/std-lib/box.md:115:    println!("Value: {}", boxed);
+src/zh-CN/essentials/std-lib/box.md:118:    println!("Value: {}", *boxed);
+src/zh-CN/essentials/std-lib/box.md:123:    println!("Modified: {}", boxed_mut);
+src/zh-CN/essentials/std-lib/box.md:131:    println!("Consumed: {}", boxed);
+src/zh-CN/essentials/std-lib/box.md:160:    println!("Stack: {}, Heap: {}", stack_val, *heap_val);
+src/zh-CN/essentials/std-lib/vec.md:24:println!("Length: {}", v2.len());
+src/zh-CN/essentials/std-lib/vec.md:27:println!("Vector 1: {:?}", v1);
+src/zh-CN/essentials/std-lib/vec.md:28:println!("Vector 2: {:?}", v2);
+src/zh-CN/essentials/std-lib/vec.md:29:println!("Vector 3: {:?}", v3);
+src/zh-CN/essentials/std-lib/vec.md:30:println!("Vector 3: {:?}", v4);
+src/zh-CN/essentials/types/phantom-data.md:38:    println!("Value: {}", wrapper.value);
+src/zh-CN/essentials/types/phantom-data.md:41:    println!("Size: {}", std::mem::size_of::<Wrapper<String>>());
+src/zh-CN/essentials/types/phantom-data.md:62:        println!("Door is locked");
+src/zh-CN/essentials/types/phantom-data.md:67:        println!("Unlocking door");
+src/zh-CN/essentials/types/phantom-data.md:74:        println!("Locking door");
+src/zh-CN/essentials/types/phantom-data.md:79:        println!("Door opened!");
+src/zh-CN/essentials/types/phantom-data.md:116:    println!("Processing context {}", ctx.id);
+src/zh-CN/essentials/types/phantom-data.md:200:        println!("Dropping inspector: {}", self.name);
+src/zh-CN/essentials/types/compound.md:15:    println!("Tuple: ({}, {}, {})", x, y, z);
+src/zh-CN/essentials/types/compound.md:19:    println!("Array: {:?}", array);
+src/zh-CN/essentials/types/struct.md:37:    println!("Black color: ({}, {}, {})", black.0, black.1, black.2);
+src/zh-CN/essentials/types/pointer.md:22:    println!("y: {}", y);
+src/zh-CN/essentials/types/pointer.md:27:    println!("z: {}", z);
+src/zh-CN/essentials/types/pointer.md:40:    println!("b: {}", b);
+src/zh-CN/essentials/types/pointer.md:52:    println!("a: {}, b: {}", a, b);
+src/zh-CN/essentials/types/pointer.md:67:        println!("b: {}", b);
+src/zh-CN/essentials/types/pointer.md:70:    println!("a: {}", a);
+src/zh-CN/essentials/types/pointer.md:91:        println!("y: {}", *y);
+src/zh-CN/essentials/types/pointer.md:93:        println!("z: {}", *w);
+src/zh-CN/essentials/types/vector.md:31:println!("The third element is {}", v[2]);
+src/zh-CN/essentials/types/vector.md:34:    Some(third) => println!("The third element is {}", third),
+src/zh-CN/essentials/types/vector.md:35:    None => println!("There is no third element."),
+src/zh-CN/essentials/types/type-alias.md:18:    println!("Distance: {} km", distance);
+src/zh-CN/essentials/types/type-alias.md:37:    println!("IntPoint: ({}, {})", int_point.x, int_point.y);
+src/zh-CN/essentials/types/type-alias.md:38:    println!("FloatPoint: ({}, {})", float_point.x, float_point.y);
+src/zh-CN/essentials/types/generic.md:68:    println!("Some number: {:?}", some_number);
+src/zh-CN/essentials/types/generic.md:69:    println!("Some string: {:?}", some_string);
+src/zh-CN/essentials/types/generic.md:70:    println!("No value: {:?}", no_value);
+src/zh-CN/essentials/types/scalar.md:17:    println!("x: {}, y: {}, is_active: {}, letter: {}", x, y, is_active, letter);
+src/zh-CN/essentials/operators/bitwise-operations.md:16:    println!("a & b: {:04b}", a & b); // Bitwise AND
+src/zh-CN/essentials/operators/bitwise-operations.md:17:    println!("a | b: {:04b}", a | b); // Bitwise OR
+src/zh-CN/essentials/operators/bitwise-operations.md:18:    println!("a ^ b: {:04b}", a ^ b); // Bitwise XOR
+src/zh-CN/essentials/operators/bitwise-operations.md:19:    println!("a << 1: {:04b}", a << 1); // Left shift
+src/zh-CN/essentials/operators/bitwise-operations.md:20:    println!("a >> 1: {:04b}", a >> 1); // Right shift
+src/zh-CN/essentials/operators/arithmetic-operations.md:16:    println!("a + b = {}", a + b); // Addition
+src/zh-CN/essentials/operators/arithmetic-operations.md:17:    println!("a - b = {}", a - b); // Subtraction
+src/zh-CN/essentials/operators/arithmetic-operations.md:18:    println!("a * b = {}", a * b); // Multiplication
+src/zh-CN/essentials/operators/arithmetic-operations.md:19:    println!("a / b = {}", a / b); // Division
+src/zh-CN/essentials/operators/arithmetic-operations.md:20:    println!("a % b = {}", a % b); // Remainder
+src/zh-CN/essentials/operators/assignement-operations.md:17:    println!("a += 5: {}", a);
+src/zh-CN/essentials/operators/assignement-operations.md:20:    println!("a -= 3: {}", a);
+src/zh-CN/essentials/operators/assignement-operations.md:23:    println!("a *= 2: {}", a);
+src/zh-CN/essentials/operators/assignement-operations.md:26:    println!("a /= 4: {}", a);
+src/zh-CN/essentials/operators/assignement-operations.md:29:    println!("a %= 3: {}", a);
+src/zh-CN/essentials/operators/logical-operations.md:14:    println!("a && b: {}", a && b); // Logical AND
+src/zh-CN/essentials/operators/logical-operations.md:15:    println!("a || b: {}", a || b); // Logical OR
+src/zh-CN/essentials/operators/comparison-operations.md:17:    println!("a == b: {}", a == b); // Equal to
+src/zh-CN/essentials/operators/comparison-operations.md:18:    println!("a != b: {}", a != b); // Not equal to
+src/zh-CN/essentials/operators/comparison-operations.md:19:    println!("a > b: {}", a > b); // Greater than
+src/zh-CN/essentials/operators/comparison-operations.md:20:    println!("a < b: {}", a < b); // Less than
+src/zh-CN/essentials/operators/comparison-operations.md:21:    println!("a >= b: {}", a >= b); // Greater than or equal to
+src/zh-CN/essentials/operators/comparison-operations.md:22:    println!("a <= b: {}", a <= b); // Less than or equal to
+src/zh-CN/essentials/core-concepts/async-await.md:24:    println!("Got: {}", data);
+src/zh-CN/essentials/core-concepts/async-await.md:55:    println!("Starting...");
+src/zh-CN/essentials/core-concepts/async-await.md:57:    println!("Done!");
+src/zh-CN/essentials/core-concepts/async-await.md:68:    println!("Task one complete");
+src/zh-CN/essentials/core-concepts/async-await.md:73:    println!("Task two complete");
+src/zh-CN/essentials/core-concepts/async-await.md:113:    println!("File content: {}", content);
+src/zh-CN/essentials/core-concepts/async-await.md:131:    println!("Task returned: {}", result);
+src/zh-CN/essentials/core-concepts/crate.md:30:    println!("Hello, world!");
+src/zh-CN/essentials/core-concepts/crate.md:55:    println!("Hello, library!");
+src/zh-CN/essentials/core-concepts/crate.md:76:    println!("Random number: {}", n);
+src/zh-CN/essentials/core-concepts/iterator.md:168:            println!("Mapping {}", x);
+src/zh-CN/essentials/core-concepts/borrow.md:14:    println!("The length of '{}' is {}.", s1, len); // s1 在此仍然有效
+src/zh-CN/essentials/core-concepts/pattern-matching.md:42:    Point { x, y } => println!("On neither axis: ({}, {})", x, y),
+src/zh-CN/essentials/core-concepts/closure.md:18:let print_x = || println!("x: {}", x);
+src/zh-CN/essentials/core-concepts/closure.md:32:println!("x: {}", x); // Output: x: 15
+src/zh-CN/essentials/core-concepts/closure.md:41:let print_x = move || println!("x: {:?}", x);
+src/zh-CN/essentials/core-concepts/error-handling.md:21:        Ok(result) => println!("Result: {}", result),
+src/zh-CN/essentials/core-concepts/error-handling.md:22:        Err(e) => println!("Error: {}", e),
+src/zh-CN/essentials/core-concepts/error-handling.md:26:        Ok(result) => println!("Result: {}", result),
+src/zh-CN/essentials/core-concepts/error-handling.md:27:        Err(e) => println!("Error: {}", e),
+src/zh-CN/essentials/core-concepts/error-handling.md:43:        Some(index) => println!("Found at index: {}", index),
+src/zh-CN/essentials/core-concepts/error-handling.md:44:        None => println!("Not found"),
+src/zh-CN/essentials/core-concepts/error-handling.md:65:        Ok(contents) => println!("File contents: {}", contents),
+src/zh-CN/essentials/core-concepts/error-handling.md:66:        Err(e) => println!("Error reading file: {}", e),
+src/zh-CN/essentials/core-concepts/error-handling.md:113:        Ok(number) => println!("Parsed number: {}", number),
+src/zh-CN/essentials/core-concepts/error-handling.md:114:        Err(e) => println!("Error: {}", e),
+src/zh-CN/essentials/core-concepts/concurrency.md:17:            println!("hi number {} from the spawned thread!", i);
+src/zh-CN/essentials/core-concepts/concurrency.md:23:        println!("hi number {} from the main thread!", i);
+src/zh-CN/essentials/core-concepts/concurrency.md:50:    println!("Got: {}", received);
+src/zh-CN/essentials/core-concepts/concurrency.md:79:    println!("Result: {}", *counter.lock().unwrap());

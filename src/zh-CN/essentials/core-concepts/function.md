@@ -6,7 +6,7 @@
 
 ```rust, editable
 fn main() {
-    println!("Hello, world!");
+    println!("你好，世界！");
 }
 ```
 
@@ -18,7 +18,7 @@ fn main() {
 
 ```rust, editable
 fn greet(name: &str) {
-    println!("Hello, {}!", name);
+    println!("你好，{}！", name);
 }
 
 fn main() {
@@ -40,7 +40,7 @@ fn add(a: i32, b: i32) -> i32 {
 
 fn main() {
     let sum = add(5, 3);
-    println!("Sum: {}", sum);
+    println!("和: {}", sum);
 }
 ```
 

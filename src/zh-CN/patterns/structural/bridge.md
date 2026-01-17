@@ -5,7 +5,7 @@
 ```rust, editable
 trait Implementor { fn do_it(&self); }
 struct ConcreteImpl;
-impl Implementor for ConcreteImpl { fn do_it(&self) { println!("doing"); } }
+impl Implementor for ConcreteImpl { fn do_it(&self) { println!("正在执行"); } }
 
 struct Abstraction<T: Implementor> { imp: T }
 impl<T: Implementor> Abstraction<T> { fn new(imp: T) -> Self { Self { imp } } fn op(&self) { self.imp.do_it() } }
