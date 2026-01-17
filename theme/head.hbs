@@ -38,10 +38,13 @@ document.addEventListener('DOMContentLoaded', function() {
     let rel = path;
     for (const p of knownPrefixes) {
         if (rel.startsWith(p)) {
-            rel = rel.slice(p.length - 1); // keep leading /
+            // remove the language prefix (e.g. '/zh-CN') but keep the leading '/'
+            rel = rel.slice(p.length - 1);
+            if (!rel.startsWith('/')) rel = '/' + rel;
             break;
         }
     }
+    if (!rel.startsWith('/')) rel = '/' + rel;
 
     for (const [code, label] of Object.entries(langs)) {
         const opt = document.createElement('option');
@@ -60,8 +63,14 @@ document.addEventListener('DOMContentLoaded', function() {
 
     sel.addEventListener('change', function() {
         const code = sel.value;
-        // If rel is '/' keep it; otherwise join
-        const target = (rel === '/') ? ('/' + code + '/') : ('/' + code + rel);
+        let target;
+        if (code === defaultLang) {
+            // default language maps to root (no language prefix)
+            target = rel === '/' ? '/' : rel;
+        } else {
+            // other languages are under /<code>/...
+            target = (rel === '/') ? ('/' + code + '/') : ('/' + code + rel);
+        }
         window.location.pathname = target;
     });
 
