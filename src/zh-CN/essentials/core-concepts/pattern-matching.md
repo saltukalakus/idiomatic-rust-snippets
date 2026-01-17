@@ -1,0 +1,99 @@
+### 模式匹配
+
+模式匹配是一项强大的功能，允许你匹配复杂数据结构并根据其形状执行不同的操作。
+
+### 匹配字面量
+
+```rust, editable
+let x = 1;
+
+match x {
+    1 => println!("One!"),
+    2 => println!("Two!"),
+    _ => println!("Something else!"),
+}
+```
+
+### 匹配多个模式
+
+```rust, editable
+let x = 1;
+
+match x {
+    1 | 2 => println!("One or Two!"),
+    3 => println!("Three!"),
+    _ => println!("Something else!"),
+}
+```
+
+### 解构结构体
+
+```rust, editable
+struct Point {
+    x: i32,
+    y: i32,
+}
+
+let p = Point { x: 0, y: 7 };
+
+match p {
+    Point { x: 0, y } => println!("On the y axis at {}", y),
+    Point { x, y: 0 } => println!("On the x axis at {}", x),
+    Point { x, y } => println!("On neither axis: ({}, {})", x, y),
+}
+```
+
+### 解构枚举
+
+```rust, editable
+enum Message {
+    Quit,
+    Move { x: i32, y: i32 },
+    Write(String),
+    ChangeColor(i32, i32, i32),
+}
+
+let msg = Message::ChangeColor(0, 160, 255);
+
+match msg {
+    Message::Quit => println!("The Quit variant has no data to destructure."),
+    Message::Move { x, y } => println!("Move in the x direction {} and in the y direction {}", x, y),
+    Message::Write(text) => println!("Text message: {}", text),
+    Message::ChangeColor(r, g, b) => println!("Change the color to red {}, green {}, and blue {}", r, g, b),
+}
+```
+
+### 在模式中忽略值
+
+```rust, editable
+let numbers = (2, 4, 8, 16, 32);
+
+match numbers {
+    (first, _, third, _, fifth) => {
+        println!("Some numbers: {}, {}, {}", first, third, fifth)
+    },
+}
+```
+
+### 匹配值的范围
+
+```rust, editable
+let x = 5;
+
+match x {
+    1..=5 => println!("One through Five"),
+    _ => println!("Something else"),
+}
+```
+
+### 使用 `if` 守卫
+
+```rust, editable
+let x = Some(4);
+
+match x {
+    Some(n) if n < 5 => println!("Less than five: {}", n),
+    Some(n) => println!("{}", n),
+    None => (),
+}
+```
