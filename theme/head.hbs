@@ -17,3 +17,63 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 });
 </script>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Language selector for multilingual mdBook output.
+    const langs = { 'en': 'English', 'zh-CN': '简体中文' };
+    const defaultLang = 'en';
+
+    const rightButtons = document.querySelector('.right-buttons');
+    if (!rightButtons) return;
+
+    const sel = document.createElement('select');
+    sel.className = 'language-switcher';
+    sel.style.marginLeft = '8px';
+    sel.style.padding = '4px 6px';
+
+    // detect current path without known language prefix
+    const path = window.location.pathname || '/';
+    const knownPrefixes = Object.keys(langs).map(k => '/' + k + '/');
+    let rel = path;
+    for (const p of knownPrefixes) {
+        if (rel.startsWith(p)) {
+            rel = rel.slice(p.length - 1); // keep leading /
+            break;
+        }
+    }
+
+    for (const [code, label] of Object.entries(langs)) {
+        const opt = document.createElement('option');
+        opt.value = code;
+        opt.textContent = label;
+        sel.appendChild(opt);
+    }
+
+    // set current selection
+    for (const c of Object.keys(langs)) {
+        if (path.startsWith('/' + c + '/')) {
+            sel.value = c;
+            break;
+        }
+    }
+
+    sel.addEventListener('change', function() {
+        const code = sel.value;
+        // If rel is '/' keep it; otherwise join
+        const target = (rel === '/') ? ('/' + code + '/') : ('/' + code + rel);
+        window.location.pathname = target;
+    });
+
+    const wrapper = document.createElement('div');
+    wrapper.style.display = 'inline-block';
+    wrapper.style.verticalAlign = 'middle';
+    wrapper.appendChild(sel);
+
+    rightButtons.insertBefore(wrapper, rightButtons.firstChild.nextSibling);
+});
+</script>
+
+<style>
+.language-switcher { font-size: 13px; }
+</style>
