@@ -1,26 +1,26 @@
-### Builder Pattern (Method Chaining)
+### 构建器模式（方法链）
 
-The builder pattern with method chaining allows composing behavior by chaining method calls. Each method modifies and returns `self`, enabling fluent APIs and zero-cost abstractions.
+带有方法链的构建器模式允许通过链接方法调用来组合行为。每个方法都会修改并返回 `self`，从而实现流畅的 API 和零成本抽象。
 
-**Benefits**:
-- Zero heap allocations - entirely stack-based
-- Compile-time dispatch - no vtable overhead
-- Fluent, readable API
-- Type-safe composition at compile time
+**优点**:
+- 零堆分配 - 完全基于栈
+- 编译时分发 - 没有 vtable 开销
+- 流畅、可读的 API
+- 编译时类型安全的组合
 
 ```rust, editable
 {{#include builder-pattern/src/main.rs}}
 ```
 
-**Key Points**:
-- The example compares trait object approach (`Box<dyn Text>`) with method chaining
-- Trait object version: `Bold` wraps `Italic` which wraps `PlainText` - each allocation on heap
-- Method chaining version: `TextBuilder` has `content`, `bold`, and `italic` fields
-- Each builder method (`bold()`, `italic()`) sets a flag and returns `self`
-- `render()` applies formatting based on flags - all stack-allocated, zero heap overhead
+**关键点**:
+- 该示例比较了 trait 对象方法（`Box<dyn Text>`）和方法链
+- Trait 对象版本：`Bold` 包装 `Italic`，`Italic` 包装 `PlainText` - 每个都在堆上分配
+- 方法链版本：`TextBuilder` 具有 `content`、`bold` 和 `italic` 字段
+- 每个构建器方法（`bold()`、`italic()`）设置一个标志并返回 `self`
+- `render()` 根据标志应用格式 - 全部在栈上分配，零堆开销
 
-**When to Use**:
-- Composing optional features or behaviors
-- Building fluent APIs
-- Zero-cost abstractions over runtime dispatch
-- When the set of behaviors is known at compile time
+**何时使用**:
+- 组合可选功能或行为
+- 构建流畅的 API
+- 运行时分发的零成本抽象
+- 当行为集合在编译时已知时

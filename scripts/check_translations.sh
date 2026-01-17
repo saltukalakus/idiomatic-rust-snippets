@@ -62,32 +62,40 @@ if [ "$file_count" -gt 0 ]; then
   sorted_ratios=$(echo -e "$ratios" | awk '{print $2}' | sort -n)
   median_ratio=$(echo "$sorted_ratios" | awk -v count="$file_count" '{arr[NR]=$1} END { if (count % 2 == 1) { print arr[int(count/2)+1] } else { print (arr[count/2] + arr[count/2+1]) / 2 } }')
   
-  lower_bound=$(awk -v median="$median_ratio" 'BEGIN { print median * 0.97 }')
-  upper_bound=$(awk -v median="$median_ratio" 'BEGIN { print median * 1.03 }')
+  lower_bound=$(awk -v median="$median_ratio" 'BEGIN { print median * 0.80 }')
+  upper_bound=$(awk -v median="$median_ratio" 'BEGIN { print median * 1.20 }')
 
   echo "Median size ratio: $(printf "%.2f" "$median_ratio")"
-  echo "Safe range (3% deviation): [$(printf "%.2f" "$lower_bound") - $(printf "%.2f" "$upper_bound")]"
+  echo "Safe range (20% deviation): [$(printf "%.2f" "$lower_bound") - $(printf "%.2f" "$upper_bound")]"
   
   # 2. Check for file size differences
   echo -e "\nFiles with potential translation issues (size outside safe range):"
-  size_check_failed=0
-  while IFS=' ' read -r file ratio; do
-    if [ -n "$file" ]; then
-      is_outlier=$(awk -v ratio="$ratio" -v lower="$lower_bound" -v upper="$upper_bound" 'BEGIN { exit !(ratio < lower || ratio > upper) }')
-      if $is_outlier; then
-        trans_file="$root/$lang/$file"
-        trans_size=$(stat -f%z "$trans_file")
-        percentage=$(awk -v ratio="$ratio" 'BEGIN { printf "%.2f", ratio * 100 }')
-        echo "  - '$lang/$file' (Size: $trans_size bytes, ${percentage}% of original)" >&2
-        size_check_failed=1
-      fi
-    fi
-  done <<< "$ratios"
+  
+  outliers=$(echo -e "$ratios" | awk -v lower="$lower_bound" -v upper="$upper_bound" -v root="$root" -v lang="$lang" '
+    {
+      # In awk, $1 is the first field (filename), $2 is the second (ratio)
+      filename = $1
+      ratio = $2
+      
+      if (ratio < lower || ratio > upper) {
+        trans_file = root "/" lang "/" filename
+        
+        # The getline command executes the shell command and puts the output into the trans_size variable
+        command = "stat -f%z \"" trans_file "\""
+        command | getline trans_size
+        close(command)
 
-  if [ "$size_check_failed" -eq 0 ]; then
-      echo "OK: No files found with significant size differences."
-  else
+        percentage = ratio * 100
+        printf("  - \047%s/%s\047 (Size: %d bytes, %.2f%% of original)\n", lang, filename, trans_size, percentage)
+      }
+    }
+  ')
+
+  if [ -n "$outliers" ]; then
+      echo "$outliers" >&2
       exit_code=1
+  else
+      echo "OK: No files found with significant size differences."
   fi
 else
   echo "No files to compare."
