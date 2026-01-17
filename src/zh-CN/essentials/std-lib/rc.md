@@ -1,3 +1,4 @@
+````markdown
 ### 理解 `Rc`
 
 `Rc`（引用计数）用于在单线程环境中实现多所有权。它允许程序的多个部分共享同一数据的只读所有权，而无需复制数据。
@@ -15,7 +16,7 @@ use std::rc::Rc;
 
 fn main() {
     let value = Rc::new(5);
-    println!("Value: {}", value);
+    println!("值: {}", value);
 }
 ```
 
@@ -30,9 +31,10 @@ fn main() {
     let value = Rc::new(5);
     let value_clone = Rc::clone(&value);
 
-    println!("Value: {}", value);
-    println!("Cloned Value: {}", value_clone);
+    println!("值: {}", value);
+    println!("克隆的值: {}", value_clone);
 }
 ```
 
 - `Rc::clone(&value)` 创建指向相同数据的新引用。`value` 和 `value_clone` 指向相同的数据，引用计数会增加。
+````

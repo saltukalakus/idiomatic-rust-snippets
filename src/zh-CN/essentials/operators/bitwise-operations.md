@@ -13,10 +13,10 @@ fn main() {
     let a = 0b1100;
     let b = 0b1010;
 
-    println!("a & b: {:04b}", a & b); // Bitwise AND
-    println!("a | b: {:04b}", a | b); // Bitwise OR
-    println!("a ^ b: {:04b}", a ^ b); // Bitwise XOR
-    println!("a << 1: {:04b}", a << 1); // Left shift
-    println!("a >> 1: {:04b}", a >> 1); // Right shift
+    println!("a & b: {:04b}", a & b); // 按位与
+    println!("a | b: {:04b}", a | b); // 按位或
+    println!("a ^ b: {:04b}", a ^ b); // 按位异或
+    println!("a << 1: {:04b}", a << 1); // 左移
+    println!("a >> 1: {:04b}", a >> 1); // 右移
 }
 ```

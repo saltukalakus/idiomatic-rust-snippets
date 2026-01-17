@@ -1,15 +1,31 @@
-### `derive(Debug)`
+````markdown
+### `#[derive(Debug)]` 的用途是什么？
 
-`#[derive(Debug)]` 自动为类型生成实现 `Debug` trait 的代码，允许使用 `{:?}` 或 `{:#?}` 输出调试信息。
+Rust 中的 `#[derive(Debug)]` 属性会自动为结构体或枚举生成 `Debug` trait 的实现。该 trait 允许您使用 `{:?}` 格式化程序来格式化值，这对于调试非常有用。
 
 ```rust, editable
 #[derive(Debug)]
-struct Person { name: String, age: u8 }
+struct Person {
+    name: String,
+    age: u32,
+}
 
 fn main() {
-    let p = Person { name: "Alice".into(), age: 30 };
-    println!("{:?}", p);
+    let person = Person {
+        name: String::from("Alice"),
+        age: 30,
+    };
+
+    // 使用 Debug trait 打印 person 结构体
+    println!("{:?}", person);
 }
 ```
 
-当你的类型包含无法自动实现 `Debug` 的字段时，你可以手动实现 `Debug` 或为字段选择性地实现 `#[derive(Debug)]`。
+`Person` 结构体派生了 `Debug` trait，允许我们使用 `println!("{:?}", person);` 打印其值。输出将是：
+
+```
+Person { name: "Alice", age: 30 }
+```
+
+这使得在开发和调试期间检查复杂数据结构的值变得更加容易。
+````

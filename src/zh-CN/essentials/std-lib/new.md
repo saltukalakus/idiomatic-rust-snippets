@@ -1,20 +1,26 @@
-### `new` - 常见构造函数约定
+````markdown
+### Rust 有 `new` 关键字吗？
 
-在 Rust 中，`new` 常被用作类型的构造函数（关联函数），返回 `Self` 的实例：
+Rust **没有**像其他一些编程语言（例如 C++ 或 Java）那样的 `new` 关键字。相反，Rust 通常使用一个名为 `new` 的关联函数来创建类型的实例。这是一种约定，而不是语言特性。
 
 ```rust, editable
-struct Thing { value: i32 }
+struct MyStruct {
+    value: i32,
+}
 
-impl Thing {
-    fn new(value: i32) -> Self {
-        Self { value }
+impl MyStruct {
+    // 关联函数 `new`，用于创建 `MyStruct` 的实例
+    fn new(value: i32) -> MyStruct {
+        MyStruct { value }
     }
 }
 
 fn main() {
-    let t = Thing::new(42);
-    println!("{}", t.value);
+    // 使用 `new` 函数创建 `MyStruct` 的实例
+    let instance = MyStruct::new(10);
+    println!("MyStruct 的值: {}", instance.value);
 }
 ```
 
-注意：并非所有类型都使用 `new`——有时会使用 `default()`（`Default` trait）或更语义化的构造函数名，例如 `with_capacity`。
+- `new` 函数被定义为 `MyStruct` 的关联函数，用于创建 `MyStruct` 的新实例。
+````

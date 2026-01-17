@@ -9,13 +9,13 @@
 
 ```rust, editable
 fn main() {
-    // Tuple
+    // 元组
     let tuple: (i32, f64, char) = (42, 3.14, 'A');
     let (x, y, z) = tuple;
-    println!("Tuple: ({}, {}, {})", x, y, z);
+    println!("元组: ({}, {}, {})", x, y, z);
 
-    // Array
+    // 数组
     let array: [i32; 3] = [1, 2, 3];
-    println!("Array: {:?}", array);
+    println!("数组: {:?}", array);
 }
 ```

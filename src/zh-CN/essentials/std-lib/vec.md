@@ -7,8 +7,8 @@
 ```rust, editable
 // 创建向量
 let v1: Vec<i32> = Vec::new();     // 空向量
-let v2 = vec![1, 2, 3];            // 带初始值的向量
-let v3 = vec!["aa", "dd", "cc"];   // 字符串类型的向量
+let v2 = vec![1, 2, 3];            // 带有初始值的向量
+let v3 = vec!["aa", "dd", "cc"];   // 带有字符串类型项的向量
 
 // 添加元素
 let mut v4 = Vec::new();
@@ -21,11 +21,11 @@ let third = v2[2];                 // 3
 let first = v2.get(0);             // Some(1)
 
 // 向量长度
-println!("Length: {}", v2.len());
+println!("长度: {}", v2.len());
 
 // 向量内容
-println!("Vector 1: {:?}", v1);
-println!("Vector 2: {:?}", v2);
-println!("Vector 3: {:?}", v3);
-println!("Vector 3: {:?}", v4);
+println!("向量 1: {:?}", v1);
+println!("向量 2: {:?}", v2);
+println!("向量 3: {:?}", v3);
+println!("向量 4: {:?}", v4);
 ```

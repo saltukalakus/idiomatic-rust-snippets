@@ -13,19 +13,19 @@
 fn main() {
     let mut a = 10;
 
-    a += 5; // Addition assignment
+    a += 5; // 加后赋值
     println!("a += 5: {}", a);
 
-    a -= 3; // Subtraction assignment
+    a -= 3; // 减后赋值
     println!("a -= 3: {}", a);
 
-    a *= 2; // Multiplication assignment
+    a *= 2; // 乘后赋值
     println!("a *= 2: {}", a);
 
-    a /= 4; // Division assignment
+    a /= 4; // 除后赋值
     println!("a /= 4: {}", a);
 
-    a %= 3; // Remainder assignment
+    a %= 3; // 取模后赋值
     println!("a %= 3: {}", a);
 }
 ```

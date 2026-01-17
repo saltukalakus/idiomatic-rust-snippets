@@ -18,7 +18,7 @@ enum Result<T, E> {
 ```rust, editable
 fn divide(a: f64, b: f64) -> Result<f64, String> {
     if b == 0.0 {
-        Err("Cannot divide by zero".to_string())
+        Err("不能除以零".to_string())
     } else {
         Ok(a / b)
     }
@@ -26,8 +26,8 @@ fn divide(a: f64, b: f64) -> Result<f64, String> {
 
 fn main() {
     match divide(10.0, 2.0) {
-        Ok(result) => println!("结果：{}", result),
-        Err(e) => eprintln!("错误：{}", e),
+        Ok(result) => println!("结果: {}", result),
+        Err(e) => eprintln!("错误: {}", e),
     }
 }
 ```
@@ -39,26 +39,26 @@ fn main() {
 ```rust, editable
 fn parse_number(s: &str) -> Result<i32, String> {
     s.parse::<i32>()
-        .map_err(|e| format!("Failed to parse '{}': {}", s, e))
+        .map_err(|e| format!("解析 '{}' 失败: {}", s, e))
 }
 
 fn add_two_numbers(a: &str, b: &str) -> Result<i32, String> {
-    let num_a = parse_number(a)?;  // 若解析失败则返回错误
-    let num_b = parse_number(b)?;  // 若解析失败则返回错误
+    let num_a = parse_number(a)?;  // 如果解析失败则返回错误
+    let num_b = parse_number(b)?;  // 如果解析失败则返回错误
     Ok(num_a + num_b)
 }
 
 fn main() {
-    // 成功示例
+    // 成功案例
     match add_two_numbers("10", "20") {
         Ok(sum) => println!("和: {}", sum),
-        Err(e) => println!("错误：{}", e),
+        Err(e) => println!("错误: {}", e),
     }
     
-    // 错误示例
+    // 错误案例
     match add_two_numbers("10", "abc") {
         Ok(sum) => println!("和: {}", sum),
-        Err(e) => println!("错误：{}", e),
+        Err(e) => println!("错误: {}", e),
     }
 }
 ```
@@ -78,18 +78,18 @@ fn main() {
 ```rust, editable
 fn main() {
     let good_result: Result<i32, &str> = Ok(10);
-    let bad_result: Result<i32, &str> = Err("error");
+    let bad_result: Result<i32, &str> = Err("错误");
     
     // 检查
-    println!("Is ok: {}", good_result.is_ok());  // true
-    println!("Is err: {}", bad_result.is_err()); // true
+    println!("是 ok: {}", good_result.is_ok());  // true
+    println!("是 err: {}", bad_result.is_err()); // true
     
     // 使用默认值提取
     println!("{}", good_result.unwrap_or(0));     // 10
     println!("{}", bad_result.unwrap_or(0));      // 0
     
     println!("{}", bad_result.unwrap_or_else(|e| {
-        eprintln!("Error occurred: {}", e);
+        eprintln!("发生错误: {}", e);
         -1
     })); // -1
 }
@@ -108,9 +108,9 @@ fn main() {
     println!("{:?}", doubled); // Ok(4)
     
     // 转换 Err 值
-    let err: Result<i32, &str> = Err("oops");
-    let mapped_err = err.map_err(|e| format!("错误：{}", e));
-    println!("{:?}", mapped_err); // Err("Error: oops")
+    let err: Result<i32, &str> = Err("哎呀");
+    let mapped_err = err.map_err(|e| format!("错误: {}", e));
+    println!("{:?}", mapped_err); // Err("错误: 哎呀")
 }
 ```
 
@@ -118,14 +118,14 @@ fn main() {
 
 ```rust, editable
 fn parse_number(s: &str) -> Result<i32, String> {
-    s.parse().map_err(|_| format!("Not a number: {}", s))
+    s.parse().map_err(|_| format!("不是一个数字: {}", s))
 }
 
 fn double_if_positive(n: i32) -> Result<i32, String> {
     if n > 0 {
         Ok(n * 2)
     } else {
-        Err("Number must be positive".to_string())
+        Err("数字必须是正数".to_string())
     }
 }
 
@@ -145,13 +145,13 @@ fn main() {
 fn parse_numbers(strings: Vec<&str>) -> Result<Vec<i32>, std::num::ParseIntError> {
     strings.into_iter()
         .map(|s| s.parse::<i32>())
-        .collect()  // 将 Vec<Result<i32, E>> 收集为 Result<Vec<i32>, E>
+        .collect()  // 将 Vec<Result<i32, E>> 收集到 Result<Vec<i32>, E>
 }
 
 fn main() {
     match parse_numbers(vec!["1", "2", "3"]) {
-        Ok(numbers) => println!("Numbers: {:?}", numbers),
-        Err(e) => eprintln!("Parse error: {}", e),
+        Ok(numbers) => println!("数字: {:?}", numbers),
+        Err(e) => eprintln!("解析错误: {}", e),
     }
 }
 ```
@@ -172,8 +172,8 @@ enum MathError {
 impl fmt::Display for MathError {
     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
         match self {
-            MathError::DivisionByZero => write!(f, "Cannot divide by zero"),
-            MathError::NegativeSquareRoot => write!(f, "Cannot take square root of negative"),
+            MathError::DivisionByZero => write!(f, "不能除以零"),
+            MathError::NegativeSquareRoot => write!(f, "不能对负数开平方根"),
         }
     }
 }
@@ -190,8 +190,8 @@ fn divide(a: f64, b: f64) -> Result<f64, MathError> {
 
 fn main() {
     match divide(10.0, 0.0) {
-        Ok(result) => println!("结果：{}", result),
-        Err(e) => println!("错误：{}", e),
+        Ok(result) => println!("结果: {}", result),
+        Err(e) => println!("错误: {}", e),
     }
 }
 ```
@@ -203,12 +203,12 @@ fn main() {
 
 ```rust,ignore
 fn find_user(id: u32) -> Option<String> {
-    // None just means "not found", no error details needed
+    // None 仅表示“未找到”，不需要错误详情
     if id == 1 { Some("Alice".to_string()) } else { None }
 }
 
 fn load_config(path: &str) -> Result<String, std::io::Error> {
-    // Err provides details about what went wrong
+    // Err 提供了出错的详细信息
     std::fs::read_to_string(path)
 }
 ```
@@ -220,7 +220,7 @@ fn main() {
     let result: Result<i32, &str> = Ok(5);
     let option: Option<i32> = result.ok();  // Ok(5) -> Some(5)
     
-    let result2: Result<i32, &str> = option.ok_or("missing value");  // Some(5) -> Ok(5)
+    let result2: Result<i32, &str> = option.ok_or("缺少值");  // Some(5) -> Ok(5)
     
     println!("{:?}", result2);
 }

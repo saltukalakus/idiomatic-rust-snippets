@@ -62,12 +62,12 @@ enum MyOption<T> {
 
 fn main() {
     let some_number = MyOption::Some(5);
-    let some_string = MyOption::Some("a string");
+    let some_string = MyOption::Some("一个字符串");
     let no_value: MyOption<i32> = MyOption::None;
 
-    println!("Some number: {:?}", some_number);
-    println!("Some string: {:?}", some_string);
-    println!("No value: {:?}", no_value);
+    println!("一些数字: {:?}", some_number);
+    println!("一些字符串: {:?}", some_string);
+    println!("无值: {:?}", no_value);
 }
 ```
 

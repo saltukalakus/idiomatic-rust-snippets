@@ -3,14 +3,21 @@
 - `Self`：在类型或 trait 上下文中，表示实现块的类型本身（类型级别）。
 - `self`：方法接收者实例（值级别）。
 
-```rust, editable
-struct Foo;
+```rust,ignore
+struct MyStruct;
 
-impl Foo {
-    fn new() -> Self { Foo }
+impl MyStruct {
+    // 关联函数，使用 `Self`
+    fn new() -> Self {
+        MyStruct
+    }
 
-    fn consume(self) { /* 使用 self */ }
+    // 方法，使用 `self`
+    fn consume(self) {
+        // 消费实例
+    }
 }
 ```
 
-记住 `Self` 是类型，而 `self` 是实例。两者在不同语法位置使用。
+- `Self` 在 `new` 函数中用于指代 `MyStruct` 类型。
+- `self` 在 `consume` 方法中用于指代 `MyStruct` 的实例。

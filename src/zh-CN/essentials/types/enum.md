@@ -39,14 +39,14 @@ enum Message {
 fn main() {
     let msg1 = Message::Quit;
     let msg2 = Message::Move { x: 10, y: 20 };
-    let msg3 = Message::Write(String::from("Hello"));
+    let msg3 = Message::Write(String::from("你好"));
     let msg4 = Message::ChangeColor(255, 0, 0);
 
     match msg1 {
         Message::Quit => println!("退出消息"),
         Message::Move { x, y } => println!("移动到 ({}, {})", x, y),
-        Message::Write(text) => println!("写消息：{}", text),
-        Message::ChangeColor(r, g, b) => println!("将颜色改为 ({}, {}, {})", r, g, b),
+        Message::Write(text) => println!("写入消息: {}", text),
+        Message::ChangeColor(r, g, b) => println!("将颜色更改为 ({}, {}, {})", r, g, b),
     }
 }
 ```
@@ -66,14 +66,14 @@ impl Message {
         match self {
             Message::Quit => println!("退出消息"),
             Message::Move { x, y } => println!("移动到 ({}, {})", x, y),
-            Message::Write(text) => println!("写消息：{}", text),
-            Message::ChangeColor(r, g, b) => println!("将颜色改为 ({}, {}, {})", r, g, b),
+            Message::Write(text) => println!("写入消息: {}", text),
+            Message::ChangeColor(r, g, b) => println!("将颜色更改为 ({}, {}, {})", r, g, b),
         }
     }
 }
 
 fn main() {
-    let msg = Message::Write(String::from("Hello"));
+    let msg = Message::Write(String::from("你好"));
     msg.call();
 }
 ```
