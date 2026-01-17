@@ -31,6 +31,12 @@ document.addEventListener('DOMContentLoaded', function() {
     sel.className = 'language-switcher';
     sel.style.marginLeft = '8px';
     sel.style.padding = '4px 6px';
+    sel.style.fontSize = '13px';
+    sel.style.border = '1px solid var(--icons)';
+    sel.style.borderRadius = '3px';
+    sel.style.backgroundColor = 'var(--bg)';
+    sel.style.color = 'var(--fg)';
+    sel.style.cursor = 'pointer';
 
     // detect current path without known language prefix
     const path = window.location.pathname || '/';
@@ -75,8 +81,11 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 
     const wrapper = document.createElement('div');
-    wrapper.style.display = 'inline-block';
-    wrapper.style.verticalAlign = 'middle';
+    wrapper.className = 'language-switcher-wrapper';
+    wrapper.style.display = 'inline-flex';
+    wrapper.style.alignItems = 'center';
+    wrapper.style.height = '100%';
+    wrapper.style.transform = 'translateY(-6px)';
     wrapper.appendChild(sel);
 
     rightButtons.insertBefore(wrapper, rightButtons.firstChild.nextSibling);
@@ -84,5 +93,18 @@ document.addEventListener('DOMContentLoaded', function() {
 </script>
 
 <style>
-.language-switcher { font-size: 13px; }
+.language-switcher { 
+    font-size: 13px;
+}
+
+@media only screen and (max-width: 768px) {
+    .language-switcher-wrapper {
+        margin-left: 0 !important;
+    }
+    .language-switcher {
+        font-size: 12px !important;
+        padding: 3px 4px !important;
+        margin-left: 4px !important;
+    }
+}
 </style>
