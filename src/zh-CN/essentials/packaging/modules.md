@@ -1,4 +1,3 @@
-````markdown
 ### 如何从标准库调用函数：
 
 ```rust, editable
@@ -26,4 +25,3 @@ Cargo.toml 文件内容
 ```rust, editable
 {{#include modules/src/rand/main.rs}}
 ```
-````

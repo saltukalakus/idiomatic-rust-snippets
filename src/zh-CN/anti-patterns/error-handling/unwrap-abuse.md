@@ -16,7 +16,7 @@ fn read_config() -> String {
 
 fn main() {
     let config = read_config();
-    println!("Config loaded: {} bytes", config.len());
+    println!("配置已加载: {} 字节", config.len());
 }
 ```
 
@@ -38,11 +38,11 @@ fn read_config() -> Result<String, Box<dyn Error>> {
 fn main() {
     match read_config() {
         Ok(config) => {
-            println!("Config loaded: {} bytes", config.len());
+            println!("配置已加载: {} 字节", config.len());
         }
         Err(e) => {
-            eprintln!("Failed to load config: {}", e);
-            eprintln!("Please set CONFIG_PATH environment variable");
+            eprintln!("加载配置失败: {}", e);
+            eprintln!("请设置 CONFIG_PATH 环境变量");
             std::process::exit(1);
         }
     }

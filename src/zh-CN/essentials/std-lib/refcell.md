@@ -1,4 +1,3 @@
-````markdown
 ### 理解 `RefCell`
 
 `RefCell` 是一种在 Rust 中提供内部可变性的类型。它允许你在有不可变引用的情况下修改数据。这是通过在运行时而不是编译时强制执行借用规则来实现的。
@@ -21,4 +20,3 @@
 - `RefCell` 在单线程中管理值时有效。对于多线程场景，请使用 `Mutex` 或 `RwLock`。
 
 更多详情，请参阅 [Rust `RefCell` 文档](https://doc.rust-lang.org/std/cell/struct.RefCell.html)。
-````

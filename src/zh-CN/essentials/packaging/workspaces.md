@@ -1,4 +1,3 @@
-````markdown
 ### Cargo 工作区
 
 Cargo 工作区是一组共享相同 `Cargo.lock` 文件和输出目录的包。工作区非常适合管理拆分为多个相关 crate 的大型项目，可在保持单一构建配置的同时实现代码重用。
@@ -149,4 +148,3 @@ serde = { path = "../forks/serde" }
 - **使用路径依赖**：对于工作区内的 crate，使用 `path = "../other-crate"` 引用它们。
 - **运行 `cargo check`**：在开发过程中使用 `cargo check --workspace` 进行快速编译检查。
 - **CI/CD 设置**：在持续集成管道中，使用 `--workspace` 标志来构建和测试所有 crate。
-````

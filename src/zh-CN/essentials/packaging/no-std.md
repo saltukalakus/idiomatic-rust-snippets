@@ -1,4 +1,3 @@
-````markdown
 ### #![no_std] 的用途是什么？
 
 Rust 中的 `#![no_std]` 属性用于指示一个 crate 不使用 Rust 标准库 (std)。相反，它依赖于核心库 (core)，核心库是标准库的子集，可在没有完整标准库的环境中使用，例如嵌入式系统或操作系统内核。
@@ -53,4 +52,3 @@ pub extern "C" fn _start() -> ! {
 ```
 
 **注意**: `no_std` crates 不能使用 `println!`、`Vec`、`String` 或其他仅限 std 的功能。它们依赖于 `core`（语言原语）和 `alloc`（如果堆分配可用）。
-````

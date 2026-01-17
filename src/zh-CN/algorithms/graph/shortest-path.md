@@ -12,20 +12,18 @@ struct State {
     position: usize,
 }
 
-// The priority queue depends on `Ord`.
-// Explicitly implement the trait so the queue becomes a min-heap
-// instead of a max-heap.
+// 优先队列依赖于 `Ord`。
+// 显式实现该 trait，以便队列成为最小堆而不是最大堆。
 impl Ord for State {
     fn cmp(&self, other: &Self) -> Ordering {
-        // Notice that the we flip the ordering on costs.
-        // In case of a tie we compare positions - this step is necessary
-        // to make implementations of `PartialEq` and `Ord` consistent.
+        // 注意我们反转了成本的排序。
+        // 如果成本相同，我们比较位置 - 这是为了使 `PartialEq` 和 `Ord` 的实现保持一致所必需的。
         other.cost.cmp(&self.cost)
             .then_with(|| self.position.cmp(&other.position))
     }
 }
 
-// `PartialOrd` needs to be implemented as well.
+// `PartialOrd` 也需要实现。
 impl PartialOrd for State {
     fn partial_cmp(&self, other: &Self) -> Option<Ordering> {
         Some(self.cmp(other))
@@ -42,25 +40,24 @@ fn dijkstra(adj_list: &Vec<Vec<Edge>>, start: usize) -> Vec<usize> {
     let mut dist: Vec<_> = (0..adj_list.len()).map(|_| usize::MAX).collect();
     let mut heap = BinaryHeap::new();
 
-    // We're at `start`, with a zero cost
+    // 我们在 `start` 位置，成本为零
     dist[start] = 0;
     heap.push(State { cost: 0, position: start });
 
-    // Examine the frontier with lower cost nodes first (min-heap)
+    // 首先检查成本较低的节点（最小堆）
     while let Some(State { cost, position }) = heap.pop() {
-        // Important as we may have already found a better way
+        // 很重要，因为我们可能已经找到了更好的路径
         if cost > dist[position] {
             continue;
         }
 
-        // For each node we can reach, see if we can find a way with
-        // a lower cost going through this node
+        // 对于我们可以到达的每个节点，看看是否可以通过此节点找到成本更低的路径
         for edge in &adj_list[position] {
             let next = State { cost: cost + edge.cost, position: edge.node };
 
-            // If so, add it to the frontier and continue
+            // 如果是，则将其添加到边界并继续
             if next.cost < dist[next.position] {
-                // Relaxation, we have now found a better way
+                // 松弛操作，我们现在找到了更好的路径
                 dist[next.position] = next.cost;
                 heap.push(next);
             }
@@ -71,7 +68,7 @@ fn dijkstra(adj_list: &Vec<Vec<Edge>>, start: usize) -> Vec<usize> {
 }
 
 fn main() {
-    // Create a graph represented as an adjacency list
+    // 创建一个表示为邻接表的图
     let graph = vec![
         vec![Edge { node: 1, cost: 2 }, Edge { node: 2, cost: 4 }],
         vec![Edge { node: 2, cost: 1 }, Edge { node: 3, cost: 7 }],
@@ -79,13 +76,13 @@ fn main() {
         vec![],
     ];
 
-    // Calculate the shortest path from node 0
+    // 计算从节点 0 开始的最短路径
     let start_node = 0;
     let distances = dijkstra(&graph, start_node);
 
-    // Print the shortest path to each node
+    // 打印到每个节点的最短路径
     for (i, d) in distances.iter().enumerate() {
-        println!("The shortest path from node {} to node {} is {}", start_node, i, d);
+        println!("从节点 {} 到节点 {} 的最短路径是 {}", start_node, i, d);
     }
 }
 ```

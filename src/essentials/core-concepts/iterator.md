@@ -11,11 +11,7 @@ pub trait Iterator {
     type Item;
     fn next(&mut self) -> Option<Self::Item>;
 }
-```
 
-### Basic Usage
-
-```rust, editable
 fn main() {
     let numbers = vec![1, 2, 3, 4, 5];
     

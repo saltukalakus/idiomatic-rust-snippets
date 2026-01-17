@@ -1,4 +1,3 @@
-````markdown
 ### Cargo 命令
 
 Cargo 是 Rust 的构建系统和包管理器。它提供了一套全面的命令，用于构建、测试、记录和发布 Rust 项目。了解这些命令对于高效的 Rust 开发至关重要。
@@ -315,4 +314,4 @@ cargo help
 
 # 显示特定命令的帮助
 cargo help build
-````
+```

@@ -1,4 +1,4 @@
-### 不必要的智能指针（Unnecessary Smart Pointers）
+### 不必要的智能指针
 
 当简单的引用或直接拥有值即可时使用 `Box<T>`、`Rc<T>` 或 `Arc<T>` 是浪费的。智能指针会带来额外的间接性和堆分配开销。它们适用于特定的所有权场景：递归类型、共享所有权或动态特征对象。
 
@@ -21,9 +21,9 @@ impl Config {
     }
     
     fn display(&self) {
-        println!("Timeout: {}s", self.timeout);
-        println!("Retries: {}", self.max_retries);
-        println!("Endpoint: {}", self.endpoint);
+        println!("超时: {}s", self.timeout);
+        println!("重试次数: {}", self.max_retries);
+        println!("端点: {}", self.endpoint);
     }
 }
 
@@ -55,9 +55,9 @@ impl Config {
     }
     
     fn display(&self) {
-        println!("Timeout: {}s", self.timeout);
-        println!("Retries: {}", self.max_retries);
-        println!("Endpoint: {}", self.endpoint);
+        println!("超时: {}s", self.timeout);
+        println!("重试次数: {}", self.max_retries);
+        println!("端点: {}", self.endpoint);
     }
 }
 

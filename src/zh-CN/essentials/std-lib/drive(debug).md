@@ -1,4 +1,3 @@
-````markdown
 ### `#[derive(Debug)]` 的用途是什么？
 
 Rust 中的 `#[derive(Debug)]` 属性会自动为结构体或枚举生成 `Debug` trait 的实现。该 trait 允许您使用 `{:?}` 格式化程序来格式化值，这对于调试非常有用。
@@ -28,4 +27,3 @@ Person { name: "Alice", age: 30 }
 ```
 
 这使得在开发和调试期间检查复杂数据结构的值变得更加容易。
-````

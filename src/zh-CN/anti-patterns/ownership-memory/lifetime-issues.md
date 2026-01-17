@@ -1,4 +1,4 @@
-### 不恰当的生命周期处理（Lifetime Issues）
+### 不恰当的生命周期处理
 
 在 Rust 的生命周期省略规则（elision rules）适用的情况下过度使用显式生命周期注解会使代码不必要地复杂。开发者常常在函数签名中到处添加生命周期参数，而编译器本可以推断它们。这会使函数签名冗长且难以阅读。
 
@@ -24,11 +24,11 @@ fn main() {
     let sentence = "Hello world from Rust";
     let other = "unused";
     let word = first_word(sentence, other);
-    println!("First word: {}", word); // Prints: First word: Hello
+    println!("第一个词: {}", word); // 输出: 第一个词: Hello
     
     let mut buffer = String::new();
     let result = longest("short", "very long string", &mut buffer);
-    println!("Longest: {}", result); // Prints: Longest: very long string
+    println!("最长的: {}", result); // 输出: 最长的: very long string
 }
 ```
 
@@ -55,10 +55,10 @@ fn main() {
     let sentence = "Hello world from Rust";
     let other = "unused";
     let word = first_word(sentence, other);
-    println!("First word: {}", word); // Prints: First word: Hello
+    println!("第一个词: {}", word); // 输出: 第一个词: Hello
     
     let result = longest("short", "very long string");
-    println!("Longest: {}", result); // Prints: Longest: very long string
+    println!("最长的: {}", result); // 输出: 最长的: very long string
 }
 ```
 

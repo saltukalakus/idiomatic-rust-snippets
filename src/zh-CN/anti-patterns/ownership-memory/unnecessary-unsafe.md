@@ -20,14 +20,14 @@ fn get_middle_element(data: &Vec<i32>) -> Option<i32> {
 fn main() {
     let numbers = vec![10, 20, 30, 40, 50];
     if let Some(mid) = get_middle_element(&numbers) {
-        println!("Middle: {}", mid); // Prints: Middle: 30
+        println!("中间值: {}", mid); // 输出: 中间值: 30
     }
     
     let empty: Vec<i32> = vec![];
     if let Some(mid) = get_middle_element(&empty) {
-        println!("Middle: {}", mid);
+        println!("中间值: {}", mid);
     } else {
-        println!("Empty vector"); // Prints: Empty vector
+        println!("空向量"); // 输出: 空向量
     }
 }
 ```
@@ -45,14 +45,14 @@ fn get_middle_element(data: &Vec<i32>) -> Option<i32> {
 fn main() {
     let numbers = vec![10, 20, 30, 40, 50];
     if let Some(mid) = get_middle_element(&numbers) {
-        println!("Middle: {}", mid); // Prints: Middle: 30
+        println!("中间值: {}", mid); // 输出: 中间值: 30
     }
     
     let empty: Vec<i32> = vec![];
     if let Some(mid) = get_middle_element(&empty) {
-        println!("Empty vector"); // Prints: Empty vector
+        println!("空向量"); // 输出: 空向量
     } else {
-        println!("No middle element");
+        println!("没有中间元素");
     }
 }
 ```

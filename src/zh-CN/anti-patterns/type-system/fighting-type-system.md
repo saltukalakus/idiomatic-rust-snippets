@@ -1,4 +1,4 @@
-### 与类型系统对抗（Fighting the Type System）
+### 与类型系统对抗
 
 使用类型转换、transmute 或 `as` 强制转换类型以“凑合”类型，是导致 bug 的常见做法。Rust 的类型系统可以在编译时防止许多错误。与之对抗（使用不安全转换或忽略类型不匹配）会引入在运行时才暴露的问题。
 
@@ -22,12 +22,12 @@ fn process_bytes(data: &[u8]) -> u32 {
 fn main() {
     let numbers = vec![10, 20, 30];
     let avg = calculate_average(numbers);
-    println!("Average: {}", avg); // Prints: Average: 20
+    println!("平均值: {}", avg); // 输出: 平均值: 20
     
     let empty: Vec<i32> = vec![];
-    // 这会 panic：thread 'main' panicked at 'attempt to divide by zero'
+    // 这会 panic：'main' 线程因“尝试除以零”而 panic
     let avg = calculate_average(empty);
-    println!("Average: {}", avg);
+    println!("平均值: {}", avg);
 }
 ```
 
@@ -58,13 +58,13 @@ fn process_bytes(data: &[u8]) -> Option<u32> {
 fn main() {
     let numbers = vec![10, 20, 30];
     if let Some(avg) = calculate_average(&numbers) {
-        println!("Average: {:.2}", avg); // Prints: Average: 20.00
+        println!("平均值: {:.2}", avg); // 输出: 平均值: 20.00
     }
     
     let empty: Vec<i32> = vec![];
     match calculate_average(&empty) {
-        Some(avg) => println!("Average: {:.2}", avg),
-        None => println!("Cannot calculate average of empty list"), // Prints this
+        Some(avg) => println!("平均值: {:.2}", avg),
+        None => println!("无法计算空列表的平均值"), // 输出此行
     }
 }
 ```

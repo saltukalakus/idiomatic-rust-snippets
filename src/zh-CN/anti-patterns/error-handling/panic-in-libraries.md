@@ -5,63 +5,63 @@
 一个会 panic 的库相当于在说“我比你更懂如何处理这个错误”——这种情况几乎总是不成立。
 
 ```rust, editable
-// Library code - BAD
+// 库代码 - 糟糕
 pub fn parse_port(s: &str) -> u16 {
     if s.is_empty() {
-        panic!("Port string cannot be empty");
+        panic!("端口字符串不能为空");
     }
     
     match s.parse::<u16>() {
         Ok(port) if port > 0 => port,
-        Ok(_) => panic!("Port must be greater than 0"),
-        Err(_) => panic!("Invalid port number: {}", s),
+        Ok(_) => panic!("端口必须大于 0"),
+        Err(_) => panic!("无效的端口号: {}", s),
     }
 }
 
-// Application code
+// 应用代码
 fn main() {
     let ports = vec!["8080", "0", "invalid", "3000"];
     
     for port_str in ports {
-        let port = parse_port(port_str); // Panics on "0" - crashes the entire app
-        println!("Using port: {}", port);
+        let port = parse_port(port_str); // 在 "0" 上 panic - 导致整个应用崩溃
+        println!("使用端口: {}", port);
     }
 }
 ```
 
-该库在输入无效时会 panic（例如 "0" 或 "invalid"），导致整个应用崩溃。应用无法恢复、记录错误、使用默认值或跳过无效端口。库代码剥夺了应用开发者的控制权。程序崩溃时会显示：`thread 'main' panicked at 'Port must be greater than 0'`。
+该库在输入无效时会 panic（例如 "0" 或 "invalid"），导致整个应用崩溃。应用无法恢复、记录错误、使用默认值或跳过无效端口。库代码剥夺了应用开发者的控制权。程序崩溃时会显示：`'main' 线程因“端口必须大于 0”而 panic`。
 
 下面的示例通过返回 `Result` 而不是 panic 来改进。
 
 ```rust, editable
-// Library code - GOOD
+// 库代码 - 良好
 pub fn parse_port(s: &str) -> Result<u16, String> {
     if s.is_empty() {
-        return Err("Port string cannot be empty".to_string());
+        return Err("端口字符串不能为空".to_string());
     }
     
     match s.parse::<u16>() {
         Ok(port) if port > 0 => Ok(port),
-        Ok(_) => Err("Port must be greater than 0".to_string()),
-        Err(_) => Err(format!("Invalid port number: {}", s)),
+        Ok(_) => Err("端口必须大于 0".to_string()),
+        Err(_) => Err(format!("无效的端口号: {}", s)),
     }
 }
 
-// Application code
+// 应用代码
 fn main() {
     let ports = vec!["8080", "0", "invalid", "3000"];
     
     for port_str in ports {
         match parse_port(port_str) {
-            Ok(port) => println!("Using port: {}", port),
-            Err(e) => eprintln!("Skipping invalid port '{}': {}", port_str, e),
+            Ok(port) => println!("使用端口: {}", port),
+            Err(e) => eprintln!("跳过无效端口 '{}': {}", port_str, e),
         }
     }
-    // Prints:
-    // Using port: 8080
-    // Skipping invalid port '0': Port must be greater than 0
-    // Skipping invalid port 'invalid': Invalid port number: invalid
-    // Using port: 3000
+    // 输出:
+    // 使用端口: 8080
+    // 跳过无效端口 '0': 端口必须大于 0
+    // 跳过无效端口 'invalid': 无效的端口号: invalid
+    // 使用端口: 3000
 }
 ```
 

@@ -1,4 +1,3 @@
-````markdown
 ### 理解 Rust 中的 `Self`
 
 在 Rust 中，`Self` 是一个特殊的类型别名，指代当前 trait 或实现块的类型。它通常在 trait 定义和实现中用来指代实现该 trait 的类型。
@@ -37,4 +36,3 @@ fn main() {
 - `MyStruct` 结构体实现了 `MyTrait` trait，在实现中使用 `Self` 来指代它自己的类型。
 
 这使得代码更加灵活和可重用，因为 `Self` 可以适应实现该 trait 的类型。
-````

@@ -11,29 +11,29 @@
 下例中定义了一个名为 `Greet` 的 `trait`，包含一个方法 `greet`。随后为 `Person` 和 `Dog` 两个结构体实现了该 `trait`。
 
 ```rust, editable
-// Define a trait named `Greet`
+// 定义一个名为 `Greet` 的 trait
 pub trait Greet {
     fn greet(&self);
 }
 
-// Define a struct named `Person`
+// 定义一个名为 `Person` 的结构体
 pub struct Person {
     name: String,
 }
 
-// Implement the `Greet` trait for the `Person` struct
+// 为 `Person` 结构体实现 `Greet` trait
 impl Greet for Person {
     fn greet(&self) {
         println!("你好，我的名字是 {}！", self.name);
     }
 }
 
-// Define a struct named `Dog`
+// 定义一个名为 `Dog` 的结构体
 pub struct Dog {
     name: String,
 }
 
-// Implement the `Greet` trait for the `Dog` struct
+// 为 `Dog` 结构体实现 `Greet` trait
 impl Greet for Dog {
     fn greet(&self) {
         println!("汪！我的名字是 {}！", self.name);
@@ -42,7 +42,7 @@ impl Greet for Dog {
 
 
 fn main() {
-    // Create instances of `Person` and `Dog`
+    // 创建 `Person` 和 `Dog` 的实例
     let person = Person {
         name: String::from("Alice"),
     };

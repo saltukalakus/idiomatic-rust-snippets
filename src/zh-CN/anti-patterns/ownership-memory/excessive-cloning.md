@@ -1,4 +1,4 @@
-### 过度克隆（Excessive Cloning）
+### 过度克隆
 
 为了满足借用检查器而克隆数据是常见的初学者反模式。虽然 `.clone()` 可以快速解决所有权错误，但它会产生不必要的分配和复制。对于大型数据结构或紧密循环，这会显著影响性能。
 
@@ -15,7 +15,7 @@ fn analyze_text(text: String) -> (usize, usize) {
 fn main() {
     let large_text = "word ".repeat(100_000);
     let (words, lines) = analyze_text(large_text);
-    println!("Words: {}, Lines: {}", words, lines);
+    println!("单词数: {}, 行数: {}", words, lines);
 }
 ```
 
@@ -34,7 +34,7 @@ fn analyze_text(text: &str) -> (usize, usize) {
 fn main() {
     let large_text = "word ".repeat(100_000);
     let (words, lines) = analyze_text(&large_text);
-    println!("Words: {}, Lines: {}", words, lines);
+    println!("单词数: {}, 行数: {}", words, lines);
 }
 ```
 

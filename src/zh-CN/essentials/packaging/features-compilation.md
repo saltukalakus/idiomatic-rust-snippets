@@ -1,4 +1,3 @@
-````markdown
 ### 什么是特性？
 
 特性（Features）是一种根据指定配置有条件地编译代码的方法。它们允许您在您的 crate 或其依赖项中启用或禁用某些功能。特性在 Cargo.toml 文件中定义，可用于控制可选依赖项和条件编译。
@@ -53,4 +52,3 @@ my_crate = { version = "1.0", default-features = false, features = ["feature1"] 
 `default` 属性: 默认特性默认启用，除非明确禁用。<br/>
 
 自定义特性可以在 Cargo.toml 中添加，并根据需要启用或禁用。您可以在函数顶部使用 `#[cfg(feature = "feature_name")]` 来根据特性可用性在代码中包含/排除函数。<br/>
-````

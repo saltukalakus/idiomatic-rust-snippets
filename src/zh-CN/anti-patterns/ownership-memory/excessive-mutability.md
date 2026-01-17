@@ -1,4 +1,4 @@
-### 过度可变（Excessive Mutability）
+### 过度可变
 
 将变量标记为 `mut` 而实际上不需要变更是常见的反模式。过度可变会使代码更难理解，容易引入意外修改，并阻碍编译器优化。Rust 默认不可变是一个特性，而非限制。
 
@@ -18,10 +18,10 @@ fn calculate_price(base_price: f64, quantity: u32) -> f64 {
 
 fn main() {
     let total = calculate_price(10.0, 5);
-    println!("Total: ${:.2}", total); // Prints: $55.00 (错误，应为 $54.00)
+    println!("总价: ${:.2}", total); // 输出: $55.00 (错误，应为 $54.00)
     
     let expected = 10.0 * 5.0 * 1.08;
-    println!("Expected: ${:.2}", expected); // Prints: $54.00
+    println!("期望值: ${:.2}", expected); // 输出: $54.00
 }
 ```
 
@@ -43,10 +43,10 @@ fn calculate_price(base_price: f64, quantity: u32) -> f64 {
 
 fn main() {
     let total = calculate_price(10.0, 5);
-    println!("Total: ${:.2}", total); // Prints: $54.00 (正确)
+    println!("总价: ${:.2}", total); // 输出: $54.00 (正确)
     
     let expected = 10.0 * 5.0 * 1.08;
-    println!("Expected: ${:.2}", expected); // Prints: $54.00
+    println!("期望值: ${:.2}", expected); // 输出: $54.00
 }
 ```
 
