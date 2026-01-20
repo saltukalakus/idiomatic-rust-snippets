@@ -66,6 +66,10 @@ jobs:
         run: mdbook build
       - name: Build Chinese translation
         run: ./scripts/build_zh.sh
+      - name: Copy custom domain files
+        run: |
+          cp CNAME book/CNAME
+          cp .nojekyll book/.nojekyll
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
