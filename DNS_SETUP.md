@@ -101,7 +101,8 @@ You can check DNS propagation status using:
 - https://dnschecker.org
 - Command line: `dig idiomatic-rust-snippets.org`
 - Command line: `nslookup idiomatic-rust-snippets.org`
-
+- Command line: `nslookup -type=txt _github-pages-challenge-saltukalakus.idiomatic-rust-snippets.org gordon.ns.cloudflare.com`
+  
 ## Step 5: Enable HTTPS
 
 Once DNS is configured and verified:
