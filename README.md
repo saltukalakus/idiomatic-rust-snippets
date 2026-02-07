@@ -37,28 +37,10 @@ make serve      # Serve the book locally
 ***Available Make commands:***
 - `make check-rust` - Verify Rust toolchain version
 - `make install` - Install mdbook and mdbook-metadata
-- `make build` - Build the book (English and Chinese)
-- `make build-zh` - Build only Chinese translation
+- `make build` - Build the book
 - `make serve` - Build and serve the book locally
 - `make clean` - Clean build artifacts
 - `make all` - Check Rust, install dependencies and build
-
-### Multilingual Support
-
-The book is available in multiple languages:
-- **English** (default): Accessible at the root path `/`
-- **简体中文** (Simplified Chinese): Accessible at `/zh-CN/`
-
-A language selector dropdown is available in the header for easy switching between languages.
-
-To build the Chinese translation separately:
-```
-./scripts/build_zh.sh
-# or
-make build-zh
-```
-
-The `make build` command automatically builds both English and Chinese versions.
 
 **Manual installation:**
 ```

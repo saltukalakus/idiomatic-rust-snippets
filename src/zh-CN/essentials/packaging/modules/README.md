@@ -1,1 +1,0 @@
-A small project showing your options with the Rust module system

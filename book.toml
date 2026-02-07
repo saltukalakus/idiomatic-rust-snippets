@@ -1,7 +1,7 @@
 [book]
 authors = ["saltukalakus"]
 language = "en"
-multilingual = true
+multilingual = false
 src = "src"
 title = "Idiomatic Rust Snippets"
 

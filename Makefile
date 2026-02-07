@@ -1,4 +1,4 @@
-.PHONY: install build build-zh serve clean help check-rust
+.PHONY: install build serve clean help check-rust
 
 # Load tool versions from .tool-versions file
 include .tool-versions
@@ -8,8 +8,7 @@ help:
 	@echo "Available targets:"
 	@echo "  check-rust - Verify Rust toolchain version"
 	@echo "  install    - Install mdbook and mdbook-metadata"
-	@echo "  build      - Build the book (English)"
-	@echo "  build-zh   - Build Chinese translation"
+	@echo "  build      - Build the book"
 	@echo "  serve      - Build and serve the book locally"
 	@echo "  clean      - Clean build artifacts"
 	@echo "  all        - Check Rust, install dependencies and build"
@@ -31,17 +30,10 @@ install:
 build:
 	@echo "Building the book..."
 	@mdbook build
-	@echo "Building Chinese translation..."
-	@./scripts/build_zh.sh
-
-build-zh:
-	@echo "Building Chinese translation..."
-	@./scripts/build_zh.sh
 
 serve:
-	@echo "Building both versions..."
+	@echo "Building the book..."
 	@mdbook build
-	@./scripts/build_zh.sh
 	@echo "Serving the book with Python HTTP server..."
 	@cd book && python3 -m http.server 3000
 
