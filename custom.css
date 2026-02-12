@@ -28,6 +28,22 @@ html:not(.sidebar-resizing) .sidebar {
     transition: none !important;
 }
 
+/*
+ * Prevent code block flash (FOUC) on page load.
+ * When navigating to a page with code, the browser renders unstyled code,
+ * then highlight.js styles it, then Ace editor replaces it — causing flashes.
+ * These rules ensure code blocks have a stable appearance before JS takes over.
+ */
+.playground {
+    contain: layout style;
+}
+
+code.editable,
+code.language-rust {
+    background-color: var(--code-bg) !important;
+    min-height: 3em;
+}
+
 /* Hide keyboard shortcuts overlay by default */
 #keyboard-shortcuts-help {
     display: none !important;
