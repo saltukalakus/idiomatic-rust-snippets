@@ -5,34 +5,27 @@ html {
     overflow-y: scroll;
 }
 
-/* Prevent sidebar width animations and transitions */
-.sidebar {
+/*
+ * Disable all sidebar and page-wrapper transitions/animations.
+ * mdBook uses a checkbox (#sidebar-toggle-anchor) and CSS transitions
+ * to animate the sidebar. On production (GitHub Pages + Cloudflare),
+ * network latency causes a visible slide-in effect on each page load.
+ * Locally it's too fast to notice.
+ */
+html:not(.sidebar-resizing) .sidebar {
     transition: none !important;
 }
 
-.sidebar-visible .sidebar {
-    transform: none !important;
-}
-
-/* Force sidebar to stay visible and prevent auto-collapse on navigation */
-.sidebar {
-    left: 0 !important;
-    transform: translateX(0) !important;
-}
-
-/* Prevent sidebar from being hidden */
-.sidebar-hidden .sidebar {
-    left: 0 !important;
-    transform: translateX(0) !important;
-}
-
-/* Disable main content area slide animation */
-#content main,
-.content,
-main {
+.page-wrapper {
     transition: none !important;
-    animation: none !important;
-    transform: none !important;
+}
+
+#sidebar-toggle-anchor:not(:checked) ~ .sidebar {
+    transition: none !important;
+}
+
+#sidebar-toggle-anchor:checked ~ .page-wrapper {
+    transition: none !important;
 }
 
 /* Hide keyboard shortcuts overlay by default */
