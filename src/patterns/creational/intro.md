@@ -8,6 +8,4 @@ Creational Patterns deal with object creation mechanisms, providing flexible and
 
 2- [Factory Method](./factory-method.md): Defines an interface for creating an object, but lets subclasses alter the type of objects that will be created.
 
-3- [Abstract Factory](./abstract-factory.md): Provides an interface for creating families of related or dependent objects without specifying their concrete classes.
-
-4- [Builder](./builder.md): Separates the construction of a complex object from its representation. This pattern is very common and idiomatic in Rust.
+3- [Builder](./builder.md): Separates the construction of a complex object from its representation. This pattern is very common and idiomatic in Rust.

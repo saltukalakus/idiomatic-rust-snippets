@@ -1,6 +1,6 @@
 ### What is the purpose of **imp** keyword?
 
-The **impl** keyword in Rust is used to define implementations for structs, enums, and [traits](./trait.md). It allows you to associate functions and methods with a type, and to implement traits for a type.
+The **impl** keyword in Rust is used to define implementations for structs, enums, and [traits](../types/trait.md). It allows you to associate functions and methods with a type, and to implement traits for a type.
 
 ### Usage of impl
 

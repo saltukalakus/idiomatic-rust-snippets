@@ -2,7 +2,7 @@
 
 Binary search is an efficient algorithm for finding an item from a sorted list of items. It works by repeatedly dividing in half the portion of the list that could contain the item, until you've narrowed down the possible locations to just one.
 
-This implementation assumes that the input array is sorted. If the array is not sorted, the binary search algorithm will not work correctly. Check out the [sorting section](../sorting/intro.html) for implementations of some of array sorting algorithms.
+This implementation assumes that the input array is sorted. If the array is not sorted, the binary search algorithm will not work correctly. Check out the [sorting section](../sorting/intro.md) for implementations of some of array sorting algorithms.
 
 ```rust, editable
 fn binary_search(arr: &[i32], target: i32) -> Option<usize> {

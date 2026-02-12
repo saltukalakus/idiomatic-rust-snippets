@@ -52,4 +52,4 @@ fn main() {
 }
 ```
 
-You can define methods and associated functions for structs using the [impl](./imp.md) keyword.
+You can define methods and associated functions for structs using the [impl](../std-lib/imp.md) keyword.
