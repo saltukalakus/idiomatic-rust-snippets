@@ -14,6 +14,15 @@ html {
     transform: none !important;
 }
 
+/* Disable main content area slide animation */
+#content main,
+.content,
+main {
+    transition: none !important;
+    animation: none !important;
+    transform: none !important;
+}
+
 /* Hide keyboard shortcuts overlay by default */
 #keyboard-shortcuts-help {
     display: none !important;
