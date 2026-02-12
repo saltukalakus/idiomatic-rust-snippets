@@ -5,6 +5,15 @@ html {
     overflow-y: scroll;
 }
 
+/* Prevent sidebar width animations and transitions */
+.sidebar {
+    transition: none !important;
+}
+
+.sidebar-visible .sidebar {
+    transform: none !important;
+}
+
 /* Hide keyboard shortcuts overlay by default */
 #keyboard-shortcuts-help {
     display: none !important;
