@@ -14,6 +14,18 @@ html {
     transform: none !important;
 }
 
+/* Force sidebar to stay visible and prevent auto-collapse on navigation */
+.sidebar {
+    left: 0 !important;
+    transform: translateX(0) !important;
+}
+
+/* Prevent sidebar from being hidden */
+.sidebar-hidden .sidebar {
+    left: 0 !important;
+    transform: translateX(0) !important;
+}
+
 /* Disable main content area slide animation */
 #content main,
 .content,
