@@ -1,5 +1,10 @@
 /* custom.css */
 
+/* Fix sidebar width jumping by always showing scrollbar space */
+html {
+    overflow-y: scroll;
+}
+
 /* Hide keyboard shortcuts overlay by default */
 #keyboard-shortcuts-help {
     display: none !important;
