@@ -64,8 +64,6 @@ jobs:
         uses: actions/configure-pages@v5
       - name: Build with mdBook (English)
         run: mdbook build
-      - name: Build Chinese translation
-        run: ./scripts/build_zh.sh
       - name: Copy custom domain files
         run: |
           cp CNAME book/CNAME
