@@ -9,7 +9,7 @@ Rust supports underscores (_) for package names but not hyphens (-). However, yo
 extern crate "rustc-serialize" as rustc_serialize;
 ```
 
-There is [quite a bit of debate](https://www.reddit.com/r/rust/comments/194clzq/underscores_vs_dashes_in_crate_names/) about whether hyphens should be used in library names.
+There is [quite a bit of debate](https://web.archive.org/web/20240111/https://www.reddit.com/r/rust/comments/194clzq/underscores_vs_dashes_in_crate_names/) about whether hyphens should be used in library names.
 
 Refraining from using hyphens seems to be the most future-proof option, but I agree with the aesthetics aspect of using dash instead of underscore.
 

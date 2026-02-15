@@ -23,4 +23,4 @@ If you find this project useful, please consider giving a ⭐STAR⭐ on GitHub!
 
 Help me improve it by adding new examples, or fixing issues by opening [pull requests](https://github.com/saltukalakus/idiomatic-rust-snippets/pulls). All contributions are welcome.
 
-This project is not associated with the [Rust Foundation](https://foundation.rust-lang.org/). 
+This project is not associated with the [Rust Foundation](https://rustfoundation.org/). 
