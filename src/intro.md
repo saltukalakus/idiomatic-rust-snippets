@@ -1,26 +1,32 @@
 ---
- title: Learn Rust
+ title: Idiomatic Rust Snippets
  author: Saltuk Alakus
- keywords: Algorithms with Rust, Rust exercises, Learn Rust Language, Learning Rust, How to learn Rust, Understand Rust Code, Rust Sample, Rust Code
+ keywords: Idiomatic Rust, Rust Design Patterns, Rust Anti-Patterns, Rust Algorithms, Rust Best Practices
  released: true
 ---
+Whether you are a beginner trying to understand ownership or an architect looking for the Rust equivalent of the Strategy pattern, this book cuts through the theory and gives you **working, copy-pasteable and editable interactive examples**. 
+Tweak the code, break it, fix it, and see the results instantly.
 
-### Idiomatic Rust Snippets
+### 1. [Essentials](./essentials/intro.md)
+*For the Developer New to Rust.*
+Skip the fluff and focus on the core concepts that trip up beginners: ownership, borrowing, and the type system.
 
-Rust is known to have a steep learning curve. This book is intended to be beginner-friendly and get you up to speed with the core Rust concepts and is one of the best "cheat sheets" for Rust developers. 
+### 2. [Anti-Patterns](./anti-patterns/intro.md)
+*For the Developer Who Got It to Compile (Finally).*
+Just because it runs doesn't mean it's right. This section highlights common mistakes developers make when bringing habits from other languages (like manual indexing or ignoring warnings) and shows you the **idiomatic checks and fixes**.
 
-1. [Essentials](./essentials/intro.md) covers the basic aspects of the Rust programming language. They are explained with easy to understand examples.
+### 3. [Design Patterns](./patterns/intro.md)
+*For the Architect & Senior Engineer.*
+"How do I implement the Observer pattern without a garbage collector?" This section translates classic GoF patterns into Rust's ownership model, showing you how to build scalable, maintainable systems without fighting the borrow checker.
 
-2. [Anti Patterns](./anti-patterns/intro.md) section explains various non-idiomatic usages that need to be avoided. This is the best section to read for developers who have started building projects with Rust.
+### 4. [Algorithms](./algorithms/intro.md)
+*For the Performance Engineer.*
+See how standard algorithms (sorting, searching, graphs) look when implemented with Rust's safety guarantees and zero-cost abstractions.
 
-3. [Design Patterns](./patterns/intro.md) section demonstrates several design patterns with minimalistic but complete projects. This section is for more advanced developers and design architects.
+---
 
-4. [Algorithms](./algorithms/intro.md) section explains various popular algorithms with code samples in Rust.
+If you have a better way to solve a problem, or a pattern we missed, join us on [GitHub](https://github.com/saltukalakus/idiomatic-rust-snippets).
 
-The project follows a minimalistic approach, where almost all pages are short with simple, easy-to-follow code samples. Most samples can run. For those samples that allow execution you can tweak the code on the online editor and test your ideas live. 
+*Note: This is an independent community project and is not affiliated with the Rust Foundation.*
 
-If you find this project useful, please consider giving a ⭐STAR⭐ on GitHub!
-
-Help me improve it by adding new examples, or fixing issues by opening [pull requests](https://github.com/saltukalakus/idiomatic-rust-snippets/pulls). All contributions are welcome.
-
-This project is not associated with the [Rust Foundation](https://rustfoundation.org/). 
+ 
