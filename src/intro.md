@@ -9,7 +9,7 @@ Tweak the code, break it, fix it, and see the results instantly.
 
 ### 1. [Essentials](./essentials/intro.md)
 *For the Developer New to Rust.*
-Skip the fluff and focus on the core concepts that trip up beginners: ownership, borrowing, and the type system.
+Focuses on the core concepts for beginners: ownership, borrowing, and the type system and a few more.
 
 ### 2. [Anti-Patterns](./anti-patterns/intro.md)
 *For the Developer Who Got It to Compile (Finally).*
