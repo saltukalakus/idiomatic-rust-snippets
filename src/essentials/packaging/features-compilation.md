@@ -51,4 +51,4 @@ my_crate = { version = "1.0", default-features = false, features = ["feature1"] 
 `features`: Allow conditional compilation and optional dependencies.<br/>
 `default` attribute: Default features is enabled by default unless explicitly disabled.<br/>
 
-Custom Features can be added in Cargo.toml and enabled or disabled as needed. You can use `#[cfg(feature = "feature_name")]` at the top of the function to include/exclude from teh code based on the feature availability.<br/>
+Custom Features can be added in Cargo.toml and enabled or disabled as needed. You can use `#[cfg(feature = "feature_name")]` at the top of the function to include/exclude from the code based on the feature availability.<br/>

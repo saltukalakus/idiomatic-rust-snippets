@@ -1,4 +1,4 @@
-### Sample project showıng the Observer pattern
+### Sample project showing the Observer pattern
 
 Testing the app.
 

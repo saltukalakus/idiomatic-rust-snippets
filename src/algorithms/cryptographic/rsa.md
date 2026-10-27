@@ -27,13 +27,8 @@ num-traits = "0.2"
 - The ciphertext `c` is decrypted back to plaintext `m` using the formula: `m ≡ c^d (mod n)`.
 
 ```rust, editable
-extern crate num_bigint as bigint;
-extern crate num_traits;
-extern crate rand;
-
-use bigint::{BigInt, ToBigInt};
+use num_bigint::{BigInt, ToBigInt};
 use num_traits::{One, Zero};
-use rand::Rng;
 
 fn main() {
      // Generate two large prime numbers (for simplicity, small primes are used here)

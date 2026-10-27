@@ -5,11 +5,11 @@ Using `unsafe` blocks when safe Rust alternatives exist defeats the purpose of R
 Unsafe should be a last resort. Most performance-critical code doesn't need it, and safe abstractions are usually fast enough.
 
 ```rust, editable
-fn get_middle_element(data: &Vec<i32>) -> Option<i32> {
+fn get_middle_element(data: &[i32]) -> Option<i32> {
     if data.is_empty() {
         return None;
     }
-    
+
     let mid = data.len() / 2;
     unsafe {
         // Unnecessary unsafe - could panic if logic is wrong
@@ -22,7 +22,7 @@ fn main() {
     if let Some(mid) = get_middle_element(&numbers) {
         println!("Middle: {}", mid); // Prints: Middle: 30
     }
-    
+
     let empty: Vec<i32> = vec![];
     if let Some(mid) = get_middle_element(&empty) {
         println!("Middle: {}", mid);
@@ -37,7 +37,7 @@ Using `get_unchecked()` bypasses bounds checking, assuming the programmer verifi
 The next sample uses safe indexing.
 
 ```rust, editable
-fn get_middle_element(data: &Vec<i32>) -> Option<i32> {
+fn get_middle_element(data: &[i32]) -> Option<i32> {
     let mid = data.len() / 2;
     data.get(mid).copied()
 }
@@ -47,12 +47,12 @@ fn main() {
     if let Some(mid) = get_middle_element(&numbers) {
         println!("Middle: {}", mid); // Prints: Middle: 30
     }
-    
+
     let empty: Vec<i32> = vec![];
     if let Some(mid) = get_middle_element(&empty) {
-        println!("Empty vector"); // Prints: Empty vector
+        println!("Middle: {}", mid);
     } else {
-        println!("No middle element");
+        println!("No middle element"); // Prints: No middle element
     }
 }
 ```

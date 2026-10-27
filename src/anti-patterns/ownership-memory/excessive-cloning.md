@@ -5,17 +5,17 @@ Cloning data to satisfy the borrow checker is a common beginner anti-pattern. Wh
 Understanding Rust's borrowing rules allows you to share data efficiently without cloning. References are zero-cost abstractions.
 
 ```rust, editable
-fn analyze_text(text: String) -> (usize, usize) {
+fn analyze_text(text: String) -> (usize, usize, usize) {
     let word_count = text.clone().split_whitespace().count();
     let char_count = text.clone().chars().count();
     let line_count = text.clone().lines().count();
-    (word_count, line_count)
+    (word_count, char_count, line_count)
 }
 
 fn main() {
     let large_text = "word ".repeat(100_000);
-    let (words, lines) = analyze_text(large_text);
-    println!("Words: {}, Lines: {}", words, lines);
+    let (words, chars, lines) = analyze_text(large_text);
+    println!("Words: {}, Chars: {}, Lines: {}", words, chars, lines);
 }
 ```
 
@@ -24,17 +24,17 @@ Cloning the string three times creates three separate ~600KB allocations for a s
 The next sample uses borrowing instead of cloning.
 
 ```rust, editable
-fn analyze_text(text: &str) -> (usize, usize) {
+fn analyze_text(text: &str) -> (usize, usize, usize) {
     let word_count = text.split_whitespace().count();
     let char_count = text.chars().count();
     let line_count = text.lines().count();
-    (word_count, line_count)
+    (word_count, char_count, line_count)
 }
 
 fn main() {
     let large_text = "word ".repeat(100_000);
-    let (words, lines) = analyze_text(&large_text);
-    println!("Words: {}, Lines: {}", words, lines);
+    let (words, chars, lines) = analyze_text(&large_text);
+    println!("Words: {}, Chars: {}, Lines: {}", words, chars, lines);
 }
 ```
 

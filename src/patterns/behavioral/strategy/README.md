@@ -1,4 +1,4 @@
-### Sample project showıng the Strategy pattern
+### Sample project showing the Strategy pattern
 
 Testing the app.
 

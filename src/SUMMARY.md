@@ -1,5 +1,5 @@
 # Summary
-[Ideomatic Rust](./intro.md)
+[Idiomatic Rust](./intro.md)
 - [Essentials](./essentials/intro.md)
   - [Core Concepts](./essentials/core-concepts/intro.md)
     - [Functions](./essentials/core-concepts/function.md)  

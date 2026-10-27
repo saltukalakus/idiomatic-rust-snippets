@@ -10,3 +10,5 @@ Patterns help to have reusable solutions to common problems that occur in softwa
 
 4- [Rust Idioms](./rust-idioms/intro.md): Patterns unique to Rust that leverage the ownership system, type system, and zero-cost abstractions.
 
+> **GoF patterns in Rust:** The Creational, Behavioral, and Structural sections translate classic Gang of Four patterns into Rust. Use them to understand how familiar OOP patterns map onto Rust concepts — but don't assume every pattern belongs in your code. Idiomatic Rust often replaces them entirely: enums with pattern matching replace many inheritance hierarchies, traits and closures replace strategy and command objects, and ownership eliminates whole categories of GoF patterns (e.g. many uses of Flyweight, Proxy, or Mediator). Reach for [Rust Idioms](./rust-idioms/intro.md) first.
+

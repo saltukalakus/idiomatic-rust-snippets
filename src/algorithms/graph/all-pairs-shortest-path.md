@@ -13,7 +13,7 @@ The Floyd-Warshall algorithm uses dynamic programming to build up the shortest p
 ```rust, editable
 const INF: i32 = i32::MAX / 2; // Use a large value to represent infinity
 
-fn floyd_warshall(graph: &Vec<Vec<i32>>) -> Vec<Vec<i32>> {
+fn floyd_warshall(graph: &[Vec<i32>]) -> Vec<Vec<i32>> {
     let n = graph.len();
     let mut dist = graph.clone();
 

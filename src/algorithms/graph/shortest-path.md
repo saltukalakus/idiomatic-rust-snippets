@@ -38,7 +38,7 @@ struct Edge {
     cost: usize,
 }
 
-fn dijkstra(adj_list: &Vec<Vec<Edge>>, start: usize) -> Vec<usize> {
+fn dijkstra(adj_list: &[Vec<Edge>], start: usize) -> Vec<usize> {
     let mut dist: Vec<_> = (0..adj_list.len()).map(|_| usize::MAX).collect();
     let mut heap = BinaryHeap::new();
 

@@ -1,4 +1,4 @@
-### What is the differences between Structs vs Enums?
+### What are the differences between Structs vs Enums?
 
 Enums and structs are both ways to define custom data types in Rust, but they serve different purposes and have different characteristics. Here’s a detailed comparison of enums and structs:
 
